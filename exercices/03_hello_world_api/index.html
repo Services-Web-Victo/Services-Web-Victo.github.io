@@ -1,0 +1,1093 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/exercices/03_hello_world_api/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Exercice 03 - HelloWorldApi - Services Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercice-03-helloworldapi" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Services Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercice 03 - HelloWorldApi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../notes_de_cours/php/array/" class="md-tabs__link">
+        Notes de cours
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01_utilisation_api/" class="md-tabs__link">
+        Exercices
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+
+    </a>
+    Services Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Notes de cours
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Notes de cours" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Notes de cours
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          PHP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PHP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          PHP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/php/array/" class="md-nav__link">
+        Les tableaux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/php/json/" class="md-nav__link">
+        Manipulation de données en JSON
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/php/file_get_contents/" class="md-nav__link">
+        Effectuer un appel GET à un service web
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Exercices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercices" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exercices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_utilisation_api/" class="md-nav__link">
+        01 - Utilisation d’un service web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_revision_php/" class="md-nav__link">
+        02 - Revision PHP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-des-routes" class="md-nav__link">
+    Description des routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-du-repertoire-du-projet" class="md-nav__link">
+    Création du répertoire du projet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-de-la-base-de-donnees-et-insertion-des-donnees" class="md-nav__link">
+    Création de la base de données et insertion des données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajout-des-informations-de-connexion" class="md-nav__link">
+    Ajout des informations de connexion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connexion-a-la-base-de-donnees" class="md-nav__link">
+    Connexion à la base de données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modification-au-fichier-composerjson" class="md-nav__link">
+    Modification au fichier composer.json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rediriger-les-routes" class="md-nav__link">
+    Rediriger les routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fichier-de-chargement" class="md-nav__link">
+    Fichier de chargement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-de-la-porte-dentree" class="md-nav__link">
+    Création de la "porte d'entrée"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dune-classe-pour-construire-la-reponse" class="md-nav__link">
+    Création d'une classe pour construire la réponse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-du-controleur-de-la-table-salutations" class="md-nav__link">
+    Création du contrôleur de la table salutations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#couche-dacces-aux-donnees-de-la-table-salutations" class="md-nav__link">
+    Couche d'accès aux données de la table salutations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-de-la-route" class="md-nav__link">
+    Test de la route
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-des-autres-routes" class="md-nav__link">
+    Création des autres routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modification-de-la-route-de-la-salutation-aleatoire" class="md-nav__link">
+    Modification de la route de la salutation aléatoire
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="exercice-03-helloworldapi">Exercice 03 - HelloWorldApi</h1>
+<p>On va créer notre première api en PHP de base sans utiliser de framework et le moins de dépendance possible. Ça nous permettra de comprendre la base avant de nous lancer dans des projets plus complexes. Quoi de mieux qu'un Hello World pour commencer...</p>
+<h2 id="prerequis">Prérequis</h2>
+<ul>
+<li>Ampps (ou une autre "stack" incluant au minimum Apache, MySQL et PHP) -  <a href="https://ampps.com/">https://ampps.com/</a></li>
+<li>Composer - <a href="https://getcomposer.org/">https://getcomposer.org/</a></li>
+</ul>
+<h2 id="description-des-routes">Description des routes</h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/greetings/list</td>
+<td>Afficher toutes les salutations</td>
+</tr>
+<tr>
+<td>/greetings/random</td>
+<td>Afficher une salutation aléatoire</td>
+</tr>
+<tr>
+<td>/greetings/show/[id]</td>
+<td>Afficher une salutation selon selon son id</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creation-du-repertoire-du-projet">Création du répertoire du projet</h2>
+<p>Créez à la racine de votre répertoire "localhost" de Ampps (par défaut ça sera C:\Program Files\Ampps\www ) un nouveau répertoire pour votre projet nommé <strong>helloworldapi</strong>. Créez aussi les sous-répertoire <code>Src</code> et <code>api</code>où vous allez retrouver la plupart des fichiers de l'api.</p>
+<h2 id="creation-de-la-base-de-donnees-et-insertion-des-donnees">Création de la base de données et insertion des données</h2>
+<ol>
+<li>Créez la base de données <code>helloworldapi</code>.</li>
+<li>Exécutez le script suivant pour créer la table salutation et y insérer les données de départ.</li>
+</ol>
+<pre><code class="language-sql">CREATE TABLE IF NOT EXISTS helloworldapi.salutations (
+    id INT auto_increment NOT NULL,
+    texte varchar(100) NOT NULL,
+    langue varchar(2) NOT NULL,
+    PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+
+INSERT INTO helloworldapi.salutations (texte,langue) VALUES
+     ('Bonjour le monde','fr'),
+     ('Bon matin','fr'),
+     ('Salut','fr'),
+     ('Bonne nuit je vais travailler','fr'),
+     ('Hello world','en'),
+     ('Good morning','en'),
+     ('Hi','en'),
+     ('Good night, i''m going to work','en'),
+     ('Hola Mundo','es'),
+     ('Buenos dias','es'),
+     ('Hola','es'),
+     ('Buenas noches me voy a trabajar','es'),
+     ('Hallo Welt','de'),
+     ('guten Morgen','de'),
+     ('Hallo','de'),
+     ('Gute Nacht, ich gehe zur Arbei','de');
+</code></pre>
+<h2 id="ajout-des-informations-de-connexion">Ajout des informations de connexion</h2>
+<ol>
+<li>Installez une dépendance à la bibliothèque DotEnv dans votre projet : <a href="https://github.com/vlucas/phpdotenv">https://github.com/vlucas/phpdotenv</a>. </li>
+<li>Créez les trois fichiers suivants :</li>
+</ol>
+<p>.gitignore</p>
+<pre><code>.env
+</code></pre>
+<p>.env.exemple</p>
+<pre><code>DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+</code></pre>
+<p>.env</p>
+<pre><code>DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=helloworldapi
+DB_USERNAME=votre_usager_mysql
+DB_PASSWORD=votre_mot_de_passe
+</code></pre>
+<h2 id="connexion-a-la-base-de-donnees">Connexion à la base de données</h2>
+<ol>
+<li>Créez le fichier <code>Database.php</code> dans le sous-répertoire <code>Src</code></li>
+<li>Copiez le code suivant</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+/*
+Src/Database.php
+
+Gestion de la connexion à la base de données
+
+source : https://dev.to/shahbaz17/build-a-simple-rest-api-in-php-2edl
+*/
+
+namespace Src;
+
+class Database {
+
+    private $dbConnection = null;
+
+    public function __construct()
+    {
+      $host = $_ENV['DB_HOST'];
+      $port = $_ENV['DB_PORT'];
+      $db   = $_ENV['DB_DATABASE'];
+      $username = $_ENV['DB_USERNAME'];
+      $password = $_ENV['DB_PASSWORD'];
+
+      try {
+        $this-&gt;dbConnection = new \PDO(
+            &quot;mysql:host=$host;port=$port;dbname=$db&quot;,
+            $username,
+            $password
+        );
+      } catch (\PDOException $e) {
+        exit($e-&gt;getMessage());
+      }
+    }
+
+    public function getConnection()
+    {
+      return $this-&gt;dbConnection;
+    }
+  }
+?&gt;
+</code></pre>
+<p>Pour plus d'information sur PDO : <a href="https://www.php.net/manual/fr/book.pdo.php">www.php.net/manual/fr/book.pdo.php</a></p>
+<h2 id="modification-au-fichier-composerjson">Modification au fichier composer.json</h2>
+<p>Ajoutez un chargement automatique (autoload) du répertoire Src de votre projet dans le fichier composer.json. Votre fichier devrait ressembler à ceci : </p>
+<pre><code class="language-json">{
+  &quot;require&quot;: {
+    &quot;vlucas/phpdotenv&quot;: &quot;^5.3&quot;
+  },
+  // Section à ajouter 
+  &quot;autoload&quot;: {
+    &quot;psr-4&quot;: {
+      &quot;Src\\&quot;: &quot;src/&quot;
+    }
+  }
+}
+</code></pre>
+<p>Une fois les modifications effectuées, lancez la commande suivante en console</p>
+<pre><code class="language-bash">composer update
+</code></pre>
+<h2 id="rediriger-les-routes">Rediriger les routes</h2>
+<p>Nous allons inclure les paramètres de nos appel directement dans l'url de la requête. ex: l'url <code>http://localhost/HelloWorldApi/greetings/show/6/</code> va afficher la salutation avec le id 6, mais en réalité l'url serait plutôt <code>http://localhost/HelloWorldApi/api/index.php?view=single&amp;id=$6</code>. Une façon de faire est de créer un fichier <code>.htaccess</code> pour indiquer à notre serveur Apache de "traduire" l'url vers le bon fichier.</p>
+<p>Créez un fichier <code>.htaccess</code> à la racine de votre projet et incluez les lignes suivantes : </p>
+<pre><code># Activer la réécriture de l'url
+Options +FollowSymlinks
+RewriteEngine on
+
+# Définition des règles de réécriture
+RewriteRule ^greetings/list   api/index.php?view=all [nc,qsa]
+RewriteRule ^greetings/random   api/index.php?view=single&amp;random=1 [nc,qsa]
+RewriteRule ^greetings/show/([0-9]+)   api/index.php?view=single&amp;id=$1 [nc,qsa]
+</code></pre>
+<h2 id="fichier-de-chargement">Fichier de chargement</h2>
+<ol>
+<li>Créez le fichier <code>bootstrap.php</code> à la racine du projet. Ce fichier s'occuper de charger le nécessaire au fonctionnement de notre api.</li>
+<li>Copiez le code suivant</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+// Chargement des dépendances
+require 'vendor/autoload.php';
+
+use Src\Database;
+
+// Chargement dans les variable d'environnement le contenu du fichier .env
+// Source : https://github.com/vlucas/phpdotenv
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv-&gt;safeLoad();
+
+// Initialisation et récupération de la connexion à la base de données
+$dbConnection = (new Database())-&gt;getConnection();
+?&gt;
+</code></pre>
+<h2 id="creation-de-la-porte-dentree">Création de la "porte d'entrée"</h2>
+<ol>
+<li>Créez le fichier <code>index.php</code> dans le sous-répertoire <code>api</code>. Ce fichier sera en quelque sorte le point d'entrée de notre api.</li>
+<li>Copiez le code suivant dans le fichier.</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+/*
+api/index.php
+*/
+
+require(&quot;../bootstrap.php&quot;);
+
+use Src\GreetingHandler;
+
+// Récupération des paramêtres de la requête
+$view = $_GET[&quot;view&quot;] ?? &quot;&quot;;
+$random = $_GET[&quot;random&quot;] ?? 0;
+$greetingId = $_GET[&quot;id&quot;] ?? 0;
+
+// Mappage selon les paramtes de l'url
+switch($view){
+
+    case &quot;all&quot;:
+        // Pour le endpoint /greetings/list
+        $mobileRestHandler = new GreetingHandler($dbConnection);
+        $mobileRestHandler-&gt;getAllGreetings();
+        break;
+
+    // ...
+}
+?&gt;
+</code></pre>
+<h2 id="creation-dune-classe-pour-construire-la-reponse">Création d'une classe pour construire la réponse</h2>
+<ol>
+<li>Créez le fichier <code>SimpleRest.php</code> dans le sous-répertoire <code>Src</code>. Cette classe aidera à construire la réponse http à la requête.</li>
+<li>Copiez le code suivant dans le fichier.</li>
+</ol>
+<pre><code class="language-php">&lt;?php 
+/*
+Cette classe est utilisée pour facilité la création de l'entête http de la réponse
+
+Source : https://phppot.com/php/php-restful-web-service/
+*/
+
+namespace Src;
+
+class SimpleRest {
+
+    private $httpVersion = &quot;HTTP/1.1&quot;;
+
+    public function setHttpHeaders($contentType, $statusCode){
+
+        $statusMessage = $this -&gt; getHttpStatusMessage($statusCode);
+
+        header($this-&gt;httpVersion. &quot; &quot;. $statusCode .&quot; &quot;. $statusMessage);      
+
+        $contentType = strpos($contentType,'text/html') !== false ? &quot;X-Content-Type-Options: nosniff&quot; : $contentType;
+
+        header(&quot;Content-Type:&quot;. $contentType);
+    }
+
+    public function getHttpStatusMessage($statusCode){
+        $httpStatus = array(
+            100 =&gt; 'Continue',  
+            101 =&gt; 'Switching Protocols',  
+            200 =&gt; 'OK',
+            201 =&gt; 'Created',  
+            202 =&gt; 'Accepted',  
+            203 =&gt; 'Non-Authoritative Information',  
+            204 =&gt; 'No Content',  
+            205 =&gt; 'Reset Content',  
+            206 =&gt; 'Partial Content',  
+            300 =&gt; 'Multiple Choices',  
+            301 =&gt; 'Moved Permanently',  
+            302 =&gt; 'Found',  
+            303 =&gt; 'See Other',  
+            304 =&gt; 'Not Modified',  
+            305 =&gt; 'Use Proxy',  
+            306 =&gt; '(Unused)',  
+            307 =&gt; 'Temporary Redirect',  
+            400 =&gt; 'Bad Request',  
+            401 =&gt; 'Unauthorized',  
+            402 =&gt; 'Payment Required',  
+            403 =&gt; 'Forbidden',  
+            404 =&gt; 'Not Found',  
+            405 =&gt; 'Method Not Allowed',  
+            406 =&gt; 'Not Acceptable',  
+            407 =&gt; 'Proxy Authentication Required',  
+            408 =&gt; 'Request Timeout',  
+            409 =&gt; 'Conflict',  
+            410 =&gt; 'Gone',  
+            411 =&gt; 'Length Required',  
+            412 =&gt; 'Precondition Failed',  
+            413 =&gt; 'Request Entity Too Large',  
+            414 =&gt; 'Request-URI Too Long',  
+            415 =&gt; 'Unsupported Media Type',  
+            416 =&gt; 'Requested Range Not Satisfiable',  
+            417 =&gt; 'Expectation Failed',  
+            500 =&gt; 'Internal Server Error',  
+            501 =&gt; 'Not Implemented',  
+            502 =&gt; 'Bad Gateway',  
+            503 =&gt; 'Service Unavailable',  
+            504 =&gt; 'Gateway Timeout',  
+            505 =&gt; 'HTTP Version Not Supported');
+        return ($httpStatus[$statusCode]) ? $httpStatus[$statusCode] : $httpStatus[500];
+    }
+}
+?&gt;
+</code></pre>
+<h2 id="creation-du-controleur-de-la-table-salutations">Création du contrôleur de la table salutations</h2>
+<ol>
+<li>Créez le fichier <code>GreetingHandler.php</code> dans le sous-répertoire <code>Src</code>. Ce fichier sert à faire le pont entre les routes et l'accès aux données de la base de données. Il s'occupera aussi de créer la réponse à retourner à l'usager.</li>
+<li>Copiez le code suivant dans le fichier.</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+/*
+Src/GreetingHandler.php
+*/
+
+namespace Src;
+
+use Src\SimpleRest; 
+use Src\Greeting;
+
+class GreetingHandler extends SimpleRest {
+
+    private $db;
+
+    public function __construct($db)
+    {
+        $this-&gt;db = $db;
+    }
+
+    function getAllGreetings() {    
+
+        $greeting = new Greeting($this-&gt;db);
+        $rawData = $greeting-&gt;getAllGreetings();
+
+        if(empty($rawData)) {
+            $statusCode = 404;
+            $rawData = array('error' =&gt; 'Aucune salutations trouvées!');        
+        } else {
+            $statusCode = 200;
+        }
+
+        $this-&gt;buildResponse($rawData, $statusCode);
+    }
+
+    public function buildResponse($data, $statusCode) {
+        $requestContentType = $_SERVER['HTTP_ACCEPT'];
+        $this -&gt;setHttpHeaders($requestContentType, $statusCode);
+
+        if(strpos($requestContentType,'application/json') !== false) || {
+            $response = $this-&gt;encodeJson($data);
+            echo $response;
+        } else if(strpos($requestContentType,'text/html') !== false){
+            $response = $this-&gt;encodeHtml($data);
+            echo $response;
+        } else if(strpos($requestContentType,'application/xml') !== false){
+            $response = $this-&gt;encodeXml($data);
+            echo $response;
+        } else if(strpos($requestContentType,'*/*') !== false) {
+            $response = $this-&gt;encodeJson($data);
+            echo $response;
+        }
+    }
+
+    public function encodeHtml($responseData) {
+        $htmlResponse = &quot;&lt;table border='1'&gt;&quot;;
+        $htmlResponse .= &quot;&lt;tr&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;texte&lt;/th&gt;&lt;th&gt;langue&lt;/th&gt;&lt;/tr&gt;&quot;;
+        foreach($responseData as $key=&gt;$value) {
+                $htmlResponse .= &quot;&lt;tr&gt;&lt;td&gt;&quot;. $value[&quot;id&quot;] . &quot;&lt;/td&gt;&lt;td&gt;&quot;. $value[&quot;texte&quot;] . &quot;&lt;/td&gt;&lt;td&gt;&quot; . $value[&quot;langue&quot;] . &quot;&lt;/td&gt;&lt;/tr&gt;&quot;;
+        }
+        $htmlResponse .= &quot;&lt;/table&gt;&quot;;
+        return $htmlResponse;       
+    }
+
+    public function encodeJson($responseData) {
+        $jsonResponse = json_encode($responseData);
+        return $jsonResponse;       
+    }
+
+    public function encodeXml($responseData) {
+        // creating object of SimpleXMLElement
+        $xml = new SimpleXMLElement('&lt;?xml version=&quot;1.0&quot;?&gt;&lt;mobile&gt;&lt;/mobile&gt;');
+        foreach($responseData as $key=&gt;$value) {
+            $xml-&gt;addChild($key, $value);
+        }
+        return $xml-&gt;asXML();
+    }
+}
+?&gt;
+</code></pre>
+<h2 id="couche-dacces-aux-donnees-de-la-table-salutations">Couche d'accès aux données de la table salutations</h2>
+<ol>
+<li>Créez le fichier <code>Greeting.php</code> dans le sous-répertoire <code>Src</code>. Ce fichier va exécuter les requêtes à la base de données et retourner les données brutes au contrôleur.</li>
+<li>Copiez le code suivant dans le fichier.</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+
+namespace Src;
+
+class Greeting{
+
+    private $db;
+
+    public function __construct($db)
+    {
+        $this-&gt;db = $db;
+    }
+
+    public function getAllGreetings(){
+        $query = &quot;SELECT id, texte, langue FROM salutations;&quot;;
+
+        $statement = $this-&gt;db-&gt;query($query);
+        $result = $statement-&gt;fetchAll(\PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+}
+</code></pre>
+<h2 id="test-de-la-route">Test de la route</h2>
+<p>La route <code>/greetings/list</code> est maintenant fonctionnelle, vous pouvez la tester avec l'url complet qui sera <code>http://localhost/HelloWorldApi/greetings/list</code>. </p>
+<ol>
+<li>Testez la route dans un navigateur.</li>
+<li>Testez aussi la route avec Postman.</li>
+</ol>
+<h2 id="creation-des-autres-routes">Création des autres routes</h2>
+<p>En vous basant sur le code du projet, créez les deux routes restantes : </p>
+<ul>
+<li><code>/greetings/random</code> - Affiche une salutation aléatoire</li>
+<li><code>/greetings/show/[id]</code> - Affiche la salutation avec le id spécifié en paramètre</li>
+</ul>
+<p>Testez ensuite les nouvelles routes avec Postman.</p>
+<h2 id="modification-de-la-route-de-la-salutation-aleatoire">Modification de la route de la salutation aléatoire</h2>
+<p>Modifiez la route <code>/greetings/random</code> pour qu'elle puisse prendre en paramètre la langue de la salutation. </p>
+<ul>
+<li>La règle de réécriture dans le fichier <code>.htaccess</code> deviendra <code>RewriteRule ^greetings/random/?(.*)$  api/index.php?view=single&amp;random=1&amp;langue=$1 [nc,qsa]</code></li>
+<li><code>?(.*)</code> indique un paramètre optionnel acceptant n'importe quel caractère.</li>
+<li><code>langue=$1</code> indique que le paramètre sera stocké dans la variable <strong>langue</strong>.</li>
+<li>Les codes de langue sont dans la base de données (fr, en, es et de).</li>
+<li>Si on entre autre chose, soit vous retournez une erreur 404, soit vous n'en tenez pas compte et sélectionnez la salutation parmi toute les langues.</li>
+<li>Au final la route  <code>/greetings/random/en</code> retournera une citation aléatoire en anglais. </li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

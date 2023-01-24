@@ -1,0 +1,877 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/notes_de_cours/api/bonnes_pratiques/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Les bonnes pratiques dans la conception d'un API - Services Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#les-bonnes-pratiques-dans-la-conception-dun-api" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Services Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les bonnes pratiques dans la conception d'un API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../php/array/" class="md-tabs__link">
+        Notes de cours
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../exercices/01_utilisation_api/" class="md-tabs__link">
+        Exercices
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+
+    </a>
+    Services Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Notes de cours
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Notes de cours" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Notes de cours
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          PHP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PHP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          PHP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/array/" class="md-nav__link">
+        Les tableaux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/json/" class="md-nav__link">
+        Manipulation de données en JSON
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/file_get_contents/" class="md-nav__link">
+        Effectuer un appel GET à un service web
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Exercices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Exercices" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Exercices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/01_utilisation_api/" class="md-nav__link">
+        01 - Utilisation d’un service web
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/02_revision_php/" class="md-nav__link">
+        02 - Revision PHP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-le-format-json" class="md-nav__link">
+    Utiliser le format JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-des-noms-au-lieu-de-verbes-pour-les-routes" class="md-nav__link">
+    Utiliser des noms au lieu de verbes pour les routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-la-methode-http-pour-decrire-la-fonctionnalite-de-la-ressource" class="md-nav__link">
+    Utiliser la méthode HTTP pour décrire la fonctionnalité de la ressource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-les-codes-de-statut-http" class="md-nav__link">
+    Utiliser les codes de statut HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="Utiliser les codes de statut HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resume-des-methodes-avec-le-code-de-statut-suggere" class="md-nav__link">
+    Résumé des méthodes avec le code de statut suggéré
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codes-a-utiliser-pour-les-erreurs" class="md-nav__link">
+    Codes à utiliser pour les erreurs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-limbrication-dans-les-routes" class="md-nav__link">
+    Utiliser l'imbrication dans les routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permettre-les-filtres-le-tri-selection-des-champs-retournes-et-la-pagination" class="md-nav__link">
+    Permettre les filtres, le tri, sélection des champs retournés et la pagination
+  </a>
+  
+    <nav class="md-nav" aria-label="Permettre les filtres, le tri, sélection des champs retournés et la pagination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtre" class="md-nav__link">
+    Filtre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tri" class="md-nav__link">
+    tri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-des-champs-retournes" class="md-nav__link">
+    Sélection des champs retournés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    Pagination
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="les-bonnes-pratiques-dans-la-conception-dun-api">Les bonnes pratiques dans la conception d'un API</h1>
+<h2 id="utiliser-le-format-json">Utiliser le format JSON</h2>
+<p>Le format à préconiser pour recevoir et retourner de l'information de notre api est le format JSON. C'est de loin le plus utilisé aujourd'hui et la grande majorité des langages de programmation on des fonctions natives pour le manipuler.</p>
+<h2 id="utiliser-des-noms-au-lieu-de-verbes-pour-les-routes">Utiliser des noms au lieu de verbes pour les routes</h2>
+<p>Quand on nomme les routes de notre api, on ne devrait pas utiliser de verbe. L'emploi d'un nom significatif est à privilégier. Par exemple notre api nous permet de retourner une liste d'utilisateurs ou d'en créer un, on serait tenté d'utiliser comme nom de route </p>
+<pre><code>https://monApi/getUtilisateurs
+https://monApi/createUtilisateurs
+</code></pre>
+<p>mais il est préférable d'utiliser dans les deux cas</p>
+<pre><code>https://monApi/utilisateurs
+</code></pre>
+<p>Un même route peut avoir plus d'une fonctionnalité, c'est la méthode HTTP qui nous permet de les différenciées.</p>
+<h2 id="utiliser-la-methode-http-pour-decrire-la-fonctionnalite-de-la-ressource">Utiliser la méthode HTTP pour décrire la fonctionnalité de la ressource</h2>
+<p>En lien avec le point suivant, utiliser la bonne méthode HTTP pour indiquer ce que la fonctionnalité de la route. Il existe une méthode qui correspondante à chaque opération CRUD. </p>
+<table>
+<thead>
+<tr>
+<th>Opération dans la BD</th>
+<th>Méthode http</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lire</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Insérer</td>
+<td>POST</td>
+</tr>
+<tr>
+<td>Modifier</td>
+<td>PUT</td>
+</tr>
+<tr>
+<td>Modifier partiellement</td>
+<td>PATCH</td>
+</tr>
+<tr>
+<td>Supprimer</td>
+<td>DELETE</td>
+</tr>
+</tbody>
+</table>
+<p>On ne doit jamais modifier une ressource avec une action GET. Les actions de modification PUT et PATCH sont très similaires, la différence est que PUT est utilisé pour modifier toutes les valeurs de la ressource alors que PATCH l'est pour une modification partielle. Autre distinction de PUT, si la ressource n'est pas trouvé, elle sera créée. Prenons l'exemple suivant, on veut pouvoir modifier un utilisateur ayant ces informations </p>
+<pre><code class="language-json">{
+    &quot;id&quot; : &quot;1&quot;,
+    &quot;username&quot; : &quot;[username]&quot;,
+    &quot;first_name&quot; : &quot;[first_name]&quot;,
+    &quot;last_name&quot; : &quot;[last_name]&quot;,
+    &quot;email&quot; : &quot;[email]&quot;
+}
+</code></pre>
+<p>Avec PUT on doit envoyer toutes ces informations dans la requête, alors qu'avec PATCH on pourrait permettre seulement d'envoyer et de modifier le <strong>email</strong>.</p>
+<p>L'utilisation de la bonne méthode HTTP nous permet d'utiliser la même route pour plus d'une fonction.</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/utilisateurs</td>
+<td>Retourne la liste de tous les utilisateurs</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/utilisateurs</td>
+<td>Création d'un utilisateur</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/utilisateurs/21</td>
+<td>Modification de l'utilisateur avec le id 21</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/utilisateurs/21</td>
+<td>Suppression de l'utilisateur avec le id 21</td>
+</tr>
+</tbody>
+</table>
+<p>voir Les méthodes HTTP</p>
+<h2 id="utiliser-les-codes-de-statut-http">Utiliser les codes de statut HTTP</h2>
+<p>Dans la réponse de la requête à votre API utilisez une code de statut HTTP approprié à la situation.</p>
+<ul>
+<li>200 - 299 indique un succès</li>
+<li>400 - 499 Il y a eu une erreur côté client</li>
+<li>500 - 599 Il y a eu une erreur côté serveur</li>
+</ul>
+<h3 id="resume-des-methodes-avec-le-code-de-statut-suggere">Résumé des méthodes avec le code de statut suggéré</h3>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>GLOBAL (/utilisateurs)</th>
+<th>Sur un element (/utilisateurs/{id})</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>201 Created - La ressource est créée et est retournée dans la réponse</td>
+<td>-</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>200 OK</td>
+<td>200 OK</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>404 Not Found - La ressource n'a pas été trouvée, ex: le id utilisateur est invalide.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>405 Method Not Allowed - On ne devrait pas permettre de modifier toutes les ressources en une action</td>
+<td>200 OK - La ressource est modifiée et est retournée dans la réponse.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>201 Created - La ressource a été créé car elle etait inexistante.</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>405 Method Not Allowed - On ne devrait pas permettre de modifier toutes les ressources en une action</td>
+<td>200 OK - La ressource est modifiée et est retournée dans la réponse.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>404 Not Found - La ressource à modifier n'a pas été trouvée, ex: le id utilisateur est invalide.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>405 Method Not Allowed - On ne devrait pas permettre de supprimer toutes les ressources en une action. Si oui utilisez le code 200.</td>
+<td>204 No Content - La ressource est a été supprimé et aucune information n'est retournée dans la réponse.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>200 OK - La ressource est supprimé et est retournée dans la réponse.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="codes-a-utiliser-pour-les-erreurs">Codes à utiliser pour les erreurs</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Utilisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401 - Unauthorized</td>
+<td>Le client ne s'est pas encore authentifier pour accéder à l'api.</td>
+</tr>
+<tr>
+<td>403 - Forbidden</td>
+<td>Le client est authentifié mais n'a pas les autorisations pour accéder à la ressource.</td>
+</tr>
+<tr>
+<td>404 - Not Found</td>
+<td>L'url utilisé est invalide, le client demande une ressource qui n'existe pas.</td>
+</tr>
+<tr>
+<td>500 - Internal Server Error</td>
+<td>Une erreur est survenu côté serveur. Retournez de l'information sur l'erreur dans la réponse.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="utiliser-limbrication-dans-les-routes">Utiliser l'imbrication dans les routes</h2>
+<p>Quand des ressources de votre api peuvent être reliées, utilisez l'imbrication pour créer des urls significatifs. Par exemple un auteur peut avoir écrit plusieurs livres, on pourrait avoir une route nommée <code>/{auteurs}/livres</code> qui retourne tous les livres de l'auteur en paramètre.</p>
+<p>Il faut cependant faire attention à ne pas trop surcharger la route en allant trop profondément avec l'imbrication.</p>
+<h2 id="permettre-les-filtres-le-tri-selection-des-champs-retournes-et-la-pagination">Permettre les filtres, le tri, sélection des champs retournés et la pagination</h2>
+<p>Pour permettre à l'utilisateur un meilleur contrôle sur les données récupérées, permettez l'utilisation de filtres, de tri et de pagination dans vos requête. Les paramètres devraient être situé dans la section "requête" de l'url</p>
+<h3 id="filtre">Filtre</h3>
+<p>Utilisez un nom de paramètre significatif. Pour saisir plusieurs valeurs, on doit les séparer par une virgule.</p>
+<p>Exemple : </p>
+<ul>
+<li><code>/livres?categorie=roman</code> pour afficher tous les livres de la catégorie roman.</li>
+<li><code>/livres?categorie=roman,documentaire</code> pour afficher tous les livres de la catégorie roman et documentaire.</li>
+</ul>
+<h3 id="tri">tri</h3>
+<p>Utilisez comme valeur du paramètre le nom du champ avec un code prédéfini en préfixe ( + et - par exemple) qui indiquera si le tri est ascendant ou descendant. Le tri sur plus d'un champ devrait aussi être permis.</p>
+<p>Exemple : </p>
+<ul>
+<li><code>/livres?tri=+titre,-prix</code> pour trier par les livres titre de manière ascendante et par prix de manière descendante.</li>
+</ul>
+<h3 id="selection-des-champs-retournes">Sélection des champs retournés</h3>
+<p>Il peut aussi être pertinent de permettre au client de pouvoir sélectionner uniquement les champs qu'il veut avoir dans la réponse à la requête. </p>
+<p>Exemple : </p>
+<ul>
+<li><code>/livres?champs=titre,isbn</code> retournera la liste de tous les livres mais seulement le titres et isbn de chacun.</li>
+</ul>
+<h3 id="pagination">Pagination</h3>
+<p>Il n'est pas rare qu'une ressource comporte plusieurs centaines sinon milliers d'enregistrement. On devrait permettre au client de pouvoir sélectionner seulement une partie des enregistrements en définissant un point de départ (offset) et un nombre d'enregistrement (limit). Si on utilise la pagination, on devrait définir des valeurs par défaut au paramètre offset et limit (généralement offset sera égale à 0 pour le premier enregistrement). </p>
+<p>Exemple : </p>
+<ul>
+<li><code>/livres?limit=50&amp;offset=100</code> En partant du centième enregistrement, affiche les 50 livres suivants.</li>
+</ul>
+<p>Pour faciliter le traitement des données, on devrait ajouter dans la réponse le nombre total d'enregistrements ainsi que les valeurs de limit et offset.</p>
+<p>Une autre technique est d'avoir un nombre d'enregistrement fixe par page et de seulement permettre à l'usager de choisir la page qu'il veut afficher. Exemple, on décide d'afficher 30 enregistrements par page, l'url suivant va afficher les enregistrement 61 à 90 : </p>
+<ul>
+<li><code>/livres?page=3</code></li>
+</ul>
+<p>On peut bien sur combiner les deux méthodes comme c'est souvent le cas dans les sites d'achats en lignes (On peut choisir la page et le nombre d'articles affichés par page).</p>
+<h2 id="source">Source</h2>
+<ul>
+<li><a href="https://www.moesif.com/blog/api-guide/api-design-guidelines/">https://www.moesif.com/blog/api-guide/api-design-guidelines/</a></li>
+<li><a href="https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/">https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/</a></li>
+<li><a href="https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291">https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
