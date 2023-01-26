@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/api/unit_test/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/slim/devilbox/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Tester notre API - Services Web</title>
+        <title>Configurer un projet SLIM avec Devilbox - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tester-notre-api" class="md-skip">
+        <a href="#configurer-un-projet-slim-avec-devilbox" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tester notre API
+              Configurer un projet SLIM avec Devilbox
             
           </span>
         </div>
@@ -201,6 +201,8 @@
         
   
   
+    
+  
 
 
   
@@ -212,7 +214,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../bonnes_pratiques/" class="md-tabs__link">
+      <a href="../../api/bonnes_pratiques/" class="md-tabs__link md-tabs__link--active">
         Notes de cours
       </a>
     </li>
@@ -296,12 +298,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -350,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bonnes_pratiques/" class="md-nav__link">
+      <a href="../../api/bonnes_pratiques/" class="md-nav__link">
         Les bonnes pratiques dans la conception d'un API
       </a>
     </li>
@@ -444,12 +448,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -470,11 +476,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../slim/devilbox/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configurer un projet SLIM avec Devilbox
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Configurer un projet SLIM avec Devilbox
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creation-du-virtual-host" class="md-nav__link">
+    Création du "Virtual Host"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dun-symlink" class="md-nav__link">
+    Création d'un Symlink
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -486,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slim/structure/" class="md-nav__link">
+      <a href="../structure/" class="md-nav__link">
         Structure de nos projet avec SLIM
       </a>
     </li>
@@ -500,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slim/recuperer_params/" class="md-nav__link">
+      <a href="../recuperer_params/" class="md-nav__link">
         Récupérer les paramètres d'une requête HTTP
       </a>
     </li>
@@ -624,104 +678,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pourquoi-tester-notre-application" class="md-nav__link">
-    Pourquoi tester notre application?
+  <a href="#creation-du-virtual-host" class="md-nav__link">
+    Création du "Virtual Host"
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tester-avec-postman" class="md-nav__link">
-    Tester avec Postman
-  </a>
-  
-    <nav class="md-nav" aria-label="Tester avec Postman">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemple-dune-serie-de-test" class="md-nav__link">
-    Exemple d'une série de test
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notre-premier-test" class="md-nav__link">
-    Notre premier test
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tester-avec-phpunit" class="md-nav__link">
-    Tester avec PHPUnit
-  </a>
-  
-    <nav class="md-nav" aria-label="Tester avec PHPUnit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-et-integration-dans-un-projet" class="md-nav__link">
-    Installation et intégration dans un projet
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-de-phpunit" class="md-nav__link">
-    Configuration de PHPUnit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#executer-les-tests" class="md-nav__link">
-    Exécuter les tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreur-avec-la-commande-testcoverage" class="md-nav__link">
-    Erreur avec la commande test:coverage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ajouter-un-trait-a-notre-projet" class="md-nav__link">
-    Ajouter un "trait" à notre projet
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notre-premier-test-unitaire" class="md-nav__link">
-    Notre premier test unitaire
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tests-unitaires-de-nos-routes" class="md-nav__link">
-    Tests unitaires de nos routes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    Références
+  <a href="#creation-dun-symlink" class="md-nav__link">
+    Création d'un Symlink
   </a>
   
 </li>
@@ -741,251 +706,16 @@
                   
 
 
-<h1 id="tester-notre-api">Tester notre API</h1>
-<h2 id="pourquoi-tester-notre-application">Pourquoi tester notre application?</h2>
-<p>Dès qu’on ajoute du code à notre application, on ouvre la porte à ajouter aussi de possible erreurs ou comportement qu’on avait pas prévu. Pour s’assurer d’avoir une application solide et plus facilement modifiable, c’est une bonne pratique de programmer des tests qu’on pourra lancer au besoin par un script. </p>
-<p>Plusieurs possibilités s’offrent à nous comme plate-forme de tests si on ne veut pas tout programmer nous-même. Dans le cadre du cours on va en voir 2 : </p>
-<ul>
-<li>Postman, qui offre la possibilité d’inclure des tests scriptés en javascript.</li>
-<li>PHPUnit, un framework php</li>
-</ul>
-<h2 id="tester-avec-postman">Tester avec Postman</h2>
-<p>Dans l'interface de postman, on peut scripter des tests dans l'onglet <strong>Tests</strong> d'une requête.</p>
-<p><img alt="unit_test_01" src="\img\unit_test_01.png" /></p>
-<p>Les scripts de tests sont codés en javascript et seront lancés une fois la réponse de l’appel à l’api reçu. Chaque test aura la structure suivante : </p>
-<pre><code class="language-js">pm.test(&quot;Description du test&quot;, function() {
-    // Le script du test
-})
+<h1 id="configurer-un-projet-slim-avec-devilbox">Configurer un projet SLIM avec Devilbox</h1>
+<h2 id="creation-du-virtual-host">Création du "Virtual Host"</h2>
+<p>Créez le répertoire qui va contenir votre projet dans le sous répertoire <strong>data/www</strong> de votre dossier Devilbox. Allez ensuite ajouter une entrée dans le fichier <strong>hosts</strong> de Windows (C:\Windows\System32\drivers\etc\hosts) avec le nom du dossier qui va conternir le projet suivi de <strong>.loc</strong></p>
+<pre><code>127.0.0.1 nomDossierProjet.loc
 </code></pre>
-<p>Le résultat des tests se retrouvent dans la section Response sous l’onglet Test Results.</p>
-<p><img alt="unit_test_03.png" src="\img\unit_test_03.png" /></p>
-<h3 id="exemple-dune-serie-de-test">Exemple d'une série de test</h3>
-<pre><code class="language-js">/* Structure de la réponse
-[
-    {
-        &quot;id&quot;: &quot;54&quot;,
-        &quot;genreId&quot;: &quot;1&quot;,
-        &quot;titre&quot;: &quot;Fondation&quot;,
-        &quot;isbn&quot;: &quot;9782070463619&quot;
-    },
-]
-*/
-
-// La constante jsonData va contenir un objet json de la réponse
-const jsonData = pm.response.json();
-
-pm.test(&quot;La réponse retourne le code 200&quot;, function () {
-    pm.response.to.have.status(200);
-});
-
-pm.test(&quot;La réponse est un tableau&quot;, function () {
-    pm.expect(jsonData).to.be.an(&quot;array&quot;);
-})
-
-pm.test(&quot;Les items du tableau de la réponse ont les bonnes clés&quot;, function() {
-    if(jsonData.length &gt; 0){
-        // Valide que le premier item du tableau books contient les clés id, genreId, titre et isbn
-        pm.expect(jsonData[0]).to.have.all.keys('id', 'genreId', 'titre','isbn');
-    }
-})
-
-pm.test(&quot;Les items du tableau de la réponse ont les bons types&quot;, function() {
-    if(jsonData.length &gt; 0){
-        pm.expect(jsonData[0].id).to.be.a(&quot;string&quot;);
-        pm.expect(jsonData[0].genreId).to.be.a(&quot;string&quot;);
-        pm.expect(jsonData[0].titre).to.be.a(&quot;string&quot;);
-        pm.expect(jsonData[0].isbn).to.be.a(&quot;string&quot;);
-    }
-})
+<h2 id="creation-dun-symlink">Création d'un Symlink</h2>
+<p>Habituellement avec Devilbox on crée un sous-dossier <strong>htdocs</strong> qui contient notre fichier index.php. Avec Slim notre fichier index.php se retrouve dans le sous-répertoire <strong>public</strong>. Au lieu de créer un répertoire nommé htdocs on va créer à la place un symlink du même nom qui va pointer sur le répertoire public. En ligne de commande à la racine de votre projet entrez la commande suivante </p>
+<pre><code>ln -s public/ htdocs
 </code></pre>
-<h3 id="notre-premier-test">Notre premier test</h3>
-<p>À l'aide de la route <code>https://api.chucknorris.io/jokes/random</code> testez que les clés <strong>url</strong> ou <strong>value</strong> soient bien présente dans la réponse.   </p>
-<p>Pour plus d'information et d'exemples, consultez la documentation de Postman :</p>
-<ul>
-<li><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></li>
-</ul>
-<h2 id="tester-avec-phpunit">Tester avec PHPUnit</h2>
-<h3 id="installation-et-integration-dans-un-projet">Installation et intégration dans un projet</h3>
-<p>Faites l’installation de PHPUnit comme dépendance de développement avec la commande suivante</p>
-<pre><code>composer require phpunit/phpunit --dev
-</code></pre>
-<p>Chaque tests sera une classe PHP qui sera présente dans le répertoire tests/TestCase/ de notre application</p>
-<ul>
-<li>Créer le répertoire ./tests/TestCase/ à la racine de l’application</li>
-<li>Avec git bash vous pouvez faire la commande mkdir –p tests/TestCase</li>
-</ul>
-<p>Ouvrez de fichier <strong>composer.json</strong> et ajoutez les lignes suivantes à la suite du fichier</p>
-<pre><code class="language-json">&quot;scripts&quot;: {
-    &quot;test&quot;: &quot;phpunit --configuration phpunit.xml --testdox&quot;,
-    &quot;test:coverage&quot;: &quot;phpunit --configuration phpunit.xml --coverage-clover build/logs/clover.xml --coverage-html build/coverage&quot;
-}
-</code></pre>
-<h3 id="configuration-de-phpunit">Configuration de PHPUnit</h3>
-<p>Créez le fichier phpunit.xml à la racine de l’application. La configuration de PHPUnit se fera dans ce fichier.
-Copiez le code suivant dans le fichier.</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;phpunit 
-    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
-    bootstrap=&quot;vendor/autoload.php&quot; 
-    colors=&quot;true&quot; 
-    backupGlobals=&quot;false&quot; 
-    backupStaticAttributes=&quot;false&quot; 
-    xsi:noNamespaceSchemaLocation=&quot;https://schema.phpunit.de/9.3/phpunit.xsd&quot;&gt;
-  &lt;coverage processUncoveredFiles=&quot;false&quot;&gt;
-    &lt;include&gt;
-      &lt;directory suffix=&quot;.php&quot;&gt;src&lt;/directory&gt;
-    &lt;/include&gt;
-    &lt;exclude&gt;
-      &lt;directory&gt;vendor&lt;/directory&gt;
-      &lt;directory&gt;build&lt;/directory&gt;
-    &lt;/exclude&gt;
-  &lt;/coverage&gt;
-  &lt;testsuites&gt;
-    &lt;testsuite name=&quot;Tests&quot;&gt;
-      &lt;directory suffix=&quot;Test.php&quot;&gt;tests&lt;/directory&gt;
-    &lt;/testsuite&gt;
-  &lt;/testsuites&gt;
-&lt;/phpunit&gt;
-</code></pre>
-<p>Modifiez le fichier .gitignore pour ajouter la ligne suivante <code>build/</code>.</p>
-<h3 id="executer-les-tests">Exécuter les tests</h3>
-<p>Pour lancer les tests, faire la commande suivante dans un terimal à la racine de l’application</p>
-<pre><code>composer test
-</code></pre>
-<p>Pour lancer les tests avec une couverture du code, faire la commande suivante</p>
-<pre><code>composer test:coverage
-</code></pre>
-<p>Après avoir lancé <code>composer test:coverage</code>, vous aurez accès à deux pages html de résumé des tests dans le répertoire <strong>build/coverage</strong>. </p>
-<h3 id="erreur-avec-la-commande-testcoverage">Erreur avec la commande test:coverage</h3>
-<p>Si vous utilisez AMPPS et que vous rencontrez l’erreur suivante <code>Error: No code coverage driver is available</code> , il vous faut éditer le fichier php.ini de la façon suivante : </p>
-<pre><code class="language-react">// Modifiez ces lignes
-;Xdebug
-;zend_extension=&quot;{$path}\php-7.3\lib\php_xdebug.dll&quot;
-// Comme ceci
-[Xdebug]
-zend_extension=&quot;{$path}\php-7.3\lib\php_xdebug.dll&quot;
-// Et ajoutez les deux lignes suivantes à la suite
-xdebug.remote_autostart = 1
-xdebug.remote_enable = 1
-</code></pre>
-<p>Pour accéder rapidement au fichier php.ini, affichez le tableau de bord de Ammps et à la ligne PHP cliquez sur <strong>Settings</strong> et ensuite <strong>Configuration</strong>.</p>
-<h3 id="ajouter-un-trait-a-notre-projet">Ajouter un "trait" à notre projet</h3>
-<p>Un trait est une sorte de classe abstraite qui nous permet de regrouper des fonctionnalités  pour ensuite les utiliser dans des classes. On va ajouter un trait à notre projet pour faciliter l'execution des tests. </p>
-<ul>
-<li>Dans votre projet, créez le répertoire <code>tests\Traits</code></li>
-<li>Téléchargez le fichier <a href="\resources\AppTestTrait.php">AppTestTrait.php</a> et copiez-le dans le répertoire nouvellement créé.</li>
-</ul>
-<p>Comme vous pouvez voir, le fichier contient déjà sont lots de fonctions qu'on va pouvoir utiliser pour l'éxécution de nos tests. Vous n'avez pas besoin de "comprendre" tous les fonctions, le but ici étant de se concentrer sur l'écriture des tests. </p>
-<h3 id="notre-premier-test-unitaire">Notre premier test unitaire</h3>
-<p>Un test unitaire est un test effectué sur une seule classe PHP. </p>
-<p>Supposons une classe Calculator.php situé dans <code>src/Support/</code>. Notre classe à une seule fonction <code>add()</code> qui prends en paramêtre deux entiers et les additionne : </p>
-<pre><code class="language-php">&lt;?php
-
-namespace App\Support;
-
-class Calculator
-{
-    public function add(int $a, int $b): int
-    {
-        return $a + $b;
-    }
-}
-?&gt;
-</code></pre>
-<p>On va créer une classe qui contiendra nos tests dans le répertoire <code>tests/TestCase/Support/CalculatorTest.php</code>. Par convention on va respecter l’arborescence des répertoires (/Support) et le nom de la classe test va être le même que celui de la classe testée à laquelle on ajoute le suffixe Test (Calculator deviendra CalculatorTest). La classe doit "étendre" (extends) TestCase qui, une classe de PHPUnit qui nous permettra de faire nos test. Voici un exemple de test où l'on s'assure que la fonction <code>add()</code> retourne le bon résultat.</p>
-<pre><code class="language-php">&lt;?php
-// CalculatorTest.php
-namespace App\Test\TestCase\Support;
-
-use App\Support\Calculator;
-use PHPUnit\Framework\TestCase;
-
-// Oubliez pas d'ajouter extends TestCase
-class CalculatorTest extends TestCase
-{
-    public function testAddReturnValidSum(): void
-    {
-        // Créationi d'un objet Calculator
-        $calculator = new Calculator();
-        // Exécution de la fonction add
-        $result = $calculator-&gt;add(30, 12);
-
-        // Ici on &quot;assert&quot; que la fonction add de la 
-        // classe Calculator retourne la bonne valeur
-        $this-&gt;assertEquals(42, $result);
-    }
-}
-</code></pre>
-<p>Et maintenant pour lançons notre test avec la commande <code>composer test</code> à partir d'une console à la racine de notre projet. </p>
-<p><strong>Résultat positif</strong></p>
-<p>Si on lance le test avec notre exemple, on va avoir le résultat suivant. On peut voir que la fonction <code>testAddReturnValidSum</code> retourne un résultat valide.</p>
-<p><img alt="unit_test_04" src="\img\unit_test_04.png" /></p>
-<p>C’est le nom de la fonction qui est utilisé comme titre dans le résultat des tests. Il faut qu’elle commence par test et qu’on utilise le « CamelCase » testAddReturnValidSum =&gt; Add return valid sum.</p>
-<p><strong>Résultat négatif</strong></p>
-<p>Si on modifie la valeur de la ligne 17 de CalculatorTest.php pour 421 au lieu de 42 (pour simuler un erreur dans notre fonction), on aura le résultat suivant : </p>
-<p><img alt="unit_test_05" src="\img\unit_test_05.png" /></p>
-<h3 id="tests-unitaires-de-nos-routes">Tests unitaires de nos routes</h3>
-<p>On va créer une classe par route qu’on veut tester. Elle sera créer dans le répertoire tests/TestCase/[La même structure que la classe à tester]</p>
-<p><strong>Exemple d'une classe test</strong></p>
-<p>Je veux un test qui couvre la classe <code>src/Action/Book/BookViewByIdAction.php</code>, je vais créer ma classe test dans le répertoire <code>tests/TestCase/Action/Book</code>. On pourrait seulement la créer dans tests/TestCase mais la première structure permet de garder le code claire, surtout si on a beaucoup de tests à créer.</p>
-<ul>
-<li>La classe test va porter le même nom que la classe testé en y ajoutant Test à la fin. </li>
-<li>Je veux tester BookViewByIdAction, ma classe test va donc se nommer BookViewByIdActionTest.</li>
-<li>La classe va « extends » TestCase et utiliser AppTestTrait (voir code exemple plus loin).</li>
-<li>Ensuite on va crée une ou des fonctions qui vont contenir nos tests.</li>
-<li>Le nom de la fonction doit obligatoirement commencer par test.</li>
-<li>Le nom de la fonction sera ce qui est affiché dans le résultat. Le mot test du début sera supprimé et le caractère _ deviendra un espace.</li>
-<li><code>testBookViewById_Retourne_les_bonnes_valeurs</code> devient BookViewById Retourne les bonnes valeurs</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-
-namespace App\Test\TestCase\Action\Book;
-
-use App\Test\Traits\AppTestTrait;
-use PHPUnit\Framework\TestCase;
-
-class BookViewByIdActionTest extends TestCase
-{
-    // On inclus ici une référence au trait qu'on a créé plus haut
-    use AppTestTrait;
-
-    public function testBookViewById_Retourne_les_bonnes_valeurs(): void
-    {
-        // Les valeurs de retour attendues
-        $expected = [
-            [
-                &quot;id&quot; =&gt; &quot;74&quot;,
-                &quot;genreId&quot; =&gt; &quot;1&quot;,
-                &quot;titre&quot; =&gt; &quot;Blade Runner&quot;,
-                &quot;isbn&quot; =&gt; &quot;9782290314944&quot;
-            ]
-        ];
-
-        // On crée la requête en faisant un appel à la route à tester
-        // la fonction createJsonRequest provient du trait AppTestTrait
-        $request = $this-&gt;createJsonRequest('GET', '/books/74');
-        // On effectue la requête et récupère le résultat
-        $response = $this-&gt;app-&gt;handle($request);
-
-        // C'est ici qu'on fait nos affirmations (assert)
-        // J'affirme que le code de statut de la réponse est 200
-        $this-&gt;assertSame(200, $response-&gt;getStatusCode());
-        // J'affirme que les valeurs de retour correspondent à ce qui est attendu
-        $this-&gt;assertJsonData($expected, $response);
-    }
-}
-</code></pre>
-<h2 id="references">Références</h2>
-<p>Postman</p>
-<ul>
-<li><a href="https://learning.postman.com/docs/writing-scripts/test-scripts/">https://learning.postman.com/docs/writing-scripts/test-scripts/</a></li>
-<li><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></li>
-</ul>
-<p>PHPUnit</p>
-<ul>
-<li><a href="https://phpunit.de/getting-started/phpunit-9.html">https://phpunit.de/getting-started/phpunit-9.html</a></li>
-<li><a href="https://phpunit.readthedocs.io/fr/latest/">https://phpunit.readthedocs.io/fr/latest/</a></li>
-</ul>
+<p><a href="https://devilbox.readthedocs.io/en/latest/examples/setup-laravel.html#symlink-webroot">source</a></p>
 
 
 
@@ -1006,6 +736,42 @@ class BookViewByIdActionTest extends TestCase
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../../php/file_get_contents/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Effectuer un appel GET à un service web" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Effectuer un appel GET à un service web
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../structure/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Structure de nos projet avec SLIM" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Structure de nos projet avec SLIM
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
