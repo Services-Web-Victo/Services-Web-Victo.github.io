@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/slim/recuperer_params/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/api/json/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Récupérer les paramètres d'une requête HTTP - Services Web</title>
+        <title>Le format JSON - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recuperer-les-parametres-dune-requete-http" class="md-skip">
+        <a href="#le-format-json" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Récupérer les paramètres d'une requête HTTP
+              Le format JSON
             
           </span>
         </div>
@@ -214,7 +214,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../api/bonnes_pratiques/" class="md-tabs__link md-tabs__link--active">
+      <a href="../bonnes_pratiques/" class="md-tabs__link md-tabs__link--active">
         Notes de cours
       </a>
     </li>
@@ -326,12 +326,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -354,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/bonnes_pratiques/" class="md-nav__link">
+      <a href="../bonnes_pratiques/" class="md-nav__link">
         Les bonnes pratiques dans la conception d'un API
       </a>
     </li>
@@ -366,11 +368,86 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../api/json/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Le format JSON
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Le format JSON
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-de-base" class="md-nav__link">
+    Structure de base
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure de base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lobjet" class="md-nav__link">
+    L'objet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-tableau" class="md-nav__link">
+    Le tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-valeurs-possibles" class="md-nav__link">
+    Liste des valeurs possibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    Sources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -462,14 +539,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -492,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../devilbox/" class="md-nav__link">
+      <a href="../../slim/devilbox/" class="md-nav__link">
         Configurer un projet SLIM avec Devilbox
       </a>
     </li>
@@ -506,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../structure/" class="md-nav__link">
+      <a href="../../slim/structure/" class="md-nav__link">
         Structure de nos projet avec SLIM
       </a>
     </li>
@@ -518,66 +593,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Récupérer les paramètres d'une requête HTTP
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../slim/recuperer_params/" class="md-nav__link">
         Récupérer les paramètres d'une requête HTTP
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parametre-de-la-section-query" class="md-nav__link">
-    Paramètre de la section "query"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parametre-dans-la-route" class="md-nav__link">
-    Paramètre dans la route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parametre-dans-le-corps-de-la-requete" class="md-nav__link">
-    Paramètre dans le corps de la requête
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -699,22 +719,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parametre-de-la-section-query" class="md-nav__link">
-    Paramètre de la section "query"
+  <a href="#structure-de-base" class="md-nav__link">
+    Structure de base
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure de base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lobjet" class="md-nav__link">
+    L'objet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-tableau" class="md-nav__link">
+    Le tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-valeurs-possibles" class="md-nav__link">
+    Liste des valeurs possibles
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parametre-dans-la-route" class="md-nav__link">
-    Paramètre dans la route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parametre-dans-le-corps-de-la-requete" class="md-nav__link">
-    Paramètre dans le corps de la requête
+  <a href="#sources" class="md-nav__link">
+    Sources
   </a>
   
 </li>
@@ -734,70 +774,54 @@
                   
 
 
-<h1 id="recuperer-les-parametres-dune-requete-http">Récupérer les paramètres d'une requête HTTP</h1>
-<p>On a vu qu'il y a plusieurs méthodes pour passer des paramètres dans une requête HTML : dans la section "query" de l'url, directement dans l'url et dans le corps (body) de la requête. SLIM nous permet de facilement récupérer ces données avec l'objet <code>ServerRequestInterface</code></p>
-<p>Cette objet est reçu en paramêtre de la fonction <code>_invoke</code> des classes "action" de notre api. </p>
-<pre><code class="language-php">public function __invoke(
-    ServerRequestInterface $request, 
-    ResponseInterface $response
-): ResponseInterface {
-
-    // Avec la variable $request nous avons accès aux paramètres
-    // ...
+<h1 id="le-format-json">Le format JSON</h1>
+<p>JSON (<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation) est un format créé pour faciliter l'échange de données entre différents systèmes. Bien que grandement inspiré de la notation objet de JavaScript le format JSON est indépendant de tout langage et peut être interpréter par la majorité des différents langage de programmation.</p>
+<h2 id="structure-de-base">Structure de base</h2>
+<p>Les deux structures suivantes sont utilisées pour construire notre JSON : </p>
+<h3 id="lobjet">L'objet</h3>
+<p>Une suite d'éléments clé/valeurs, sérarés par une virgule. L'objet sera entouré par des accolades.</p>
+<pre><code>{
+    &quot;cle1&quot; : &quot;valeur1&quot;,
+    &quot;cle2&quot; : &quot;valeur2&quot;
 }
 </code></pre>
-<h3 id="parametre-de-la-section-query">Paramètre de la section "query"</h3>
-<p>La fonction <code>getQueryParams()</code> de l'objet <code>ServerRequestInterface</code> nous retourne un tableau associatif qui contient tous les paramètres. L'exemple suivant avec la route <code>/livres?page=1</code> nous montres comment récupérer la valeur du paramètre <code>page</code></p>
-<pre><code class="language-php">public function __invoke(
-    ServerRequestInterface $request, 
-    ResponseInterface $response
-): ResponseInterface {
-    // Récupération des paramètres dans un tableau
-    // S'il n'y a pas de paramètre, retourne un tableau vide
-    $queryParams = $request-&gt;getQueryParams() ?? [];
-    // Récupération de la valeur du paramètre page
-    $page = $queryParams['page'] ?? 1;
-
-    //...
+<p><img alt="object" src="/img/json01.png" />
+<a href="https://www.json.org/json-fr.html">source</a></p>
+<h3 id="le-tableau">Le tableau</h3>
+<p>Une suite d'éléments ordonnés, séparée par une virgule et entourée par des crochets [ ]</p>
+<pre><code>[&quot;valeur1&quot;, &quot;valeur2&quot;]
+</code></pre>
+<p><img alt="array" src="/img/json02.png" />
+<a href="https://www.json.org/json-fr.html">source</a></p>
+<p>On peut mélanger les deux structures sans problème (un tableau d'objet, une valeur de l'objet est un tableau, etc.)</p>
+<pre><code>{
+    &quot;cle1&quot; : [
+        &quot;valeur1&quot;, 
+        &quot;valeur2&quot;
+    ],
+    &quot;cle2&quot; : &quot;valeur2&quot;
 }
 </code></pre>
-<h3 id="parametre-dans-la-route">Paramètre dans la route</h3>
-<p>La fonction <code>getAttribute('nomDuParamètre', valeurPardefaut)</code> de l'objet <code>ServerRequestInterface</code> nous retourne la valeur du paramètre demandé. Quand on défini notre route, les valeurs qui seront défini comme paramètre sont entourées d'accolades. Prenons comme exemple la route <code>/livres/13</code> qui affichera le livre avec le id 13. Dans notre code la route sera définie comme ceci dans le fichier <code>route.php</code></p>
-<pre><code class="language-php">// Le nom de la classe importe peu, ici c'est la description de la route qui est importante
-$app-&gt;get('/livres/{id}', \App\Action\Book\BookViewByIdAction::class);
-</code></pre>
-<p>Exemple d'utilisation de <code>getAttribute()</code></p>
-<pre><code class="language-php">public function __invoke(
-    ServerRequestInterface $request, 
-    ResponseInterface $response
-): ResponseInterface {
-    // Récupération du paramètre de route 'id'
-    $id = $request-&gt;getAttribute('id', 0);
-
-    // ...
-}
-</code></pre>
-<h3 id="parametre-dans-le-corps-de-la-requete">Paramètre dans le corps de la requête</h3>
-<p>La fonction <code>getParsedBody()</code> de l'objet <code>ServerRequestInterface</code> nous retourne un tableau associatif qui contient tous les paramètres du corps de la requête. Prenons comme exemple une requête HTTP de création d'un livre qui aurait les valeurs suivantes : </p>
-<pre><code class="language-json">{
-    &quot;genreId&quot;: &quot;1&quot;,
-    &quot;titre&quot;: &quot;Mon livre&quot;,
-    &quot;isbn&quot;: &quot;123456789&quot;
-}
-</code></pre>
-<p>Pour récupérer le titre avec <code>getParsedBody()</code></p>
-<pre><code class="language-php">public function __invoke(
-    ServerRequestInterface $request, 
-    ResponseInterface $response
-): ResponseInterface {
-    // Récupération des données du corps de la requête
-    $data = (array)$request-&gt;getParsedBody();
-    // Récupération de la valeur de titre
-    $titre = $data['titre'] ?? '';
-
-    // ...
-}
-</code></pre>
+<p>Il est aussi possible d'avoir un objet ou un tableau vide, qu'on notera respectivement {} et [].</p>
+<h2 id="liste-des-valeurs-possibles">Liste des valeurs possibles</h2>
+<ul>
+<li>String : du texte entouré de guillemets "</li>
+<li>Nombre : sans les guillemets, on peut utiliser les décimales avec le <strong>point</strong> et les exposants avec le caractère <strong>e</strong>.</li>
+<li>objet : comme vu plus haut, liste de clé/valeur entourées par des accolades</li>
+<li>tableau : liste d'items entourés de crochet</li>
+<li>booléan : utilisez true ou false sans guillemets et en minuscule</li>
+<li>valeur nulle : null sans guillemets et en minuscule</li>
+</ul>
+<p><img alt="value" src="/img/json03.png" /></p>
+<p><strong>Note sur les dates</strong> : Le format date n'étant pas pleinenement supporté, on devrait par précaution les convertir en texte.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Toutes les images proviennent du site <a href="https://www.json.org/json-fr.html">www.json.org</a></li>
+<li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-404/">ECMA-404 The JSON Data Interchange Standard.</a></li>
+<li><a href="https://www.json.org/json-fr.html">www.json.org</a></li>
+<li><a href="https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf">Standart de l'ECMA en version PDF</a></li>
+<li>Validateur de format JSON : <a href="https://jsonlint.com/">www.jsonlint.com</a></li>
+</ul>
 
 
 
@@ -823,7 +847,7 @@ $app-&gt;get('/livres/{id}', \App\Action\Book\BookViewByIdAction::class);
     <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
       
         
-        <a href="../structure/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Structure de nos projet avec SLIM" rel="prev">
+        <a href="../bonnes_pratiques/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les bonnes pratiques dans la conception d&#39;un API" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -832,20 +856,20 @@ $app-&gt;get('/livres/{id}', \App\Action\Book\BookViewByIdAction::class);
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Structure de nos projet avec SLIM
+              Les bonnes pratiques dans la conception d'un API
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../exercices/01_utilisation_api/" class="md-footer__link md-footer__link--next" aria-label="Suivant: 01 - Utilisation d’un service web" rel="next">
+        <a href="../../php/array/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les tableaux" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              01 - Utilisation d’un service web
+              Les tableaux
             </div>
           </div>
           <div class="md-footer__button md-icon">
