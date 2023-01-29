@@ -621,43 +621,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequis" class="md-nav__link">
-    Prérequis
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#description-des-routes" class="md-nav__link">
     Description des routes
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#creation-du-repertoire-du-projet" class="md-nav__link">
     Création du répertoire du projet
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#creation-de-la-base-de-donnees-et-insertion-des-donnees" class="md-nav__link">
     Création de la base de données et insertion des données
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ajout-des-informations-de-connexion" class="md-nav__link">
     Ajout des informations de connexion
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#route-a-ajouter" class="md-nav__link">
-    Route à ajouter
+  <a href="#point-1-route-a-ajouter" class="md-nav__link">
+    Point #1 Route à ajouter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-2-ajout-dun-parametre-a-une-route" class="md-nav__link">
+    Point #2 Ajout d'un paramètre à une route
   </a>
   
 </li>
@@ -704,43 +717,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequis" class="md-nav__link">
-    Prérequis
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#description-des-routes" class="md-nav__link">
     Description des routes
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#creation-du-repertoire-du-projet" class="md-nav__link">
     Création du répertoire du projet
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#creation-de-la-base-de-donnees-et-insertion-des-donnees" class="md-nav__link">
     Création de la base de données et insertion des données
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ajout-des-informations-de-connexion" class="md-nav__link">
     Ajout des informations de connexion
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#route-a-ajouter" class="md-nav__link">
-    Route à ajouter
+  <a href="#point-1-route-a-ajouter" class="md-nav__link">
+    Point #1 Route à ajouter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-2-ajout-dun-parametre-a-une-route" class="md-nav__link">
+    Point #2 Ajout d'un paramètre à une route
   </a>
   
 </li>
@@ -762,12 +788,12 @@
 
 <h1 id="exercice-03-helloworldapi">Exercice 03 - HelloWorldApi</h1>
 <p>On va créer notre première api en PHP avec le framework en partant d'un template github. Quoi de mieux qu'un Hello World pour commencer...</p>
-<h2 id="prerequis">Prérequis</h2>
+<h2 id="installation">Installation</h2>
 <ul>
 <li>Devilbox</li>
 <li>Composer - <a href="https://getcomposer.org/">https://getcomposer.org/</a></li>
 </ul>
-<h2 id="description-des-routes">Description des routes</h2>
+<h3 id="description-des-routes">Description des routes</h3>
 <table>
 <thead>
 <tr>
@@ -789,15 +815,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="creation-du-repertoire-du-projet">Création du répertoire du projet</h2>
+<h3 id="creation-du-repertoire-du-projet">Création du répertoire du projet</h3>
 <p>Créez un nouveau dépôt à partir de celui-ci : <a href="https://github.com/Services-Web-Victo/ex03-helloworldapi">https://github.com/Services-Web-Victo/ex03-helloworldapi</a>. Clonez le ensuite dans le répertoire www de devilbox et faites le nécessaire pour que ça fonctionne. En entrant l'url de votre projet vous devriez avoir un message de bienvenue.</p>
-<h2 id="creation-de-la-base-de-donnees-et-insertion-des-donnees">Création de la base de données et insertion des données</h2>
+<h3 id="creation-de-la-base-de-donnees-et-insertion-des-donnees">Création de la base de données et insertion des données</h3>
 <ol>
 <li>Dans le répertoire <strong>resources/sql</strong> roulez le fichier <strong>helloworld_insertdata.sql</strong> dans la base de donnée </li>
 </ol>
-<h2 id="ajout-des-informations-de-connexion">Ajout des informations de connexion</h2>
+<h3 id="ajout-des-informations-de-connexion">Ajout des informations de connexion</h3>
 <p>Modifier les informations de connexion à la base de données dans le fichier <strong>config/settings.php</strong></p>
-<h2 id="route-a-ajouter">Route à ajouter</h2>
+<h2 id="point-1-route-a-ajouter">Point #1 Route à ajouter</h2>
 <table>
 <thead>
 <tr>
@@ -809,12 +835,52 @@
 <tbody>
 <tr>
 <td>GET</td>
-<td>/greetings?langue=[fr,en,es,de]</td>
+<td>/languages</td>
+<td>Afficher la liste de toutes les langues</td>
+</tr>
+</tbody>
+</table>
+<p>Ajoutez la route <strong>/languages</strong> qui va afficher la liste de toutes les langues présentent dans la base de données, avec le code de la langue et sa description. Ajoutez aussi le nombre de langues totales. La réponse devra est formaté comme suit : </p>
+<pre><code>{
+  &quot;langues&quot;: [
+    {
+      &quot;code&quot;: &quot;de&quot;,
+      &quot;langue&quot;: &quot;Allemand&quot;
+    },
+    {
+      &quot;code&quot;: &quot;en&quot;,
+      &quot;langue&quot;: &quot;Englais&quot;
+    },
+    {
+      &quot;code&quot;: &quot;es&quot;,
+      &quot;langue&quot;: &quot;Espagnol&quot;
+    },
+    {
+      &quot;code&quot;: &quot;fr&quot;,
+      &quot;langue&quot;: &quot;Français&quot;
+    }
+  ],
+  &quot;total&quot;: 4
+}
+</code></pre>
+<h2 id="point-2-ajout-dun-parametre-a-une-route">Point #2 Ajout d'un paramètre à une route</h2>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/greetings?language=[fr,en,es,de]</td>
 <td>Afficher une salutation aléatoire</td>
 </tr>
 </tbody>
 </table>
-<p>En vous servant de la route <strong>/greetings</strong> ajoutez la possibilité d'inclure le paramêtre langue pour spécifier dans quelle langue on veut avoir notre message. Les valeurs possibles sont : </p>
+<p>En vous servant de la route <strong>/greetings</strong> ajoutez la possibilité d'inclure le paramètre <strong>language</strong> pour spécifier dans quelle langue on veut avoir notre message. Les valeurs possibles sont : </p>
 <ul>
 <li>fr : Français</li>
 <li>en : Anglais</li>
@@ -823,10 +889,11 @@
 </ul>
 <pre><code>/greetings?langue=fr
 </code></pre>
+<p>Vous avez la méthode pour récupérer le paramètre dans les notes de cours <a href="https://services-web-victo.github.io/notes_de_cours/slim/recuperer_params/#parametre-de-la-section-query">ici</a></p>
 <p>Si l'usager entre un code inexistant, le message de retour sera "Aucune salutation trouvée, bonjour quand-même"</p>
-<p>La réponse devra être formatée de la façon suivante (la valeur de codeLangue est la donnée extrait de la base de données et non du paramètre, même si elle est pareil): </p>
+<p>La réponse devra être formatée de la façon suivante (la valeur de code est la donnée extrait de la base de données et non du paramètre, même si elle est pareil): </p>
 <pre><code>{
-    &quot;codeLangue&quot;:&quot;fr&quot;,
+    &quot;code&quot;:&quot;fr&quot;,
     &quot;message&quot;:&quot;Bonjour le monde&quot;
 }
 </code></pre>

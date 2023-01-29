@@ -1026,7 +1026,7 @@ https://monApi/createUtilisateurs
 <tr>
 <td>DELETE</td>
 <td>405 Method Not Allowed - On ne devrait pas permettre de supprimer toutes les ressources en une action. Si oui utilisez le code 200.</td>
-<td>204 No Content - La ressource est a été supprimé et aucune information n'est retournée dans la réponse.</td>
+<td>204 No Content - La ressource a été supprimé et aucune information n'est retournée dans la réponse.</td>
 </tr>
 <tr>
 <td></td>
@@ -1087,7 +1087,7 @@ https://monApi/createUtilisateurs
 <li><code>/livres?champs=titre,isbn</code> retournera la liste de tous les livres mais seulement le titres et isbn de chacun.</li>
 </ul>
 <h3 id="pagination">Pagination</h3>
-<p>Il n'est pas rare qu'une ressource comporte plusieurs centaines sinon milliers d'enregistrement. On devrait permettre au client de pouvoir sélectionner seulement une partie des enregistrements en définissant un point de départ (offset) et un nombre d'enregistrement (limit). Si on utilise la pagination, on devrait définir des valeurs par défaut au paramètre offset et limit (généralement offset sera égale à 0 pour le premier enregistrement). </p>
+<p>Il n'est pas rare qu'une ressource comporte plusieurs centaines sinon milliers d'enregistrements. On devrait permettre au client de pouvoir sélectionner seulement une partie des enregistrements en définissant un point de départ (offset) et un nombre d'enregistrement (limit). Si on utilise la pagination, on devrait définir des valeurs par défaut au paramètre offset et limit (généralement offset sera égale à 0 pour le premier enregistrement). </p>
 <p>Exemple : </p>
 <ul>
 <li><code>/livres?limit=50&amp;offset=100</code> En partant du centième enregistrement, affiche les 50 livres suivants.</li>
