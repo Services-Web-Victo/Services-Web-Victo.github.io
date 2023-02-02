@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/04_libapi/">
+        <link rel="canonical" href="https://example.com/exercices/04_imdb/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Exercice 04 - libAPI - Services Web</title>
+        <title>Exercice 04 - IMDB - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-04-libapi" class="md-skip">
+        <a href="#exercice-04-imdb" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 04 - libAPI
+              Exercice 04 - IMDB
             
           </span>
         </div>
@@ -680,41 +680,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#deuxieme-partie-documentation" class="md-nav__link">
-    Deuxième partie - Documentation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#troisieme-partie-filtre-tri-selection-et-pagination" class="md-nav__link">
-    Troisième partie - Filtre, tri, sélection et pagination
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quatrieme-partie-revision-et-formatage-de-la-reponse" class="md-nav__link">
-    Quatrième partie - Révision et formatage de la réponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cinquieme-partie-utilisation-de-monolog" class="md-nav__link">
-    Cinquième partie - Utilisation de Monolog
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sixieme-partie-middleware" class="md-nav__link">
-    Sixième partie - Middleware
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -735,21 +700,19 @@
                   
 
 
-<h1 id="exercice-04-libapi">Exercice 04 - libAPI</h1>
-<p>Pour cet exercice nous allons créer un répertoire de livres. Même si le sujet est assez simple, nous allons créer une api un  peu plus étoffer grâce au framework <a href="https://www.slimframework.com/">SLIM</a>. Cet exercice va être utiliser sur plusieurs cours, on va y intégrer petit à petit plusieurs notions essentielles, alors il est important de suivre chaque étape et de les compléter.</p>
+<h1 id="exercice-04-imdb">Exercice 04 - IMDB</h1>
+<p>Pour cet exercice nous allons travailler avec les 1000 films les mieux notés sur IMDB. Même si le sujet est assez simple, nous allons créer une api un peu plus étoffer grâce au framework <a href="https://www.slimframework.com/">SLIM</a>. Cet exercice va être utiliser sur plusieurs cours, on va y intégrer petit à petit plusieurs notions essentielles, alors il est important de suivre chaque étape et de les compléter.</p>
 <h2 id="prerequis">Prérequis</h2>
 <ul>
-<li>Ampps (ou une autre "stack" incluant au minimum Apache, MySQL et PHP) -  <a href="https://ampps.com/">https://ampps.com/</a></li>
+<li>Devilbox, Ampps ou une autre "stack" incluant au minimum Apache, MySQL et PHP) -  <a href="https://ampps.com/">https://ampps.com/</a></li>
 <li>Composer - <a href="https://getcomposer.org/">https://getcomposer.org/</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
 <ul>
-<li>Cloner le dépot suivant à la racine de votre répertoire "localhost" de Ampps (par défaut ça sera C:\Program Files\Ampps\www ) : <a href="https://github.com/ServiceWeb-H2022/base-slim-skeleton">https://github.com/ServiceWeb-H2022/base-slim-skeleton</a></li>
-<li>Renommez le répertoire créé (base-slim-skeleton) pour <strong>libapi</strong>.</li>
+<li>Cloner le dépot suivant à la racine de votre répertoire "localhost" de serveur web (C:\devilbox\data\www\ pour Devilbox ) : <a href="https://github.com/ServiceWeb-H2022/base-slim-skeleton">https://github.com/ServiceWeb-H2022/base-slim-skeleton</a></li>
 <li>Roulez la commande <code>composer update</code> dans le répertoire de votre projet.</li>
-<li>Créez une base de données nommée aussi <strong>libapi</strong></li>
-<li>Modifier les informations de connexion à la base de données dans le fichier config/settings.php.</li>
-<li>Rouler le script <code>ressource/sql/createUserTable.sql</code> dans la base de données crée pour tester la création d'un usager.</li>
+<li>Créez le fichier config/env.php en copiant le fichier config/env.exemple.php et modifiez les informations de connexion à la base de données dans le fichier config/env.php.</li>
+<li>Roulez le script <code>ressource/sql/insertData.sql</code> dans la base de données que vous allez utiliser pour l'exercice.</li>
 </ul>
 <h2 id="test-de-linstallation">Test de l'installation</h2>
 <p>Vous devriez avoir accès maintenant aux routes suivantes. Testez les avec Postman et un navigateur pour la route de la documentation.</p>
@@ -774,19 +737,11 @@
 </tr>
 <tr>
 <td>POST</td>
-<td>/users</td>
-<td>Création d'un usager</td>
+<td>/films</td>
+<td>Liste de tous les films</td>
 </tr>
 </tbody>
 </table>
-<p>Pour la création d'un usager, ajouter dans le body de la requête l'information en JSON : </p>
-<pre><code>{
-    &quot;username&quot; : &quot;[username]&quot;,
-    &quot;first_name&quot; : &quot;[first_name]&quot;,
-    &quot;last_name&quot; : &quot;[last_name]&quot;,
-    &quot;email&quot; : &quot;[email]&quot;
-}
-</code></pre>
 <h2 id="structure-du-projet">Structure du projet</h2>
 <ul>
 <li><strong>/config</strong></li>
@@ -798,7 +753,7 @@
 <li>C’est ici qu’on va définir les routes </li>
 </ul>
 </li>
-<li><strong>Settings.php</strong><ul>
+<li><strong>Settings.php</strong> et <strong>env.php</strong><ul>
 <li>Constantes de configuration. Par exemple les informations pour se connecter à la bd</li>
 </ul>
 </li>
@@ -820,7 +775,7 @@
 </ul>
 </li>
 <li><strong>/domain</strong><ul>
-<li><strong>/user</strong></li>
+<li><strong>/nom_du_modele</strong></li>
 <li>Séparer la logique application de l’accès aux données</li>
 <li><strong>/Repository</strong><ul>
 <li>Accès aux données</li>
@@ -837,7 +792,7 @@
 <p>La route appelle une classe action, ensuite le bon service est appelé. Le service va chercher les données avec la classe repository correspondante.</p>
 <h2 id="exercices">Exercices</h2>
 <h3 id="premiere-partie-routes">Première partie - Routes</h3>
-<p>Créez les routes suivantes pour compléter la gestion des utilisateurs : </p>
+<p>Créez les routes suivantes pour agrémenter la gestion de films. Voir plus bas pour le format de chaque réponse : </p>
 <table>
 <thead>
 <tr>
@@ -849,188 +804,74 @@
 <tbody>
 <tr>
 <td>GET</td>
-<td>/users</td>
-<td>Lister tous les usagers</td>
+<td>/film/{id}</td>
+<td>Lister seulement le film avec le id en paramètre</td>
 </tr>
 <tr>
-<td>GET</td>
-<td>/users/{id}</td>
-<td>Lister seulement l'usager avec le id en paramètre</td>
+<td>POST</td>
+<td>/film</td>
+<td>Ajouter un film avec les informations dans le "body" de la requête</td>
 </tr>
 <tr>
 <td>PUT</td>
-<td>/users/{id}</td>
-<td>Modifier l'usager avec le id en paramètre</td>
+<td>/film/{id}</td>
+<td>Modifier un film avec le id en paramètre et les informations dans le "body"</td>
 </tr>
 <tr>
 <td>DELETE</td>
-<td>/users/{id}</td>
-<td>Supprimer l'usager avec le id en paramètre</td>
+<td>/film/{id}</td>
+<td>Supprimer le film avec le id en paramètre</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Pour chaque route, créez une classe "action", "service" et "repository". </li>
+<li>Retourner aussi les bons codes de statut, voir la section <a href="/notes_de_cours/api/bonnes_pratiques/#utiliser-les-codes-de-statut-http">"Utiliser les codes de statut HTTP"</a> dans les bonnes pratiques.</li>
 <li>Testez ensuite vos routes avec Postman.</li>
 </ul>
-<h3 id="deuxieme-partie-documentation">Deuxième partie - Documentation</h3>
-<p>Créez la documentation pour les routes déjà existantes. À partir de maintenant, pour chaque route que nous allons ajouter, on va créer en même temps la documentation. </p>
-<ul>
-<li>Renommez le fichier de documentation <code>resources/docs/base_slim_skeleton_v1.yaml</code> pour <code>libapi.yaml</code>. C'est dans ce fichier que vous allez écrire la documentation. Il y a déjà une partie de fait pour les routes qui était déjà présente.</li>
-<li>Modifiez le code du fichier <code>src/Action/Docs/SwaggerUiAction.php</code> pour que la variable <code>$yamlFile</code> fasse référence à votre fichier renommé. </li>
-<li>En vous inspirant de ce qui est déjà présent dans le fichier de documentation et du site <a href="https://swagger.io/docs/specification/about/">swagger.io</a>, rédigez la documentation pour les 4 routes que vous avez créé dans la première partie.</li>
-<li>Une fois terminé elle devrait apparaitre dans la page affiché quand vous utilisez la route <code>/</code></li>
-</ul>
-<h3 id="troisieme-partie-filtre-tri-selection-et-pagination">Troisième partie - Filtre, tri, sélection et pagination</h3>
-<p>À l'aide des notes de cours sur les bonnes pratiques de conception d'un api, révisez ce que vous avez fait jusqu'à maintenant et apporter des corrections à votre projet si nécessaire.</p>
-<ul>
-<li>Ajouter les options de filtre, tri, sélection de champs et de pagination seulement pour la route <code>GET /users</code></li>
-</ul>
-<h3 id="quatrieme-partie-revision-et-formatage-de-la-reponse">Quatrième partie - Révision et formatage de la réponse</h3>
-<p>Dans le répertoire <code>resources/sql</code> vous devriez avoir un fichier nommé <strong>books_insert_data.zip</strong>. S'il n'est pas présent vous pouvez le récupérer depuis le liens suivant : <a href="https://github.com/ServiceWeb-H2022/base-slim-skeleton/blob/main/resources/sql/books_insert_data.zip">books_insert_data.zip</a>. Le fichier contient deux scripts SQL à exécuter, un de création de la table books et un autre d'insertion de données dans cette table. Une fois les données importées, ajoutez la route suivante à votre API</p>
-<p><strong>Afficher la liste de tous les livres</strong></p>
-<table>
-<thead>
-<tr>
-<th>Méthode</th>
-<th>Route</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>/livres</td>
-<td>Liste de tous les livres</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Vous devez ajouter une pagination à la route. L'usager doit pouvoir entrer le numéro de page qu'il souhaite, s'il n'entre rien la page 1 sera affichée par défaut. Le nombre de livre à afficher par page est de 20 et vous devez commencer au premier enregistrement. Ex : <code>/livres?page=2</code> affichera les livres 21 à 40.</li>
-<li>Par défaut la liste sera afficher par ordre alphabétique selon le <strong>titre</strong> du livre, permettez de pouvoir afficher la liste selon un tri alphabétique inversé.</li>
-<li>La réponse devra être en format JSON et respecter la structure suivante : </li>
-</ul>
-<pre><code class="language-json">{
-    &quot;livres&quot; : [
-        {
-            &quot;id&quot; : &quot;24876258&quot;,
-            &quot;title&quot; : &quot;The Aeronaut's Windlass&quot;,
-            &quot;series&quot; : &quot;(The Cinder Spires #1)&quot;,
-            &quot;cover_link&quot; : &quot;https://i.gr-assets.com/images/S/compressed.ph...&quot;,
-            &quot;author&quot; : &quot;Jim Butcher&quot;,
-            &quot;average_rating&quot; : &quot;4,17&quot;,
-            &quot;isbn&quot; : &quot;0451466802&quot;,
-            &quot;isbn13&quot; : &quot;9780451466808&quot;
-        },
-        {
-            ...
-        }
-    ],
-    &quot;page&quot; : 1,
-    &quot;page_total&quot; : 247   
+<p><strong>Film à utiliser pour l'ajout</strong></p>
+<p>Vous pouvez utiliser les informations suivantes pour créer un nouveau film : </p>
+<pre><code>{
+  &quot;poster_link&quot;: &quot;&quot;,
+  &quot;series_title&quot;: &quot;The Shawshank Redemption&quot;,
+  &quot;released_year&quot;: 1994,
+  &quot;certificate&quot;: &quot;&quot;,
+  &quot;runtime&quot;: &quot;142 min&quot;,
+  &quot;genre&quot;: &quot;Drama&quot;,
+  &quot;imdb_rating&quot;: 9.3,
+  &quot;overview&quot;: &quot;Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.&quot;,
+  &quot;meta_score&quot;: 80,
+  &quot;director&quot;: &quot;Frank Darabont&quot;,
+  &quot;star1&quot;: &quot;Tim Robbins&quot;,
+  &quot;star2&quot;: &quot;Morgan Freeman&quot;,
+  &quot;star3&quot;: &quot;Bob Gunton&quot;,
+  &quot;star4&quot;: &quot;William Sadler&quot;,
+  &quot;no_of_votes&quot;: 2343110,
+  &quot;gross&quot;: &quot;28,341,469&quot;
 }
 </code></pre>
-<p><strong>Afficher la description d'un livre</strong></p>
-<table>
-<thead>
-<tr>
-<th>Méthode</th>
-<th>Route</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>/livres/[id]/description</td>
-<td>Affiche la description d'un livre selon son id</td>
-</tr>
-</tbody>
-</table>
-<p>La route doit permettre d'afficher la description d'un livre selon son id. Si le id n'existe pas, le code de statut 404 doit être retourné et un message d'erreur dans la réponse.</p>
-<p>Format de la réponse quand le id existe : </p>
-<pre><code class="language-json">{
-    &quot;id&quot; : &quot;24876258&quot;,
-    &quot;title&quot; : &quot;The Aeronaut's Windlass&quot;,
-    &quot;description&quot; : &quot;Jim Butcher, the #1 New York Times bestselling author ...&quot;
+<p><strong>Format des réponses</strong></p>
+<p>GET /film/1001</p>
+<pre><code>{
+  &quot;id&quot;: 1001,
+  &quot;poster_link&quot;: &quot;https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg&quot;,
+  &quot;series_title&quot;: &quot;The Shawshank Redemption&quot;,
+  &quot;released_year&quot;: 1994,
+  &quot;certificate&quot;: &quot;A&quot;,
+  &quot;runtime&quot;: &quot;142 min&quot;,
+  &quot;genre&quot;: &quot;Drama&quot;,
+  &quot;imdb_rating&quot;: 9.3,
+  &quot;overview&quot;: &quot;Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.&quot;,
+  &quot;meta_score&quot;: 80,
+  &quot;director&quot;: &quot;Frank Darabont&quot;,
+  &quot;star1&quot;: &quot;Tim Robbins&quot;,
+  &quot;star2&quot;: &quot;Morgan Freeman&quot;,
+  &quot;star3&quot;: &quot;Bob Gunton&quot;,
+  &quot;star4&quot;: &quot;William Sadler&quot;,
+  &quot;no_of_votes&quot;: 2343110,
+  &quot;gross&quot;: &quot;28,341,469&quot;
 }
 </code></pre>
-<p>Format de la réponse si le id n'existe pas : </p>
-<pre><code class="language-json">{
-    &quot;errors&quot; : {
-        &quot;code&quot; : &quot;404&quot;,
-        &quot;message&quot; : &quot;Le id [id] n'existe pas&quot;
-    }
-}
-</code></pre>
-<h3 id="cinquieme-partie-utilisation-de-monolog">Cinquième partie - Utilisation de Monolog</h3>
-<p>Avant de continuer, faites un commit des modifications que vous avez apporté à votre projet jusqu'à maintenant : </p>
-<ul>
-<li>Le message du commit doit être "Exercice 04 partie 4 terminé"</li>
-<li>Faites un push du commit sur votre dépôt GitHub</li>
-<li>Créer maintenant une branche à votre projet nommée <code>Exercice04-5</code>.</li>
-</ul>
-<p>À l'aide des notes de cours sur l'utilisation de Monolog, faites en sorte qu'à chaque fois qu'on modifie un usager, un message d'événement s'inscrit dans un fichier de log avec les configurations suivantes : </p>
-<ul>
-<li>Nom du fichier de log : <strong>usersLog</strong></li>
-<li>Identification du message : <strong>updateUser</strong></li>
-<li>Niveau de sévérité : <strong>INFO</strong></li>
-<li>Message : "L'usager <strong>username</strong> a été modifié : {<strong>les nouvelles valeur de l'usager</strong>}"</li>
-</ul>
-<p>Exemple de résultat</p>
-<pre><code>[2022-02-11T06:43:08.169802+01:00] updateUser.INFO: L'usager mathProf a été modifié : {&quot;username&quot; : &quot;mathProf&quot;,&quot;first_name&quot; : &quot;Mathieu&quot;,&quot;last_name&quot; : &quot;Fréchette&quot;,&quot;email&quot; : &quot;frechette.mathieu@cegepvicto.ca&quot;
-}
-</code></pre>
-<p>Une fois terminé, fusionner votre branche au projet principal en suivant ces étapes : </p>
-<ul>
-<li>Faites un commit des modifications avec le message "Exercice 04 partie 5 terminé"</li>
-<li>Changer de branche pour revenir à la branche principale</li>
-<li>Fusionner la branche <code>Exercice04-5</code> dans la branche principale</li>
-<li>Faites un push du commit sur votre dépôt GitHub</li>
-</ul>
-<h3 id="sixieme-partie-middleware">Sixième partie - Middleware</h3>
-<p>Faites le nécessaire pour qu'à <u>chaque requête</u> HTTP vers votre projet, les informations suivantes soit inscrite dans un fichier de log : </p>
-<ul>
-<li>L'identificateur de la ligne sera <strong>RouteLogMiddleware</strong></li>
-<li>Le niveau de sévérité est <strong>INFO</strong></li>
-<li>Ensuite ajoutez la méthode HTTP (GET, POST, PUT, PATCH, DELETE) utilisée</li>
-<li>Suivra le nom de la route, les paramètres de la section "query" s'il y en a et le contenu du body</li>
-</ul>
-<p><strong>Exemple</strong></p>
-<pre><code>[2022-01-30T13:44:25.145185-05:00] RouteLogMiddleware.INFO: GET /libapi/docs
-[2022-01-30T13:44:25.145185-05:00] RouteLogMiddleware.INFO: GET /libapi/livres?page=3
-[2022-02-14T06:49:19.833744+01:00] RouteLogMiddleware.INFO: GET /libapi/ {&quot;cle1&quot;:&quot;Valeur1&quot;,&quot;cle2&quot;:&quot;Valeur2&quot;}  
-</code></pre>
-<p><strong>Quelques pistes de solution</strong></p>
-<ul>
-<li>Créer un fichier php dans le répertoire src/Middleware qui contiendra votre code</li>
-<li>Invoquer cette classe au niveau de l'application</li>
-<li>Dans votre classe "middleware", la structure de la fonction <code>__invoke()</code> devrait ressembler à ceci : </li>
-</ul>
-<pre><code class="language-php">public function __invoke(
-    Request $request, 
-    RequestHandler $handler): Response
-{
-    // Cette ligne exécute la requête
-    $response = $handler-&gt;handle($request);
-
-    // Votre code ...
-
-    return $response;
-}
-</code></pre>
-<p>Pour récupérer les informations générales de la route</p>
-<ul>
-<li><a href="https://www.slimframework.com/docs/v4/cookbook/retrieving-current-route.html">https://www.slimframework.com/docs/v4/cookbook/retrieving-current-route.html</a></li>
-</ul>
-<p>Pour les paramètres dans la route</p>
-<ul>
-<li><a href="https://www.slimframework.com/docs/v4/objects/request.html#the-request-uri">https://www.slimframework.com/docs/v4/objects/request.html#the-request-uri</a></li>
-</ul>
-<p>Pour le contenu du body, on l'a déjà vu quand on le récupère pour traiter un requête POST.</p>
-<ul>
-<li><a href="https://www.slimframework.com/docs/v3/objects/request.html#the-request-body">https://www.slimframework.com/docs/v3/objects/request.html#the-request-body</a></li>
-</ul>
 
 
 

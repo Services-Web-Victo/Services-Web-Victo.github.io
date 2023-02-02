@@ -689,6 +689,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#point-3-ajouter-une-salutation" class="md-nav__link">
+    Point #3 Ajouter une salutation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -781,6 +788,13 @@
         <li class="md-nav__item">
   <a href="#point-2-ajout-dun-parametre-a-une-route" class="md-nav__link">
     Point #2 Ajout d'un paramètre à une route
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-3-ajouter-une-salutation" class="md-nav__link">
+    Point #3 Ajouter une salutation
   </a>
   
 </li>
@@ -909,6 +923,69 @@
 <pre><code>{
     &quot;code&quot;:&quot;fr&quot;,
     &quot;message&quot;:&quot;Bonjour le monde&quot;
+}
+</code></pre>
+<h2 id="point-3-ajouter-une-salutation">Point #3 Ajouter une salutation</h2>
+<p>Ajoutez la route suivante qui va permettre d'ajouter une salutation dans la base de données.</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>/greetings</td>
+<td>Afficher une salutation aléatoire</td>
+</tr>
+</tbody>
+</table>
+<p>Les données seront envoyées en paramètre dans le corps de la requête.</p>
+<pre><code>{
+  &quot;code&quot; : &quot;fr&quot;,
+  &quot;message&quot; : &quot;Ceci est mon nouveau message en français&quot;
+}
+</code></pre>
+<p>Si le code de la langue n'est pas présent dans la base de données, annuler l'ajout et retournez le message suivant : </p>
+<pre><code>{
+  &quot;id&quot; : null,
+  &quot;erreur&quot; : &quot;Le code de la langue est inexistant&quot;
+}
+</code></pre>
+<p>Si l'ajout du message fonctionne, retournez la réponse suivante : </p>
+<pre><code>{
+  &quot;id&quot; : Le id du nouvel enregistrement,
+  &quot;code&quot; : &quot;Le code de la langue du message&quot;,
+  &quot;message&quot; : &quot;Le message ajouté&quot; 
+}
+</code></pre>
+<p><strong>Extrait de code pour vous aider avec le point #3</strong></p>
+<p>Fonction pour ajouter le message dans la base de données et retourner le id</p>
+<pre><code>/**
+  * Ajoute un message de salutation
+  * 
+  * @param int $langueId Le id du code de langue 
+  * @param string $message Le message à ajouter
+  *
+  * @return int Le id du message ajouté
+  */
+public function insertGreeting(int $langueId, string $message): int
+{
+    $row = [
+        'langue_id' =&gt; $langueId,
+        'message' =&gt; $message
+    ];
+
+    $sql = &quot;INSERT INTO salutations SET 
+            langue_id=:langue_id, 
+            message=:message&quot;;
+
+    $this-&gt;connection-&gt;prepare($sql)-&gt;execute($row);
+
+    return (int)$this-&gt;connection-&gt;lastInsertId();
 }
 </code></pre>
 
