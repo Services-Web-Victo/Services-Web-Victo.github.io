@@ -524,6 +524,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/slim/monolog/" class="md-nav__link">
+        Utilisation de journaux d'évènements (Log files)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -691,6 +705,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deuxieme-partie-filtre-et-pagination" class="md-nav__link">
+    Deuxième partie - Filtre et pagination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troisieme-partie-utilisation-de-monolog" class="md-nav__link">
+    Troisième partie - Utilisation de Monolog
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -776,6 +804,20 @@
           <li class="md-nav__item">
   <a href="#premiere-partie-routes" class="md-nav__link">
     Première partie - Routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deuxieme-partie-filtre-et-pagination" class="md-nav__link">
+    Deuxième partie - Filtre et pagination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troisieme-partie-utilisation-de-monolog" class="md-nav__link">
+    Troisième partie - Utilisation de Monolog
   </a>
   
 </li>
@@ -971,6 +1013,46 @@
   &quot;no_of_votes&quot;: 2343110,
   &quot;gross&quot;: &quot;28,341,469&quot;
 }
+</code></pre>
+<h3 id="deuxieme-partie-filtre-et-pagination">Deuxième partie - Filtre et pagination</h3>
+<p>À l'aide des notes de cours sur les bonnes pratiques de conception d'un api, ajouter les options de filtre et de pagination pour la route <code>GET /film</code></p>
+<ul>
+<li>Le filtre se fera sur la colonne <strong>genre</strong> de la table imdb_top, ex <code>/film?genre=Fantasy</code></li>
+<li>Pour la pagination, l'usager ne pourra que choisir la page à afficher. Par défaut on va afficher 50 films par page et si aucun numéro de page n'est fournis, on va afficher la page 1. Ex: <code>/film?page=2</code></li>
+<li>Bien sur on va pouvoir combiner les deux paramètres comme ceci : <code>/film?genre=Fantasy&amp;page=1</code></li>
+</ul>
+<p>Modifiez la réponse pour y ajouter les informations suivantes : </p>
+<ul>
+<li>genre : La valeur qu'on a passé en paramètre, si aucune laisser vide <code>"genre"  : "",</code></li>
+<li>nombreFilms : Le nombre de films selon le filtre appliqué.</li>
+<li>page : La valeur du paramètre, si aucun inscrire 1.</li>
+<li>totalPage : Le nombre de pages au total, le nombre de films total divisé par le nombre de film par page (50) arrondis à l'entier supérieur.</li>
+</ul>
+<pre><code>{
+    &quot;movies&quot; : [
+        {
+          ...
+        },
+        {
+          ...
+        }
+    ],
+    &quot;genre&quot; : &quot;Fantasy&quot;,
+    &quot;nombreFilms&quot; : 66,
+    &quot;page&quot; : 1,
+    &quot;totalPage&quot; : 2
+}
+</code></pre>
+<h3 id="troisieme-partie-utilisation-de-monolog">Troisième partie - Utilisation de Monolog</h3>
+<p>À l'aide des notes de cours sur l'utilisation de Monolog, faites en sorte qu'à chaque fois qu'on supprime un film, un message d'événement s'inscrit dans un fichier de log avec les configurations suivantes : </p>
+<ul>
+<li>Nom du fichier de log : <strong>MoviesLog</strong></li>
+<li>Identification du message : <strong>deleteMovie</strong></li>
+<li>Niveau de sévérité : <strong>INFO</strong></li>
+<li>Message : "Le film <strong>titre_du_film</strong> a été supprimé : {<strong>les nouvelles valeur de l'usager</strong>}"</li>
+</ul>
+<p>Exemple de résultat</p>
+<pre><code>[2022-02-11T06:43:08.169802+01:00] deleteMovie.INFO: Le film Labyrinth a été supprimé
 </code></pre>
 
 
