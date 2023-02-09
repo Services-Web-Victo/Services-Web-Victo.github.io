@@ -1015,7 +1015,7 @@
 }
 </code></pre>
 <h3 id="deuxieme-partie-filtre-et-pagination">Deuxième partie - Filtre et pagination</h3>
-<p>À l'aide des notes de cours sur les bonnes pratiques de conception d'un api, ajouter les options de filtre et de pagination pour la route <code>GET /film</code></p>
+<p>À l'aide des notes de cours sur les bonnes pratiques de conception d'un api, ajouter les options de filtre et de pagination pour la route <code>GET /film</code> qui affiche la liste de tous les livres.</p>
 <ul>
 <li>Le filtre se fera sur la colonne <strong>genre</strong> de la table imdb_top, ex <code>/film?genre=Fantasy</code></li>
 <li>Pour la pagination, l'usager ne pourra que choisir la page à afficher. Par défaut on va afficher 50 films par page et si aucun numéro de page n'est fournis, on va afficher la page 1. Ex: <code>/film?page=2</code></li>
@@ -1024,7 +1024,7 @@
 <p>Modifiez la réponse pour y ajouter les informations suivantes : </p>
 <ul>
 <li>genre : La valeur qu'on a passé en paramètre, si aucune laisser vide <code>"genre"  : "",</code></li>
-<li>nombreFilms : Le nombre de films selon le filtre appliqué.</li>
+<li>nombreFilms : Le nombre de films qui est affiché dans la page selon le filtre appliqué.</li>
 <li>page : La valeur du paramètre, si aucun inscrire 1.</li>
 <li>totalPage : Le nombre de pages au total, le nombre de films total divisé par le nombre de film par page (50) arrondis à l'entier supérieur.</li>
 </ul>
@@ -1038,7 +1038,7 @@
         }
     ],
     &quot;genre&quot; : &quot;Fantasy&quot;,
-    &quot;nombreFilms&quot; : 66,
+    &quot;nombreFilms&quot; : 50,
     &quot;page&quot; : 1,
     &quot;totalPage&quot; : 2
 }
@@ -1049,10 +1049,10 @@
 <li>Nom du fichier de log : <strong>MoviesLog</strong></li>
 <li>Identification du message : <strong>deleteMovie</strong></li>
 <li>Niveau de sévérité : <strong>INFO</strong></li>
-<li>Message : "Le film <strong>titre_du_film</strong> a été supprimé : {<strong>les nouvelles valeur de l'usager</strong>}"</li>
+<li>Message : "Le film "<strong>titre_du_film</strong>" id [<strong>id_du_film</strong>] a été supprimé."</li>
 </ul>
 <p>Exemple de résultat</p>
-<pre><code>[2022-02-11T06:43:08.169802+01:00] deleteMovie.INFO: Le film Labyrinth a été supprimé
+<pre><code>[2022-02-11T06:43:08.169802+01:00] deleteMovie.INFO: Le film &quot;Labyrinth&quot; id [1001] a été supprimé.
 </code></pre>
 
 
