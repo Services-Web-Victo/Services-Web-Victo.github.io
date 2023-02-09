@@ -1043,6 +1043,7 @@
     &quot;totalPage&quot; : 2
 }
 </code></pre>
+<p>Pour découper le résultat en page, vous pouvez utiliser LIMIT et OFFSET dans la requête SQL ou bien array_slice sur le tableau de résultat de la requête qui aurait déjà filtré les films. (Vous faites une requête qui filtre les films selon le genre et ensuite utilisez array_slice sur le résultat en PHP).</p>
 <h3 id="troisieme-partie-utilisation-de-monolog">Troisième partie - Utilisation de Monolog</h3>
 <p>À l'aide des notes de cours sur l'utilisation de Monolog, faites en sorte qu'à chaque fois qu'on supprime un film, un message d'événement s'inscrit dans un fichier de log avec les configurations suivantes : </p>
 <ul>
