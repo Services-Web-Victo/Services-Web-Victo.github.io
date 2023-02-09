@@ -374,6 +374,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/api/documentation_api/" class="md-nav__link">
+        Documentation de l'API
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -719,6 +733,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#quatrieme-partie-documentation" class="md-nav__link">
+    Quatrième partie - Documentation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -818,6 +839,13 @@
           <li class="md-nav__item">
   <a href="#troisieme-partie-utilisation-de-monolog" class="md-nav__link">
     Troisième partie - Utilisation de Monolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quatrieme-partie-documentation" class="md-nav__link">
+    Quatrième partie - Documentation
   </a>
   
 </li>
@@ -1055,6 +1083,14 @@
 <p>Exemple de résultat</p>
 <pre><code>[2022-02-11T06:43:08.169802+01:00] deleteMovie.INFO: Le film &quot;Labyrinth&quot; id [1001] a été supprimé.
 </code></pre>
+<h3 id="quatrieme-partie-documentation">Quatrième partie - Documentation</h3>
+<p>Créez la documentation pour les routes déjà existantes. À partir de maintenant, pour chaque route que nous allons ajouter, on va créer en même temps la documentation.</p>
+<ul>
+<li>Renommez le fichier de documentation resources/docs/base_slim_skeleton_v1.yaml pour <strong>imdb_api.yaml</strong>. C'est dans ce fichier que vous allez écrire la documentation. Il y a déjà du code dans se fichier que j'ai laissé en exemple. Vous pourrez le supprimer quand il ne vous sera plus nécessaire.</li>
+<li>Modifiez le code du fichier src/Action/Docs/SwaggerUiAction.php pour que la variable $yamlFile fasse référence à votre fichier renommé.</li>
+<li>En vous inspirant de ce qui est déjà présent dans le fichier de documentation et du site swagger.io, rédigez la documentation pour les 4 routes que vous avez créé dans la première partie.</li>
+<li>Une fois terminé elle devrait apparaitre dans la page affiché quand vous utilisez la route <code>/docs</code></li>
+</ul>
 
 
 
