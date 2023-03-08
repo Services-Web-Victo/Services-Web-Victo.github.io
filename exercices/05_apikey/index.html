@@ -723,32 +723,26 @@
     Modification à la base de données
   </a>
   
-    <nav class="md-nav" aria-label="Modification à la base de données">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ajout-dune-route-pour-obtenir-une-cle-api" class="md-nav__link">
     Ajout d'une route pour obtenir une clé api
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#protection-des-routes-par-un-middleware" class="md-nav__link">
     Protection des routes par un middleware
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#limiter-le-nombre-de-requetes-optionnel" class="md-nav__link">
     Limiter le nombre de requêtes (optionnel)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -798,32 +792,26 @@
     Modification à la base de données
   </a>
   
-    <nav class="md-nav" aria-label="Modification à la base de données">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ajout-dune-route-pour-obtenir-une-cle-api" class="md-nav__link">
     Ajout d'une route pour obtenir une clé api
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#protection-des-routes-par-un-middleware" class="md-nav__link">
     Protection des routes par un middleware
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#limiter-le-nombre-de-requetes-optionnel" class="md-nav__link">
     Limiter le nombre de requêtes (optionnel)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -895,7 +883,7 @@ foreach($users as $user) {
 echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 </code></pre>
 <p>Je vous conseille de rouler ce code dans un éditeur de code PHP en ligne tel que <a href="https://onlinephp.io/">https://onlinephp.io/</a> pour récupérer facilement le résultat.</p>
-<h3 id="ajout-dune-route-pour-obtenir-une-cle-api">Ajout d'une route pour obtenir une clé api</h3>
+<h2 id="ajout-dune-route-pour-obtenir-une-cle-api">Ajout d'une route pour obtenir une clé api</h2>
 <p>Maintenant qu'on a une table dans la base de données avec une liste d'usager, on va créer une nouvelle route qui va permettre à un usager de demander une clé api.</p>
 <table>
 <thead>
@@ -925,7 +913,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
     &quot;api_key&quot; : &quot;la_valeur_de_ma_cle&quot;
 }
 </code></pre>
-<h3 id="protection-des-routes-par-un-middleware">Protection des routes par un middleware</h3>
+<h2 id="protection-des-routes-par-un-middleware">Protection des routes par un middleware</h2>
 <p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes devront être protégé par le middleware. Les routes GET ne seront pas affecté par la vérification. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
 <p><code>Authorization : api_key la_valeur_de_ma_cle</code></p>
 <ul>
@@ -937,7 +925,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
     &quot;erreur&quot; : &quot;La clé est invalide. Accès non autorisé&quot;
 }
 </code></pre>
-<h3 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (optionnel)</h3>
+<h2 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (optionnel)</h2>
 <p>Mettez en place un système pour limiter le nombre de requêtes par jour et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403. La validation se fera uniquement sur les routes qui ont la méthode GET.</p>
 
 
