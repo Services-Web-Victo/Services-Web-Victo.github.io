@@ -908,13 +908,8 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 <tbody>
 <tr>
 <td>GET</td>
-<td>/api</td>
-<td>Retourne la clé api de l'usager. S'il n'y en a pas de créé, en génère une.</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/api/nouvelle</td>
-<td>Génère une nouvelle clé api</td>
+<td>/cle?nouvelle=true</td>
+<td>Retourne la clé api de l'usager. S'il n'y en a pas de créé, en génère une. Si le paramètre "nouvelle" est ajouté et est égale à 1, génère une nouvelle clé même s'il y en a déjà une.</td>
 </tr>
 </tbody>
 </table>
@@ -925,7 +920,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 <li>Pour le format de la clé, à vous de choisir la façon dont vous allez la générer. Je vous rappelle parcontre qu'elle doit être unique. </li>
 <li>Si la clé est créé ou bien simplement affichée, retournez le code de statut 200. Par contre si l'usager et/ou le mot de passe est invalide, retournez le code 403 et aucune réponse.</li>
 </ul>
-<p>La réponse des deux routes en cas de succès sera similaire : </p>
+<p>La réponse en cas de succès sera la suivante: </p>
 <pre><code class="language-json">{
     &quot;api_key&quot; : &quot;la_valeur_de_ma_cle&quot;
 }
@@ -943,7 +938,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 }
 </code></pre>
 <h3 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (optionnel)</h3>
-<p>Mettez en place un système pour limiter le nombre de requêtes par heure et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403.</p>
+<p>Mettez en place un système pour limiter le nombre de requêtes par jour et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403. La validation se fera uniquement sur les routes qui ont la méthode GET.</p>
 
 
 
