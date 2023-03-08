@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/05_heroku/">
+        <link rel="canonical" href="https://example.com/exercices/05_apikey/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Exercice 05 - Hébergement d'un api avec Heroku - Services Web</title>
+        <title>04b - Sécurité avec clé API - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-05-hebergement-dun-api-avec-heroku" class="md-skip">
+        <a href="#exercice-04b-securite-avec-cle-api" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 05 - Hébergement d'un api avec Heroku
+              04b - Sécurité avec clé API
             
           </span>
         </div>
@@ -224,13 +224,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../01_utilisation_api/" class="md-tabs__link">
+      <a href="../01_utilisation_api/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -380,6 +382,20 @@
     <li class="md-nav__item">
       <a href="../../notes_de_cours/api/documentation_api/" class="md-nav__link">
         Documentation de l'API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/api/auth_http/" class="md-nav__link">
+        Schéma d'authentification HTTP
       </a>
     </li>
   
@@ -583,12 +599,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -661,6 +679,88 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04b - Sécurité avec clé API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        04b - Sécurité avec clé API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modification-a-la-base-de-donnees" class="md-nav__link">
+    Modification à la base de données
+  </a>
+  
+    <nav class="md-nav" aria-label="Modification à la base de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajout-dune-route-pour-obtenir-une-cle-api" class="md-nav__link">
+    Ajout d'une route pour obtenir une clé api
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protection-des-routes-par-un-middleware" class="md-nav__link">
+    Protection des routes par un middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiter-le-nombre-de-requetes-optionnel" class="md-nav__link">
+    Limiter le nombre de requêtes (optionnel)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -687,6 +787,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modification-a-la-base-de-donnees" class="md-nav__link">
+    Modification à la base de données
+  </a>
+  
+    <nav class="md-nav" aria-label="Modification à la base de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajout-dune-route-pour-obtenir-une-cle-api" class="md-nav__link">
+    Ajout d'une route pour obtenir une clé api
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protection-des-routes-par-un-middleware" class="md-nav__link">
+    Protection des routes par un middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiter-le-nombre-de-requetes-optionnel" class="md-nav__link">
+    Limiter le nombre de requêtes (optionnel)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -700,8 +842,108 @@
                   
 
 
-<h1 id="exercice-05-hebergement-dun-api-avec-heroku">Exercice 05 - Hébergement d'un api avec Heroku</h1>
-<p>En vous aidant des notes de cours, faites une mise en ligne de votre exercice 04 sur un compte Heroku. Vous devez me remettre ensuite l'url de votre api via le devoir sur Teams.</p>
+<h1 id="exercice-04b-securite-avec-cle-api">Exercice 04b - Sécurité avec clé API</h1>
+<p>Pour cet exercice, utilisez l'api que vous avez créé à l'exercice 4. Vous allez implémenter une protection de sorte que pour certaines routes de votre api l'utilisateur devra inclure une clé api valide.</p>
+<h2 id="modification-a-la-base-de-donnees">Modification à la base de données</h2>
+<p>Dans le but de nous simplifier le développement, on va prendre pour acquis qu'il y a déjà un système de création d'usager en place. </p>
+<p>Créez une nouvelle table dans la base de données nommmée <strong>users</strong> avec les champs suivants : </p>
+<table>
+<thead>
+<tr>
+<th>champs</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>La clé primaire</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Le code d'usager, une adresse courriel, doit être UNIQUE non nulle</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Le mot de passe hashé (voir plus bas) un champ texte d'au moins 256 caractères non nulle</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>Un champ texte d'au moins 256 caractères qui peut être nulle mais doit être UNIQUE.</td>
+</tr>
+</tbody>
+</table>
+<p>Ajoutez quelques usagers dans votre table en vous servant de l'extrait de code suivant pour "hashé" le mot de passe et générer le script d'insertion SQL : </p>
+<pre><code>&lt;?php
+
+// Le nom de votre table usager
+$nomTable = &quot;users&quot;;
+// Liste des usagers à ajouter
+$users = [
+        [&quot;code&quot; =&gt; &quot;frechette.mathieu@cegepvicto.ca&quot;, &quot;password&quot; =&gt; &quot;qwerty&quot;],
+        [&quot;code&quot; =&gt; &quot;math.frechette@gmail.com&quot;, &quot;password&quot; =&gt; &quot;1234&quot;],
+    ];
+
+
+$scriptSQL = &quot;INSERT INTO $nomTable(code, password, api_key) VALUES &quot;;
+
+foreach($users as $user) {
+    $scriptSQL .= &quot;('&quot; . $user['code'] . &quot;', '&quot; . password_hash($user['password'], PASSWORD_DEFAULT) . &quot;', null),&quot;;
+}
+
+
+echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
+</code></pre>
+<p>Je vous conseille de rouler ce code dans un éditeur de code PHP en ligne tel que <a href="https://onlinephp.io/">https://onlinephp.io/</a> pour récupérer facilement le résultat.</p>
+<h3 id="ajout-dune-route-pour-obtenir-une-cle-api">Ajout d'une route pour obtenir une clé api</h3>
+<p>Maintenant qu'on a une table dans la base de données avec une liste d'usager, on va créer une nouvelle route qui va permettre à un usager de demander une clé api.</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Route</th>
+<th>DEscription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/api</td>
+<td>Retourne la clé api de l'usager. S'il n'y en a pas de créé, en génère une.</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/api/nouvelle</td>
+<td>Génère une nouvelle clé api</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Les informations de l'usager (nom d'usager et mot de passe) doivent être incluses dans l'entête de la requête sous le format d'une authentification basique.(Voir les notes de cours sur les authentifications HTTP).</li>
+<li>Veillez à encoder les informations en base64. (Regardez la fonction base64_encode en PHP) Encore une fois servez-vous d'un éditeur de PHP en ligne pour générer votre jeton encodé.</li>
+<li>Quand on génère une clé, on va l'enregistrer dans la table <strong>users</strong> à la colonne <strong>api_key</strong>.</li>
+<li>Pour le format de la clé, à vous de choisir la façon dont vous allez la générer. Je vous rappelle parcontre qu'elle doit être unique. </li>
+<li>Si la clé est créé ou bien simplement affichée, retournez le code de statut 200. Par contre si l'usager et/ou le mot de passe est invalide, retournez le code 403 et aucune réponse.</li>
+</ul>
+<p>La réponse des deux routes en cas de succès sera similaire : </p>
+<pre><code class="language-json">{
+    &quot;api_key&quot; : &quot;la_valeur_de_ma_cle&quot;
+}
+</code></pre>
+<h3 id="protection-des-routes-par-un-middleware">Protection des routes par un middleware</h3>
+<p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes qui ont les méthodes POST, PUT, PATCH et DELETE devront être protégé par le middleware. Les routes GET ne seront pas affecté par la vérification. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
+<p><code>Authorization : api_key la_valeur_de_ma_cle</code></p>
+<ul>
+<li>Validez simplement que la clé existe bien dans la table <strong>users</strong> de la base de données.</li>
+<li>Si la clé existe, laisser passer la requête.</li>
+<li>Sinon, retourne le code de statut 403 et la réponse suivante : </li>
+</ul>
+<pre><code class="language-json">{
+    &quot;erreur&quot; : &quot;La clé est invalide. Accès non autorisé&quot;
+}
+</code></pre>
+<h3 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (optionnel)</h3>
+<p>Mettez en place un système pour limiter le nombre de requêtes par heure et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403.</p>
 
 
 
@@ -722,6 +964,27 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../04_imdb/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 04 - IMDB API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              04 - IMDB API
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
