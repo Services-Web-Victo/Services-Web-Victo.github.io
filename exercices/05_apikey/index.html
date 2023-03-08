@@ -926,7 +926,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 }
 </code></pre>
 <h3 id="protection-des-routes-par-un-middleware">Protection des routes par un middleware</h3>
-<p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes qui ont les méthodes POST, PUT, PATCH et DELETE devront être protégé par le middleware. Les routes GET ne seront pas affecté par la vérification. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
+<p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes devront être protégé par le middleware. Les routes GET ne seront pas affecté par la vérification. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
 <p><code>Authorization : api_key la_valeur_de_ma_cle</code></p>
 <ul>
 <li>Validez simplement que la clé existe bien dans la table <strong>users</strong> de la base de données.</li>
