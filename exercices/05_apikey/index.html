@@ -914,7 +914,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 }
 </code></pre>
 <h2 id="protection-des-routes-par-un-middleware">Protection des routes par un middleware</h2>
-<p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes devront être protégé par le middleware. Les routes GET ne seront pas affecté par la vérification. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
+<p>Créez un middleware qui va s'assurer que la clé api qu'on envoie avec la requête est valide. Dans votre api, toute les routes devront être protégé par le middleware à l'exception de la route qui permet d'obtenir une clé que vous venez de créer. La clé devra être incluse dans l'entête de la requête sous le format suivant : </p>
 <p><code>Authorization : api_key la_valeur_de_ma_cle</code></p>
 <ul>
 <li>Validez simplement que la clé existe bien dans la table <strong>users</strong> de la base de données.</li>
@@ -926,7 +926,7 @@ echo substr($scriptSQL, 0, -1) . &quot;;&quot;;
 }
 </code></pre>
 <h2 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (optionnel)</h2>
-<p>Mettez en place un système pour limiter le nombre de requêtes par jour et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403. La validation se fera uniquement sur les routes qui ont la méthode GET.</p>
+<p>Mettez en place un système pour limiter le nombre de requêtes par jour et par clé api. Si l'usager dépasse le nombre de requêtes permise, retourner un message d'erreur avec le code de statut 403. La validation se fera uniquement sur les routes <code>GET /film</code> et <code>GET /film/{id}</code>.</p>
 
 
 
