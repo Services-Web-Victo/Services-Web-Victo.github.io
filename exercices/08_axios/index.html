@@ -15,7 +15,7 @@
     
     
       
-        <title>Exercice 08 - Consommer une api avec Axios - Services Web</title>
+        <title>08 - Consommer une api avec Axios - Services Web</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 08 - Consommer une api avec Axios
+              08 - Consommer une api avec Axios
             
           </span>
         </div>
@@ -224,13 +224,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../01_utilisation_api/" class="md-tabs__link">
+      <a href="../01_utilisation_api/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -626,8 +628,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../notes_de_cours/react/cycle_de_vie/" class="md-nav__link">
+        Cycle de vie d'une application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../notes_de_cours/react/snippet/" class="md-nav__link">
         Extraits de code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/react/fetch_api/" class="md-nav__link">
+        Consommer un service Web avec Axios
       </a>
     </li>
   
@@ -756,12 +786,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -876,6 +908,61 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          08 - Consommer une api avec Axios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        08 - Consommer une api avec Axios
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -915,13 +1002,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#corrige" class="md-nav__link">
-    Corrigé
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -941,24 +1021,25 @@
 <p>En vous inspirant de l'affichage présenté sur le site <a href="https://randomuser.me/">https://randomuser.me/</a>, créez une application React qui affichera certaines informations d'un utilisateur obtenu grâce à un appel à l'api du même site.</p>
 <h2 id="instructions">Instructions</h2>
 <ul>
-<li>Créez un nouveau projet avec <strong>Create React App</strong> que vous nommerez ex08_nom_prenom et faite le nécessaire le relier à un dépôt Github sur votre compte personnelle.</li>
+<li>Créez un nouveau projet avec <strong>Create React App</strong> que vous nommerez ex08_nom_prenom et faite le nécessaire pour le relier à un dépôt Github sur votre compte personnelle.</li>
 <li>À l'affichage et au rafraichissement de la page, votre application doit faire un appel à l'api de <strong>RandomUser</strong> et afficher les informations obtenues dans un composant "carte".</li>
 <li>Je vous laisse "découper" la carte en composant comme bon vous semble mais ça vous prends minimalement les composants suivants : </li>
-<li><code>Card</code> : Le composant "maitre" qui va englober les autres.</li>
+<li><code>Card</code> : Le composant "maitre" qui va englober les autres et qui fera l'appel à l'api de RandomUser.</li>
 <li><code>Avatar</code> : Il s'occupe d'afficher uniquement la photo.</li>
-<li><code>Information</code> : La zone du bas où sont affiché les informations de l'usager</li>
-<li>Le composant doit être autonome, c'est-à-dire que si je l'inclus 2 fois dans la page, deux appels différent à l'api seront fait.</li>
+<li>
+<p><code>Information</code> : La zone du bas où sont affiché les informations de l'usager</p>
+</li>
+<li>
+<p>Le composant <code>Card</code> doit être autonome, c'est-à-dire que si je l'inclus 2 fois dans la page, deux appels différent à l'api seront fait.</p>
+</li>
 <li>Consulter la documentation du site <a href="https://randomuser.me/api/">https://randomuser.me/api/</a> pour connaître l'url à utiliser et connaitre le format de la réponse.</li>
-<li>Dans la section information, quand on clique sur un des icones, l'information affichée sous la photo doit être modifié en conséquence. Référez-vous à l'affichage fait sur <a href="https://randomuser.me/">https://randomuser.me/</a>.</li>
+<li>Dans la section information, affichez le message "Salut, je m'appelle " et en dessous le nom récupéré de l'api.</li>
+<li>Faites en sorte que lorque vous cliquez sur l'image de l'utilisateur, la carte se rafraichisse et affiche un nouvel utilisateur.</li>
+<li>(Optionnel) Ajoutez des icones comme sur l'image plus bas et quand on clique sur l'une d'elles, l'information affichée sous la photo sera modifiée en conséquence. Référez-vous à l'affichage fait sur <a href="https://randomuser.me/">https://randomuser.me/</a>.</li>
 <li>Une fois l'exercice terminé, poussez votre projet sur GitHub et retournez le devoir Teams associé avec l'url de votre dépôt.</li>
 </ul>
 <p><strong>Exemple de résultat</strong></p>
 <p><img alt="exercice08_maquette" src="\img\exercice08_maquette.png" /></p>
-<h2 id="corrige">Corrigé</h2>
-<p>Je suis allé un peu trop loin dans le design pour ce que je demandais, mais l'essence de l'appel à l'api et de la récupération des données est là.</p>
-<ul>
-<li><a href="https://github.com/ServiceWeb-H2022/corrige_exercice_08">https://github.com/ServiceWeb-H2022/corrige_exercice_08</a></li>
-</ul>
 
 
 
@@ -979,6 +1060,27 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../07_react_state/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 07 - L&#39;état local" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              07 - L'état local
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

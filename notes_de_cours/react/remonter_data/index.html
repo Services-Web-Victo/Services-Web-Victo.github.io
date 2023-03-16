@@ -642,8 +642,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../cycle_de_vie/" class="md-nav__link">
+        Cycle de vie d'une application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../snippet/" class="md-nav__link">
         Extraits de code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fetch_api/" class="md-nav__link">
+        Consommer un service Web avec Axios
       </a>
     </li>
   
@@ -892,6 +920,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/08_axios/" class="md-nav__link">
+        08 - Consommer une api avec Axios
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -935,7 +977,7 @@
 <p>On a vu qu'en React les "données descendent, l'état remonte". En passant les données en paramètre du composant parent au composant enfant on peut y accéder avec l'objet <strong>props</strong> mais elles sont en lecture seule. Quand on veut faire remonter des données dans l'autre sens on doit utiliser une fonction défini dans le composant parent et la passer elle aussi en paramètre au composant enfant. </p>
 <p>Prenons comme exemple l'affichage suivant qui est divisé en deux composant parent / enfant : </p>
 <p><img alt="react_state01" src="\img\react_state01.png" /></p>
-<p>La valeur du nom est stocké dans l'état local de <strong>App.js</strong>. On veut pouvoir le modifier dans la zone de texte du composant <strong>EditName</strong>. Le composant <strong>App.js</strong> va passer en paramètre la valeur du nom mais il ne pourra pas être modifier par le composant enfant car les props sont toujours en lecture seule. On va devoir créer une fonction dans <strong>App.js</strong> qui va modifier l'état de celui-ci et la passer en paramètre au composant <strong>EditName</strong>. Ensuite dans <strong>EditName</strong> on va associer une fonction à l'événement <strong>OnChange</strong> de la zone de saisie et dans cette fonction on va appeler la fonction reçu en paramètre par le composant <strong>App</strong>.</p>
+<p>La valeur du nom est stocké dans l'état local de <strong>App.js</strong>. On veut pouvoir le modifier dans la zone de texte du composant <strong>EditName</strong>. Le composant <strong>App.js</strong> va passer en paramètre la valeur du nom mais il ne pourra pas être modifié par le composant enfant car les props sont toujours en lecture seule. On va devoir créer une fonction dans <strong>App.js</strong> qui va modifier l'état de celui-ci et la passer en paramètre au composant <strong>EditName</strong>. Ensuite dans <strong>EditName</strong> on va associer une fonction à l'événement <strong>OnChange</strong> de la zone de saisie et dans cette fonction on va appeler la fonction reçu en paramètre par le composant <strong>App</strong>.</p>
 <p>App.js</p>
 <pre><code class="language-react">import React from 'react';
 import './App.css';
