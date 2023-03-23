@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/09_auth_api_key/">
+        <link rel="canonical" href="https://example.com/exercices/09_react_form/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Exercice 09 - Authentification avec une clé API - Services Web</title>
+        <title>09 - Gestion de formulaire - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-09-authentification-avec-une-cle-api" class="md-skip">
+        <a href="#exercice-9-les-formulaires-en-react" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 09 - Authentification avec une clé API
+              09 - Gestion de formulaire
             
           </span>
         </div>
@@ -224,13 +224,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../01_utilisation_api/" class="md-tabs__link">
+      <a href="../01_utilisation_api/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -662,6 +664,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/react/form/" class="md-nav__link">
+        Gestion de formulaire en React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/react/axios_crud/" class="md-nav__link">
+        Opération CRUD avec Axios
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -784,12 +814,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -918,6 +950,95 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          09 - Gestion de formulaire
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        09 - Gestion de formulaire
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liste-des-routes-a-votre-disposition" class="md-nav__link">
+    Liste des routes à votre disposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-des-composants" class="md-nav__link">
+    Création des composants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composition-du-formulaire" class="md-nav__link">
+    Composition du formulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement-de-la-composante" class="md-nav__link">
+    Fonctionnement de la composante
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -959,49 +1080,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#modification-a-la-base-de-donnees" class="md-nav__link">
-    Modification à la base de données
+  <a href="#liste-des-routes-a-votre-disposition" class="md-nav__link">
+    Liste des routes à votre disposition
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ajout-dune-route-pour-obtenir-une-cle-api" class="md-nav__link">
-    Ajout d'une route pour obtenir une clé api
+  <a href="#creation-des-composants" class="md-nav__link">
+    Création des composants
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#protection-de-la-route-de-selection-des-livres" class="md-nav__link">
-    Protection de la route de sélection des livres
+  <a href="#composition-du-formulaire" class="md-nav__link">
+    Composition du formulaire
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modification-de-la-route-de-creation-dun-usager" class="md-nav__link">
-    Modification de la route de création d'un usager
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limiter-le-nombre-de-requetes-optionnel" class="md-nav__link">
-    Limiter le nombre de requêtes (Optionnel)
+  <a href="#fonctionnement-de-la-composante" class="md-nav__link">
+    Fonctionnement de la composante
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extrait-de-code" class="md-nav__link">
-    Extrait de code
-  </a>
   
 </li>
       
@@ -1020,16 +1127,12 @@
                   
 
 
-<h1 id="exercice-09-authentification-avec-une-cle-api">Exercice 09 - Authentification avec une clé API</h1>
-<p>À partir de l'exercice 4, on va implémenter une protection de certaines routes à l'aide d'une clé api et d'un middleware. </p>
+<h1 id="exercice-9-les-formulaires-en-react">Exercice 9 - Les formulaires en React</h1>
+<p>À partir de l'application React que vous avez créé dans l'exercice 06 et de l'api que je vais vous fournir, vous allez créer un composant React de gestion de livre.</p>
 <h2 id="instructions">Instructions</h2>
-<h3 id="modification-a-la-base-de-donnees">Modification à la base de données</h3>
-<p>Dans votre base de données, créez une nouvelle table selon les spécifications suivantes. Cette table va contenir une série de clés api générées aléatoirement. Chaque clé est lié à un utilisateur de la table <strong>users</strong>. Vous devez aussi créer une clé étrangère sur la colonne user_id vers la colonne id de la table <strong>users</strong>. Quand l'utilisateur est supprimé, il faut que la clé api soit automatiquement supprimé aussi. (Ajoutez l'option ON DELETE Cascade à la clé étrangère).</p>
-<p><img alt="exercice09_bd" src="\img\exercice09_bd.png" /></p>
-<p>Ajoutez aussi dans la table <strong>user</strong> une nouvelle colonne password. Cette colonne va contenir un mot de passe hashé à l'aide de la fonction password_hash() de PHP.</p>
-<p><img alt="exercice09_bd2" src="\img\exercice09_bd2.png" /></p>
-<h3 id="ajout-dune-route-pour-obtenir-une-cle-api">Ajout d'une route pour obtenir une clé api</h3>
-<p>Ajoutez la route suivante à votre projet, elle permettra a un utilisateur valide d'obtenir une clé api valide.</p>
+<p>Modifiez le projet que vous aviez fait pour l'exercice 06 ou bien créez un nouveau projet avec <strong>Create React App</strong>.</p>
+<h3 id="liste-des-routes-a-votre-disposition">Liste des routes à votre disposition</h3>
+<p>Voici les routes qui vous permettront de faire la gestion de la base de donnée de livres. L'adresse du serveur est <code>https://api.mathieufrechette.ca/exreact</code></p>
 <table>
 <thead>
 <tr>
@@ -1041,72 +1144,69 @@
 <tbody>
 <tr>
 <td>GET</td>
-<td>/cle_api</td>
-<td>Obtenir une nouvelle clé api pour un utilisateur</td>
+<td>/livre</td>
+<td>La liste de tous les livres.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/livre</td>
+<td>Ajouter un livre.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/livre/{id}</td>
+<td>Modification ou création d'un livre selon un id</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/livre/{id}</td>
+<td>Suppression d'un livre selon son id</td>
 </tr>
 </tbody>
 </table>
-<p>Dans l'entête de la requête, on devra inclure les informations d'autorisation qu'on utiliserait si on faisait une authentification basique. </p>
-<pre><code>Authorization: Basic bG9sOnNlY3VyZQ==
+<p>Pour les routes POST et PUT, vous devez inclure les informations suivantes dans le corps de la requête : </p>
+<pre><code>{
+    &quot;titre&quot; : &quot;Le titre du livre&quot;
+}
 </code></pre>
-<p>Ajouter ensuite le code nécessaire pour </p>
+<h3 id="creation-des-composants">Création des composants</h3>
+<p>Vous devez segmenter l'interface de gestion des livres en composantes de la façon suivante : </p>
 <ul>
-<li>Décoder le "token" reçu et en extraire le nom d'usager et le mot de passe.</li>
-<li>Vérifier que le nom d'usager existe dans la base de données et que le mot de passe est valide. Vous allez avoir besoin des fonctions PHP <code>password_hash</code> et <code>password_verify</code></li>
-<li>Si tout est conforme, générez une clé_api de 10 caractères aléatoire.</li>
-<li>Enregistrez la clé dans la base de données et retournez la réponse suivante. S'il y a déjà une clé présente pour l'utilisateur, écraser l'ancienne pour la remplacer par la nouvelle.</li>
+<li>GestionLivre : Composante principale, c'est ici que les modifications à la base de données seront faites.</li>
+<li>FormGestionLivre : Composante "formulaire", affiche les contrôles nécessaires à l'ajout, la modification ou la suppression d'un livre.</li>
+<li>ListeLivre : Affiche la liste des tous les livres dans un tableau HTML.</li>
 </ul>
-<pre><code class="language-json">{
-    cle_api : &quot;235aed08a0&quot;
-}
-</code></pre>
-<h3 id="protection-de-la-route-de-selection-des-livres">Protection de la route de sélection des livres</h3>
-<p>Créez un middleware qui va protéger la route <code>GET /livres</code> en permettant d'y accéder seulement si une clé api valide est incluse dans l'entête de la requète HTTP sous le format suivant </p>
-<pre><code>Authorization: Api_key 235aed08a0
-</code></pre>
-<p>Si la clé ne figure pas dans la base de données, retournez une réponse vide avec le code de statut <code>401 Unauthorized</code></p>
-<h3 id="modification-de-la-route-de-creation-dun-usager">Modification de la route de création d'un usager</h3>
-<p>Modifiez la route <code>POST /users</code> de création d'un usager. La route devra maintenant prendre en valeur dans le "body" un mot de passe (déjà hashé) et l'ajouter dans la base de données lors de l'insertion. (Voir plus bas l'extrait de code PHP pour hashé le mot de passe). Si vous avez déjà des usagers dans la table, veuillez leur générer un mot de passe à chacun.</p>
-<h3 id="limiter-le-nombre-de-requetes-optionnel">Limiter le nombre de requêtes (Optionnel)</h3>
-<p>Modifiez votre code pour limiter le nombre de requêtes permises par heure à 30 par clé api. Ex: Une première requête est fait aujourd'hui à 08:31. On ne doit pas permettre plus de 29 autres requêtes jusqu'à 09:31. Quand la limite est dépassé, retournez un message d'information pertinant à l'utilisateur.</p>
-<h2 id="extrait-de-code">Extrait de code</h2>
-<p><strong>Script pour hashé un mot de passe et un bearer token</strong></p>
-<pre><code class="language-php">&lt;?php
-// Utilisation &gt; php nomDuScript.php nomUsager motDePasse
-$user = $argv[1];
-$password = $argv[2];
-
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$token = base64_encode(&quot;username:&quot; . $user . &quot; password:&quot; . $password);
-
-// Le mot de passe hashé, peut être utilisé pour ajouter manuellement le mot
-// de passe dans la table users de la BD ou bien en utilisant la route de création d'usager
-echo &quot;Mot de passe hashé : &quot; . $hashedPassword . &quot;\n&quot;;
-// Ce qui doit être ajouté dans l'entête de la requête http
-echo &quot;Bearer token : &quot; . $token;
-
-?&gt;
-</code></pre>
-<p><strong>Récupération de la valeur de la clé Authorization de l'entête d'un requête HTTP en PHP</strong></p>
-<pre><code class="language-php">&lt;?php
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
-
-class BasicAuthMiddleware
-{
-    public function __invoke(
-        Request $request, 
-        RequestHandler $handler): ResponseInterface
-    {        
-        // Extraction du token encodé de l'entête. 
-        // Ex: Si on a comme valeur dans l'entête Authorization: Basic bG9sOnNlY3VyZQ==
-        // Alors la valeur de $token sera bG9sOnNlY3VyZQ==
-        $token = explode(' ', $request-&gt;getHeaderLine('Authorization'))[1] ?? '';
-
-        // ...
-    }
-}
-</code></pre>
+<h3 id="composition-du-formulaire">Composition du formulaire</h3>
+<p>Le formulaire du composant <code>FormGestionLivre</code> comporte trois boutons : <strong>Nouveau</strong>, <strong>Enregistrer</strong>, et <strong>Supprimer</strong> ainsi qu'un <em>input</em> pour saisir le titre du livre. </p>
+<table>
+<thead>
+<tr>
+<th>Bouton</th>
+<th>Comportement</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nouveau</td>
+<td>Efface les données présentent dans les contrôles du formulaire.</td>
+<td></td>
+</tr>
+<tr>
+<td>Enregistrer</td>
+<td>Crée ou modifie les données selon le cas (Si aucune clé api n'est présente dans la table pour le livre, on crée un nouvel enregistrement, sinon on modifie l'enregistrement déjà présent)</td>
+<td></td>
+</tr>
+<tr>
+<td>Supprimer</td>
+<td>On supprime l'enregistrement dans la base de données</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>La sélection de l'usager se fait par un "Combobox" qui affiche la liste de tous les usagers, pas seulement ceux qui ont déjà une clé d'attribué. L'alimentation du "combobox" se fera à l'aide de la route <code>/users</code> que vous avez créé à l'exercice 4.</p>
+<h3 id="fonctionnement-de-la-composante">Fonctionnement de la composante</h3>
+<p>Quand on clique sur une des lignes de la liste des livres du composant <code>ListeLivre</code>, les données s'affichent dans le formulaire. On peut ensuite les modifier ou supprimer l'enregistrement en cliquant sur les boutons appropriés. La liste des livres doit se mettre à jour automatiquement sans devoir refaire un appel à l'api.</p>
 
 
 
@@ -1127,6 +1227,27 @@ class BasicAuthMiddleware
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../08_axios/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 08 - Consommer une api avec Axios" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              08 - Consommer une api avec Axios
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

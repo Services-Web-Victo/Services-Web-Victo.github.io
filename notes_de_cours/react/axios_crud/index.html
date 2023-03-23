@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/react/classes/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/react/axios_crud/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Classes - Services Web</title>
+        <title>Opération CRUD avec Axios - Services Web</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#operation-crud-avec-axios" class="md-skip">
+          Aller au contenu
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Classes
+              Opération CRUD avec Axios
             
           </span>
         </div>
@@ -196,6 +201,8 @@
         
   
   
+    
+  
 
 
   
@@ -207,7 +214,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../api/bonnes_pratiques/" class="md-tabs__link">
+      <a href="../../api/bonnes_pratiques/" class="md-tabs__link md-tabs__link--active">
         Notes de cours
       </a>
     </li>
@@ -291,12 +298,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -481,12 +490,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -652,6 +663,116 @@
       <a href="../fetch_api/" class="md-nav__link">
         Consommer un service Web avec Axios
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form/" class="md-nav__link">
+        Gestion de formulaire en React
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Opération CRUD avec Axios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Opération CRUD avec Axios
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe-de-base" class="md-nav__link">
+    Principe de base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-des-differentes-operations" class="md-nav__link">
+    Exemples des différentes opérations
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples des différentes opérations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selectionner-la-liste-de-livres" class="md-nav__link">
+    Sélectionner la liste de livres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-livre" class="md-nav__link">
+    Ajouter un livre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifier-un-livre" class="md-nav__link">
+    Modifier un livre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supprimer-un-livre" class="md-nav__link">
+    Supprimer un livre
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -913,6 +1034,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/09_react_form/" class="md-nav__link">
+        09 - Gestion de formulaire
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -936,6 +1071,64 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe-de-base" class="md-nav__link">
+    Principe de base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-des-differentes-operations" class="md-nav__link">
+    Exemples des différentes opérations
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples des différentes opérations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selectionner-la-liste-de-livres" class="md-nav__link">
+    Sélectionner la liste de livres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-livre" class="md-nav__link">
+    Ajouter un livre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifier-un-livre" class="md-nav__link">
+    Modifier un livre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supprimer-un-livre" class="md-nav__link">
+    Supprimer un livre
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -950,9 +1143,27 @@
                   
 
 
-  <h1>Classes</h1>
-
-
+<h1 id="operation-crud-avec-axios">Opération CRUD avec Axios</h1>
+<h2 id="principe-de-base">Principe de base</h2>
+<p>Il y a plusieurs façon de gérer les résultats d’opérations CRUD depuis un api. Les exemples que je vais vous donner ici sont basé sur un api de gestion d’une liste de livres et d’un client React qui permet d’effectuer toutes les opérations CRUD avec Axios.</p>
+<p>On va avoir en permanence dans l’objet state un tableau qui contient tous les livres. Dès qu’on va effectuer une opération avec l’api, sur un succès de la requête, on va simplement modifier se tableau pour y appliquer les changements.</p>
+<ul>
+<li><code>SELECT</code> : on remplace le tableau par le résultat.</li>
+<li><code>INSERT</code> : on ajoute le nouveau livre au tableau.</li>
+<li><code>UPDATE</code> : on modifie l’item du tableau selon le id du livre.</li>
+<li><code>DELETE</code> : on enlève du tableau le livre supprimé.</li>
+</ul>
+<p>En liant le tableau de l’object state à une composante qui l’affiche, la mise à jour de la liste s’effectuera automatiquement. </p>
+<h2 id="exemples-des-differentes-operations">Exemples des différentes opérations</h2>
+<h3 id="selectionner-la-liste-de-livres">Sélectionner la liste de livres</h3>
+<p><img alt="selectLivre" src="\img\axios_crud01.png" /></p>
+<h3 id="ajouter-un-livre">Ajouter un livre</h3>
+<p><img alt="insertLivre" src="\img\axios_crud02.png" /></p>
+<h3 id="modifier-un-livre">Modifier un livre</h3>
+<p>L'exemple ici va modifier la liste seulement si le livre modifié était déjà présent. Dans le cas où on ferait la création du livre si le id spécifié n'existe pas, il faudrait adapté un peu le code pour ajouter le livre au tableau s'il a été créé. On pourrait récupérer par exemple le code de statut de la réponse et faire le traitement approprié (200 pour une modification, 201 pour une création)
+<img alt="insertLivre" src="\img\axios_crud03.png" /></p>
+<h3 id="supprimer-un-livre">Supprimer un livre</h3>
+<p><img alt="deleteLivre" src="\img\axios_crud04.png" /></p>
 
 
 
@@ -973,6 +1184,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../form/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Gestion de formulaire en React" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Gestion de formulaire en React
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../slim/devilbox/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Configurer un projet SLIM avec Devilbox" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Configurer un projet SLIM avec Devilbox
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
