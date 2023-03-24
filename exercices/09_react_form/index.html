@@ -1019,8 +1019,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fonctionnement-de-la-composante" class="md-nav__link">
-    Fonctionnement de la composante
+  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
+    Fonctionnement de l'application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-visuel" class="md-nav__link">
+    Exemple de visuel
   </a>
   
 </li>
@@ -1101,8 +1108,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fonctionnement-de-la-composante" class="md-nav__link">
-    Fonctionnement de la composante
+  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
+    Fonctionnement de l'application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-visuel" class="md-nav__link">
+    Exemple de visuel
   </a>
   
 </li>
@@ -1174,7 +1188,7 @@
 <ul>
 <li>GestionLivre : Composante principale, c'est ici que les modifications à la base de données seront faites.</li>
 <li>FormGestionLivre : Composante "formulaire", affiche les contrôles nécessaires à l'ajout, la modification ou la suppression d'un livre.</li>
-<li>ListeLivre : Affiche la liste des tous les livres dans un tableau HTML.</li>
+<li>ListeLivre : Affiche la liste des tous les livres dans un tableau HTML. (Vous pourriez réutiliser les composantes <strong>Tableau</strong> et <strong>LigneTableau</strong> que vous aviez créé à l'exercice 06)</li>
 </ul>
 <h3 id="composition-du-formulaire">Composition du formulaire</h3>
 <p>Le formulaire du composant <code>FormGestionLivre</code> comporte trois boutons : <strong>Nouveau</strong>, <strong>Enregistrer</strong>, et <strong>Supprimer</strong> ainsi qu'un <em>input</em> pour saisir le titre du livre. </p>
@@ -1204,9 +1218,10 @@
 </tr>
 </tbody>
 </table>
-<p>La sélection de l'usager se fait par un "Combobox" qui affiche la liste de tous les usagers, pas seulement ceux qui ont déjà une clé d'attribué. L'alimentation du "combobox" se fera à l'aide de la route <code>/users</code> que vous avez créé à l'exercice 4.</p>
-<h3 id="fonctionnement-de-la-composante">Fonctionnement de la composante</h3>
+<h3 id="fonctionnement-de-lapplication">Fonctionnement de l'application</h3>
 <p>Quand on clique sur une des lignes de la liste des livres du composant <code>ListeLivre</code>, les données s'affichent dans le formulaire. On peut ensuite les modifier ou supprimer l'enregistrement en cliquant sur les boutons appropriés. La liste des livres doit se mettre à jour automatiquement sans devoir refaire un appel à l'api.</p>
+<h3 id="exemple-de-visuel">Exemple de visuel</h3>
+<p><img alt="Visuel" src="/img/exercice09.png" /></p>
 
 
 
