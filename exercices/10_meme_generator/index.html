@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/10_react_form/">
+        <link rel="canonical" href="https://example.com/exercices/10_meme_generator/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
-        <title>Exercice 10 - Les formulaires en React - Services Web</title>
+        <title>10 - Générateur de meme - Services Web</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-10-les-formulaires-en-react" class="md-skip">
+        <a href="#exercice-10-generateur-de-meme" class="md-skip">
           Aller au contenu
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 10 - Les formulaires en React
+              10 - Générateur de meme
             
           </span>
         </div>
@@ -224,13 +224,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../01_utilisation_api/" class="md-tabs__link">
+      <a href="../01_utilisation_api/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -812,12 +814,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -960,6 +964,101 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          10 - Générateur de meme
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        10 - Générateur de meme
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
+    Fonctionnement de l'application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envoyer-des-valeurs-dans-le-corps-de-la-requetes" class="md-nav__link">
+    Envoyer des valeurs dans le corps de la requêtes
+  </a>
+  
+    <nav class="md-nav" aria-label="Envoyer des valeurs dans le corps de la requêtes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sous-postman" class="md-nav__link">
+    Sous Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-la-librairie-axios" class="md-nav__link">
+    Avec la librairie Axios
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1001,29 +1100,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creation-des-routes-necessaires" class="md-nav__link">
-    Création des routes nécessaires
+  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
+    Fonctionnement de l'application
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creation-des-composants" class="md-nav__link">
-    Création des composants
+  <a href="#envoyer-des-valeurs-dans-le-corps-de-la-requetes" class="md-nav__link">
+    Envoyer des valeurs dans le corps de la requêtes
+  </a>
+  
+    <nav class="md-nav" aria-label="Envoyer des valeurs dans le corps de la requêtes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sous-postman" class="md-nav__link">
+    Sous Postman
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#composition-du-formulaire" class="md-nav__link">
-    Composition du formulaire
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fonctionnement-du-composant" class="md-nav__link">
-    Fonctionnement du composant
+  <a href="#avec-la-librairie-axios" class="md-nav__link">
+    Avec la librairie Axios
   </a>
   
 </li>
@@ -1048,77 +1153,52 @@
                   
 
 
-<h1 id="exercice-10-les-formulaires-en-react">Exercice 10 - Les formulaires en React</h1>
-<p>À partir de la table <code>cle_api</code> que vous avez créé dans l'exercice 09 et de l'api créé à l'exercice 4, vous allez créer un composant React de gestion des clés api.</p>
+<h1 id="exercice-10-generateur-de-meme">Exercice 10 - Générateur de meme</h1>
+<p>À l'aide de l'api de ImgFlip vous devez creer un générateur de "meme" en react.</p>
 <h2 id="instructions">Instructions</h2>
-<p>Créez un nouveau projet avec <strong>Create React App</strong> pour cet exercice.</p>
-<h3 id="creation-des-routes-necessaires">Création des routes nécessaires</h3>
-<p>Vous allez devoir créer les routes suivantes pour vous permettre d'effectuer la gestion des clés.</p>
-<table>
-<thead>
-<tr>
-<th>Méthode</th>
-<th>Route</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>/cle_api/all</td>
-<td>La liste de toutes les clés api. En plus des champs de la table cle_api, vous devez aussi retourner le nom de l'usager.</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>/cle_api</td>
-<td>Modification ou création d'une clé api. Les données doivent toutes être dans le "body" de la requête.</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/cle_api/{id}</td>
-<td>Suppression d'une clé api selon son id</td>
-</tr>
-</tbody>
-</table>
-<h3 id="creation-des-composants">Création des composants</h3>
-<p>Vous devez segmenter l'interface de gestion des clés en composants de la façon suivante : </p>
 <ul>
-<li>GestionApi : Composant principal, c'est ici que les modifications à la base de données seront fait</li>
-<li>FormGestionApi : Composant "formulaire", affiche les contrôles nécessaires à l'ajout, la modification ou la suppression d'une clé api.</li>
-<li>ListeApi : Affiche la liste des toutes les clés api. Les valeurs "visibles" à l'écran seront le nom de l'usager et sa clé, trié en ordre alphabétique de nom d'usager.</li>
+<li>Créez un nouveau projet avec <strong>Create React App</strong> pour cet exercice.</li>
+<li>Vous allez aussi devoir vous créer un compte gratuit sur le site de ImgFlip : <a href="https://imgflip.com/">https://imgflip.com/</a>.</li>
+<li>Notez bien votre nom d'usager et votre mot de passe, vous allez en avoir besoin pour utiliser l'api.</li>
+<li>Consultez la documentation de l'api à cette adresse : <a href="https://imgflip.com/api">https://imgflip.com/api</a></li>
+<li>Pour le projet vous allez utiliser les routes <code>/get_memes</code> et <code>/caption_image</code>.</li>
 </ul>
-<h3 id="composition-du-formulaire">Composition du formulaire</h3>
-<p>Le formulaire du composant <code>FormGestionApi</code> comporte trois boutons : Nouveau, Enregistrer, Supprimer. </p>
-<table>
-<thead>
-<tr>
-<th>Bouton</th>
-<th>Comportement</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Nouveau</td>
-<td>Efface les données présentent dans les contrôles du formulaire.</td>
-<td></td>
-</tr>
-<tr>
-<td>Enregistrer</td>
-<td>Crée ou modifie les données selon le cas (Si aucune clé api n'est présente dans la table pour l'usager, on crée un nouvel enregistrement, sinon on modifie l'enregistrement déjà présent)</td>
-<td></td>
-</tr>
-<tr>
-<td>Supprimer</td>
-<td>On supprime l'enregistrement dans la base de données</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>La sélection de l'usager se fait par un "Combobox" qui affiche la liste de tous les usagers, pas seulement ceux qui ont déjà une clé d'attribué. L'alimentation du "combobox" se fera à l'aide de la route <code>/users</code> que vous avez créé à l'exercice 4.</p>
-<p>Un champs de saisie texte sera utilisé pour la valeur de la clé api. Ajoutez aussi un bouton "Générer" qui va générer une clé aléatoirement selon la même logique que vous avez utilisé à l'exercice 9.</p>
-<h3 id="fonctionnement-du-composant">Fonctionnement du composant</h3>
-<p>Quand on clique sur une des lignes de la liste des clés du composant <code>ListeApi</code>, les données s'affichent dans le formulaire. On peut ensuite les modifier ou supprimer l'enregistrement en cliquant sur les boutons appropriés. La liste des clés doit se mettre à jour automatiquement sans devoir refaire un appel à l'api.</p>
+<h3 id="fonctionnement-de-lapplication">Fonctionnement de l'application</h3>
+<ul>
+<li>Je vous laisse découper l'application en composante de la façon que vous jugez pertinante.</li>
+<li>Afficher à l'utilisateur 10 images de meme parmi lesquelles il pourra choisir. Ces images seront récupérées depuis le résultat de la route <code>/get_memes</code>. Pour plus de simplicité, ne retenez que les images avec la valeur <code>"box_count" : 2</code>.</li>
+<li>Ensuite ajoutez deux zones de saisies qui permettront d'ajouter deux textes à votre image. </li>
+<li>Quand l'usager cliquera sur un bouton "générer", faites afficher l'image du résultat dans la page. L'image devra se rafraichir à chaque clique du bouton sans réafficher la page.</li>
+<li>Utilisez la route <code>/caption_image</code> pour générer l'image. Attention, la façon d'envoyer les données dans le body est un peu différente de ce qu'on a vu auparavant, voir la note plus bas pour plus de détail.</li>
+<li>Donc en résumé, l'utilisateur sélectionne une des 10 images, inscrit ensuite un texte dans chacune des zones et clique sur le bouton "Générer".</li>
+</ul>
+<h3 id="envoyer-des-valeurs-dans-le-corps-de-la-requetes">Envoyer des valeurs dans le corps de la requêtes</h3>
+<p>Jusqu'à maintenant on a toujours utilisé le format JSON pour envoyer des données dans le "body" de nos requêtes. L'api de ImgFlip accepte un autre format : <code>x-www-form-urlencoded</code>. Le format utilise aussi une syntaxe clé/valeur mais la façon d'inclure les données dans la requête va différer un peu.</p>
+<h4 id="sous-postman">Sous Postman</h4>
+<p>Dans la section "Body", cochez l'option <code>x-www-form-urlencoded</code>. Ensuite entrez vos informations dans le tableau : 
+<img alt="img10_1" src="\img\exercice10_1.png" /></p>
+<h3 id="avec-la-librairie-axios">Avec la librairie Axios</h3>
+<p>Premièrement on va utiliser la classe <code>URLSearchParams</code> pour créer une constante des données qu'on veut envoyer. Ensuite dans notre appel avec axios on va modifier la valeur du "content-type" dans le "header" pour <code>application/x-www-form-urlencoded</code>. On va aussi joindre nos paramêtre sous la clé "data": </p>
+<pre><code>const params = new URLSearchParams({ 
+    template_id : 181913649,
+    username : &quot;********&quot;,
+    password : &quot;********&quot;
+});
+
+axios({
+    method: 'POST',
+    url: 'https://api.imgflip.com/caption_image',
+    // Section headers à ajouter
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded'
+    },
+    // On joint la liste des paramêtres ici
+    data: params
+})
+.then((resultat) =&gt; {
+    // Code lors d'un succès
+})
+</code></pre>
 
 
 
@@ -1139,6 +1219,27 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../09_react_form/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 09 - Gestion de formulaire" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              09 - Gestion de formulaire
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
