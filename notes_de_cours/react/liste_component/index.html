@@ -1103,16 +1103,16 @@
 <p>L'erreur qui est affiché si on ne donne pas le paramètre <code>key</code></p>
 <p><img alt="react_component_list_error" src="\img\react_component_list_error.png" /></p>
 <h2 id="creer-un-tableau-de-composantes">Créer un tableau de composantes</h2>
-<p>Voici deux exemples, le premier avec une boucle <strong>foreach</strong> et le second avec la fonction <strong>array.map</strong>.</p>
+<p>Voici deux exemples, le premier avec une boucle <strong>forEach</strong> et le second avec la fonction <strong>array.map</strong>.</p>
 <pre><code class="language-javascript">let lignesTableau = [];
 
 // La classe reçoit en paramètre un tableau livres
 // LigneTableau est une composante 
-this.props.livres.foreach(function(livre) {
+this.props.livres.forEach(function(livre) {
     lignesTableau.push(&lt;LigneTableau livre={livre} key={livre.id}/&gt;);
 });
 // ou avec une fonction fléchée
-this.props.livres.foreach(book =&gt; lignesTableau.push(&lt;LigneTableau livre={livre} key={livre.id}/&gt;));
+this.props.livres.forEach(book =&gt; lignesTableau.push(&lt;LigneTableau livre={livre} key={livre.id}/&gt;));
 </code></pre>
 <pre><code class="language-javascript">const lignesTableau = this.props.livres.map(livre =&gt; (&lt;LigneTableau book={livre} key={livre.id}/&gt;));
 </code></pre>
