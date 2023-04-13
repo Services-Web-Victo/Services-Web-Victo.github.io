@@ -237,6 +237,24 @@
   
 
       
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Évaluation
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -394,6 +412,20 @@
     <li class="md-nav__item">
       <a href="../../notes_de_cours/api/auth_http/" class="md-nav__link">
         Schéma d'authentification HTTP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/api/unit_test/" class="md-nav__link">
+        Tester notre api
       </a>
     </li>
   
@@ -980,6 +1012,145 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Évaluation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Évaluation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Évaluation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Épreuve finale
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Épreuve finale
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enonce-de-lepreuve" class="md-nav__link">
+    Énoncé de l’épreuve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contexte-de-realisation" class="md-nav__link">
+    Contexte de réalisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specification-de-lepreuve" class="md-nav__link">
+    Spécification de l’épreuve
+  </a>
+  
+    <nav class="md-nav" aria-label="Spécification de l’épreuve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-service-web" class="md-nav__link">
+    Le service Web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-client-web" class="md-nav__link">
+    Le client Web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-unitaire" class="md-nav__link">
+    Test unitaire
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grille-de-correction" class="md-nav__link">
+    Grille de correction
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1043,15 +1214,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#suivi-de-version" class="md-nav__link">
-    Suivi de version
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    Tests
+  <a href="#test-unitaire" class="md-nav__link">
+    Test unitaire
   </a>
   
 </li>
@@ -1086,7 +1250,7 @@
 <h1 id="epreuve-finale">Épreuve finale</h1>
 <h2 id="enonce-de-lepreuve">Énoncé de l’épreuve</h2>
 <p>Vous devez développer seul un service web selon les spécifications décrites plus bas et l’intégrer
-dans un site Web.</p>
+dans un site Web codé avec React.</p>
 <h2 id="contexte-de-realisation">Contexte de réalisation</h2>
 <ul>
 <li>Le développement se fera durant le temps en classe et hors classe.</li>
@@ -1108,34 +1272,22 @@ dans un site Web.</p>
    classe.</li>
 <li>Toutes les routes doivent être couvertes par des tests fonctionnels. (Voir section Tests plus
    loin)</li>
-<li>Au moins une des routes doit être protégée par un système d’authentification de votre
-   choix (basic, avec JWT, etc.)</li>
-<li>Le service web doit être hébergé en ligne sur l’hébergeur de votre choix.</li>
+<li>Les routes doivent être protégées par un système d’authentification par "bearer token" avec clé d'api. La clé d'api doit être associé à un usager dans votre base de donnée.</li>
+<li>Créez une route qui permettra, en envoyant un code d'usager et un mot de passe encodé, de générer une nouvelle clé api si l'usager existe dans votre base de données et que le mot de passe est valide. </li>
 </ol>
 <h3 id="le-client-web">Le client Web</h3>
 <ol>
 <li>Le client web doit utiliser React pour l’affichage et la gestion des
    opérations avec le service web.</li>
 <li>Il permettra de se connecter à votre service web et d’interagir avec les routes.</li>
-<li>L’utilisateur devra pouvoir utiliser votre site web pour pouvoir afficher, ajouter, modifier
-   et supprimer des données. Comme pour le service web, vous n’êtes pas obligé de couvrir
-   toutes les tables possibles de votre base de données.</li>
+<li>L’utilisateur devra pouvoir utiliser votre site web pour interagir avec les routes que vous avez définies dans votre service web. Encore une fois vous devez au minimum permettre interaction avec une route GET, POST, PUT et DELETE. </li>
 <li>Le site web doit aussi utiliser une seconde API que vous n’avez pas développée. Ça peut
-   être une API publique (météo, Random User, Unsplash, etc.) ou bien l’api d’un autre élève.</li>
+   être une API publique (météo, "Random User", "Unsplash", etc.) ou bien l’api d’un autre élève.</li>
+<li>Ajouter une section à votre page où l'usager pourra inscrire un code usager et un mot de passe. Ensuite, en cliquant sur un bouton, un appel sera fait à votre route pour générer une nouvelle clé et elle sera affichée dans votre page.</li>
 <li>L’aspect esthétique ne sera pas évalué, je veut que ça fonctionne avant tout.</li>
 </ol>
-<h3 id="suivi-de-version">Suivi de version</h3>
-<ol>
-<li>Vous devez faire un suivi de version sur Github.</li>
-<li>Un premier push à votre repo distant doit être fait avant de commencer à développer.</li>
-<li>Ajoutez-moi comme collaborateur à votre repo.</li>
-<li>Utilisateur : FrechetteMathieu</li>
-<li>Email : frechette.mathieu@carrefour.cegepvicto.ca</li>
-<li>Vous devez faire des commits et des push de façon régulière (idéalement après chaque fonctionnalité terminée
-  que vous codez).</li>
-</ol>
-<h3 id="tests">Tests</h3>
-<p>Pour chaque route, vous devez tester au minimum les deux points suivants :</p>
+<h3 id="test-unitaire">Test unitaire</h3>
+<p>Pour la route avec la méthode PUT, vous devez tester au minimum les deux points suivants :</p>
 <ul>
 <li>Le code de statut retourné est bon</li>
 <li>Les valeurs de retours sont ce qui est attendu</li>
@@ -1152,31 +1304,23 @@ dans un site Web.</p>
 <tbody>
 <tr>
 <td><strong>Partie #1 - Le service Web</strong></td>
-<td align="right"><strong>/65</strong></td>
+<td align="right"><strong>/60</strong></td>
 </tr>
 <tr>
-<td>La base de données doit être composée d’un minimum de deux tables.</td>
-<td align="right">5</td>
+<td>Une route est créé, est fonctionnelle et retourne le bon code d'état pour chacune des méthodes suivantes : GET, POST, PUT, DELETE (10 points par route)</td>
+<td align="right">/40</td>
 </tr>
 <tr>
-<td>Vous devez créer les routes pour couvrir toutes les opérations CRUD sur une des tables de la base de données.</td>
-<td align="right">40</td>
+<td>Toutes les routes sont documentées selon la norme openAPI.</td>
+<td align="right">/5</td>
 </tr>
 <tr>
-<td>Les routes doivent retourner le bon code d’état selon leur type et la situation.</td>
-<td align="right">5</td>
+<td>Toutes les routes sont protégées par un système d’authentification de votre choix par clé d'api.</td>
+<td align="right">/5</td>
 </tr>
 <tr>
-<td>Toutes les routes créées doivent être documentées selon la norme openAPI.</td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td>Au moins une des routes doit être protégée par un système  d’authentification de votre choix (basic, avec JWT, etc.)</td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td>Le service web doit être hébergé en ligne sur l’hébergeur de  votre choix.</td>
-<td align="right">5</td>
+<td>Une route permet de demander une nouvelle clé en spécifiant un code usager et un mot de passe valide.</td>
+<td align="right">/10</td>
 </tr>
 <tr>
 <td></td>
@@ -1184,31 +1328,19 @@ dans un site Web.</p>
 </tr>
 <tr>
 <td><strong>Partie #2 - Client React</strong></td>
-<td align="right"><strong>/25</strong></td>
+<td align="right"><strong>/35</strong></td>
 </tr>
 <tr>
-<td>Le site web doit utiliser React pour l’affichage et la gestion des opérations avec le service web.</td>
-<td align="right">5</td>
+<td>L’utilisateur peut utiliser votre site web pour interagir avec les routes que vous avez définies dans votre service web. (5 points par route)</td>
+<td align="right">/20</td>
 </tr>
 <tr>
-<td>L’utilisateur devra pouvoir utiliser votre site web pour pouvoir afficher, ajouter, modifier et supprimer des données.</td>
-<td align="right">15</td>
+<td>Le site web utilise une seconde API que vous n’avez pas développé.</td>
+<td align="right">/5</td>
 </tr>
 <tr>
-<td>Le site web doit aussi utiliser une seconde API que vous n’avez pas développée. Ça peut être une API publique bien l’api d’un autre élève.</td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td><strong>Suivi de version</strong></td>
-<td align="right"><strong>/5</strong></td>
-</tr>
-<tr>
-<td>Un suivi de version est fait avec Github</td>
-<td align="right">5</td>
+<td>L'interface permet de générer une nouvelle clé pour un usager</td>
+<td align="right">/10</td>
 </tr>
 <tr>
 <td></td>
@@ -1219,8 +1351,8 @@ dans un site Web.</p>
 <td align="right"><strong>/5</strong></td>
 </tr>
 <tr>
-<td>Chaque route est testé avec PHPUnit</td>
-<td align="right">5</td>
+<td>Une route avec méthode  PUT est testé avec PHPUnit selon ce qui est demandé.</td>
+<td align="right">/5</td>
 </tr>
 <tr>
 <td></td>
@@ -1252,6 +1384,27 @@ dans un site Web.</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../../exercices/10_meme_generator/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: 10 - Générateur de meme" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              10 - Générateur de meme
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
