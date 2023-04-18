@@ -1118,8 +1118,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#test-unitaire" class="md-nav__link">
-    Test unitaire
+  <a href="#presentation-du-projet" class="md-nav__link">
+    Présentation du projet
   </a>
   
 </li>
@@ -1214,8 +1214,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#test-unitaire" class="md-nav__link">
-    Test unitaire
+  <a href="#presentation-du-projet" class="md-nav__link">
+    Présentation du projet
   </a>
   
 </li>
@@ -1254,10 +1254,11 @@ dans un site Web codé avec React.</p>
 <h2 id="contexte-de-realisation">Contexte de réalisation</h2>
 <ul>
 <li>Le développement se fera durant le temps en classe et hors classe.</li>
-<li>Date limite de remise : Jeudi le 11 mai à 23:59</li>
+<li>Date limite de remise : Jeudi le 11 mai à 17:05</li>
 <li>La remise se fera par Github. Vous pouvez me faire un repo pour le service web et un autre pour le site ou bien me jumeler les deux dans le même.</li>
 <li>Pour la base de données, me faire un dump avec création de tables et inclure le
   fichier dans le projet du service web.</li>
+<li>Une partie du projet sera évaluation par une présentation de votre part. (voir détail plus bas)</li>
 </ul>
 <h2 id="specification-de-lepreuve">Spécification de l’épreuve</h2>
 <h3 id="le-service-web">Le service Web</h3>
@@ -1270,8 +1271,6 @@ dans un site Web codé avec React.</p>
    403, etc.). Fiez-vous aux notes de cours pour la convention qu'on utilise dans le cours.</li>
 <li>Toutes les routes créées doivent être documentées selon la norme openAPI qu’on a vue en
    classe.</li>
-<li>Toutes les routes doivent être couvertes par des tests fonctionnels. (Voir section Tests plus
-   loin)</li>
 <li>Les routes doivent être protégées par un système d’authentification par "bearer token" avec clé d'api. La clé d'api doit être associé à un usager dans votre base de donnée.</li>
 <li>Créez une route qui permettra, en envoyant un code d'usager et un mot de passe encodé, de générer une nouvelle clé api si l'usager existe dans votre base de données et que le mot de passe est valide. </li>
 </ol>
@@ -1286,13 +1285,8 @@ dans un site Web codé avec React.</p>
 <li>Ajouter une section à votre page où l'usager pourra inscrire un code usager et un mot de passe. Ensuite, en cliquant sur un bouton, un appel sera fait à votre route pour générer une nouvelle clé et elle sera affichée dans votre page.</li>
 <li>L’aspect esthétique ne sera pas évalué, je veut que ça fonctionne avant tout.</li>
 </ol>
-<h3 id="test-unitaire">Test unitaire</h3>
-<p>Pour la route avec la méthode PUT, vous devez tester au minimum les deux points suivants :</p>
-<ul>
-<li>Le code de statut retourné est bon</li>
-<li>Les valeurs de retours sont ce qui est attendu</li>
-</ul>
-<p>Vous devez effectuer vos tests directement dans l’api avec PHPUnit.</p>
+<h3 id="presentation-du-projet">Présentation du projet</h3>
+<p>Vous devrez me présenter votre projet lors de sa remise finale. La présentation se fera individuellement sur rendez-vous au maximum lors de la dernière journée de remise. Un horaire de rencontre est disponible sur Teams.</p>
 <h2 id="grille-de-correction">Grille de correction</h2>
 <table>
 <thead>
@@ -1328,31 +1322,19 @@ dans un site Web codé avec React.</p>
 </tr>
 <tr>
 <td><strong>Partie #2 - Client React</strong></td>
-<td align="right"><strong>/35</strong></td>
+<td align="right"><strong>/40</strong></td>
 </tr>
 <tr>
-<td>L’utilisateur peut utiliser votre site web pour interagir avec les routes que vous avez définies dans votre service web. (5 points par route)</td>
-<td align="right">/20</td>
+<td>L’utilisateur peut utiliser votre site web pour interagir avec les routes que vous avez définies dans votre service web. (6 points par route)</td>
+<td align="right">/24</td>
 </tr>
 <tr>
 <td>Le site web utilise une seconde API que vous n’avez pas développé.</td>
-<td align="right">/5</td>
+<td align="right">/6</td>
 </tr>
 <tr>
 <td>L'interface permet de générer une nouvelle clé pour un usager</td>
 <td align="right">/10</td>
-</tr>
-<tr>
-<td></td>
-<td align="right"></td>
-</tr>
-<tr>
-<td><strong>Tests unitaires</strong></td>
-<td align="right"><strong>/5</strong></td>
-</tr>
-<tr>
-<td>Une route avec méthode  PUT est testé avec PHPUnit selon ce qui est demandé.</td>
-<td align="right">/5</td>
 </tr>
 <tr>
 <td></td>
