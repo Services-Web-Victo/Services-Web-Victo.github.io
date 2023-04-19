@@ -186,6 +186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/notes_de_cours/react/infinite_loop/</loc>
+         <lastmod>2023-04-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/notes_de_cours/react/introduction/</loc>
          <lastmod>2023-04-19</lastmod>
          <changefreq>daily</changefreq>
