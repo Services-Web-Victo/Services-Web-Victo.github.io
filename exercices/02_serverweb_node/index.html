@@ -693,6 +693,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    02 - Serveur Web en Node.js
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -702,6 +713,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-routes" class="md-nav__link">
+    Gestion des routes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -734,6 +771,21 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-routes" class="md-nav__link">
+    Gestion des routes
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -771,6 +823,17 @@
 <p>Changez la valeur du <em>Content-Type</em> pour que le format de la réponse soit du html.</p>
 <p>Installez nodemon et configurez votre projet pour pouvoir le lancer avec la commande <code>npm dev</code>.</p>
 <p>Installer le module dotenv et modifiez votre code pour que la valeur du port à utiliser soit stockée dans un fichier <strong>.env</strong>.</p>
+<h2 id="gestion-des-routes">Gestion des routes</h2>
+<p>Maintenant que vous avez un serveur web qui fonctionne, on va l'améliorer un peu avec une gestion basique de route.</p>
+<ul>
+<li>Quand on n'entre que l'hôte ou bien la route <code>/</code>, affichez en html "Bienvenue à mon premier api" dans une balise h1</li>
+<li>Quand on entre la route <code>/professeurs</code>, reprenez le code de la première partie. Donc si j'entre <code>localhost:3000/professeurs?code=1</code> la réponse sera "Bonjour Mathieu Fréchette" dans une balise H1.</li>
+<li>Quand j'entre la route <code>/professeurs/tous</code> je retourne en json l'objet professeurs.</li>
+</ul>
+<div class="admonition astuce">
+<p class="admonition-title">Astuce</p>
+<p>Utilisez la fonction JSON.stringify() pour convertir un objet en JSON. Dans les notes de cours sur le format JSON vous avez des exemples.</p>
+</div>
 
 
 
