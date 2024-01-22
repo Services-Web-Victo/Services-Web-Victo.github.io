@@ -753,6 +753,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Express
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/middleware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intergiciel (middleware)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -838,6 +898,26 @@
   
   <span class="md-ellipsis">
     02 - Serveur Web en Node.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Hello World API
   </span>
   
 
@@ -1001,7 +1081,7 @@
 <h1 id="les-bonnes-pratiques-dans-la-conception-dun-api">Les bonnes pratiques dans la conception d'un API</h1>
 <h2 id="utiliser-le-format-json">Utiliser le format JSON</h2>
 <p>Le format à préconiser pour recevoir et retourner de l'information de notre api est le format JSON. C'est de loin le plus utilisé aujourd'hui et la grande majorité des langages de programmation on des fonctions natives pour le manipuler.</p>
-<p>Plus de détail dans cette section : <a href="/notes_de_cours/api/json">Le format JSON</a></p>
+<p>Plus de détail dans cette section : <a href="../json/">Le format JSON</a></p>
 <h2 id="utiliser-des-noms-au-lieu-de-verbes-pour-les-routes">Utiliser des noms au lieu de verbes pour les routes</h2>
 <p>Quand on nomme les routes de notre api, on ne devrait pas utiliser de verbe. L'emploi d'un nom significatif est à privilégier. Par exemple notre api nous permet de retourner une liste d'utilisateurs ou d'en créer un, on serait tenté d'utiliser comme nom de route </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://monApi/getUtilisateurs
@@ -1089,7 +1169,6 @@
 </tr>
 </tbody>
 </table>
-<p>voir Les méthodes HTTP</p>
 <h2 id="utiliser-les-codes-de-statut-http">Utiliser les codes de statut HTTP</h2>
 <p>Dans la réponse de la requête à votre API utilisez une code de statut HTTP approprié à la situation.</p>
 <ul>
@@ -1190,7 +1269,7 @@
 <p>Quand des ressources de votre api peuvent être reliées, utilisez l'imbrication pour créer des urls significatifs. Par exemple un auteur peut avoir écrit plusieurs livres, on pourrait avoir une route nommée <code>/{auteurs}/livres</code> qui retourne tous les livres de l'auteur en paramètre.</p>
 <p>Il faut cependant faire attention à ne pas trop surcharger la route en allant trop profondément avec l'imbrication.</p>
 <h2 id="permettre-les-filtres-le-tri-selection-des-champs-retournes-et-la-pagination">Permettre les filtres, le tri, sélection des champs retournés et la pagination</h2>
-<p>Pour permettre à l'utilisateur un meilleur contrôle sur les données récupérées, permettez l'utilisation de filtres, de tri et de pagination dans vos requête. Les paramètres devraient être situé dans la section "requête" de l'url</p>
+<p>Pour permettre à l'utilisateur un meilleur contrôle sur les données récupérées, permettez quand c'est possible l'utilisation de filtres, de tri et de pagination dans vos requête. Les paramètres devraient être situé dans la section "requête" de l'url</p>
 <h3 id="filtre">Filtre</h3>
 <p>Utilisez un nom de paramètre significatif. Pour saisir plusieurs valeurs, on doit les séparer par une virgule.</p>
 <p>Exemple : </p>
@@ -1224,9 +1303,11 @@
 <p>On peut bien sur combiner les deux méthodes comme c'est souvent le cas dans les sites d'achats en lignes (On peut choisir la page et le nombre d'articles affichés par page).</p>
 <h2 id="source">Source</h2>
 <ul>
-<li><a href="https://www.moesif.com/blog/api-guide/api-design-guidelines/">https://www.moesif.com/blog/api-guide/api-design-guidelines/</a></li>
-<li><a href="https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/">https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/</a></li>
-<li><a href="https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291">https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291</a></li>
+<li>API design patterns and best practices. API Design Patterns and Best Practices | API Guide. (2022, January 12). <a href="https://www.moesif.com/blog/api-guide/api-design-guidelines/">https://www.moesif.com/blog/api-guide/api-design-guidelines/</a></li>
+<li>Chris, K. (2021, September 16). Rest API best practices – rest endpoint design examples. freeCodeCamp.org. <a href="https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/">https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/</a></li>
+<li>Mockel, J.-M. (2022, June 22). Rest api design best practices handbook – how to build a REST API with JavaScript, node.js, and express.js. freeCodeCamp.org. <a href="https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/">https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/</a></li>
+<li>MozDevNet. (n.d.). Méthodes de requête HTTP - http: MDN. MDN Web Docs. <a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Methods">https://developer.mozilla.org/fr/docs/Web/HTTP/Methods</a> </li>
+<li>Solutions, M.-W. (2017, May 16). 10 best practices for better restful API. Medium. <a href="https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291">https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291</a></li>
 </ul>
 
 
