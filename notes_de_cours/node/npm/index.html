@@ -791,11 +791,115 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheatsheet/" class="md-nav__link">
+      <a href="../express_mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aide-mémoire
+    MySQL avec Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structure_projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure d'un projet Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aide/start_express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Démarrer un projet Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aide/recuperer_parametres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récupérer les paramètres d'une requête
   </span>
   
 
@@ -1182,9 +1286,14 @@ Ensuite dans le code importé le fichier et vous pouvez récupérer les informat
 <div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="na">**/node_modules </span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">.env  </span>
 </span></code></pre></div>
+<p>Parcontre notre application à besoin du fichier <strong>.env</strong> pour fonctionner. Une pratique courante est d'ajouter un fichier <strong>.env.exemple</strong> avec les constantes à avoir mais sans valeur pour indiquer à la personne qui va utiliser votre application quels champs remplir.</p>
+<div class="language-text highlight"><span class="filename">.env.exemple</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cleAPI=
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>utilisateurBD=
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>motDePasse=
+</span></code></pre></div>
 <h2 id="mise-a-jour-des-modules">Mise à jour des modules</h2>
 <p>Pour mettre à jour les modules, on doit faire la commande </p>
-<div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="na">npm update [-g] [&lt;pkg&gt;...]</span>
+<div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="na">npm update [-g] [&lt;pkg&gt;...]</span>
 </span></code></pre></div>
 <figure>
 <p><img alt="npm-versions.png" class="center shadow" src="../../../assets/img/npm-versions.png" />

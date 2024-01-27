@@ -668,11 +668,115 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/cheatsheet/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express_mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aide-mémoire
+    MySQL avec Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/node/structure_projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure d'un projet Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/aide/start_express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Démarrer un projet Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/aide/recuperer_parametres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récupérer les paramètres d'une requête
   </span>
   
 
@@ -946,7 +1050,7 @@
 <p>Créez un nouveau projet dans lequel vous allez créer votre premier API en Node.js à l'aide d'Express.</p>
 <h2 id="simulation-des-donnees">Simulation des données</h2>
 <p>On va simuler l'accès à la base de données avec le tableau d'objets suivant.</p>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">salutations.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">salutations.model.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1028,7 +1132,7 @@
 </table>
 <ul class="task-list">
 <li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Vous devez utiliser l'objet <strong>Router</strong> pour regrouper toutes les routes "salutations" dans un même fichier.</p>
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Vous devez utiliser l'objet <strong>Router</strong> pour regrouper toutes les routes "salutations" dans un même fichier: <strong>salutations.route.js</strong>.</p>
 </li>
 <li class="task-list-item">
 <p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pour la route <code>POST /api/salutations</code>, vous devez dans le corps de la requête envoyer les informations suivantes en JSON (utilisez Postman le faire) : </p>
