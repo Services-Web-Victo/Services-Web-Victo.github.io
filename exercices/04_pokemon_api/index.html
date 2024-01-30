@@ -1180,10 +1180,13 @@
 </span></code></pre></div>
 <p>Créez une route qui va afficher la liste de tous les pokemons. Cette route sera <strong>paginée</strong> et n'affichera que <mark>25 pokemons par page</mark>. Chaque pokemon a aussi un type primaire. On va pouvoir ajouter un filtre en paramêtre pour n'afficher que les pokemons qui sont du type choisi.</p>
 <ul>
-<li>Le paramêtre page est optionnel. S'il n'est pas fournie, on va retourner la page 1.</li>
-<li>Le paramêtre type est aussi optionnel. S'il n'est pas fournie, afficher tous les pokemons. Si le type ne correspond à aucun type dans la table pokemon, on va retourner un tableau vide avec les valeurs nombrePokemonTotal à 0 et la page et totalPage à 1. </li>
+<li>Le paramètre page est optionnel. S'il n'est pas fournie, on va retourner la page 1.</li>
+<li>Le paramètre type est aussi optionnel. S'il n'est pas fournie, afficher tous les pokemons. Si le type ne correspond à aucun type primaire dans la table pokemon, on va retourner un tableau vide avec les valeurs nombrePokemonTotal à 0 et la page et totalPage à 1. </li>
 </ul>
-<p>Explication 
+<div class="admonition astuce">
+<p class="admonition-title">Astuce</p>
+<p>Dans ma solution j'ai seulement ajouté le type primaire comme paramètre de la requête SQL. Ensuite j'ai utilisé <code>array.slice()</code> pour effectuer la pagination sur le tableau de résultats.</p>
+</div>
 <div class="language-json highlight"><span class="filename">reponse</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Succès avec la route /api/pokemons/liste?page=2&amp;type=grass</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Code de statut 200</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
@@ -1217,7 +1220,7 @@
 </span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="p">{</span>
 </span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="nt">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;Echec lors de la récupération de la liste des pokemons&quot;</span>
 </span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="p">}</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h2 id="ajouter-un-pokemon">Ajouter un pokemon</h2>
 <div class="language-json highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/api/pokemo</span><span class="kc">ns</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
