@@ -1214,6 +1214,13 @@
 
 <h1 id="documentation-dun-api-avec-openapi">Documentation d'un API avec OpenAPI</h1>
 <p>La documentation de l'api est une étape essentielle qu'il ne faut pas négliger. Vous devez toujours garder à l'esprit que votre API peut être destiné à être utilisé par d'autres utilisateurs et la documentation va indiquer la marche à suivre. </p>
+<p>Votre documentation doit absolument comporter les éléments suivants : </p>
+<ul>
+<li>Une liste de toutes les routes (<em>endpoint</em>) de votre api avec une descriptioin de leur utilité.</li>
+<li>Les informations d'authentification s'il y a lieu.</li>
+<li>Pour chaque route, les paramètres à ajouter à la requête.</li>
+<li>Pour chaque route, toutes les réponses possibles et les valeurs retournées (code de status, données retournées)</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Nous allons utiliser la norme <a href="https://swagger.io/specification/">OpenAPI</a> pour rédiger la documentation et le module <a href="https://www.npmjs.com/package/swagger-ui-express">Swagger UI Express</a> pour le rendu visuel.</p>
