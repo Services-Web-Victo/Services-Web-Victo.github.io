@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/node/npm/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/securite/hashage/">
       
       
-        <link rel="prev" href="../server_web/">
+        <link rel="prev" href="../cle_api/">
       
       
-        <link rel="next" href="../express/">
+        <link rel="next" href="../../aide/start_express/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>NPM - Services Web</title>
+        <title>Hashage de mot de passe en Node.js - Services Web</title>
       
     
     
@@ -126,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#npm" class="md-skip">
+        <a href="#hasher-un-mot-de-passe-avec-nodejs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -162,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NPM
+              Hashage de mot de passe en Node.js
             
           </span>
         </div>
@@ -536,20 +536,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -563,7 +561,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Node.js
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
+      <a href="../../node/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,11 +594,217 @@
   
   
     <li class="md-nav__item">
-      <a href="../server_web/" class="md-nav__link">
+      <a href="../../node/server_web/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Serveur Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/npm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Express
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/middleware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intergiciel (middleware)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/express_mysql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL avec Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/javascript_async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript asynchrone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/structure_projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structure d'un projet Express.js
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sécurité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sécurité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cle_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clé API
   </span>
   
 
@@ -629,7 +833,7 @@
           
   
   <span class="md-ellipsis">
-    NPM
+    Hashage de mot de passe en Node.js
   </span>
   
 
@@ -640,7 +844,7 @@
         
   
   <span class="md-ellipsis">
-    NPM
+    Hashage de mot de passe en Node.js
   </span>
   
 
@@ -662,30 +866,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#npm-init" class="md-nav__link">
-    npm init
+  <a href="#bcrypt" class="md-nav__link">
+    BCrypt
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#npm-install" class="md-nav__link">
-    npm install
-  </a>
-  
-    <nav class="md-nav" aria-label="npm install">
+    <nav class="md-nav" aria-label="BCrypt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#les-options" class="md-nav__link">
-    Les options
+  <a href="#fonctionnement" class="md-nav__link">
+    Fonctionnement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#npm-install-save-dev" class="md-nav__link">
-    npm install --save-dev
+  <a href="#utilisation" class="md-nav__link">
+    Utilisation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-du-hash" class="md-nav__link">
+    Structure du hash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparer-un-mot-de-passe-a-un-hash" class="md-nav__link">
+    Comparer un mot de passe à un hash
   </a>
   
 </li>
@@ -696,42 +907,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modules-utiles-au-developpement" class="md-nav__link">
-    Modules utiles au développement
-  </a>
-  
-    <nav class="md-nav" aria-label="Modules utiles au développement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nodemon" class="md-nav__link">
-    nodemon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dotenv" class="md-nav__link">
-    dotenv
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#information-a-ajouter-dans-le-fichier-gitignore" class="md-nav__link">
-    Information à ajouter dans le fichier .gitignore
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mise-a-jour-des-modules" class="md-nav__link">
-    Mise à jour des modules
+  <a href="#mediagraphie" class="md-nav__link">
+    Mediagraphie
   </a>
   
 </li>
@@ -740,210 +917,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../express/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Express
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../middleware/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Intergiciel (middleware)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../routage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Routage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../express_mysql/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MySQL avec Express.js
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../javascript_async/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    JavaScript asynchrone
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../structure_projet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Structure d'un projet Express.js
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Sécurité
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Sécurité
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../securite/cle_api/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Clé API
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../securite/hashage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Hashage de mot de passe en Node.js
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1241,30 +1214,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#npm-init" class="md-nav__link">
-    npm init
+  <a href="#bcrypt" class="md-nav__link">
+    BCrypt
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#npm-install" class="md-nav__link">
-    npm install
-  </a>
-  
-    <nav class="md-nav" aria-label="npm install">
+    <nav class="md-nav" aria-label="BCrypt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#les-options" class="md-nav__link">
-    Les options
+  <a href="#fonctionnement" class="md-nav__link">
+    Fonctionnement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#npm-install-save-dev" class="md-nav__link">
-    npm install --save-dev
+  <a href="#utilisation" class="md-nav__link">
+    Utilisation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-du-hash" class="md-nav__link">
+    Structure du hash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparer-un-mot-de-passe-a-un-hash" class="md-nav__link">
+    Comparer un mot de passe à un hash
   </a>
   
 </li>
@@ -1275,42 +1255,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modules-utiles-au-developpement" class="md-nav__link">
-    Modules utiles au développement
-  </a>
-  
-    <nav class="md-nav" aria-label="Modules utiles au développement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nodemon" class="md-nav__link">
-    nodemon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dotenv" class="md-nav__link">
-    dotenv
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#information-a-ajouter-dans-le-fichier-gitignore" class="md-nav__link">
-    Information à ajouter dans le fichier .gitignore
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mise-a-jour-des-modules" class="md-nav__link">
-    Mise à jour des modules
+  <a href="#mediagraphie" class="md-nav__link">
+    Mediagraphie
   </a>
   
 </li>
@@ -1330,161 +1276,100 @@
                   
 
 
-<h1 id="npm">npm</h1>
-<p>Npm est le gestionnaire de paquets (modules) officiel de Node.js. Celui-ci permet d’ajouter des modules externes dans une application Node.js Depuis la version 0.6.3 de Node.js, npm fait partie de l'environnement et est donc automatiquement installé par défaut. npm fonctionne avec un terminal et gère les dépendances pour une application. Il permet également d'installer des applications Node.js disponibles sur le dépôt npm.</p>
+<h1 id="hasher-un-mot-de-passe-avec-nodejs">Hasher un mot de passe avec Node.js</h1>
+<p>Vous êtes responsable des données qui transigent par votre api. Les informations sensibles comme un mot de passe doivent <mark>toujours</mark> être <em>hashé</em> avant d'être enregistrées dans une base de données.</p>
+<p>Petit rappel, le hachage de mot de passe consiste à transformer un mot de passe en lettres alphanumériques à l'aide d'algorithmes spécifiques. </p>
+<h2 id="bcrypt">BCrypt</h2>
+<p>Sous Node.js vous avez la librairie <strong>BCrypt</strong> qui vous aide à <em>hasher</em> un mot de passe et ensuite de le valider. </p>
 <div class="admonition manuel">
 <p class="admonition-title">Manuel</p>
-<p><a href="https://docs.npmjs.com/">Documentation de npm js</a><br />
-<a href="https://fr.wikipedia.org/wiki/Npm">Wikipedia - Article sur npm</a>  </p>
+<p><a href="https://www.npmjs.com/package/bcrypt">https://www.npmjs.com/package/bcrypt</a></p>
 </div>
-<h2 id="npm-init">npm init</h2>
-<p>La commande npm init permet d’initialiser un projet Node.js dans le but de gérer les modules associés au projet. </p>
-<div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">init</span><span class="w"> </span><span class="o">-</span><span class="nx">y</span>
+<h3 id="fonctionnement">Fonctionnement</h3>
+<p>On va fournir à <strong>BCrypt</strong> un mot de passe en clair qu'il va convertir en un hash. C'est cette donnée que nous allons enregistrer dans la base de données. <strong>BCrypt</strong> utilise aussi le concept de <strong>salt</strong> qui ajoute une couche supplémentaire de sécurité. Un <em>salt</em> est une chaine de caractère généré aléatoirement et qui sera ajouté au <em>hash</em>. Un autre concept utilisé est le <em>cost factor</em>, un indicateur du temps pris pour générer le <em>hash</em>. Plus le <em>cost factor</em> est élevé, plus le <em>hash</em> sera sécuritaire mais il sera plus long à générer. </p>
+<h3 id="utilisation">Utilisation</h3>
+<p>Installation</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm install BCrypt
 </span></code></pre></div>
-<p>Cette commande crée un fichier nommé package.json qui contiendra les configurations du projet ainsi que la liste des divers modules nécessaires pour son bon fonctionnement. L'option <strong>-y</strong> va créer le fichier avec les informations par défaut.</p>
-<p><mark class="critic">Cette commande devrait toujours être exécutée avant de procéder à l’installation de modules.</mark>  </p>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<p><a href="https://docs.npmjs.com/cli/v6/commands/npm-init">npm init</a></p>
-</div>
-<div class="language-json highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">package.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppName&quot;</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISC&quot;</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
+<p>Pour hasher une chaine de caractère on va utiliser la fonction <code>hash()</code> de <strong>BCrypt</strong>. La fonction va prendre en argument la chaine de caractère à hasher ainsi que le <em>cost factor</em>. Le <em>salt</em> va étre généré automatiquement et ajouté au <em>hash</em>.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hashage.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bcrypt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bcrypt&#39;</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">costFactor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Admin@1234&quot;</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="hll"><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">costFactor</span><span class="p">)</span>
+</span></span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">hash</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hash: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="p">})</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="npm-install">npm install</h2>
-<p>La commande npm install permet d’installer des modules dans un projet.
-Lors de l’ajout d’un premier module au projet, le dossier node_modules est automatiquement créé. 
-Pour installer un module dans un projet :</p>
-<div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">nomModule</span>
+<p>On pourrait aussi le faire en deux étapes, générer le <em>salt</em> et ensuite le <em>hash</em>.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bcrypt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bcrypt&#39;</span><span class="p">);</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">costFactor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Admin@1234&quot;</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="hll"><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">genSalt</span><span class="p">(</span><span class="nx">costFactor</span><span class="p">)</span>
+</span></span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">salt</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Salt: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">salt</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="hll"><span class="w">    </span><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">salt</span><span class="p">)</span>
+</span></span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">hash</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hash: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="p">})</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="p">})</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="structure-du-hash">Structure du hash</h3>
+<p>Le hash obtenu sera une chaine d'une longueur de 60 caractères sous le format $[Algorithme]$[costFactor]$[Salt/Hash].</p>
+<div class="language-text highlight"><span class="filename">Exemple de hash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$2b$10$MUWYJRZ4mnHGfzf1Dy.34.1cXsQfJ9d3Me1YmUYWY90F1xXnthK2q
 </span></code></pre></div>
-<p>Pour chaque installation de module :<br />
-Un sous-dossier au nom du module est créé. Toutes les dépendances sont également chargées. Le module et ses dépendances sont ajoutées dans le fichier package.json </p>
-<p>Partage et Déploiement :<br />
-Lorsqu’on partage un projet, on ne fournit généralement pas le dossier node_modules car sa taille peut devenir relativement élevée et les versions de Node.js ne sont pas nécessairement les mêmes. 
-La commande npm install (sans préciser le nom du module) permet d’installer automatiquement tous les modules manquants (npm se fie au fichier package.json pour identifier les modules à installer)</p>
-<h3 id="les-options">Les options</h3>
-<p>Lors de l’installation de modules, je recommande toujours d’utiliser la commande disponible dans la procédure d’installation du module. 
-Parfois, certaines options sont nécessaires.  </p>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<p><a href="https://docs.npmjs.com/cli/v6/commands/npm-install">npm-install</a>  </p>
-</div>
-<p>Les plus courantes :  </p>
+<p>Il est composé de 4 parties, le signe $ fait office de séparateur : </p>
 <ul>
-<li><strong>--save</strong> ou <strong>-S</strong> : Ajoute le module à la liste de dépendances dans le fichier package.json. Cette option n’est plus nécessaire depuis la version npm 5.0.0, les modules étant ajoutés par défaut à la liste de dépendances. Vous verrez cependant régulièrement cette option dans les procédures d’installation de modules officiels.  </li>
-<li><strong>--global</strong> ou <strong>-g</strong> : Ajoute le module globalement sur votre PC. Je recommande peu cette option à moins que le module ne soit pas implicitement impliqué dans le projet. <a href="https://docs.npmjs.com/ downloading-and-installing-packages-globally">npm global</a> (If you are using npm 5.2 or higher, we recommend using npx to run packages globally).  </li>
+<li><code>2b</code> : L'algorithme utilisé, ici le code est pour <strong>BCrypt</strong>.</li>
+<li><code>10</code> : Le <em>cost factor</em></li>
+<li><code>MUWYJRZ4mnHGfzf1Dy.34.</code> : Les 22 caractères du <em>salt</em>.</li>
+<li><code>1cXsQfJ9d3Me1YmUYWY90F1xXnthK2q</code> : Le hash en 31 caractères.</li>
 </ul>
-<h3 id="npm-install-save-dev">npm install --save-dev</h3>
-<p>Dans votre développement, c’est possible que vous utilisiez des modules seulement pour aider le développement, mais qui ne sont pas nécessaires en production.</p>
-<p>Dans ce cas, il faut utiliser npm install avec l’option <strong>--save-dev</strong> ou <strong>-D</strong>.  </p>
-<p>Ex :   </p>
-<div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nodemon<span class="w"> </span>--D
-</span></code></pre></div>
-<p>Dans packages.json ça donne :  </p>
-<div class="language-json highlight"><span class="filename">packages.json</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppName&quot;</span><span class="p">,</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="hll"><span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span></span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="hll"><span class="w">    </span><span class="nt">&quot;nodemon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.0.2&quot;</span>
-</span></span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="hll"><span class="w">  </span><span class="p">}</span>
-</span></span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
-</span></code></pre></div>
-<h2 id="modules-utiles-au-developpement">Modules utiles au développement</h2>
-<h3 id="nodemon">nodemon</h3>
-<p>Module qui observe les fichiers de votre projet et qui redémarre le programme automatiquement.</p>
-<p>Installation : </p>
-<div class="language-bash highlight"><span class="filename">Console</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nodemon<span class="w"> </span>-D
-</span></code></pre></div>
-<p>L'option <strong>-D</strong> (ou --save-dev) indique que le module sera installé que pour le développement et qui n'est pas nécessaire. C'est le cas ici pour <em>nodemon</em></p>
-<p>Pour faciliter l’utilisation de <em>nodemon</em>, ajoutez un script dans packages.json en ajustant le nom du fichier JavaScript à lancer au démarrage : </p>
-<div class="language-json highlight"><span class="filename">packages.json</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AppName&quot;</span><span class="p">,</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="hll"><span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodemon fichier.js&quot;</span>
-</span></span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISC&quot;</span><span class="p">,</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nt">&quot;nodemon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.0.2&quot;</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>Pour exécuter votre programme, il suffit de faire la commande :</p>
-<div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>start
-</span></code></pre></div>
-<h3 id="dotenv">dotenv</h3>
-<p>Paramétrer votre application directement dans le code est imprudent. Des informations confidentielles peuvent se retrouver dans votre repo GitHub à la vue de tout le monde, ex :  </p>
-<div class="language-ts highlight"><span class="filename">a_ne_pas_faire.js</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cleAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;FKSDKLJFKDSKLJF898FSDKJKSD898F9DSKLFDSKFSD&quot;</span><span class="p">;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">utilisateurBD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">motDePasse</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">;</span>
-</span></code></pre></div>
-<p>Installation : </p>
-<div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">dotenv</span><span class="w">  </span>
-</span></code></pre></div>
-<p>Pour plus de sécurité créé un fichier nommé <strong>.env</strong> qui va contenir les informations sensibles. Ce fichier <mark>ne doit pas être indexé</mark> dans votre dépot Github, penser à l'ajouter au fichier <strong>.gitignore</strong>.</p>
-<p><div class="language-ini highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">cleAPI</span><span class="o">=</span><span class="s">&quot;FKSDKLJFKDSKLJF898FSDKJKSD898F9DSKLFDSKFSD&quot;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">utilisateurBD</span><span class="o">=</span><span class="s">&quot;admin&quot;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">motDePasse</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
-</span></code></pre></div>
-Ensuite dans le code importé le fichier et vous pouvez récupérer les informations de cette façon :   </p>
-<div class="language-ts highlight"><span class="filename">a_faire.js</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">dotenv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">);</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cleAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">cleAPI</span><span class="p">;</span>
-</span></code></pre></div>
-<h2 id="information-a-ajouter-dans-le-fichier-gitignore">Information à ajouter dans le fichier .gitignore</h2>
-<p>Il est essentiel de ne pas envoyer dans votre dépôt git le dossier <strong>node_modules</strong> ainsi que le fichier <strong>.env</strong> si vous en avez un. Ajoutez ces lignes dans .gitignore : </p>
-<div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="na">**/node_modules </span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">.env  </span>
-</span></code></pre></div>
-<p>Parcontre notre application à besoin du fichier <strong>.env</strong> pour fonctionner. Une pratique courante est d'ajouter un fichier <strong>.env.exemple</strong> avec les constantes à avoir mais sans valeur pour indiquer à la personne qui va utiliser votre application quels champs remplir.</p>
-<div class="language-text highlight"><span class="filename">.env.exemple</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cleAPI=
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>utilisateurBD=
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>motDePasse=
-</span></code></pre></div>
-<h2 id="mise-a-jour-des-modules">Mise à jour des modules</h2>
-<p>Pour mettre à jour les modules, on doit faire la commande </p>
-<div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="na">npm update [-g] [&lt;pkg&gt;...]</span>
-</span></code></pre></div>
-<figure>
-<p><img alt="npm-versions.png" class="center shadow" src="../../../assets/img/npm-versions.png" />
-  </p>
-<figcaption>Le fonctionnement des versions</figcaption>
-</figure>
-<p>Explication du système de version et des symboles utilisés : <a href="https://gist.github.com/jonlabelle/706b28d50ba75bf81d40782aa3c84b3e">npm version cheatsheet</a></p>
+<h3 id="comparer-un-mot-de-passe-a-un-hash">Comparer un mot de passe à un hash</h3>
+<p>Le mot de passe hashé ne pourra jamais être "déhashé". Pour valider un mot de passe (ou tout autre chaine de caractères) nous allons utiliser la fonction <strong>compare</strong> de <strong>BCrypt</strong>.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bcrypt.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="c1">// Code si vrai</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">})</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="c1">// code si faux</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">})</span>
+</span></code></pre></div></td></tr></table></div>
+<p>La fonction va utiliser les informations de l'algorythme, du <em>cost factor</em> et du salt pour hasher le mot de passe sous les mêmes conditions et valider qu'il correspond.</p>
+<h2 id="mediagraphie">Mediagraphie</h2>
+<ul>
+<li>Bcrypt. npm. (n.d.-a). <a href="https://www.npmjs.com/package/bcrypt">https://www.npmjs.com/package/bcrypt</a> </li>
+<li>Patel, H. (2023, March 27). Password hashing in node.js with bcrypt. LogRocket Blog. <a href="https://blog.logrocket.com/password-hashing-node-js-bcrypt/">https://blog.logrocket.com/password-hashing-node-js-bcrypt/</a> </li>
+</ul>
 
 
 
