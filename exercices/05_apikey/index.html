@@ -1118,8 +1118,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-gestion-des-utilisateurs" class="md-nav__link">
-    1. Gestion des utilisateurs
+  <a href="#1-creation-dun-utilisateur" class="md-nav__link">
+    1. Création d'un utilisateur
   </a>
   
 </li>
@@ -1139,8 +1139,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-ajout-dune-route-pour-recuperer-la-cle-optionnel" class="md-nav__link">
-    4. Ajout d'une route pour récupérer la clé (optionnel)
+  <a href="#4-ajout-dune-route-pour-recuperer-la-cle" class="md-nav__link">
+    4. Ajout d'une route pour récupérer la clé
   </a>
   
 </li>
@@ -1188,8 +1188,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-gestion-des-utilisateurs" class="md-nav__link">
-    1. Gestion des utilisateurs
+  <a href="#1-creation-dun-utilisateur" class="md-nav__link">
+    1. Création d'un utilisateur
   </a>
   
 </li>
@@ -1209,8 +1209,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-ajout-dune-route-pour-recuperer-la-cle-optionnel" class="md-nav__link">
-    4. Ajout d'une route pour récupérer la clé (optionnel)
+  <a href="#4-ajout-dune-route-pour-recuperer-la-cle" class="md-nav__link">
+    4. Ajout d'une route pour récupérer la clé
   </a>
   
 </li>
@@ -1232,7 +1232,7 @@
 
 <h1 id="exercice-05-authentification-avec-cle-api">Exercice 05 - Authentification avec clé Api</h1>
 <p>Vous pouvez faire cet exercice à partir de l'api que vous avez développé à l'exercice précédent ou bien débuter un nouveau projet. Si vous recommencez un api, assurez-vous d'avoir au moins une route qui retourne un résultat et que vous pourrez protéger.</p>
-<h2 id="1-gestion-des-utilisateurs">1. Gestion des utilisateurs</h2>
+<h2 id="1-creation-dun-utilisateur">1. Création d'un utilisateur</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Créer une table utilisateurs dans votre base de données. Vous devez avoir minimalement les champs id, nom, courriel, mot_de_passe et cle_api.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Créez une route pour ajouter un nouvel utilisateur.</li>
@@ -1264,17 +1264,17 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Authorization : &quot;cle_api 123456&quot;
 </span></code></pre></div>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Retournez une erreur si la clé n'est pas présente et aussi si elle est invalide.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Retournez une erreur si la clé n'est pas présente ou si elle est invalide.</li>
 </ul>
 <h2 id="3-protection-dun-route">3. Protection d'un route</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Protégez une de vos routes avec l'intergiciel et testez son fonctionnement.</li>
 </ul>
-<h2 id="4-ajout-dune-route-pour-recuperer-la-cle-optionnel">4. Ajout d'une route pour récupérer la clé (optionnel)</h2>
+<h2 id="4-ajout-dune-route-pour-recuperer-la-cle">4. Ajout d'une route pour récupérer la clé</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Ajoutez une route pour permettre à un utilisateur de récupérer sa clé API s'il la oublié. On peut aussi ajouté un paramêtre dans l'url pour demander d'en générer une nouvelle.</li>
 </ul>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/api/users?</span><span class="kc">n</span><span class="err">ouvelle=</span><span class="mi">1</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/api/users/cle?</span><span class="kc">n</span><span class="err">ouvelle=</span><span class="mi">1</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// Les informations seront dans le corps de la requête</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">{</span>
@@ -1285,7 +1285,7 @@
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Validez que le courriel et le mot de passe correspondent.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Si le paramêtre nouvelle est présent et égale à 1, générez une nouvelle clé.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Retourner le nouvelle clé ou l'ancienne à l'utilisateur.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Retourner la nouvelle clé ou l'ancienne à l'utilisateur.</li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;cle_api&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;654321&quot;</span>
