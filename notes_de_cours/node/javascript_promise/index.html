@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/node/express/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/node/javascript_promise/">
       
       
-        <link rel="prev" href="../npm/">
+        <link rel="prev" href="../express_mysql/">
       
       
-        <link rel="next" href="../middleware/">
+        <link rel="next" href="../structure_projet/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Express - Services Web</title>
+        <title>JavaScript asynchrone - Services Web</title>
       
     
     
@@ -126,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expressjs" class="md-skip">
+        <a href="#javascript-asynchrone" class="md-skip">
           Aller au contenu
         </a>
       
@@ -162,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Express
+              JavaScript asynchrone
             
           </span>
         </div>
@@ -634,29 +634,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Express
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,47 +645,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#premier-serveur-web-avec-express" class="md-nav__link">
-    Premier serveur web avec Express
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#les-objets-req-et-res" class="md-nav__link">
-    Les objets req et res
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routes-et-methodes-http" class="md-nav__link">
-    Routes et méthodes HTTP
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -775,9 +714,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../javascript_promise/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    JavaScript asynchrone
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -786,6 +745,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-asynchrone_1" class="md-nav__link">
+    JavaScript asynchrone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-de-rappel-asynchrones" class="md-nav__link">
+    Fonctions de rappel asynchrones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promesses-promises" class="md-nav__link">
+    Promesses (Promises)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerer-les-operations-asynchrones-avec-elegance-grace-aux-promesses" class="md-nav__link">
+    Gérer les opérations asynchrones avec élégance grâce aux promesses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-probleme-des-fonctions-de-rappel" class="md-nav__link">
+    Le problème des fonctions de rappel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-fonction-qui-retourne-une-promesse" class="md-nav__link">
+    Créer une fonction qui retourne une promesse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1291,22 +1312,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#premier-serveur-web-avec-express" class="md-nav__link">
-    Premier serveur web avec Express
+  <a href="#javascript-asynchrone_1" class="md-nav__link">
+    JavaScript asynchrone
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#les-objets-req-et-res" class="md-nav__link">
-    Les objets req et res
+  <a href="#fonctions-de-rappel-asynchrones" class="md-nav__link">
+    Fonctions de rappel asynchrones
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#routes-et-methodes-http" class="md-nav__link">
-    Routes et méthodes HTTP
+  <a href="#promesses-promises" class="md-nav__link">
+    Promesses (Promises)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerer-les-operations-asynchrones-avec-elegance-grace-aux-promesses" class="md-nav__link">
+    Gérer les opérations asynchrones avec élégance grâce aux promesses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-probleme-des-fonctions-de-rappel" class="md-nav__link">
+    Le problème des fonctions de rappel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-fonction-qui-retourne-une-promesse" class="md-nav__link">
+    Créer une fonction qui retourne une promesse
   </a>
   
 </li>
@@ -1326,100 +1368,123 @@
                   
 
 
-<h1 id="expressjs">Express.js</h1>
-<p>Express.js est un framework pour construire des applications web en Node.js. C'est de fait le framework standard pour le développement de serveur en Node.js. </p>
-<p>Documentation officielle: </p>
+<h1 id="javascript-asynchrone">JavaScript asynchrone</h1>
+<p>Asynchrone : fait référence à un environnement de communication où chaque partie reçoit et traite les messages lorsque c'est possible ou plus pratique, au lieu de le faire au même moment.  </p>
+<h2 id="javascript-asynchrone_1">JavaScript asynchrone</h2>
+<p>De nombreuses fonctionnalités des API Web utilisent désormais du code asynchrone pour s'exécuter, en particulier celles qui accèdent à un type de ressource ou le récupèrent à partir d'un périphérique externe, par exemple en récupérant un fichier sur le réseau, en accédant à une base de données et en renvoyant des données, en accédant à un flux vidéo à partir d'une webcam ou en diffusant l'affichage vers un casque VR.  </p>
 <div class="admonition manuel">
 <p class="admonition-title">Manuel</p>
-<p><a href="https://expressjs.com/fr/">Express JS</a>  </p>
+<p><a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Concepts">Concepts de l'asynchrone en JavaScript</a><br />
+<a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous">Documentation MDN pour le JavaScript asynchrone</a>   </p>
 </div>
-<p>Pour installer Express :</p>
-<div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">express</span>
+<h2 id="fonctions-de-rappel-asynchrones">Fonctions de rappel asynchrones</h2>
+<p>Les <em>callbacks</em> asynchrones ou fonctions de rappels asynchrones sont des fonctions qui sont passées comme arguments lors de l'appel d'une fonction qui commencera à exécuter du code en arrière-plan. Lorsque le code d'arrière-plan a fini de s'exécuter, il appelle la fonction de rappel pour vous faire savoir que le travail est terminé, ou pour vous faire savoir que quelque chose d'intéressant s'est produit. L'utilisation des callbacks est un peu démodée aujourd'hui, mais vous les verrez encore dans un certain nombre d'API plus anciennes encore couramment utilisées.  </p>
+<div class="admonition manuel">
+<p class="admonition-title">Manuel</p>
+<p><a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Introducing">Introduction à l'asynchrone en JavaScript</a>  </p>
+</div>
+<h2 id="promesses-promises">Promesses (Promises)</h2>
+<p>Les promesses sont le nouveau style de code asynchrone que vous verrez utilisé dans les API Web modernes.  </p>
+<p>L'objet Promise (pour « promesse ») est utilisé pour réaliser des traitements de façon asynchrone. Une promesse représente une valeur qui peut être disponible maintenant, dans le futur voire jamais.  </p>
+<p>Une Promise est dans un de ces états :   </p>
+<ul>
+<li>pending (en attente) : état initial, la promesse n'est ni remplie, ni rompue ;  </li>
+<li>fulfilled (tenue) : l'opération a réussi ;  </li>
+<li>rejected (rompue) : l'opération a échoué ;  </li>
+<li>settled (acquittée) : la promesse est tenue ou rompue mais elle n'est plus en attente.  </li>
+</ul>
+<p>Une promesse en attente peut être tenue avec une valeur ou rompue avec une raison (erreur). Quand on arrive à l'une des deux situations, les gestionnaires associés lors de l'appel de la méthode <mark class="critic">then</mark> sont alors appelés.</p>
+<figure>
+<p><img alt="javascript_async.png" class="center shadow" src="../../../assets/img/javascript_async.png" /></p>
+</figure>
+<h2 id="gerer-les-operations-asynchrones-avec-elegance-grace-aux-promesses">Gérer les opérations asynchrones avec élégance grâce aux promesses</h2>
+<p>Essentiellement, une promesse est un objet qui représente un état intermédiaire d'une opération - en fait, c'est une <strong>promesse qu'un résultat d'une certaine nature sera retourné à un moment donné dans le futur</strong>. Il n'y a <mark class="critic">aucune garantie du moment exact où l'opération se terminera et où le résultat sera renvoyé</mark>, mais il est une garantie que lorsque le résultat est disponible, ou que la promesse échoue, le code que vous fournissez sera exécuté afin de faire autre chose avec un résultat réussi, ou de gérer gracieusement un cas d'échec.  </p>
+<p>L'une des utilisations les plus courantes des promesses concerne les API web qui renvoient une promesse.  </p>
+<h2 id="le-probleme-des-fonctions-de-rappel">Le problème des fonctions de rappel</h2>
+<p>Code désordonné et difficile à lire :  </p>
+<div class="language-ts highlight"><span class="filename">callback.ts</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">choisirIngredients</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ingredients</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nx">placerLaCommande</span><span class="p">(</span><span class="nx">ingredients</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">commande</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nx">ramasserLaCommande</span><span class="p">(</span><span class="nx">commande</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">            </span><span class="nx">mangerLaPizza</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="nx">gererErreur</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="nx">gererErreur</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">},</span><span class="w"> </span><span class="nx">gererErreur</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="premier-serveur-web-avec-express">Premier serveur web avec Express</h2>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// Importer le module express</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">// Créer une application express</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Mon premier serveur web sur express !&lt;/h1&gt;&quot;</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">});</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Serveur démarré sur le port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">});</span>
+<p>Amélioration avec les promesses :  </p>
+<div class="language-ts highlight"><span class="filename">promise.ts</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">choisirIngredients</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ingredients</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nx">placerLaCommande</span><span class="p">(</span><span class="nx">ingredients</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">commande</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nx">ramasserLaCommande</span><span class="p">(</span><span class="nx">commande</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nx">mangerLaPizza</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">gererErreur</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="creer-une-fonction-qui-retourne-une-promesse">Créer une fonction qui retourne une promesse</h2>
+<p>On peut transformer une fonction en fonction asynchrone qui retourne une promesse. Il faut que la fonction retourne un objet <em>Promise</em> comme ceci. La promesse prend en paramêtre une fonction de rappel où on va indiquer avec si la promesse est tenue (<strong>resolve()</strong>) ou rompue (<strong>reject()</strong>) </p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">promise.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">maFonction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="c1">// On retourne un nouvel objet promise</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="c1">// Mon traitement</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="c1">// Si tout va bien on retourne une valeur avec Resolve()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">            </span><span class="nx">resolve</span><span class="p">({</span><span class="w"> </span><span class="nx">success</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tout va bien&quot;</span><span class="p">});</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="c1">// Si une erreur survient, on indique que l&#39;opération a échoué avec reject()</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">            </span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1">// Maintenant quand on lance la fonction on peut effectuer du traitement lorsque </span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="c1">// la promesse est tenue avec **then()** ou lorsqu&#39;il y a une erreur avec **catch()**.</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1">// C&#39;est deux fonctions prennent une fonction de rappel en paramêtre.</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="nx">maFonction</span><span class="p">()</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">resultat</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">})</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">erreur</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">erreur</span><span class="p">);</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="p">})</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="c1">// Cette ligne de code va être exécuté sans attendre la résolution de la promesse, </span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="c1">// elle peut donc être affiché avant le message dans la promesse.</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Fin du traitement&#39;</span><span class="p">);</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="les-objets-req-et-res">Les objets req et res</h2>
-<p>L’objet <strong>req</strong> représente la requête HTTP transmise au serveur. Cet objet permet, entre autres :  </p>
-<ul>
-<li>D’accéder aux paramètres transmis dans l’URL  </li>
-<li>D’accéder aux données transmise dans le corps de la requête (body)  </li>
-<li>De manipuler les cookies   </li>
-</ul>
-<p>L’objet <strong>res</strong> représente la réponse HTTP transmise du serveur au client. Cet objet permet, entre autres : </p>
-<ul>
-<li>Retourner des informations au clien</li>
-<li>Modifier le code de statut de la requête</li>
-<li>Rediriger une demande</li>
-<li>Générer un modèle de vue</li>
-</ul>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<ul>
-<li><a href="https://expressjs.com/en/4x/api.html#req">L'objet Request (req)</a></li>
-<li><a href="https://expressjs.com/en/4x/api.html#res">L'objet Response (res)</a></li>
-</ul>
-</div>
-<h2 id="routes-et-methodes-http">Routes et méthodes HTTP</h2>
-<p>Dans l’exemple précédent, la requête utilise la méthode GET, qui récupèrent les informations directement dans l’URL. </p>
-<p>D’autres méthodes sont aussi définies dans le protocole HTTP. Les plus communes sont : GET, POST, PUT, DELETE.   </p>
-<p>Avec Express.js, il est possible d’utiliser la même URL avec différentes méthodes. Cela se fait en modifiant la méthode auprès de la route :</p>
-<table>
-<thead>
-<tr>
-<th>Méthode http</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>router.<strong>get</strong>(path, function(req, res, next) { … })</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>router.<strong>post</strong>(path, function(req, res, next) { … })</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>router.<strong>put</strong>(path, function(req, res, next) { … })</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>router.<strong>delete</strong>(path, function(req, res, next) { … })</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<p><a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Methods">MDN HTTP Methods</a>  </p>
-</div>
 
 
 
