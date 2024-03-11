@@ -1418,9 +1418,12 @@
 <p>Maintenant créez-vous une connexions depuis un IDE (J'ai uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>postgres://nomUsager:motDePasse@dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
 </span></code></pre></div>
-<p>Quand vous faites votre connexion dans DBeaver, l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut: </p>
+<p>Quand vous faites votre connexion dans DBeaver, l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut (Vous devez sélectionner l'option "Connect by: URL"): </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>jdbc:postgresql://dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
 </span></code></pre></div>
+<figure>
+<p><img alt="render03.png" class="center shadow" src="../../../assets/img/render03.png" /></p>
+</figure>
 <h2 id="creation-du-service-web">Création du service web</h2>
 <p>Render utilise Github pour le déploiement des services web. Assurez-vous que votre projet est dans un dépôt Github et qu'il est à jour.</p>
 <p>Sur le site de Render, cliquez sur le bouton <em>New</em> en haut à gauche et sélectionnez <em>Web Service</em>. Sélectionnez ensuite <em>Build and deploy from a Git repository</em>. Dans la section <em>Connect a repository</em> sélectionnez le dépôt Github de votre projet. Vous pouvez aussi plus bas sélectionner n'importe quel dépôt public. Cliquez ensuite sur <em>Connect</em>.</p>
