@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/02_serverweb_node/">
+        <link rel="canonical" href="https://example.com/exercices/07_fetch/">
       
       
-        <link rel="prev" href="../01_utilisation_api/">
+        <link rel="prev" href="../06_render/">
       
-      
-        <link rel="next" href="../03_helloworld_api/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>02 - Serveur Web en Node.js - Services Web</title>
+        <title>07 - Consommer un api avec Fetch - Services Web</title>
       
     
     
@@ -126,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-02-serveur-web-avec-nodejs" class="md-skip">
+        <a href="#exercice-07-consommer-un-api-avec-fetch" class="md-skip">
           Aller au contenu
         </a>
       
@@ -162,7 +160,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02 - Serveur Web en Node.js
+              07 - Consommer un api avec Fetch
             
           </span>
         </div>
@@ -1160,29 +1158,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    02 - Serveur Web en Node.js
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02_serverweb_node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,33 +1169,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-des-routes" class="md-nav__link">
-    Gestion des routes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1327,9 +1278,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../07_fetch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1338,6 +1298,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1370,21 +1331,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-des-routes" class="md-nav__link">
-    Gestion des routes
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1398,40 +1344,20 @@
                   
 
 
-<h1 id="exercice-02-serveur-web-avec-nodejs">Exercice 02 - Serveur web avec Node.js</h1>
-<p>Créez un serveur web en Node.js, vous pouvez vous inspirer des exemples dans les notes de cours.</p>
-<p>Le serveur doit pouvoir récupérer la valeur du paramêtre <code>code</code> dans l'url envoyé. Par exemple si j'envoie <code>localhost:3000/?code=1</code> la valeur est 1.</p>
-<p>Ajoutez l'objet JavaScript suivant à votre code : </p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">professeurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Fréchette&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mathieu&quot;</span><span class="p">},</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lagacé&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Christiane&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Trottier&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sébastien&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="mf">4</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tousignant&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Simon&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="mf">5</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mercier&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;François&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="mf">6</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Croteau&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Carine&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="mf">7</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Taleb&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Frédérik&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="mf">8</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ouellet&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alexandre&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>Maintentant quand le serveur reçoit une url : </p>
+<h1 id="exercice-07-consommer-un-api-avec-fetch">Exercice 07 - Consommer un api avec Fetch</h1>
+<p>Consultez la documentation de l'API disponible à cette adresse : <a href="https://restcountries.com/">https://restcountries.com/</a>.</p>
+<p>Vous devez créer une page html avec un script JavaScript qui va permettre les opérations suivantes : </p>
 <ul>
-<li>Si le paramètre <code>code</code> est présent, affichez le prénom et le nom du professeur correspondant à sa valeur. Le texte retourné sera "Bonjour prénom nom" dans une balise H1 et le code de statut sera 200.</li>
-<li>Si le paramètre est absent ou bien que la valeur n'est pas présente dans l'objet, affichez "Professeur non trouvé" dans une balise H1. Le code de statut sera 404.</li>
+<li>Demander à l'usager le nom d'un pays en français.</li>
+<li>En cliquand sur un bouton, envoyer une requête à l'API.</li>
+<li>Récupérer et afficher dans la page le nom officiel en français du pays, le drapeau, la capitale et la population.</li>
 </ul>
-<p>Changez la valeur du <em>Content-Type</em> pour que le format de la réponse soit du html.</p>
-<p>Installez nodemon et configurez votre projet pour pouvoir le lancer avec la commande <code>npm dev</code>.</p>
-<p>Installer le module dotenv et modifiez votre code pour que la valeur du port à utiliser soit stockée dans un fichier <strong>.env</strong>.</p>
-<h2 id="gestion-des-routes">Gestion des routes</h2>
-<p>Maintenant que vous avez un serveur web qui fonctionne, on va l'améliorer un peu avec une gestion basique de route.</p>
-<ul>
-<li>Quand on n'entre que l'hôte ou bien la route <code>/</code>, affichez en html "Bienvenue à mon premier api" dans une balise h1</li>
-<li>Quand on entre la route <code>/professeurs</code>, reprenez le code de la première partie. Donc si j'entre <code>localhost:3000/professeurs?code=1</code> la réponse sera "Bonjour Mathieu Fréchette" dans une balise H1.</li>
-<li>Quand j'entre la route <code>/professeurs/tous</code> je retourne en json l'objet professeurs.</li>
-</ul>
-<div class="admonition astuce">
-<p class="admonition-title">Astuce</p>
-<p>Utilisez la fonction JSON.stringify() pour convertir un objet en JSON. Dans les notes de cours sur le format JSON vous avez des exemples.</p>
-</div>
+<p>Voici un exemple de résultat.</p>
+<figure>
+<p><img alt="ex07.png" class="center" src="../../assets/img/ex07.png" />
+  </p>
+<figcaption>Essayez de soigner un peu le css 😋</figcaption>
+</figure>
 
 
 
