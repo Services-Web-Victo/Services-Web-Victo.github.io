@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/deploiement/render/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/frontend/toolpad/">
       
       
-        <link rel="prev" href="../../node/structure_projet/">
+        <link rel="prev" href="../fetch/">
       
       
-        <link rel="next" href="../postgresql/">
+        <link rel="next" href="../../securite/cle_api/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Déploiement d'un API sur Render - Services Web</title>
+        <title>Toolpad Studio - Services Web</title>
       
     
     
@@ -126,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploiement-sur-render" class="md-skip">
+        <a href="#toolpad-studio" class="md-skip">
           Aller au contenu
         </a>
       
@@ -162,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Déploiement d'un API sur Render
+              Toolpad Studio
             
           </span>
         </div>
@@ -760,20 +760,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -787,7 +785,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Déploiement
@@ -798,29 +796,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Déploiement d'un API sur Render
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../deploiement/render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,80 +807,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creation-dun-compte-sur-render" class="md-nav__link">
-    Création d'un compte sur Render
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creation-de-la-base-de-donnees" class="md-nav__link">
-    Création de la base de données
-  </a>
-  
-    <nav class="md-nav" aria-label="Création de la base de données">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connexion-depuis-dbeaver" class="md-nav__link">
-    Connexion depuis DBeaver
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creation-du-service-web" class="md-nav__link">
-    Création du service web
-  </a>
-  
-    <nav class="md-nav" aria-label="Création du service web">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modifier-le-service-web" class="md-nav__link">
-    Modifier le service web
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references-et-tutoriels" class="md-nav__link">
-    Références et tutoriels
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -914,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../postgresql/" class="md-nav__link">
+      <a href="../../deploiement/postgresql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -940,18 +844,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -965,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Frontend
@@ -978,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/fetch/" class="md-nav__link">
+      <a href="../fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,9 +902,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../frontend/toolpad/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Toolpad Studio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1007,6 +933,88 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construire-notre-premiere-application" class="md-nav__link">
+    Construire notre première application
+  </a>
+  
+    <nav class="md-nav" aria-label="Construire notre première application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creer-une-nouvelle-application" class="md-nav__link">
+    Créer une nouvelle application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-place-de-linterface-graphique" class="md-nav__link">
+    Mise en place de l'interface graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperer-les-donnees" class="md-nav__link">
+    Récupérer les données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lier-les-donnees-a-linterface" class="md-nav__link">
+    Lier les données à l'interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-de-linteractivite-a-la-requete" class="md-nav__link">
+    Ajouter de l'intéractivité à la requête.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previsualiser-lapplication" class="md-nav__link">
+    Prévisualiser l'application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1468,56 +1476,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creation-dun-compte-sur-render" class="md-nav__link">
-    Création d'un compte sur Render
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creation-de-la-base-de-donnees" class="md-nav__link">
-    Création de la base de données
+  <a href="#construire-notre-premiere-application" class="md-nav__link">
+    Construire notre première application
   </a>
   
-    <nav class="md-nav" aria-label="Création de la base de données">
+    <nav class="md-nav" aria-label="Construire notre première application">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#connexion-depuis-dbeaver" class="md-nav__link">
-    Connexion depuis DBeaver
+  <a href="#creer-une-nouvelle-application" class="md-nav__link">
+    Créer une nouvelle application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-place-de-linterface-graphique" class="md-nav__link">
+    Mise en place de l'interface graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperer-les-donnees" class="md-nav__link">
+    Récupérer les données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lier-les-donnees-a-linterface" class="md-nav__link">
+    Lier les données à l'interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-de-linteractivite-a-la-requete" class="md-nav__link">
+    Ajouter de l'intéractivité à la requête.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previsualiser-lapplication" class="md-nav__link">
+    Prévisualiser l'application
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creation-du-service-web" class="md-nav__link">
-    Création du service web
-  </a>
-  
-    <nav class="md-nav" aria-label="Création du service web">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modifier-le-service-web" class="md-nav__link">
-    Modifier le service web
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references-et-tutoriels" class="md-nav__link">
-    Références et tutoriels
-  </a>
   
 </li>
       
@@ -1536,76 +1552,104 @@
                   
 
 
-<h1 id="deploiement-sur-render">Déploiement sur Render</h1>
-<p>Render est une plate-forme d'hébergement cloud qui offre un moyen transparent et simple de déployer et de gérer des sites Web statiques, des applications Web à part entière, des API ou des bases de données PostgreSQL.</p>
-<p>Voici quelques caractéristiques clés :</p>
-<ul>
-<li><strong>Interface conviviale</strong> : Render fournit une interface simple et intuitive qui simplifie le processus de déploiement d'applications créées à l'aide de langages de programmation populaires tels que Python et Node.js.</li>
-<li><strong>Bases de données intégrées</strong> : Render offre une prise en charge intégrée des bases de données PostgreSQL, ce qui facilite la configuration et l'intégration de bases de données dans des applications sans avoir à configurer des serveurs de bases de données séparés.</li>
-<li><strong>Flux de travail de déploiement transparent</strong> : Render fournit des fonctionnalités telles que des déploiements automatisés, des restaurations et des intégrations avec des services populaires tels que GitHub et GitLab.</li>
-<li><strong>Domaines personnalisés et SSL</strong> : Render offre la possibilité de configurer des noms de domaine personnalisés pour les sites Web et les applications Web, et comprend des certificats SSL gratuits pour un accès HTTPS sécurisé.</li>
-</ul>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Dans le forfait gratuit, on ne peut avoir qu'une base de données et elle à une durée de vie de 90 jours</p>
+<h1 id="toolpad-studio">Toolpad Studio</h1>
+<p><strong>Présentation</strong> </p>
+<p>Toolpad Studio est un générateur d'outils interne auto-hébergé et low-code. Bien que toujours en développement, il est open source et alimenté par les composants de <a href="https://mui.com/material-ui/">Material UI</a>. Toolpad Studio est conçu pour tout développeur souhaitant créer des applications internes plus rapidement. Faites glisser et déposez les composants d'interface utilisateur prédéfinis, connectez vos sources de données, publiez votre application et vous avez terminé ! </p>
+<div class="admonition manuel">
+<p class="admonition-title">Manuel</p>
+<p><a href="https://mui.com/toolpad/studio/getting-started/">https://mui.com/toolpad/studio/getting-started/</a></p>
 </div>
-<h2 id="creation-dun-compte-sur-render">Création d'un compte sur Render</h2>
-<p>Première étape, créer votre compte sur le site <a href="https://render.com/">https://render.com/</a> et sélectionnez le plan gratuit. Pour vous faciliter le travail connectez vous avec Github.</p>
-<h2 id="creation-de-la-base-de-donnees">Création de la base de données</h2>
-<p>Dans le tableau de bord à la section PostgreSQL, cliquez sur <strong>Create PostgreSQL</strong>. Ensuite donnez un nom à votre base de données, laissez les autres options par défaut, sélectionnez le forfait gratuit et cliquez sur <strong>Create database</strong>. La création prendra un certain temps et une fois terminée vous aurez accès aux informations de connexions plus bas dans la section <em>Connections</em>: </p>
-<figure>
-<p><img alt="render_01.png" class="center shadow" src="../../../assets/img/render_01.png" />
-  </p>
-<figcaption>Image 1 - Informations de connexion</figcaption>
-</figure>
-<h3 id="connexion-depuis-dbeaver">Connexion depuis DBeaver</h3>
-<p>Maintenant créez-vous une connexions depuis un IDE (J'ai uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>postgres://nomUsager:motDePasse@dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
+<p>Au niveau du fonctionnement, on crée un projet avec <code>npx</code>. Ensuite en démarrant ce projet nous avons accès à un interface graphique déjà programmé, un éditeur, qui nous permet de créer notre projet en sélectionnant les composants qu'on veut utiliser. Une fois le projet terminé, on peut le déployer sur un serveur externe comme une application Node traditionnelle.</p>
+<h2 id="installation">Installation</h2>
+<p>Pour créer un nouveau projet Toolpad Studio, utilisez la commande </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx create-toolpad-app@latest my-toolpad-app
 </span></code></pre></div>
-<p>Quand vous faites votre connexion dans DBeaver, l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut (Vous devez sélectionner l'option "Connect by: URL"): </p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>jdbc:postgresql://dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
+<p>La commande suivante va créer un dossier nommé my-toolpad-app avec les fichiers pour exécuté Toolpad Studio. </p>
+<p>Ensuite pour lancer l'application en mode développement, lancer la commande suivante dans le répertoire du projet:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm run dev
 </span></code></pre></div>
+<h2 id="construire-notre-premiere-application">Construire notre première application</h2>
+<p>Cette exercice est directement inspiré de cette démonstration : <a href="https://mui.com/toolpad/studio/getting-started/first-app/">https://mui.com/toolpad/studio/getting-started/first-app/</a></p>
+<h3 id="creer-une-nouvelle-application">Créer une nouvelle application</h3>
+<p>Exécutez la commande suivante. </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx create-toolpad-app test-toolpad-app
+</span></code></pre></div>
+<p>Lancez le serveur de développement</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cd test-toolpad-app
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm run dev
+</span></code></pre></div>
+<p>Toolpad studio devrait s'ouvrir automatiquement dans une fenêtre de votre navigateur. Vous pouvez aussi y accéder à l'adresse http://localhost:3000</p>
+<h3 id="mise-en-place-de-linterface-graphique">Mise en place de l'interface graphique</h3>
+<p>Dans la section Component library, sélectionnez un <strong>Data Grid</strong> et glissez le dans la section centrale. Faites de même avec une <strong>Image</strong>. Votre interface devrait ressembler à ça: </p>
 <figure>
-<p><img alt="render03.png" class="center shadow" src="../../../assets/img/render03.png" /></p>
-</figure>
-<h2 id="creation-du-service-web">Création du service web</h2>
-<p>Render utilise Github pour le déploiement des services web. Assurez-vous que votre projet est dans un dépôt Github et qu'il est à jour.</p>
-<p>Sur le site de Render, cliquez sur le bouton <em>New</em> en haut à gauche et sélectionnez <em>Web Service</em>. Sélectionnez ensuite <em>Build and deploy from a Git repository</em>. Dans la section <em>Connect a repository</em> sélectionnez le dépôt Github de votre projet. Vous pouvez aussi plus bas sélectionner n'importe quel dépôt public. Cliquez ensuite sur <em>Connect</em>.</p>
-<p>À l'écran suivant, vous pouvez laisser la plupart des options par défaut.</p>
-<ul>
-<li>Ajustez la valeur de <strong>Start command</strong> pour le nom du fichier de "démarrage" de votre api.</li>
-<li>Sélectionnez le plan gratuit</li>
-<li>Ensuite ajoutez les variables d'environnement qui sont dans votre fichier et qui correspondent aux informations de la connexion avec PostgreSQL. Pour la valeur de <em>PG_HOST</em> utilisez la valeur qui vous avez pour <em>Hostname</em> dans l'écran des informations de connexions (image 1).</li>
-</ul>
-<figure>
-<p><img alt="render_02.png" class="center shadow" src="../../../assets/img/render_02.png" />
+<p><img alt="toolpad_01.png" class="center shadow" src="../../../assets/img/toolpad_01.png" />
   </p>
-<figcaption>Image 2 - Variable d'environnement</figcaption>
+<figcaption></figcaption>
 </figure>
-<p>Cliquez ensuite sur <em>Deploy</em> et après un petit moment votre api sera en ligne. </p>
+<h3 id="recuperer-les-donnees">Récupérer les données</h3>
+<p>Dans la section <em>Queries</em> de l'explorateur, cliquez sur le <strong>+</strong> et sélectionnez <strong>HTTP REST API</strong>. Nous allons récupérer une liste de race de chiens pour cet exemple. Utilisez l'url suivante : 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://dog.ceo/api/breeds/list/all
+</span></code></pre></div></p>
+<p>Cliquez ensuite sur <strong>Run</strong> dans le bas à droite pour lancer la requête et inspecter les résultats.</p>
 <figure>
-<p><img alt="render_03.png" class="center shadow" src="../../../assets/img/render_03.png" />
+<p><img alt="toolpad_02.png" class="center shadow" src="../../../assets/img/toolpad_02.png" />
   </p>
-<figcaption>Image 3 - Le déploiement est terminé</figcaption>
+<figcaption></figcaption>
 </figure>
-<p>Vous avez en mauve dans le haut de la page l'url de votre api. Utilisez cette url suivi de la route pour accéder à votre api. </p>
-<div class="admonition exemple">
-<p class="admonition-title">Exemple</p>
-<p><a href="https://demo-render-6ez9.onrender.com/api/pokemons/liste?page=1&amp;type=Grass">https://demo-render-6ez9.onrender.com/api/pokemons/liste?page=1&amp;type=Grass</a></p>
-</div>
-<h3 id="modifier-le-service-web">Modifier le service web</h3>
-<p>Par défaut le déploiement est configuré sur le mode automatique, ce qui veut dire que dès que vous faites un <em>push</em> de votre projet, <em>Render</em> va aussi redéployer les modifications. </p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>C'est normal d'avoir un long délais après un moment d'inactivité, c'est un mauvais côté du plan gratuit.</p>
-</div>
-<h2 id="references-et-tutoriels">Références et tutoriels</h2>
+<p>Dans l'onglet <strong>Transform</strong> on peut modifier le résultat en inscrivant une expression JavaScript qui retourne un résultat. Cliquez sur l'option <strong>Transform response</strong> pour activer cette option. Dans notre exemple nous voulons conserver uniquement les éléments de la réponse qui sont dans l'attribut <em>message</em> sous forme de tableau. Inscrivez le code suivant : </p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">return</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">entry</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">race</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">sousRace</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">});</span>
+</span></code></pre></div>
+Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les changements.</p>
+<figure>
+<p><img alt="toolpad_03.png" class="center shadow" src="../../../assets/img/toolpad_03.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Finalement cliquez sur <strong>Save</strong> pour enregistrer la requête. Renommez là ensuite pour <code>dogQuery</code>.</p>
+<h3 id="lier-les-donnees-a-linterface">Lier les données à l'interface</h3>
+<p>La prochaine étape est de lier les données aux composantes. </p>
 <ul>
-<li><a href="https://docs.render.com/deploys">https://docs.render.com/deploys</a></li>
-<li><a href="https://docs.render.com/deploy-node-express-app">https://docs.render.com/deploy-node-express-app</a></li>
-<li><a href="https://www.makeuseof.com/deploy-expressjs-rest-api-on-render/">https://www.makeuseof.com/deploy-expressjs-rest-api-on-render/</a></li>
-<li><a href="https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/">https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/</a></li>
+<li>Cliquez sur le <strong>Data grid</strong> </li>
+<li>Dans l'inspecteur à gauche trouvez la propriété <strong>rows</strong> et cliquez sur l'icone <em>Bind "rows"</em> à sa droite pour ouvrir l'éditeur de liaisons.</li>
 </ul>
+<p>Sur la gauche, vous verrez une liste de tous les états pouvant être liés dans la page et sur la droite, un éditeur de code qui accepte n'importe quelle expression JavaScript.</p>
+<p>Utilisez la requête que vous venez d'enregistrer, <code>dogQuery</code>. Dans l'éditeur de code entrez la ligne suivante : </p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">dogQuery</span><span class="p">.</span><span class="nx">data</span>
+</span></code></pre></div>
+<p><em>dogQuery</em> est le nom de la requête et data représente le résultat.</p>
+<p>Cliquez sur <em>Update binding</em> et votre <strong>Data grid</strong> devrait se remplir avec le résultat de la requête.</p>
+<h3 id="ajouter-de-linteractivite-a-la-requete">Ajouter de l'intéractivité à la requête.</h3>
+<p>On va maintenant ajouter de l'intéractivité à notre application en créant une seconde requête qui va réagir à une sélection de la grille.</p>
+<ul>
+<li>Créez une autre requête de type REST API et ajoutez un paramètre <code>breed</code> dans la section <strong>Parameters</strong>.</li>
+<li>Cliquez sur le bouton <em>Bind</em> du paramètre et ajoutez le code suivant dans l'éditeur : </li>
+</ul>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nx">dataGrid</span><span class="p">.</span><span class="nx">selection</span><span class="o">?</span><span class="p">.[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;akita&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Le paramètre va prendre la valeur de la première colonne sélectionnée de la grille ou "Akita" si aucune ligne n'est sélectionnée.</p>
+<p>Dans l'url, cliquez sur le bouton <em>Bind "url"</em> et entrez le code suivant : </p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="sb">`https://dog.ceo/api/breed/</span><span class="si">${</span><span class="nx">parameters</span><span class="p">.</span><span class="nx">breed</span><span class="si">}</span><span class="sb">/images/random`</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>parameters</strong> permet d'accéder à la liste des paramètres et <strong>breed</strong> à la valeur de notre paramètre du même nom.</p>
+<ul>
+<li>Renommez la requète <code>imageQuery</code>.</li>
+<li>Dans l'éditeur, sélectionnez votre image et dans l'inspecteur cliquez sur le bouton <em>Bind</em> à la droite de <strong>src</strong>.</li>
+<li>Inscrivez le code suivant et cliquez sur <em>Update binding</em></li>
+</ul>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nx">imageQuery</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="previsualiser-lapplication">Prévisualiser l'application</h3>
+<p>Cliquez sur le bouton <strong>Preview</strong> pour afficher une visualisation de votre application.</p>
+<figure>
+<p><img alt="toolpad_04.png" class="center shadow" src="../../../assets/img/toolpad_04.png" />
+  </p>
+<figcaption>Version finale</figcaption>
+</figure>
 
 
 

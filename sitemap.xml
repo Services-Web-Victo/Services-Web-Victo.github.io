@@ -2,167 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/01_utilisation_api/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/02_serverweb_node/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/03_helloworld_api/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/04_pokemon_api/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/04b_documentation/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/05_apikey/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/06_render/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/exercices/07_fetch/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/exercices/08_toolpad/</loc>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/aide/cors/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/aide/recuperer_parametres/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/aide/start_express/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/api/bonnes_pratiques/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/api/documentation/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/api/introduction/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/api/json/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/deploiement/postgresql/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/deploiement/render/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/frontend/fetch/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/notes_de_cours/frontend/toolpad/</loc>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/express/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/express_mysql/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/introduction/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/javascript_promise/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/js_async_await/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/middleware/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/npm/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/routage/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/server_web/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/node/structure_projet/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/securite/authentification/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/securite/cle_api/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/securite/hashage/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/notes_de_cours/securite/jwt/</loc>
-         <lastmod>2024-03-18</lastmod>
+         <lastmod>2024-03-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
