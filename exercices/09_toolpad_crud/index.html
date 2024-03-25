@@ -8,28 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/api/introduction/">
+        <link rel="canonical" href="https://example.com/exercices/09_toolpad_crud/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../08_toolpad/">
       
       
-        <link rel="next" href="../bonnes_pratiques/">
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Introduction - Services Web</title>
+        <title>09 - Opérations CRUD avec Toolpad Studio - Services Web</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
   
@@ -89,15 +87,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../custom_theme/css/extra.css">
+      <link rel="stylesheet" href="../../custom_theme/css/extra.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/all.css">
+      <link rel="stylesheet" href="../../custom_theme/css/all.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/colors.css">
+      <link rel="stylesheet" href="../../custom_theme/css/colors.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/cards.css">
+      <link rel="stylesheet" href="../../custom_theme/css/cards.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -126,7 +124,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#operations-crud-avec-toolpad-studio" class="md-skip">
           Aller au contenu
         </a>
       
@@ -142,7 +140,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -162,7 +160,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              09 - Opérations CRUD avec Toolpad Studio
             
           </span>
         </div>
@@ -248,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -263,21 +261,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../notes_de_cours/api/introduction/" class="md-tabs__link">
           
   
   Notes de cours
@@ -294,11 +288,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../exercices/01_utilisation_api/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
   Exercices
@@ -337,7 +333,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -354,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -371,8 +367,6 @@
       
   
   
-    
-  
   
     
     
@@ -382,12 +376,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -401,7 +395,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Notes de cours
@@ -412,20 +406,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -439,7 +431,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             API
@@ -450,29 +442,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Introduction
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/api/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,60 +453,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cest-quoi-un-service-web-api" class="md-nav__link">
-    C'est quoi un service web (API)?
-  </a>
-  
-    <nav class="md-nav" aria-label="C'est quoi un service web (API)?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#court-resume-en-4-minutes" class="md-nav__link">
-    Court résumé en 4 minutes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonctionnement-general" class="md-nav__link">
-    Fonctionnement général
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#envoyer-une-requete" class="md-nav__link">
-    Envoyer une requête
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -546,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bonnes_pratiques/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/bonnes_pratiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../json/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -586,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../documentation/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -650,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/introduction/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/server_web/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/server_web/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/npm/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/npm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/express/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/middleware/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/middleware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/routage/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/routage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/express_mysql/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express_mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/javascript_promise/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/javascript_promise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -810,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/structure_projet/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/structure_projet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/render/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/postgresql/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/postgresql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -958,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/fetch/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -978,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/toolpad/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/toolpad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../securite/cle_api/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/cle_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../securite/hashage/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/hashage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/start_express/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/start_express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1146,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/recuperer_parametres/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/recuperer_parametres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1166,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/cors/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/cors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1199,6 +1117,8 @@
       
   
   
+    
+  
   
     
     
@@ -1208,12 +1128,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1227,7 +1147,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1240,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/01_utilisation_api/" class="md-nav__link">
+      <a href="../01_utilisation_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1260,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/02_serverweb_node/" class="md-nav__link">
+      <a href="../02_serverweb_node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1280,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+      <a href="../03_helloworld_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1300,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/04_pokemon_api/" class="md-nav__link">
+      <a href="../04_pokemon_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1320,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/04b_documentation/" class="md-nav__link">
+      <a href="../04b_documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/05_apikey/" class="md-nav__link">
+      <a href="../05_apikey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1360,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/06_render/" class="md-nav__link">
+      <a href="../06_render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1380,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/07_fetch/" class="md-nav__link">
+      <a href="../07_fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/08_toolpad/" class="md-nav__link">
+      <a href="../08_toolpad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1418,9 +1338,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../exercices/09_toolpad_crud/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1429,6 +1358,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1461,48 +1391,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cest-quoi-un-service-web-api" class="md-nav__link">
-    C'est quoi un service web (API)?
-  </a>
-  
-    <nav class="md-nav" aria-label="C'est quoi un service web (API)?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#court-resume-en-4-minutes" class="md-nav__link">
-    Court résumé en 4 minutes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonctionnement-general" class="md-nav__link">
-    Fonctionnement général
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#envoyer-une-requete" class="md-nav__link">
-    Envoyer une requête
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1516,35 +1404,22 @@
                   
 
 
-<h1 id="introduction">Introduction</h1>
-<h2 id="cest-quoi-un-service-web-api">C'est quoi un service web (API)?</h2>
-<p>L'acronyme API signifie en anglais Application Programming Interface. On peut définir une api comme un interface qui permet d’échanger de l’informations avec d’autres applications, peut importe le langage de programmation et le système d’exploitation.</p>
-<p>Il existe plusieurs types d'architectures d'api. Nous allons choisir l'architecture REST qui se base sur les standards du web et le protocole HTTP. </p>
-<h3 id="court-resume-en-4-minutes">Court résumé en 4 minutes</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T0DmHRdtqY0?si=GYl6HKrlAcMwzxpD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<h2 id="fonctionnement-general">Fonctionnement général</h2>
-<p>Donc si on résume notre api va recevoir des requêtes HTTP qu'il traitera selon les paramêtres envoyés et retourner une réponse à la requête.</p>
-<figure>
-<p><img alt="" class="center shadow" src="../../../assets/img/rest_01.png" />
-  </p>
-<figcaption>Source : <a href="https://www.altexsoft.com/blog/rest-api-design/" target="_blank">https://www.altexsoft.com/blog/rest-api-design/</a></figcaption>
-</figure>
-<p>Une requête à un api REST va toujours être composée de quatre parties essentielles:</p>
-<ul>
-<li>Une méthode HTTP: GET, POST, PUT, PATCH, DELETE.</li>
-<li>Une porte d'entrée (endpoint), le plus souvent sous la forme d'une url.</li>
-<li>Une entête à la requête HTTP qui contient plusieurs informations comme les informations de l'usager et une clé d'api. </li>
-<li>Un "corps" qui peut contenir des informations a envoyé à l'api.</li>
+<h1 id="operations-crud-avec-toolpad-studio">Opérations CRUD avec Toolpad Studio</h1>
+<p>À partir de l'api que vous avez mise en ligne sur Render à l'exercice 6 vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dresser la liste des enregistrements dans une grille.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Permettre d'ajouter un enregistrement dans la base de données.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Récupérer un enregistrement et donner la possibilité de le modifier.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Supprimer un enregistrement.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Rafraîchir la liste après une opétation (automatiquement ou sur un clique de bouton).</li>
 </ul>
+<p>Le fonctionnement de votre interface est à votre discrètion (grille modifiable, formulaire).</p>
+<p>Vous pouvez vous inpisrer de l'exemple suivant qui se retrouve dans la documentation de Toolpad Studio : <a href="https://mui.com/toolpad/studio/examples/basic-crud-app/">https://mui.com/toolpad/studio/examples/basic-crud-app/</a>.</p>
 <figure>
-<p><img alt="" class="center shadow" src="../../../assets/img/rest_02.png" />
+<p><img alt="ex09_01.png" class="center shadow" src="../../assets/img/ex09_01.png" />
   </p>
-<figcaption>Source : <a href="https://www.apinewbies.com/api-request/" target="_blank">https://www.apinewbies.com/api-request/</a></figcaption>
+<figcaption>Exemple tiré de la documentation</figcaption>
 </figure>
-<h2 id="envoyer-une-requete">Envoyer une requête</h2>
-<p>On peut simplement envoyer une requête à un api avec n'importe quel navigateur mais on n'aura pas de contrôle sur les informations envoyé et on sera limité à la méthode GET.</p>
-<p>Il existe plusieurs outils qui nous permettent une utilisation plus poussé des apis, <a href="https://www.postman.com/" target="_blank">Postman</a> en est un bon exemple. Sinon on peut incorporé le tout dans une application ou page web, la pluppart des langages de programmation prennent en charge les requêtes HTTP.</p>
 
 
 
@@ -1589,12 +1464,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
-        <script src="../../../custom_theme/javascript/alltarget.js"></script>
+        <script src="../../custom_theme/javascript/alltarget.js"></script>
       
     
   </body>
