@@ -1470,6 +1470,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#un-peu-daide-sur-une-fonction-un-peu-degeu" class="md-nav__link">
+    Un peu d'aide sur une fonction un peu dégeu
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1587,6 +1594,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#un-peu-daide-sur-une-fonction-un-peu-degeu" class="md-nav__link">
+    Un peu d'aide sur une fonction un peu dégeu
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1677,6 +1691,19 @@
 <figure>
 <p><img alt="exercice10_02.png" class="center shadow" src="../../assets/img/ex10_02.png" /></p>
 </figure>
+<h4 id="un-peu-daide-sur-une-fonction-un-peu-degeu">Un peu d'aide sur une fonction un peu dégeu</h4>
+<p>Dans la requête qui récupère la liste des 10 premier gabarits qui ont la propriété <code>box_count : 2</code>, j'ai utilisé le code JavaScript suivant dans le "<em>transform</em>".</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">memes</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">meme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">meme</span><span class="p">.</span><span class="nx">box_count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">10</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">meme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">meme</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">meme</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nx">meme</span><span class="p">.</span><span class="nx">url</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">});</span>
+</span></code></pre></div>
 
 
 
