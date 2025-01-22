@@ -553,6 +553,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#utiliser-de-parametres-directement-dans-lurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utiliser de paramètres directement dans l'url
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#utiliser-la-methode-http-pour-decrire-la-fonctionnalite-de-la-ressource" class="md-nav__link">
     <span class="md-ellipsis">
       Utiliser la méthode HTTP pour décrire la fonctionnalité de la ressource
@@ -1469,6 +1478,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#utiliser-de-parametres-directement-dans-lurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utiliser de paramètres directement dans l'url
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#utiliser-la-methode-http-pour-decrire-la-fonctionnalite-de-la-ressource" class="md-nav__link">
     <span class="md-ellipsis">
       Utiliser la méthode HTTP pour décrire la fonctionnalité de la ressource
@@ -1607,6 +1625,20 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://monApi/utilisateurs
 </span></code></pre></div>
 <p>Une même route peut avoir plus d'une fonctionnalité, c'est la méthode HTTP qui nous permet de les différenciées.</p>
+<h2 id="utiliser-de-parametres-directement-dans-lurl">Utiliser de paramètres directement dans l'url</h2>
+<p>Vous pouvez inclure des paramètes dans la route des deux façons suivantes : </p>
+<p><strong>Dans la section <em>query</em> de l'url :</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://monApi/utilisateurs?code=1
+</span></code></pre></div>
+Cette méthode permet d'ajouter facilement plusieurs paramètres.</p>
+<p><strong>Directement dans la route</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://monApi/utilisateurs/1
+</span></code></pre></div>
+Cette méthode ne devrait pas être utilisé avec plus d'un paramètre. Vous devez aussi faire attention à ne pas créer de confusion avec d'autres routes.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://monApi/utilisateurs/1
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>https://monApi/utilisateurs/tous
+</span></code></pre></div>
+Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, la deuxième pourrait ne jamais être accessible.</p>
 <h2 id="utiliser-la-methode-http-pour-decrire-la-fonctionnalite-de-la-ressource">Utiliser la méthode HTTP pour décrire la fonctionnalité de la ressource</h2>
 <p>En lien avec le point suivant, utilisez la bonne méthode HTTP pour indiquer quelle est la fonctionnalité de la route. Il existe une méthode qui correspondante à chaque opération CRUD. </p>
 <table>
@@ -1644,13 +1676,13 @@
 <p>On ne doit jamais modifier une ressource avec une méthode GET.</p>
 </div>
 <p>Les actions de modification PUT et PATCH sont très similaires, la différence est que PUT est utilisé pour modifier toutes les valeurs de la ressource alors que PATCH l'est pour une modification partielle. Autre distinction de PUT, si la ressource n'est pas trouvé, elle sera créée. Prenons l'exemple suivant, on veut pouvoir modifier un utilisateur ayant ces informations </p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;username&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[username]&quot;</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[first_name]&quot;</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[last_name]&quot;</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[email]&quot;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;username&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[username]&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[first_name]&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[last_name]&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[email]&quot;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Avec PUT on doit envoyer toutes ces informations dans la requête, alors qu'avec PATCH on pourrait permettre seulement d'envoyer et de modifier le <strong>email</strong>.</p>
 <p>L'utilisation de la bonne méthode HTTP nous permet d'avoir le même nom de route pour plus d'une fonction.</p>
