@@ -1339,6 +1339,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Hello World API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1444,11 +1465,11 @@
 <h2 id="fonctionnement">Fonctionnement</h2>
 <p>Voici le mode de fonctionnement que nous allons utiliser pour ajouter une protection par clé api à notre projet:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> L'utilisateur doit se créer un compte à l'aide d'une route de l'api en fournissant un email et un mot de passe.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> On va générer une clé d'api, enregistrer les informations dans la base de données (hashez le mot de passe) et ensuite retourner la clé à l'utilisateur</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> L'utilisateur devra ensuite ajouter la clé dans l'entête de chaque requête qui est envoyée au serveur.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Un Intergiciel se chargera de valider si la clé est bonne en faisant une recherche dans la base de données.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> On va ajouter le Intergiciel aux routes qu'on veut protéger.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> L'utilisateur doit se créer un compte à l'aide d'une route de l'api en fournissant un email et un mot de passe.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> On va générer une clé d'api, enregistrer les informations dans la base de données (hashez le mot de passe) et ensuite retourner la clé à l'utilisateur</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> L'utilisateur devra ensuite ajouter la clé dans l'entête de chaque requête qui est envoyée au serveur.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Un Intergiciel se chargera de valider si la clé est bonne en faisant une recherche dans la base de données.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> On va ajouter le Intergiciel aux routes qu'on veut protéger.</li>
 </ul>
 <h3 id="ajouter-la-cle-a-lentete-de-la-requete">Ajouter la clé à l'entête de la requête</h3>
 <p>Dans la section entête de la requête il y a une clé qui est utilisée justement pour envoyer des données comme un clé api. Dans Postman vous pouvez ajouter l'information dans l'onglet <em>Headers</em>. Le nom de la clé est <strong>Authorization</strong> et comme valeur nous allons avoir cle_api suivi d'une espace et de la clé. (Vous pouvez utiliser autre chose comme nom que cle_api, souvent dans les documentation on va voir <em>Bearer</em>).</p>

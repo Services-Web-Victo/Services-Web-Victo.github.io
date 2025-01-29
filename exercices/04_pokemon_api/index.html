@@ -1235,6 +1235,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_helloworld_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Hello World API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1350,12 +1371,12 @@
 <p>Dans cet exercice vous devez créer un api avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL.</p>
 <h2 id="configuration-du-projet">Configuration du projet</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Créez un nouveau projet et jumelez le à un dépôt sur github. Assurez-vous de créer un fichier <mark>.gitignore</mark> et d'exclure les fichiers et répertoires qui ne sont pas nécessaire.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Utilisez <mark>nodemon</mark> et configurez un script pour que votre application puisse être lancé avec la commande <code>npm start</code>. (Nodemon doit être installé uniquement pour le développement).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. Ajoutez aussi un fichier <mark>.env.exemple</mark> qui est le gabarit vide de votre fichier .env.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>express</em>, <em>morgan</em> et <em>mysql</em>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Chaque fonction qui interragit avec la base de données (dans le modèle) doit retourner une promesse.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez un nouveau projet et jumelez le à un dépôt sur github. Assurez-vous de créer un fichier <mark>.gitignore</mark> et d'exclure les fichiers et répertoires qui ne sont pas nécessaire.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utilisez <mark>nodemon</mark> et configurez un script pour que votre application puisse être lancé avec la commande <code>npm start</code>. (Nodemon doit être installé uniquement pour le développement).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. Ajoutez aussi un fichier <mark>.env.exemple</mark> qui est le gabarit vide de votre fichier .env.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>express</em>, <em>morgan</em> et <em>mysql</em>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Chaque fonction qui interragit avec la base de données (dans le modèle) doit retourner une promesse.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1363,7 +1384,7 @@
 </div>
 <h2 id="importation-de-la-base-de-donnees">Importation de la base de données</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice03_data.sql">exercice03_data.sql</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice03_data.sql">exercice03_data.sql</a></li>
 </ul>
 <p>Le script va créer la base de données <strong>bd_exercices</strong> si ce n'est pas déjà fait ainsi que la table <strong>pokemon</strong>.</p>
 <h2 id="afficher-un-pokemon-selon-son-id">Afficher un pokemon selon son id</h2>
