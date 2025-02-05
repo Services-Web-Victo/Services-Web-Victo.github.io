@@ -18,7 +18,7 @@
     
     
       
-        <title>Exercice 04 - Pokemon API - Services Web</title>
+        <title>Exercice 04 - Pokemon API (Formatif) - Services Web</title>
       
     
     
@@ -119,7 +119,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-04-pokemon-api" class="md-skip">
+        <a href="#exercice-04-pokemon-api-formatif" class="md-skip">
           Aller au contenu
         </a>
       
@@ -155,7 +155,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 04 - Pokemon API
+              Exercice 04 - Pokemon API (Formatif)
             
           </span>
         </div>
@@ -1256,6 +1256,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formatif/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formatif formel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1308,6 +1329,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#routes-a-creer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routes à créer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Routes à créer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#afficher-un-pokemon-selon-son-id" class="md-nav__link">
     <span class="md-ellipsis">
       Afficher un pokemon selon son id
@@ -1315,8 +1346,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#afficher-une-liste-paginee-de-tous-les-pokemons" class="md-nav__link">
     <span class="md-ellipsis">
       Afficher une liste paginée de tous les pokemons
@@ -1324,8 +1355,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ajouter-un-pokemon" class="md-nav__link">
     <span class="md-ellipsis">
       Ajouter un pokemon
@@ -1333,8 +1364,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#modifier-un-pokemon" class="md-nav__link">
     <span class="md-ellipsis">
       Modifier un pokemon
@@ -1342,13 +1373,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#supprimer-un-pokemon" class="md-nav__link">
     <span class="md-ellipsis">
       Supprimer un pokemon
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1367,27 +1403,27 @@
                   
 
 
-<h1 id="exercice-04-pokemon-api">Exercice 04 - Pokemon API</h1>
-<p>Dans cet exercice vous devez créer un api avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL.</p>
+<h1 id="exercice-04-pokemon-api-formatif">Exercice 04 - Pokemon API (Formatif)</h1>
+<p>Dans cet exercice vous devez créer un api avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL. Vous trouverez la description des routes à créer plus bas.</p>
 <h2 id="configuration-du-projet">Configuration du projet</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez un nouveau projet et jumelez le à un dépôt sur github. Assurez-vous de créer un fichier <mark>.gitignore</mark> et d'exclure les fichiers et répertoires qui ne sont pas nécessaire.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utilisez <mark>nodemon</mark> et configurez un script pour que votre application puisse être lancé avec la commande <code>npm start</code>. (Nodemon doit être installé uniquement pour le développement).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. Ajoutez aussi un fichier <mark>.env.exemple</mark> qui est le gabarit vide de votre fichier .env.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>express</em>, <em>morgan</em> et <em>mysql</em>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. Ajoutez aussi un fichier <mark>.env.example</mark> qui est le gabarit vide de votre fichier .env.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>express</em> et <em>mysql</em>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Chaque fonction qui interragit avec la base de données (dans le modèle) doit retourner une promesse.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Une fois l'exercice terminé, remettez-moi dans le devoir Teams le lien vers votre dépôt Github. Assurez-vous que la version de votre projet soit à jour.</p>
+<p>Une fois l'exercice terminé, remettez-moi dans le devoir Teams le lien vers votre dépôt Github. Assurez-vous que la version de votre projet soit à jour et que je puisse y accéder.</p>
 </div>
 <h2 id="importation-de-la-base-de-donnees">Importation de la base de données</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice03_data.sql">exercice03_data.sql</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice04_data.sql">exercice04_data.sql</a></li>
 </ul>
-<p>Le script va créer la base de données <strong>bd_exercices</strong> si ce n'est pas déjà fait ainsi que la table <strong>pokemon</strong>.</p>
-<h2 id="afficher-un-pokemon-selon-son-id">Afficher un pokemon selon son id</h2>
+<p>Le script va créer la base de données <strong>bd_exercices</strong> ainsi que la table <strong>pokemon</strong>.</p>
+<h2 id="routes-a-creer">Routes à créer</h2>
+<h3 id="afficher-un-pokemon-selon-son-id">Afficher un pokemon selon son id</h3>
 <div class="language-text highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /api/pokemons/:id
 </span></code></pre></div>
 <div class="language-json highlight"><span class="filename">reponse</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Succès avec la route /api/pokemons/1</span>
@@ -1414,7 +1450,7 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nt">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;Echec lors de la récupération du pokemon avec l&#39;id 1245&quot;</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="afficher-une-liste-paginee-de-tous-les-pokemons">Afficher une liste paginée de tous les pokemons</h2>
+<h3 id="afficher-une-liste-paginee-de-tous-les-pokemons">Afficher une liste paginée de tous les pokemons</h3>
 <div class="language-text highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET /api/pokemons/liste?page=1&amp;type=grass
 </span></code></pre></div>
 <p>Créez une route qui va afficher la liste de tous les pokemons. Cette route sera <strong>paginée</strong> et n'affichera que <mark>25 pokemons par page</mark>. Chaque pokemon a aussi un type primaire. On va pouvoir ajouter un filtre en paramêtre pour n'afficher que les pokemons qui sont du type choisi.</p>
@@ -1460,7 +1496,7 @@
 </span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="nt">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;Echec lors de la récupération de la liste des pokemons&quot;</span>
 </span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="ajouter-un-pokemon">Ajouter un pokemon</h2>
+<h3 id="ajouter-un-pokemon">Ajouter un pokemon</h3>
 <div class="language-json highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/api/pokemo</span><span class="kc">ns</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// Structure des données du corps de la requête, en json. À remplacer par des données valides</span>
@@ -1507,7 +1543,7 @@
 </span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">    </span><span class="nt">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;Echec lors de la création du pokemon [nom_du_pokemon]&quot;</span>
 </span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="modifier-un-pokemon">Modifier un pokemon</h2>
+<h3 id="modifier-un-pokemon">Modifier un pokemon</h3>
 <div class="language-json highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">PUT</span><span class="w"> </span><span class="err">/api/pokemo</span><span class="kc">ns</span><span class="err">/</span><span class="p">:</span><span class="err">id</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">// Structure des données du corps de la requête, en json. À remplacer par des données valides</span>
@@ -1560,7 +1596,7 @@
 </span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="nt">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;Echec lors de la modification du pokemon [nom_du_pokemon]&quot;</span>
 </span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="supprimer-un-pokemon">Supprimer un pokemon</h2>
+<h3 id="supprimer-un-pokemon">Supprimer un pokemon</h3>
 <div class="language-text highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>DELETE /api/pokemons/:id
 </span></code></pre></div>
 <div class="language-json highlight"><span class="filename">reponse</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Succès</span>

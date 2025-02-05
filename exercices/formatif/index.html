@@ -8,24 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/securite/jwt/">
+        <link rel="canonical" href="https://example.com/exercices/formatif/">
+      
+      
+        <link rel="prev" href="../03_helloworld_api/">
       
       
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
     
     
       
-        <title>JSON Web Token (JWT) - Services Web</title>
+        <title>Formatif formel - Services Web</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -85,15 +87,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../custom_theme/css/extra.css">
+      <link rel="stylesheet" href="../../custom_theme/css/extra.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/all.css">
+      <link rel="stylesheet" href="../../custom_theme/css/all.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/colors.css">
+      <link rel="stylesheet" href="../../custom_theme/css/colors.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/cards.css">
+      <link rel="stylesheet" href="../../custom_theme/css/cards.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -119,7 +121,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#json-web-token-jwt" class="md-skip">
+        <a href="#formatif-formel" class="md-skip">
           Aller au contenu
         </a>
       
@@ -135,7 +137,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -155,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JSON Web Token (JWT)
+              Formatif formel
             
           </span>
         </div>
@@ -244,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -263,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../workspace/" class="md-tabs__link">
+        <a href="../../notes_de_cours/workspace/" class="md-tabs__link">
           
   
   Notes de cours
@@ -277,11 +279,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../exercices/01_utilisation_api/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
   Exercices
@@ -320,7 +324,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -338,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -396,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workspace/" class="md-nav__link">
+      <a href="../../notes_de_cours/workspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -455,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/introduction/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -476,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/bonnes_pratiques/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/bonnes_pratiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/json/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/documentation/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -585,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/introduction/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -606,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/server_web/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/server_web/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -627,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/npm/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/npm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -648,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/express/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -669,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/middleware/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/middleware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/routage/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/routage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -711,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/express_mysql/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express_mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -732,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/javascript_promise/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/javascript_promise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -753,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node/structure_projet/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/structure_projet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -820,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/render/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/postgresql/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/postgresql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -908,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/fetch/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/toolpad/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/toolpad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cle_api/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/cle_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hashage/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/hashage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/start_express/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/start_express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/recuperer_parametres/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/recuperer_parametres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/cors/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/cors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1159,23 +1163,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1186,7 +1195,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1200,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/01_utilisation_api/" class="md-nav__link">
+      <a href="../01_utilisation_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1221,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/02_serverweb_node/" class="md-nav__link">
+      <a href="../02_serverweb_node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1242,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+      <a href="../03_helloworld_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1260,10 +1269,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../exercices/formatif/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Formatif formel
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1272,6 +1301,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration du projet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importation de la base de données
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consignes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consignes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grille-de-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grille de correction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1311,9 +1396,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mediagraphie" class="md-nav__link">
+  <a href="#configuration-du-projet" class="md-nav__link">
     <span class="md-ellipsis">
-      Médiagraphie
+      Configuration du projet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importation de la base de données
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consignes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consignes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grille-de-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grille de correction
     </span>
   </a>
   
@@ -1334,20 +1446,30 @@
                   
 
 
-<h1 id="json-web-token-jwt">JSON Web Token (JWT)</h1>
-<ul>
-<li>Qu'est-ce que c'est?</li>
-<li>Pourquoi on l'utilise, avantage</li>
-<li>Structure</li>
+<h1 id="formatif-formel">Formatif formel</h1>
+<p>À partir d'une copie de votre exercice 3, vous devez modifier le fichier <strong>salutations.model.js</strong> pour qu'il interroge une base de données.</p>
+<h2 id="configuration-du-projet">Configuration du projet</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez une copie de votre exercice 3 et jumelez le à un dépôt sur github. Assurez-vous de créer un fichier <mark>.gitignore</mark> et d'exclure les fichiers et répertoires qui ne sont pas nécessaire.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utilisez <mark>nodemon</mark> et configurez un script pour que votre application puisse être lancé avec la commande <code>npm start</code>. (Nodemon doit être installé uniquement pour le développement).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. Ajoutez aussi un fichier <mark>.env.example</mark> qui est le gabarit vide de votre fichier .env.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>express</em> et <em>mysql</em>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
 </ul>
-<p>https://auth0.com/docs/secure/tokens/json-web-tokens
-https://jwt.io/
-https://fr.wikipedia.org/wiki/JSON_Web_Token</p>
-<h2 id="mediagraphie">Médiagraphie</h2>
-<ul>
-<li>GeeksforGeeks. (2024, January 18). How to implement JWT Authentication in express app ?. GeeksforGeeks. <a href="https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/">https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/</a></li>
-<li>Silva, M. H. da. (2020, September 14). Creating a secure node.js REST API: Toptal®. Toptal Engineering Blog. <a href="https://www.toptal.com/nodejs/secure-rest-api-in-nodejs">https://www.toptal.com/nodejs/secure-rest-api-in-nodejs</a></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Une fois l'exercice terminé, remettez-moi dans le devoir Teams le lien vers votre dépôt Github. Assurez-vous que la version de votre projet soit à jour et que je puisse y accéder.</p>
+</div>
+<h2 id="importation-de-la-base-de-donnees">Importation de la base de données</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice03_data.sql">exercice03_data.sql</a></li>
 </ul>
+<h2 id="consignes">Consignes</h2>
+<ul>
+<li>Une fois le script exécuté, modifiez vos fichiers modèles et controlleurs pour que toutes les transactions soient fait à la base de données.</li>
+</ul>
+<h2 id="grille-de-correction">Grille de correction</h2>
+<p>La grille de correction est disponible ici : <a href="../../assets/files/Grille%20de%20correction%20formatif.pdf" target="_blank">Grille de correction formatif</a></p>
 
 
 
@@ -1400,12 +1522,12 @@ https://fr.wikipedia.org/wiki/JSON_Web_Token</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.471ce7a9.min.js"></script>
       
-        <script src="../../../custom_theme/javascript/alltarget.js"></script>
+        <script src="../../custom_theme/javascript/alltarget.js"></script>
       
     
   </body>
