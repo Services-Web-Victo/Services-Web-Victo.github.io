@@ -1402,6 +1402,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/05_apikey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 - Clé API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1502,7 +1523,7 @@
 
 
 <h1 id="cle-api">Clé API</h1>
-<p>Une clé d'api est une chaîne de caractères aléatoire unique qui est utilisée pour identifier et authentifier un utilisateur qui effectue une requête à l'api. Ce n'est pas de l'information encrypté ou hashé. Par exemple on pourrait un UUID comme clé api.</p>
+<p>Une clé d'api est une chaîne de caractères aléatoire unique qui est utilisée pour identifier et authentifier un utilisateur qui effectue une requête à l'api. <mark>Ce n'est pas de l'information encrypté ou hashé</mark>. Par exemple on pourrait utiliser un UUID comme clé api. L'importe est que la clé api doit être unique dans le système.</p>
 <p>On ajoute la clé dans l'entête de chaque requête envoyée à l'API. Ensuite le serveur détermine si la clé est valide, identifie l'utilisateur associé à la clé (identification) et détermine si celui-ci peut effectuer la requête (authentification).</p>
 <h2 id="fonctionnement">Fonctionnement</h2>
 <p>Voici le mode de fonctionnement que nous allons utiliser pour ajouter une protection par clé api à notre projet:</p>
@@ -1514,12 +1535,12 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> On va ajouter le Intergiciel aux routes qu'on veut protéger.</li>
 </ul>
 <h3 id="ajouter-la-cle-a-lentete-de-la-requete">Ajouter la clé à l'entête de la requête</h3>
-<p>Dans la section entête de la requête il y a une clé qui est utilisée justement pour envoyer des données comme un clé api. Dans Postman vous pouvez ajouter l'information dans l'onglet <em>Headers</em>. Le nom de la clé est <strong>Authorization</strong> et comme valeur nous allons avoir cle_api suivi d'une espace et de la clé. (Vous pouvez utiliser autre chose comme nom que cle_api, souvent dans les documentation on va voir <em>Bearer</em>).</p>
+<p>Dans la section entête de la requête il y a une clé qui est utilisée pour envoyer des données d'authorisation comme une clé api. Dans Postman vous pouvez ajouter l'information dans l'onglet <em>Headers</em>. Le nom de la clé est <strong>Authorization</strong> et comme valeur nous allons avoir cle_api suivi d'une espace et de la clé. (Vous pouvez utiliser autre chose comme nom que cle_api, souvent dans les documentation on va voir <em>Bearer</em>, l'idée est d'indiquer quelle genre d'autorisation on demande).</p>
 <figure>
 <p><img alt="apikey_01.png" class="center shadow" src="../../../assets/img/apikey_01.png" /></p>
 </figure>
 <h3 id="intergiciel-de-confirmation-de-la-cle">Intergiciel de confirmation de la clé</h3>
-<p>Dans votre projet, créer un répertoire <strong>middlewares</strong> dans le répertoire <strong>src</strong>. Créez un fichier dans ce répertoire avec le code suivant</p>
+<p>Dans votre projet, créez un répertoire <strong>middlewares</strong> dans le répertoire <strong>src</strong>. Le code suivant est un exemple d'intergiciel qui récupère la valeur de la clé api dans l'entête de la requête et vérifie à l'aide d'une fonction dans le modèle que la clé existe dans la base de données. </p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">authentification.middleware.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1544,24 +1565,26 @@
 <span class="normal"><a href="#__codelineno-0-22">22</a></span>
 <span class="normal"><a href="#__codelineno-0-23">23</a></span>
 <span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Utilisateur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../models/utilisateur.model&quot;</span><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ValidationCle</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../models/utilisateur.model&quot;</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="c1">// Vérifier si la clé API est présente dans l&#39;entête</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Vous devez fournir une clé api&quot;</span><span class="w"> </span><span class="p">});</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="c1">// Récupérer la clé API</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="c1">// Récupérer la clé API qui est dans l&#39;entête au format &quot;cle_api XXXXXXXX&quot;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cleApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
 </span></span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="c1">// Vérifier si la clé API est valide</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nx">Utilisateur</span><span class="p">.</span><span class="nx">validationCle</span><span class="p">(</span><span class="nx">cleApi</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nx">ValidationCle</span><span class="p">(</span><span class="nx">cleApi</span><span class="p">)</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resultat</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">resultat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Clé API invalide&quot;</span><span class="w"> </span><span class="p">});</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">            </span><span class="c1">// La clé API est valide, on continue le traitement</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">            </span><span class="c1">// La clé API est valide, on continue le traitement avec la fonction next()</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">            </span><span class="nx">next</span><span class="p">();</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="p">})</span>
@@ -1569,52 +1592,41 @@
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Erreur lors de la validation de la clé api&quot;</span><span class="w"> </span><span class="p">})</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="p">});</span><span class="w">    </span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="p">}</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">authentification</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Explication de la ligne 11
 <code>req.headers.authorization</code> me retourne la valeur complète de la clé authorization, par exemple "cle_api 123456". En utilisant split avec un espace comme caractère de séparation je me retrouve avec un tableau avec "cle_api" à l'index 0 et "123456" à l'index 1. C'est ne récupérer que la valeur de la clé que j'utilise split et ensuite je demande l'index 1. </p>
 </div>
-<p>Voici maintenant un exemple de fonction qui valide que la clé api existe dans la bd et retourne une valeur vrai ou faux.</p>
-<div class="language-javascript highlight"><span class="filename">utilisateur.model.js</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// ...</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">exports</span><span class="p">.</span><span class="nx">validationCle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cleApi</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">requete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SELECT COUNT(*) AS nbUsager FROM usager u WHERE cle_api = ?; &#39;</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">parametres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">cleApi</span><span class="p">];</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nx">sql</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">requete</span><span class="p">,</span><span class="w"> </span><span class="nx">parametres</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">,</span><span class="w"> </span><span class="nx">resultat</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Erreur sqlState </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlState</span><span class="si">}</span><span class="sb"> : </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlMessage</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">                </span><span class="nx">reject</span><span class="p">(</span><span class="nx">erreur</span><span class="p">);</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">resultat</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">nbUsager</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">   </span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p">});</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">});</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">// ...</span>
-</span></code></pre></div>
 <h3 id="protection-des-routes">Protection des routes</h3>
-<p>On peut appliquer la protection à toutes les routes de l'API. Par contre si on a une route qui permet de créer un utilisateur sans clé d'api ou une route pour la documentation, elles seront bloquées. Ce n'est donc pas la meilleure méthode. Dans le fichier index.js on va simplement utiliser <code>app.use()</code>.</p>
-<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./src/middlewares/authentification.middleware&#39;</span><span class="p">);</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// ...</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">authentification</span><span class="p">);</span>
+<p>On peut appliquer la protection à toutes les routes de l'API. Par contre si on a une route qui permet de créer un utilisateur sans clé d'api ou une route pour la documentation, elles seront bloquées. Ce n'est donc pas la meilleure méthode. Dans le fichier index.js on va simplement utiliser <code>app.use()</code> avec le nom de la fonction intergiciel qu'on aura importé.</p>
+<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/middlewares/authentification.middleware&#39;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Toutes les requètes vont validées par l&#39;intergiciel</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">authentification</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Étant donnée qu'on utilise le routage, on peut aussi ajouter la protection à un groupe de route.</p>
-<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./src/middlewares/authentification.middleware&#39;</span><span class="p">);</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// ...</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api/pokemons&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">authentification</span><span class="p">,</span><span class="w"> </span><span class="nx">pokemonsRoutes</span><span class="p">);</span>
+<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/middlewares/authentification.middleware&#39;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">testRoute</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/routes/test.route&#39;</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// ...</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;api/test&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">authentification</span><span class="p">,</span><span class="w"> </span><span class="nx">testRoute</span><span class="p">);</span>
 </span></code></pre></div>
 <p>On peut aussi y aller route par route</p>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pokemons.route.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../middlewares/authentification.middleware&#39;</span><span class="p">);</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// Ici seulement la route /liste est protégée</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/liste&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">authentification</span><span class="p">,</span><span class="w"> </span><span class="nx">pokemonsController</span><span class="p">.</span><span class="nx">afficherTousLesPokemons</span><span class="p">);</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pokemonsController</span><span class="p">.</span><span class="nx">trouverUnPokemon</span><span class="p">);</span>
-</span></code></pre></div></td></tr></table></div>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pokemons.route.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">authentification</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../middlewares/authentification.middleware&quot;</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">testController</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../controllers/test.controller&quot;</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">// Cette route n&#39;est pas protégée</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/liste&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">testController</span><span class="p">.</span><span class="nx">afficherListe</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// Mais celle-ci l&#39;est</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="hll"><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">authentification</span><span class="p">,</span><span class="w"> </span><span class="nx">testController</span><span class="p">.</span><span class="nx">ajouterItem</span><span class="p">);</span>
+</span></span></code></pre></div></td></tr></table></div>
 <h2 id="mediagraphie">Mediagraphie</h2>
 <ul>
 <li>Ali, M. (2023, April 28). Understanding API key authentication in Node.js. LogRocket Blog. <a href="https://blog.logrocket.com/understanding-api-key-authentication-node-js/">https://blog.logrocket.com/understanding-api-key-authentication-node-js/</a> </li>
