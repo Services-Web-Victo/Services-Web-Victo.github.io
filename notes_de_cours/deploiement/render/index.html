@@ -1438,6 +1438,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/06_render/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 - Déploiement sur Render
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1566,16 +1587,16 @@
 <p>Dans le forfait gratuit, on ne peut avoir qu'une base de données et elle à une durée de vie de 90 jours</p>
 </div>
 <h2 id="creation-dun-compte-sur-render">Création d'un compte sur Render</h2>
-<p>Première étape, créer votre compte sur le site <a href="https://render.com/">https://render.com/</a> et sélectionnez le plan gratuit. Pour vous faciliter le travail connectez vous avec Github.</p>
+<p>Première étape, créer votre compte sur le site <a href="https://render.com/">https://render.com/</a> et sélectionnez le plan gratuit. Pour vous faciliter le travail <mark>connectez vous avec Github</mark>.</p>
 <h2 id="creation-de-la-base-de-donnees">Création de la base de données</h2>
-<p>Dans le tableau de bord à la section PostgreSQL, cliquez sur <strong>Create PostgreSQL</strong>. Ensuite donnez un nom à votre base de données, laissez les autres options par défaut, sélectionnez le forfait gratuit et cliquez sur <strong>Create database</strong>. La création prendra un certain temps et une fois terminée vous aurez accès aux informations de connexions plus bas dans la section <em>Connections</em>: </p>
+<p>Dans le tableau de bord à la section PostgreSQL, cliquez sur <strong>Create PostgreSQL</strong> (Vous pouvez aussi cliquer sur New en haut à droite). Ensuite donnez un nom à votre base de données, laissez les autres options par défaut, sélectionnez le forfait gratuit et cliquez sur <strong>Create database</strong>. La création prendra un certain temps et une fois terminée vous aurez accès aux informations de connexions plus bas dans la section <em>Connections</em>: </p>
 <figure>
 <p><img alt="render_01.png" class="center shadow" src="../../../assets/img/render_01.png" />
   </p>
 <figcaption>Image 1 - Informations de connexion</figcaption>
 </figure>
 <h3 id="connexion-depuis-dbeaver">Connexion depuis DBeaver</h3>
-<p>Maintenant créez-vous une connexions depuis un IDE (J'ai uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase.</p>
+<p>Maintenant créez-vous une connexions depuis un IDE (J'ai uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase. Vous avez aussi votre nom d'usager et votre mot de passe.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>postgres://nomUsager:motDePasse@dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
 </span></code></pre></div>
 <p>Quand vous faites votre connexion dans DBeaver, l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut (Vous devez sélectionner l'option "Connect by: URL"): </p>

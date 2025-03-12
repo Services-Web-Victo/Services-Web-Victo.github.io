@@ -11,6 +11,8 @@
         <link rel="canonical" href="https://example.com/exercices/06_render/">
       
       
+        <link rel="prev" href="../05_apikey/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Exercice 06 - Déploiement sur Render - Services Web</title>
+        <title>06 - Déploiement sur Render - Services Web</title>
       
     
     
@@ -155,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 06 - Déploiement sur Render
+              06 - Déploiement sur Render
             
           </span>
         </div>
@@ -277,10 +279,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
@@ -1159,23 +1163,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1186,7 +1195,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1319,6 +1328,103 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    06 - Déploiement sur Render
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    06 - Déploiement sur Render
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#etape-1-creation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1 - Création de la base de données
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-2-modification-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2 - Modification du projet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-3-creation-du-service-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3 - Création du service web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-4-test-et-remise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 4 - Test et remise
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1415,7 +1521,7 @@
 <h2 id="etape-2-modification-du-projet">Étape 2 - Modification du projet</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Faites une copie de l'exercice 4, c'est cette copie que nous allons modifier et utiliser pour le déploiement.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Installez le module <em>PG</em> et modifier votre projet pour l'utiliser.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Installez le module <em>PG</em> et modifiez votre projet pour l'utiliser.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez la table <em>pokemon</em> dans votre base de données. Vous pouvez utiliser ce script SQL : <a href="../../assets/files/exercice06_create_bd.sql">exercice06_create_bd</a></li>
 </ul>
 <h2 id="etape-3-creation-du-service-web">Étape 3 - Création du service web</h2>
