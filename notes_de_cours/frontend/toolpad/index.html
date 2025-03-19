@@ -1648,22 +1648,25 @@
 </div>
 <p>Au niveau du fonctionnement, on crée un projet avec <code>npx</code>. Ensuite en démarrant ce projet nous avons accès à un interface graphique déjà programmé, un éditeur, qui nous permet de créer notre projet en sélectionnant les composants qu'on veut utiliser. Une fois le projet terminé, on peut le déployer sur un serveur externe comme une application Node traditionnelle.</p>
 <h2 id="installation">Installation</h2>
+<p>Commencer par installer pnpm:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm install -g pnpm@latest-10
+</span></code></pre></div>
 <p>Pour créer un nouveau projet Toolpad Studio, utilisez la commande </p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx create-toolpad-app@latest --studio my-toolpad-app
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pnpm create-toolpad-app@latest --studio my-toolpad-app
 </span></code></pre></div>
 <p>La commande suivante va créer un dossier nommé my-toolpad-app avec les fichiers pour exécuté Toolpad Studio. </p>
 <p>Ensuite pour lancer l'application en mode développement, lancer la commande suivante dans le répertoire du projet:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm run dev
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pnpm run dev
 </span></code></pre></div>
 <h2 id="construire-notre-premiere-application">Construire notre première application</h2>
 <p>Cette exercice est directement inspiré de cette démonstration : <a href="https://mui.com/toolpad/studio/getting-started/first-app/">https://mui.com/toolpad/studio/getting-started/first-app/</a></p>
 <h3 id="creer-une-nouvelle-application">Créer une nouvelle application</h3>
 <p>Exécutez la commande suivante. </p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx create-toolpad-app test-toolpad-app
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pnpm create-toolpad-app@latest --studio demo_toolpad
 </span></code></pre></div>
 <p>Lancez le serveur de développement</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cd test-toolpad-app
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm run dev
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cd test-toolpad-app
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pnpm run dev
 </span></code></pre></div>
 <p>Toolpad studio devrait s'ouvrir automatiquement dans une fenêtre de votre navigateur. Vous pouvez aussi y accéder à l'adresse http://localhost:3000</p>
 <h3 id="mise-en-place-de-linterface-graphique">Mise en place de l'interface graphique</h3>
@@ -1675,7 +1678,7 @@
 </figure>
 <h3 id="recuperer-les-donnees">Récupérer les données</h3>
 <p>Dans la section <em>Queries</em> de l'explorateur, cliquez sur le <strong>+</strong> et sélectionnez <strong>HTTP REST API</strong>. Nous allons récupérer une liste de race de chiens pour cet exemple. Utilisez l'url suivante : 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://dog.ceo/api/breeds/list/all
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://dog.ceo/api/breeds/list/all
 </span></code></pre></div></p>
 <p>Cliquez ensuite sur <strong>Run</strong> dans le bas à droite pour lancer la requête et inspecter les résultats.</p>
 <figure>
@@ -1684,12 +1687,12 @@
 <figcaption></figcaption>
 </figure>
 <p>Dans l'onglet <strong>Transform</strong> on peut modifier le résultat en inscrivant une expression JavaScript qui retourne un résultat. Cliquez sur l'option <strong>Transform response</strong> pour activer cette option. Dans notre exemple nous voulons conserver uniquement les éléments de la réponse qui sont dans l'attribut <em>message</em> sous forme de tableau. Inscrivez le code suivant : </p>
-<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">return</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">entry</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">race</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">sousRace</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p">};</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">});</span>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">return</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">entry</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">race</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">sousRace</span><span class="o">:</span><span class="nx">entry</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">});</span>
 </span></code></pre></div>
 Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les changements.</p>
 <figure>
@@ -1706,7 +1709,7 @@ Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les ch
 </ul>
 <p>Sur la gauche, vous verrez une liste de tous les états pouvant être liés dans la page et sur la droite, un éditeur de code qui accepte n'importe quelle expression JavaScript.</p>
 <p>Utilisez la requête que vous venez d'enregistrer, <code>dogQuery</code>. Dans l'éditeur de code entrez la ligne suivante : </p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">dogQuery</span><span class="p">.</span><span class="nx">data</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">dogQuery</span><span class="p">.</span><span class="nx">data</span>
 </span></code></pre></div>
 <p><em>dogQuery</em> est le nom de la requête et data représente le résultat.</p>
 <p>Cliquez sur <em>Update binding</em> et votre <strong>Data grid</strong> devrait se remplir avec le résultat de la requête.</p>
@@ -1716,11 +1719,11 @@ Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les ch
 <li>Créez une autre requête de type REST API et ajoutez un paramètre <code>breed</code> dans la section <strong>Parameters</strong>.</li>
 <li>Cliquez sur le bouton <em>Bind</em> du paramètre et ajoutez le code suivant dans l'éditeur : </li>
 </ul>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nx">dataGrid</span><span class="p">.</span><span class="nx">selection</span><span class="o">?</span><span class="p">.[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;akita&#39;</span>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nx">dataGrid</span><span class="p">.</span><span class="nx">selection</span><span class="o">?</span><span class="p">.[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;akita&#39;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Le paramètre va prendre la valeur de la première colonne sélectionnée de la grille ou "Akita" si aucune ligne n'est sélectionnée.</p>
 <p>Dans l'url, cliquez sur le bouton <em>Bind "url"</em> et entrez le code suivant : </p>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="sb">`https://dog.ceo/api/breed/</span><span class="si">${</span><span class="nx">parameters</span><span class="p">.</span><span class="nx">breed</span><span class="si">}</span><span class="sb">/images/random`</span>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="sb">`https://dog.ceo/api/breed/</span><span class="si">${</span><span class="nx">parameters</span><span class="p">.</span><span class="nx">breed</span><span class="si">}</span><span class="sb">/images/random`</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>parameters</strong> permet d'accéder à la liste des paramètres et <strong>breed</strong> à la valeur de notre paramètre du même nom.</p>
 <ul>
@@ -1728,7 +1731,7 @@ Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les ch
 <li>Dans l'éditeur, sélectionnez votre image et dans l'inspecteur cliquez sur le bouton <em>Bind</em> à la droite de <strong>src</strong>.</li>
 <li>Inscrivez le code suivant et cliquez sur <em>Update binding</em></li>
 </ul>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nx">imageQuery</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">script.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nx">imageQuery</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">message</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="previsualiser-lapplication">Prévisualiser l'application</h3>
 <p>Cliquez sur le bouton <strong>Preview</strong> pour afficher une visualisation de votre application.</p>
