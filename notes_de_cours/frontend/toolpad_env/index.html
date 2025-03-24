@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://example.com/exercices/10_meme_generator/">
+        <link rel="canonical" href="https://example.com/notes_de_cours/frontend/toolpad_env/">
       
       
-        <link rel="prev" href="../09_toolpad_crud/">
+        <link rel="prev" href="../toolpad/">
       
       
+        <link rel="next" href="../../securite/cle_api/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
     
     
       
-        <title>10 - Générateur de Meme - Services Web</title>
+        <title>Variable d'environnement avec Toolpad - Services Web</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -87,15 +89,15 @@
       
     
     
-      <link rel="stylesheet" href="../../custom_theme/css/extra.css">
+      <link rel="stylesheet" href="../../../custom_theme/css/extra.css">
     
-      <link rel="stylesheet" href="../../custom_theme/css/all.css">
+      <link rel="stylesheet" href="../../../custom_theme/css/all.css">
     
-      <link rel="stylesheet" href="../../custom_theme/css/colors.css">
+      <link rel="stylesheet" href="../../../custom_theme/css/colors.css">
     
-      <link rel="stylesheet" href="../../custom_theme/css/cards.css">
+      <link rel="stylesheet" href="../../../custom_theme/css/cards.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -121,7 +123,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-10-generateur-de-meme" class="md-skip">
+        <a href="#utiliser-des-variables-denvironnement-avec-toolpad-studio" class="md-skip">
           Aller au contenu
         </a>
       
@@ -137,7 +139,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -157,7 +159,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10 - Générateur de Meme
+              Variable d'environnement avec Toolpad
             
           </span>
         </div>
@@ -246,7 +248,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -261,11 +263,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../notes_de_cours/workspace/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../workspace/" class="md-tabs__link">
           
   
   Notes de cours
@@ -279,13 +283,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01_utilisation_api/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../exercices/01_utilisation_api/" class="md-tabs__link">
           
   
   Exercices
@@ -324,7 +326,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -342,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,23 +361,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -386,7 +393,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Notes de cours
@@ -400,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/workspace/" class="md-nav__link">
+      <a href="../../workspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -459,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/api/introduction/" class="md-nav__link">
+      <a href="../../api/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -480,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/api/bonnes_pratiques/" class="md-nav__link">
+      <a href="../../api/bonnes_pratiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/api/json/" class="md-nav__link">
+      <a href="../../api/json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -522,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/api/documentation/" class="md-nav__link">
+      <a href="../../api/documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/introduction/" class="md-nav__link">
+      <a href="../../node/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/server_web/" class="md-nav__link">
+      <a href="../../node/server_web/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/npm/" class="md-nav__link">
+      <a href="../../node/npm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/express/" class="md-nav__link">
+      <a href="../../node/express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/middleware/" class="md-nav__link">
+      <a href="../../node/middleware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/routage/" class="md-nav__link">
+      <a href="../../node/routage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/express_mysql/" class="md-nav__link">
+      <a href="../../node/express_mysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/javascript_promise/" class="md-nav__link">
+      <a href="../../node/javascript_promise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/node/structure_projet/" class="md-nav__link">
+      <a href="../../node/structure_projet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -824,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/deploiement/render/" class="md-nav__link">
+      <a href="../../deploiement/render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/deploiement/postgresql/" class="md-nav__link">
+      <a href="../../deploiement/postgresql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,6 +878,8 @@
                 
   
   
+    
+  
   
   
     
@@ -880,11 +889,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -898,7 +907,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Frontend
@@ -912,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/frontend/fetch/" class="md-nav__link">
+      <a href="../fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -933,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/frontend/toolpad/" class="md-nav__link">
+      <a href="../toolpad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,10 +960,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../notes_de_cours/frontend/toolpad_env/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -963,6 +981,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1021,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/securite/cle_api/" class="md-nav__link">
+      <a href="../../securite/cle_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/securite/hashage/" class="md-nav__link">
+      <a href="../../securite/hashage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/aide/start_express/" class="md-nav__link">
+      <a href="../../aide/start_express/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/aide/recuperer_parametres/" class="md-nav__link">
+      <a href="../../aide/recuperer_parametres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/aide/cors/" class="md-nav__link">
+      <a href="../../aide/cors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,28 +1203,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1216,7 +1230,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1230,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_utilisation_api/" class="md-nav__link">
+      <a href="../../../exercices/01_utilisation_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_serverweb_node/" class="md-nav__link">
+      <a href="../../../exercices/02_serverweb_node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1272,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_helloworld_api/" class="md-nav__link">
+      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1293,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../formatif/" class="md-nav__link">
+      <a href="../../../exercices/formatif/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1314,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_pokemon_api/" class="md-nav__link">
+      <a href="../../../exercices/04_pokemon_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1335,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_apikey/" class="md-nav__link">
+      <a href="../../../exercices/05_apikey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_render/" class="md-nav__link">
+      <a href="../../../exercices/06_render/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1377,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_fetch/" class="md-nav__link">
+      <a href="../../../exercices/07_fetch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_toolpad/" class="md-nav__link">
+      <a href="../../../exercices/08_toolpad/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_toolpad_crud/" class="md-nav__link">
+      <a href="../../../exercices/09_toolpad_crud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,30 +1451,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    10 - Générateur de Meme
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../exercices/10_meme_generator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1469,119 +1463,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#documents-a-remettre" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documents à remettre
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instructions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fonctionnement de l'application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation-de-variables-denvironnement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilisation de variables d'environnement
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nom-de-votre-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nom de votre page
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-des-routes-avec-postman" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test des routes avec Postman
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#envoyer-des-valeurs-dans-le-corps-de-la-requetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Envoyer des valeurs dans le corps de la requêtes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Envoyer des valeurs dans le corps de la requêtes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sous-postman" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sous Postman
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dans-linterface-de-toolpad-studio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dans l'interface de Toolpad Studio
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1614,107 +1495,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#documents-a-remettre" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documents à remettre
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instructions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fonctionnement-de-lapplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fonctionnement de l'application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation-de-variables-denvironnement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilisation de variables d'environnement
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nom-de-votre-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nom de votre page
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-des-routes-avec-postman" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test des routes avec Postman
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#envoyer-des-valeurs-dans-le-corps-de-la-requetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Envoyer des valeurs dans le corps de la requêtes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Envoyer des valeurs dans le corps de la requêtes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sous-postman" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sous Postman
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dans-linterface-de-toolpad-studio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dans l'interface de Toolpad Studio
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1728,70 +1508,26 @@
                   
 
 
-<h1 id="exercice-10-generateur-de-meme">Exercice 10 - Générateur de meme</h1>
-<p>À l'aide de l'api de ImgFlip et de Toolpad Studio vous devez creer un générateur de "meme".</p>
-<h2 id="documents-a-remettre">Documents à remettre</h2>
-<p>Voici ce que vous devez remettre dans un dossier compressé nommé ex10_noDA sur Teams</p>
+<h1 id="utiliser-des-variables-denvironnement-avec-toolpad-studio">Utiliser des variables d'environnement avec Toolpad Studio</h1>
+<p>Il y a déjà une mécanique de mise en place pour vous permettre de travailler avec des variables d'environnement dans Toolpad Studio.</p>
 <ul>
-<li>Le répertoire ex10_noDa situé dans votre projet dans <code>./toolpad/pages/</code>. (Voir la section <em>Nom de votre page</em>)</li>
-<li>La collection de vos requêtes Postman en format JSON (Voir la section <em>Test des routes avec Postman</em>)</li>
-</ul>
-<h2 id="instructions">Instructions</h2>
-<ul>
-<li>Créez un nouveau projet avec <strong>Toolpad Studio</strong> pour cet exercice.</li>
-<li>Vous allez aussi devoir vous créer un compte gratuit sur le site de ImgFlip : <a href="https://imgflip.com/">https://imgflip.com/</a>.</li>
-<li>Notez bien votre nom d'usager et votre mot de passe, vous allez en avoir besoin pour utiliser l'api.</li>
-<li>Consultez la documentation de l'api à cette adresse : <a href="https://imgflip.com/api">https://imgflip.com/api</a></li>
-<li>Pour le projet vous allez utiliser les routes <code>/get_memes</code> et <code>/caption_image</code>.</li>
-</ul>
-<h3 id="fonctionnement-de-lapplication">Fonctionnement de l'application</h3>
-<ul>
-<li>Je vous laisse découper l'application en composante de la façon que vous jugez pertinante.</li>
-<li>Affichez à l'utilisateur une liste de sélection avec 10 images de meme parmi lesquelles il pourra choisir. Ces images seront récupérées depuis le résultat de la route <code>/get_memes</code>. Pour plus de simplicité, ne retenez que les 10 premières images avec la valeur <code>"box_count" : 2</code>.</li>
-<li>Affichez dans la liste le nom de l'image et dans une zone sous la liste l'image sélectionnée.</li>
-<li>Ensuite ajoutez deux zones de saisies qui permettront d'ajouter deux textes à votre image. </li>
-<li>Quand l'usager cliquera sur un bouton "générer", faites afficher l'image du résultat dans la page.</li>
-<li>Ajoutez aussi une lien hypertexte "Ouvrir en taille réelle" qui ouvrira dans un nouvel onglet l'url de l'image.</li>
-<li>Utilisez la route <code>/caption_image</code> pour générer l'image. Attention, la façon d'envoyer les données dans le body est un peu différente de ce qu'on a vu auparavant, voir la note plus bas pour plus de détail.</li>
-<li>Donc en résumé, l'utilisateur sélectionne une des 10 images, inscrit ensuite un texte dans chacune des zones et clique sur le bouton "Générer".</li>
+<li>Premièrement vous devez ajouter un fichier <code>.env</code> à la racine de votre projet et y inclure vos variables.</li>
 </ul>
 <figure>
-<p><img alt="exercice10_03.png" class="center shadow" src="../../assets/img/ex10_03.png" />
+<p><img alt="toolpad_env01.png" class="center shadow" src="../../../assets/img/toolpad_env01.png" />
   </p>
-<figcaption>Exemple de la page</figcaption>
+<figcaption>Mon fichier .env dans VSCode</figcaption>
 </figure>
-<h3 id="utilisation-de-variables-denvironnement">Utilisation de variables d'environnement</h3>
-<p>Utilisez des variables d'environnement dans un fichier <strong>.env</strong> à la racine du projet pour enregistrer les valeurs suivantes : </p>
-<ul>
-<li>Le <em>host</em> de l'api (https://api.imgflip.com)</li>
-<li>Votre nom d'usager</li>
-<li>Votre mot de passe</li>
-</ul>
-<h3 id="nom-de-votre-page">Nom de votre page</h3>
-<p>Renommez votre page de la façon suivante : </p>
-<ul>
-<li>Node name : ex10_noDA</li>
-<li>Display name : ex10_noDA</li>
-<li>Page title : Exercice 10</li>
-</ul>
-<h3 id="test-des-routes-avec-postman">Test des routes avec Postman</h3>
-<p>Dans Postman</p>
-<ul>
-<li>Créez une nouvelle collection nommée ex10_noda</li>
-<li>Créez une requête fonctionnelle pour chacune des routes que vous allez utiliser (<code>/get_memes</code> et <code>/caption_image</code>)</li>
-<li>Vous pouvez exporter la collection en cliquant sur les trois points à droite du titre de la collection. Sélectionnez <em>Collection v2.1</em> dans les choix.</li>
-</ul>
-<h3 id="envoyer-des-valeurs-dans-le-corps-de-la-requetes">Envoyer des valeurs dans le corps de la requêtes</h3>
-<p>Jusqu'à maintenant on a toujours utilisé le format JSON pour envoyer des données dans le "body" de nos requêtes. L'api de ImgFlip accepte un autre format : <code>x-www-form-urlencoded</code>. Le format utilise aussi une syntaxe clé/valeur mais la façon d'inclure les données dans la requête va différer un peu.</p>
-<h4 id="sous-postman">Sous Postman</h4>
-<p>Dans la section "Body", cochez l'option <code>x-www-form-urlencoded</code>. Ensuite entrez vos informations dans le tableau : </p>
+<p>Ensuite dans l'éditeur de votre projet quand vous liez (bind) un paramètre allez dans l'onglet <code>Environment variable</code> et sélectionnez la variable voulue dans la liste (C'est les variables du fichier .env).</p>
 <figure>
-<p><img alt="exercice10_01.png" class="center shadow" src="../../assets/img/ex10_01.png" /></p>
+<p><img alt="toolpad_env02.png" class="center shadow" src="../../../assets/img/toolpad_env02.png" />
+  </p>
+<figcaption>Lier le paramètre</figcaption>
 </figure>
-<h4 id="dans-linterface-de-toolpad-studio">Dans l'interface de Toolpad Studio</h4>
-<p>Dans la section body de la requête, sélectionnez <em>x-www-form-urlencoded</em> en entrez ensuite chacun de vos paramètres. Vous pouvez les <em>binder</em> à des paramètres de la section <em>parameters</em>. </p>
 <figure>
-<p><img alt="exercice10_02.png" class="center shadow" src="../../assets/img/ex10_02.png" /></p>
+<p><img alt="toolpad_env03.png" class="center shadow" src="../../../assets/img/toolpad_env03.png" />
+  </p>
+<figcaption>Sélectionnez la bonne variable</figcaption>
 </figure>
 
 
@@ -1845,12 +1581,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.471ce7a9.min.js"></script>
       
-        <script src="../../custom_theme/javascript/alltarget.js"></script>
+        <script src="../../../custom_theme/javascript/alltarget.js"></script>
       
     
   </body>
