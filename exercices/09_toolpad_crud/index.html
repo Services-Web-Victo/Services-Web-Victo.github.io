@@ -14,8 +14,6 @@
         <link rel="prev" href="../08_toolpad/">
       
       
-        <link rel="next" href="../10_meme_generator/">
-      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
@@ -1430,6 +1428,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    09 - Opérations CRUD avec Toolpad Studio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1440,27 +1449,79 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10_meme_generator/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    10 - Générateur de Meme
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable d'environnement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dresser-la-liste-des-enregistrements-dans-une-grille" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dresser la liste des enregistrements dans une grille.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permettre-dajouter-un-enregistrement-dans-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permettre d'ajouter un enregistrement dans la base de données.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperer-un-enregistrement-et-donner-la-possibilite-de-le-modifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récupérer un enregistrement et donner la possibilité de le modifier.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supprimer-un-enregistrement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supprimer un enregistrement.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rafraichir-la-liste-apres-une-opetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rafraîchir la liste après une opétation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1493,6 +1554,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable d'environnement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dresser-la-liste-des-enregistrements-dans-une-grille" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dresser la liste des enregistrements dans une grille.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permettre-dajouter-un-enregistrement-dans-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permettre d'ajouter un enregistrement dans la base de données.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperer-un-enregistrement-et-donner-la-possibilite-de-le-modifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récupérer un enregistrement et donner la possibilité de le modifier.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supprimer-un-enregistrement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supprimer un enregistrement.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rafraichir-la-liste-apres-une-opetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rafraîchir la liste après une opétation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1507,7 +1630,7 @@
 
 
 <h1 id="operations-crud-avec-toolpad-studio">Opérations CRUD avec Toolpad Studio</h1>
-<p>À partir de l'api que vous avez mise en ligne sur Render à l'exercice 6 vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
+<p>À partir de l'api que vous avez mise en ligne sur Render à l'<mark>exercice 6</mark> vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Dresser la liste des enregistrements dans une grille.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Permettre d'ajouter un enregistrement dans la base de données.</li>
@@ -1515,12 +1638,56 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Supprimer un enregistrement.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Rafraîchir la liste après une opétation (automatiquement ou sur un clique de bouton).</li>
 </ul>
-<p>Le fonctionnement de votre interface est à votre discrètion (grille modifiable, formulaire).</p>
-<p>Vous pouvez vous inpisrer de l'exemple suivant qui se retrouve dans la documentation de Toolpad Studio : <a href="https://mui.com/toolpad/studio/examples/basic-crud-app/">https://mui.com/toolpad/studio/examples/basic-crud-app/</a>.</p>
+<h2 id="variable-denvironnement">Variable d'environnement</h2>
+<ul>
+<li>Utilisez une variable d'environnement pour le hostname de votre api.</li>
+<li>Si vous avez implémenter la protection par clé api, ajouter aussi la clé api dans vos variables d'environnement.</li>
+</ul>
+<h2 id="dresser-la-liste-des-enregistrements-dans-une-grille">Dresser la liste des enregistrements dans une grille.</h2>
+<ul>
+<li>Utilisez une dataGrid pour afficher vos données. </li>
+<li>Puisque la requête était paginée, ajoutez sous la grille un sélecteur de page. Vous pouvez récupérer la page affiché et le nombre de page total dans la réponse de la requête.</li>
+<li>À vous de trouver un moyen de créer un tableau qui contiendra les nombres de 1 au nombre total de page que vous pourrez utiler comme données dans le sélecteur.</li>
+<li>Quand on change la valeur du sélecteur, les données de la grille doivent être mise à jour.</li>
+</ul>
+<figure>
+<p><img alt="ex09_02.png" class="center shadow" src="../../assets/img/ex09_02.png" />
+  </p>
+<figcaption>Exemple de résultat</figcaption>
+</figure>
+<h2 id="permettre-dajouter-un-enregistrement-dans-la-base-de-donnees">Permettre d'ajouter un enregistrement dans la base de données.</h2>
+<ul>
+<li>Ajoutez un formulaire avec les champs nécessaires à l'ajout d'un pokemon.</li>
+<li>Un bouton "Ajouter" lancera la requête et ensuite la grille sera mise à jour.</li>
+</ul>
+<h2 id="recuperer-un-enregistrement-et-donner-la-possibilite-de-le-modifier">Récupérer un enregistrement et donner la possibilité de le modifier.</h2>
+<ul>
+<li>Ajoutez un formulaire avec les champs nécessaires à la modification d'un pokemon.</li>
+<li>Quand un sélectionne un Pokemon dans la liste, les champs correspondants sont remplis avec les valeurs.</li>
+<li>Un bouton "Modifier" lancera la requête et ensuite la grille sera mise à jour.</li>
+<li>Le bouton ne doit être accessible que si un enregistrement est sélectionné dans la liste.</li>
+</ul>
+<h2 id="supprimer-un-enregistrement">Supprimer un enregistrement.</h2>
+<ul>
+<li>Ajoutez un bouton "Supprimer" en haut de la grille.</li>
+<li>Quand on clique sur le bouton, le Pokemon sélectionné est supprimé et la grille est mise à jour.</li>
+<li>Le bouton ne doit être accessible que si un enregistrement est sélectionné dans la liste.</li>
+</ul>
+<h2 id="rafraichir-la-liste-apres-une-opetation">Rafraîchir la liste après une opétation</h2>
+<ul>
+<li>Vous pouvez utiliser la fonction <code>refetch()</code> pour relancer la requête correspondante.</li>
+</ul>
+<div class="admonition astuce">
+<p class="admonition-title">Astuce</p>
+<p>La fonction call() retourne une promesse, vous pouvez donc avec then() lancer du code après l'exécution de celle-ci : 
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">deletePokemon</span><span class="p">.</span><span class="nx">call</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">listePokemonQuery</span><span class="p">.</span><span class="nx">refetch</span><span class="p">())</span>
+</span></code></pre></div></p>
+</div>
+<p>Vous pouvez vous inspirer de l'exemple suivant qui se retrouve dans la documentation de Toolpad Studio : <a href="https://mui.com/toolpad/studio/examples/basic-crud-app/">https://mui.com/toolpad/studio/examples/basic-crud-app/</a>.</p>
 <figure>
 <p><img alt="ex09_01.png" class="center shadow" src="../../assets/img/ex09_01.png" />
   </p>
-<figcaption>Exemple tiré de la documentation</figcaption>
+<figcaption>Exemple de formulaire d'ajout et de modification</figcaption>
 </figure>
 
 
