@@ -145,7 +145,7 @@ article a[href^="https://"]::after
 }
 
 #cc-img{
-    max-width: 4rem;
+    max-width: 4rem !important;
     height: auto;
     margin-left: 10px;
     margin-right: 10px;
