@@ -154,7 +154,6 @@ article a[href^="https://"]::after
 
 .licence-text-light {
     color: var(--md-footer-fg-color--light);
-    /* font-size: 0.9rem; */
 }
 
 footer a[href^="https://"]::after,
