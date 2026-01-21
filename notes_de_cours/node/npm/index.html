@@ -2187,15 +2187,17 @@ Parfois, certaines options sont nécessaires.  </p>
 </span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Pour exécuter votre programme, il suffit de faire la commande suivante :</p>
-<div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>start
+<div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>run<span class="w"> </span>start
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>OU
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>npm<span class="w"> </span>start
 </span></code></pre></div>
-<p>Tous les scripts définis sous 'scripts' dans package.json peuvents être lancés avec la forme <em>npm <script></em></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Pour lancer des commandes qui n'apparaissent pas sour <em>scripts</em>, vous devez faire la commande <code>npm run</code> et le nom à utiliser. Par exemple si vous voulez lancer une commande avec le mot-clé <em>dev</em>, vous devrez faire : </p>
+<p>Pour les commandes npm start/stop/restart et test nous n'avons pas à utiliser npm run <em>script</em> (ils ont une forme raccourcie), mais ils sont quand même définis sous <em>scripts</em>. Pour lancer toutes les autres commandes définies sous _scripts, vous devez faire la commande <code>npm run</code> et le nom à utiliser. Par exemple si vous voulez lancer une commande avec le mot-clé <em>dev</em>, vous devrez faire : </p>
 <div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
 </span></code></pre></div>
 </div>
+<p>Je vous recommande de toujours utiliser la forme npm run <em>script</em></p>
 <h3 id="dotenv">dotenv</h3>
 <p>Paramétrez votre application directement dans le code est imprudent. Des informations confidentielles peuvent se retrouver dans votre dépôt GitHub à la vue de tout le monde, ex :  </p>
 <div class="language-ts highlight"><span class="filename">a_ne_pas_faire.js</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cleAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;FKSDKLJFKDSKLJF898FSDKJKSD898F9DSKLFDSKFSD&quot;</span><span class="p">;</span>
