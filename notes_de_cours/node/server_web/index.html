@@ -2005,7 +2005,7 @@
 <p>On peut aussi simplifier l'acquisition des paramètres en ajoutant le paramètre <strong>true</strong> à la fonction url.parse(). Ça permet d'automatiquement convertir les paramètres de la requête en objet. Ça évite l'utilisation de <code>querystring</code>.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">).</span><span class="nx">query</span><span class="p">;</span>
 </span></code></pre></div>
-<p>La variable <strong>params</strong> est un tableau associatif avec le nom des paramètres en clé. Donc si je reçois le paramètre <em>page=1</em>, je peux y accèder avec comme ceci.</p>
+<p>La variable <strong>params</strong> est un tableau associatif avec le nom des paramètres en clé. Donc si je reçois le paramètre <em>page=1</em>, je peux y accèder comme ceci:</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">params</span><span class="p">[</span><span class="s2">&quot;page&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// La valeur affiché sera 1</span>
 </span></code></pre></div>
 <h3 id="exemple-de-serveur-web-avec-gestion-des-parametres">Exemple de serveur web avec gestion des paramètres</h3>
@@ -2121,7 +2121,7 @@
 </span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Le serveur est lancé à l&#39;adresse http://</span><span class="si">${</span><span class="nx">hostname</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">/`</span><span class="p">);</span>
 </span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="p">});</span>
 </span></code></pre></div></td></tr></table></div>
-<p>À la ligne 9 on récupère le nom de la route dans l'url. Ensuite avec une série de <em>if..else</em> on peut exécuté un traitement différent selon la route. Si la route est différente de ceux qu'on a codé, on retourne une erreur 404.</p>
+<p>À la ligne 9 on récupère le nom de la route dans l'url. Ensuite avec une série de <em>if..else</em> on peut exécuter un traitement différent selon la route. Si la route est différente de ceux qu'on a codé, on retourne une erreur 404.</p>
 
 
 
