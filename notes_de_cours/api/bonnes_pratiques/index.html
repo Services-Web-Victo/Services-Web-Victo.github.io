@@ -2184,14 +2184,14 @@
 <p>Le format à préconiser pour recevoir et retourner de l'information de notre api est le format JSON. C'est de loin le plus utilisé aujourd'hui et la grande majorité des langages de programmation on des fonctions natives pour le manipuler.</p>
 <p>Plus de détail dans cette section : <a href="../json/">Le format JSON</a></p>
 <h2 id="utiliser-des-noms-au-lieu-de-verbes-pour-les-routes">Utiliser des noms au lieu de verbes pour les routes</h2>
-<p>Quand on nomme les routes de notre api, on ne devrait pas utiliser de verbe. L'emploi d'un nom significatif est à privilégier. Par exemple notre api nous permet de retourner une liste d'utilisateurs ou d'en créer un, on serait tenté d'utiliser comme nom de route </p>
+<p>Quand on nomme les routes de notre api, on ne devrait pas utiliser de verbes. L'emploi d'un nom significatif est à privilégier. Par exemple, pour un api nous permet de retourner une liste d'utilisateurs ou d'en créer un, on serait tenté d'utiliser comme nom de routes: </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://monApi/getUtilisateurs
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://monApi/createUtilisateurs
 </span></code></pre></div>
 <p>mais il est préférable d'utiliser dans les deux cas</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://monApi/utilisateurs
 </span></code></pre></div>
-<p>Une même route peut avoir plus d'une fonctionnalité, c'est la méthode HTTP qui nous permet de les différenciées.</p>
+<p>Une même route peut avoir plus d'une fonctionnalité, c'est la méthode HTTP (le verbe - ie GET, POST, etc.) qui nous permet de les différencier.</p>
 <h2 id="utiliser-de-parametres-directement-dans-lurl">Utiliser de paramètres directement dans l'url</h2>
 <p>Vous pouvez inclure des paramètes dans la route des deux façons suivantes : </p>
 <p><strong>Dans la section <em>query</em> de l'url :</strong>
@@ -2240,7 +2240,7 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 </table>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>On ne doit jamais modifier une ressource avec une méthode GET.</p>
+<p>On ne doit jamais modifier une ressource avec une méthode GET.  C'est-à-dire que les requêtes GET ne doivent avoir aucun effet sur l'état de la resource associée.  </p>
 </div>
 <p>Les actions de modification PUT et PATCH sont très similaires, la différence est que PUT est utilisé pour modifier toutes les valeurs de la ressource alors que PATCH l'est pour une modification partielle. Autre distinction de PUT, si la ressource n'est pas trouvé, elle sera créée. Prenons l'exemple suivant, on veut pouvoir modifier un utilisateur ayant ces informations </p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
@@ -2288,8 +2288,8 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 <p>Dans la réponse de la requête à votre API utilisez une code de statut HTTP approprié à la situation.</p>
 <ul>
 <li>200 - 299 indique un succès</li>
-<li>400 - 499 Il y a eu une erreur côté client</li>
-<li>500 - 599 Il y a eu une erreur côté serveur</li>
+<li>400 - 499 Il y a eu une erreur côté client (ie la requête est mal formulée, accès interdit, etc.)</li>
+<li>500 - 599 Il y a eu une erreur côté serveur (le client n'y est pour rien)</li>
 </ul>
 <h3 id="resume-des-methodes-avec-le-code-de-statut-suggere">Résumé des méthodes avec le code de statut suggéré</h3>
 <table>
@@ -2364,7 +2364,7 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 <tbody>
 <tr>
 <td>401 - Unauthorized</td>
-<td>Le client ne s'est pas encore authentifier pour accéder à l'api.</td>
+<td>Le client ne s'est pas encore authentifié pour accéder à l'api.</td>
 </tr>
 <tr>
 <td>403 - Forbidden</td>
@@ -2381,10 +2381,10 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 </tbody>
 </table>
 <h2 id="utiliser-limbrication-dans-les-routes">Utiliser l'imbrication dans les routes</h2>
-<p>Quand des ressources de votre api peuvent être reliées, utilisez l'imbrication pour créer des urls significatifs. Par exemple un auteur peut avoir écrit plusieurs livres, on pourrait avoir une route nommée <code>/{auteurs}/livres</code> qui retourne tous les livres de l'auteur en paramètre.</p>
+<p>Quand des ressources de votre api peuvent être reliées, utilisez l'imbrication pour créer des urls significatifs. Par exemple un auteur peut avoir écrit plusieurs livres, on pourrait avoir une route nommée <code>/auteurs/{auteur_id}/livres</code> qui retourne tous les livres de l'auteur dont le id est fourni dans la route.</p>
 <p>Il faut cependant faire attention à ne pas trop surcharger la route en allant trop profondément avec l'imbrication.</p>
 <h2 id="permettre-les-filtres-le-tri-selection-des-champs-retournes-et-la-pagination">Permettre les filtres, le tri, sélection des champs retournés et la pagination</h2>
-<p>Pour permettre à l'utilisateur un meilleur contrôle sur les données récupérées, permettez quand c'est possible l'utilisation de filtres, de tri et de pagination dans vos requête. Les paramètres devraient être situé dans la section "requête" de l'url</p>
+<p>Pour permettre à l'utilisateur un meilleur contrôle sur les données récupérées, permettez quand c'est possible l'utilisation de filtres, de tri et de pagination dans vos requêtes. Les paramètres devraient être situés dans la section requête ("query") de l'url (suivant le signe '?')</p>
 <h3 id="filtre">Filtre</h3>
 <p>Utilisez un nom de paramètre significatif. Pour saisir plusieurs valeurs à un même paramètre, on doit les séparer par une virgule.</p>
 <p>Exemple : </p>

@@ -2070,7 +2070,8 @@
 
 
 <h1 id="npm">npm</h1>
-<p>Npm est le gestionnaire de paquets (modules) officiel de Node.js. Celui-ci permet d’ajouter des modules externes dans une application Node.js Depuis la version 0.6.3 de Node.js, npm fait partie de l'environnement et est donc automatiquement installé par défaut. Npm fonctionne dans un terminal et gère les dépendances pour une application. Il permet également d'installer des applications Node.js disponibles sur le dépôt npm.</p>
+<p>Npm est le gestionnaire de paquets (modules) officiel de Node.js. Celui-ci permet d’ajouter des modules externes dans une application Node.js.</p>
+<p>Depuis la version 0.6.3 de Node.js, npm fait partie de l'environnement et est donc automatiquement installé par défaut. Npm fonctionne dans un terminal et gère les dépendances pour une application. Il permet également d'installer des applications Node.js disponibles sur le dépôt npm.</p>
 <div class="admonition manuel">
 <p class="admonition-title">Manuel</p>
 <p><a href="https://docs.npmjs.com/">Documentation de npm js</a><br />
@@ -2114,7 +2115,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Si vous utilisez des <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules"><em>ES module</em></a> dans votre projet, ajouter la ligne <code>"type": "module"</code> comme on peut voir dans l'exemple plus haut à la ligne 6.</p>
 <h2 id="npm-install">npm install</h2>
-<p>La commande npm install permet d’installer des modules dans un projet.
+<p>La commande <em>npm install</em> permet d’installer des modules dans un projet.
 Lors de l’ajout d’un premier module au projet, le dossier node_modules est automatiquement créé. 
 Pour installer un module dans un projet :</p>
 <div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">nomModule</span>
@@ -2122,8 +2123,8 @@ Pour installer un module dans un projet :</p>
 <p>Pour chaque installation de module :<br />
 Un sous-dossier au nom du module est créé. Toutes les dépendances sont également chargées. Le module et ses dépendances sont ajoutées dans le fichier package.json </p>
 <p>Partage et Déploiement :<br />
-Lorsqu’on partage un projet, on ne fournit généralement pas le dossier node_modules car sa taille peut devenir relativement élevée et les versions de Node.js ne sont pas nécessairement les mêmes. 
-La commande npm install (sans préciser le nom du module) permet d’installer automatiquement tous les modules manquants (npm se fie au fichier package.json pour identifier les modules à installer)</p>
+Lorsqu’on partage un projet, on ne fournit pas le dossier node_modules car sa taille peut devenir relativement élevée et les versions de Node.js ne sont pas nécessairement les mêmes. Le dossier node_modules est habituellement ajouter au fichier .gitignore pour qu'il fasse pas partie des repos git.</p>
+<p>La commande npm install (sans préciser le nom du module) permet d’installer automatiquement tous les modules manquants (npm se fie au fichier package.json pour identifier les modules à installer)</p>
 <h3 id="les-options">Les options</h3>
 <p>Lors de l’installation de modules, je recommande toujours d’utiliser la commande disponible dans la procédure d’installation du module. 
 Parfois, certaines options sont nécessaires.  </p>
@@ -2162,7 +2163,7 @@ Parfois, certaines options sont nécessaires.  </p>
 </span></code></pre></div>
 <h2 id="modules-utiles-au-developpement">Modules utiles au développement</h2>
 <h3 id="nodemon">nodemon</h3>
-<p>Module qui observe les fichiers de votre projet et qui redémarre le programme automatiquement.</p>
+<p>Module qui observe les fichiers de votre projet et qui redémarre le programme automatiquement (<em>mon</em> pour <em>monitor</em>).</p>
 <p>Installation : </p>
 <div class="language-bash highlight"><span class="filename">Console</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nodemon<span class="w"> </span>-D
 </span></code></pre></div>
@@ -2188,9 +2189,10 @@ Parfois, certaines options sont nécessaires.  </p>
 <p>Pour exécuter votre programme, il suffit de faire la commande suivante :</p>
 <div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>start
 </span></code></pre></div>
+<p>Tous les scripts définis sous 'scripts' dans package.json peuvents être lancés avec la forme <em>npm <script></em></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Si vous utilisez d'autres termes que <em>start</em> pour lancer votre script, vous devez faire la commande <code>npm run</code> et le nom à utiliser. Par exemple si vous voulez lancer une commande avec le mot-clé <em>dev</em>, vous devrez faire : </p>
+<p>Pour lancer des commandes qui n'apparaissent pas sour <em>scripts</em>, vous devez faire la commande <code>npm run</code> et le nom à utiliser. Par exemple si vous voulez lancer une commande avec le mot-clé <em>dev</em>, vous devrez faire : </p>
 <div class="language-bash highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
 </span></code></pre></div>
 </div>
@@ -2220,7 +2222,7 @@ Ensuite dans le code importé le fichier et vous pouvez récupérer les informat
 <div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="na">**/node_modules </span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">.env  </span>
 </span></code></pre></div>
-<p>Parcontre notre application à besoin du fichier <strong>.env</strong> pour fonctionner. Une pratique courante est d'ajouter un fichier <strong>.env.exemple</strong> avec les constantes à avoir mais sans valeur pour indiquer à la personne qui va utiliser votre application quels champs remplir.</p>
+<p>Par contre notre application à besoin du fichier <strong>.env</strong> pour fonctionner. Une pratique courante est d'ajouter un fichier <strong>.env.exemple</strong> avec les constantes à avoir mais sans valeur pour indiquer à la personne qui va utiliser votre application quels champs remplir.</p>
 <div class="language-text highlight"><span class="filename">.env.exemple</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cleAPI=
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>utilisateurBD=
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>motDePasse=

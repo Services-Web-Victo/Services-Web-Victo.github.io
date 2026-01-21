@@ -2074,7 +2074,7 @@
 <h2 id="structure-de-base">Structure de base</h2>
 <p>Les deux structures suivantes sont utilisées pour construire notre JSON : </p>
 <h3 id="lobjet">L'objet</h3>
-<p>Une suite d'éléments clé/valeurs, sérarés par une virgule. L'objet sera entouré par des accolades.
+<p>Une suite d'éléments clé/valeurs, séparés par une virgule. Ces élements sont insérés entre une paire d'accolades pour définir un objet.
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;cle1&quot; : &quot;valeur1&quot;,
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;cle2&quot; : &quot;valeur2&quot;
@@ -2100,15 +2100,16 @@
 <ul>
 <li><strong>string</strong> : du texte entouré de guillemets "</li>
 <li><strong>number</strong> : sans les guillemets, on peut utiliser les décimales avec le <strong>point</strong> et les exposants avec le caractère <strong>e</strong>.</li>
-<li><strong>object</strong> : comme vu plus haut, liste de clé/valeur entourées par des accolades</li>
-<li><strong>array</strong> : liste d'items entourés de crochet</li>
+<li><strong>object</strong> : comme vu plus haut, liste de clés/valeurs entre accolades</li>
+<li><strong>array</strong> : liste d'items entre crochets</li>
 <li><strong>boolean</strong> : utilisez true ou false sans guillemets et en minuscule</li>
 <li>valeur nulle : null sans guillemets et en minuscule</li>
 </ul>
 <p><img alt="value" class="center" src="../../../assets/img/json03.png" /></p>
-<p><strong>Note sur les dates</strong> : Le format date n'étant pas pleinenement supporté, on devrait par précaution <mark>les stocker en texte.</mark></p>
+<p><strong>Note sur les dates</strong> : Il n'y a pas de format standard pour les dates dans JSON, il faut  <mark>les stocker en texte</mark>. Par contre, la plupart des langages/librairies utilisant JSON vont utiliser le format ISO 8601 pour formatter une date sous form de chaine de caractères.  C'est le cas de Javascript: JSON.stringify(new Date()) va générer la date pour l'instant présent sour forme de texte suivant ISO 8601.</p>
 <h2 id="valider-un-texte-au-format-json">Valider un texte au format JSON</h2>
-<p>JSONLint est un petit outils en ligne très pratique pour valider qu'un texte respecte le format JSON : <a href="https://jsonlint.com/">www.jsonlint.com</a></p>
+<p>JSONLint est un petit outil en ligne très pratique pour valider qu'un texte respecte le format JSON : <a href="https://jsonlint.com/">www.jsonlint.com</a>.  </p>
+<p>VSCode effectue une validation du JSON dans les fichiers avec l'extension .json. </p>
 <h2 id="utilisation-en-javascript">Utilisation en JavaScript</h2>
 <h3 id="jsonstringify">JSON.stringify()</h3>
 <p>La méthode la plus simple pour envoyer des données au format JSON est de convertir un objet JavaScript avec la fonction <code>JSON.stringify()</code>.</p>

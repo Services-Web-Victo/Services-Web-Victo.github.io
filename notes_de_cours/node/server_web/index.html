@@ -1971,7 +1971,7 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;text/plain&#39;</span><span class="p">);</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World - serveur NodeJS&#39;</span><span class="p">);</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">});</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="nx">hostname</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1979,12 +1979,12 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">});</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li>Le module http de Node est inclus à la première ligne, c'est lui qui va être en charge du serveur</li>
+<li>Le module <em>http</em> de Node est inclus à la première ligne, c'est lui qui va être en charge du serveur</li>
 <li>On définit ensuite une adresse d'hôte et un port pour notre serveur</li>
 <li>On crée un objet serveur à la ligne 6. Dans la fonction de rappel les paramêtres représentent des objets associés à la requête http qui est reçu (<strong>req</strong>) et la réponse retournée (<strong>res</strong>).</li>
 <li>Le <strong>statusCode</strong> est le code de statut retourné, ici 200 pour un succès</li>
-<li>Le <strong>Content-Type</strong> défini le format de la réponse.</li>
-<li>Avec la fonction <strong>end()</strong> on envoi le texte de la réponse.</li>
+<li>Le <strong>Content-Type</strong> définit le format de la réponse.</li>
+<li>Avec la fonction <strong>end()</strong> on envoie le texte de la réponse.</li>
 <li>La fonction <strong>listen</strong> à la ligne 12 lance le serveur et le met en mode "écoute"</li>
 </ul>
 <p><strong>Pour lancer le serveur</strong></p>
