@@ -1674,32 +1674,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#utilisation-de-modules-externes" class="md-nav__link">
+  <a href="#module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation de modules externes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-des-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestion des routes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-de-votre-serveur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Test de votre serveur
+        Module
       
     </span>
   </a>
@@ -1862,32 +1840,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#utilisation-de-modules-externes" class="md-nav__link">
+  <a href="#module" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Utilisation de modules externes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-des-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestion des routes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-de-votre-serveur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Test de votre serveur
+        Module
       
     </span>
   </a>
@@ -1915,8 +1871,9 @@
 <p>Créez un fichier nommé <code>serveur.js</code> qui contiendra le code de gestion de votre serveur. Vous pouvez vous inspirer des exemples dans les notes de cours comme code de départ.</p>
 <p>Le serveur doit pouvoir récupérer la valeur du paramêtre <code>code</code> dans l'url envoyé. Par exemple si j'envoie <code>localhost:3000/?code=1</code> la valeur est 1.</p>
 <p>Pour cette exercice nous ne tiendront pas compte de la méthode HTTP de la requête (GET, POST, etc.)</p>
-<p>Créez un second fichier nommé <code>professeurs.js</code> qui aura la structure d'un module JS et qui contiendra l'objet suivant : 
-Ajoutez l'objet JavaScript suivant à votre code et importez-le dans votre ficher <code>serveur.js</code> : </p>
+<h2 id="module">Module</h2>
+<p>Créez un second fichier nommé <code>professeurs.js</code> qui aura la structure d'un module <a href="https://fr.javascript.info/modules-intro">lien</a>.  </p>
+<p>Ajoutez l'objet JavaScript suivant à votre code et rendez disponible via le mot clé <em>export</em> une fonction qui retourne l'information sur un professeur à partir d'un id (nombre 1 à 8) : </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">professeurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Fréchette&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mathieu&quot;</span><span class="p">},</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lagacé&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Christiane&quot;</span><span class="w"> </span><span class="p">},</span>
@@ -1932,9 +1889,15 @@ Ajoutez l'objet JavaScript suivant à votre code et importez-le dans votre fiche
 <p class="admonition-title">Manuel</p>
 <p>Pour plus d'information sur les modules en JavaScript, vous pouvez consulter ce site : <a href="https://fr.javascript.info/modules-intro">https://fr.javascript.info/modules-intro</a></p>
 </div>
-<p>Maintentant quand le serveur reçoit un URL : </p>
+<h1 id="serveur">Serveur</h1>
+<p>Dans votre code serveur, importez la fonction définie dans le module <em>professeur.js</em>.  Les modules locaux sont référencés à l'aide d'un chemin qui commence par ./</p>
+<div class="admonition javascript">
+<p class="admonition-title">Javascript</p>
+<p>import { <em>nom_fonction</em> } from './professeurs.js';</p>
+</div>
+<p>Maintentant, quand le serveur reçoit un URL : </p>
 <ul>
-<li>Si le paramètre <code>code</code> est présent, affichez le prénom et le nom du professeur correspondant à sa valeur. Le texte retourné sera "Bonjour prénom nom" dans une balise H1 et le code de statut sera 200.</li>
+<li>Si le paramètre <code>code</code> est présent, affichez le prénom et le nom du professeur correspondant à sa valeur. Le texte retourné sera "Bonjour <em>prénom</em> <em>nom</em>" dans une balise H1 et le code de statut sera 200.</li>
 <li>Si le paramètre est absent ou bien que la valeur n'est pas présente dans l'objet, affichez <mark>"Professeur non trouvé, vous devez fournir un code de professeur valide"</mark> dans une balise H1. Le code de statut sera 404.</li>
 </ul>
 <div class="admonition astuce">
@@ -1947,12 +1910,12 @@ Ajoutez l'objet JavaScript suivant à votre code et importez-le dans votre fiche
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Attention vous devez utiliser <em>"type": "module"</em> dans votre package.json</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Installez le module dotenv et modifiez votre code pour que la valeur du port à utiliser soit stockée dans un fichier <strong>.env</strong>. Utilisez 3030 comme valeur pour le port dans le fichier .env. Modifiez votre code pour que si la valeur du fichier .env ne peut être lu le serveur utilisera le port 3000 à la place.</li>
 </ul>
-<h2 id="gestion-des-routes">Gestion des routes</h2>
+<h2 id="gestion-des-routes-v2-de-lexercice">Gestion des routes (v2 de l'exercice)</h2>
 <p>Maintenant que vous avez un serveur web qui fonctionne, on va l'améliorer un peu avec une gestion basique de route.</p>
 <ul>
 <li>Quand on n'entre que l'hôte ou bien la route <code>/</code>, affichez en html "Bienvenue à mon premier api" dans une balise h1</li>
 <li>Quand on entre la route <code>/professeurs</code>, reprenez le code de la première partie. Donc si j'entre <code>localhost:3000/professeurs?code=1</code> la réponse sera "Bonjour Mathieu Fréchette" dans une balise H1.</li>
-<li>Quand j'entre la route <code>/professeurs/tous</code> je retourne au format json l'objet professeurs. (N'oubliez pas dans ce cas de changer la valeur du <em>content-Type</em> pour indiquer qu'on retourne du JSON)</li>
+<li>Quand j'entre la route <code>/professeurs/tous</code> je retourne au format json l'objet professeurs. (N'oubliez pas dans ce cas de changer la valeur du <em>content-Type</em> pour indiquer qu'on retourne du JSON).  Vous pourriez avoir à exporter une autre fonction de votre module professeurs.js.</li>
 <li>Si j'entre une route qui n'est pas gérée par votre code, par exemple <code>/patate</code>, retournez au format JSON le message suivant : 
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;La route /patate n&#39;existe pas&quot;</span>
