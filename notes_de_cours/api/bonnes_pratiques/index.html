@@ -2363,6 +2363,10 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 </thead>
 <tbody>
 <tr>
+<td>400 - Bad Request</td>
+<td>Le client n'a pas bien formulé la requête (ex un paramètre est manquant)</td>
+</tr>
+<tr>
 <td>401 - Unauthorized</td>
 <td>Le client ne s'est pas encore authentifié pour accéder à l'api.</td>
 </tr>
@@ -2405,10 +2409,10 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 <li><code>/livres?champs=titre,isbn</code> retournera la liste de tous les livres mais seulement le titres et isbn de chacun.</li>
 </ul>
 <h3 id="pagination">Pagination</h3>
-<p>Il n'est pas rare qu'une ressource comporte plusieurs centaines sinon milliers d'enregistrements. On devrait permettre au client de pouvoir sélectionner seulement une partie des enregistrements en définissant un point de départ (offset) et un nombre d'enregistrement (limit). Si on utilise la pagination, on devrait définir des valeurs par défaut au paramètre offset et limit (généralement offset sera égale à 0 pour le premier enregistrement). </p>
+<p>Il n'est pas rare qu'une ressource comporte plusieurs centaines sinon milliers d'enregistrements. On devrait permettre au client de pouvoir sélectionner seulement une partie des enregistrements en définissant un point de départ (offset) et un nombre d'enregistrement (limit). Si on utilise la pagination, on devrait définir des valeurs par défaut au paramètre offset et limit (généralement offset sera égal à 0 pour le premier enregistrement). </p>
 <p>Exemple : </p>
 <ul>
-<li><code>/livres?limit=50&amp;offset=100</code> En partant du centième enregistrement, affiche les 50 livres suivants.</li>
+<li><code>/livres?offset=100&amp;limit=50</code> En partant du 101e enregistrement, affiche les 50 livres suivants (101 à 150).</li>
 </ul>
 <p>Pour faciliter le traitement des données, on devrait ajouter dans la réponse le nombre total d'enregistrements ainsi que les valeurs de limit et offset.</p>
 <p>Une autre technique est d'avoir un nombre d'enregistrement fixe par page et de seulement permettre à l'usager de choisir la page qu'il veut afficher. Exemple, on décide d'afficher 30 enregistrements par page, l'url suivant va afficher les enregistrement 61 à 90 : </p>
