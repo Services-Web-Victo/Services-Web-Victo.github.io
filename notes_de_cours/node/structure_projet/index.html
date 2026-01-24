@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://example.com/notes_de_cours/node/structure_projet/">
       
       
-        <link rel="prev" href="../javascript_promise/">
+        <link rel="prev" href="../express/">
       
       
-        <link rel="next" href="../../deploiement/render/">
+        <link rel="next" href="../middleware/">
       
       
         
@@ -868,6 +868,44 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure d'un projet Express.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -971,44 +1009,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Structure d'un projet Express.js
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
     </li>
   
 
@@ -1803,11 +1803,11 @@
 
 
 <h1 id="structure-dun-projet-avec-express">Structure d'un projet avec Express</h1>
-<p>Express est hautement configurable et permet pratiquement d'utiliser la structure de projet que l'on souhaite. Pour le cours nous allons adopter une approche dans laquelle nous allons séparer les routes, le controlleur où sera fait la logique applicative et l'accès aux données.</p>
+<p>Express est hautement configurable et permet en grande partied'utiliser la structure de projet que l'on souhaite. Pour le cours nous allons adopter une approche dans laquelle nous allons séparer les routes, le controlleur où sera fait la logique applicative et l'accès aux données.</p>
 <ul>
-<li>Modèle : Gestion des intéractions avec la base de données. C'est ici que nous ferons nos requêtes et retourneront les résultats bruts.</li>
+<li>Modèle : Gestion des interactions avec la base de données. C'est ici que nous ferons nos requêtes et retourneront les résultats bruts.</li>
 <li>Route : Une série de routes (<em>endpoint</em>). Chaque route fera appel à une fonction du controlleur, il n'y a pas vraiment de traitement qui se fera à ce niveau.</li>
-<li>Controlleur : C'est ici qu'on fait la logique de l'application, avec des appels au modèle si besoin est.</li>
+<li>Controlleur : C'est ici qu'a lieu la logique applicative, avec des appels au modèle si besoin est.</li>
 </ul>
 <figure>
 <p><img alt="project_structure.png" class="center shadow" src="../../../assets/img/project_structure.png" />
@@ -1819,15 +1819,15 @@
 <li><strong>.env</strong> : Contient les variables d'environnement qu'on utilise avec le module <strong>dotenv</strong>.</li>
 <li><strong>package.json</strong> : La "recette" pour construire votre application, on y retrouve les modules à installer et les scripts.</li>
 <li><strong>server.js</strong> : Fichier de démarrage de votre application. (ou index.js, app.js, etc..) </li>
-<li><strong>/src</strong> : Dossier qui contient le restant de la logique de l'application</li>
-<li><strong>/node_modules</strong> : Dossier des modules installés, ne jamais rien modifier ou ajouter dans ce répertoire. À ne pas inclure dans vos dépôts Git, ce dossier peut facilement être "reconstruit" grâce à la commande <code>npm install</code>.</li>
+<li><strong>/src</strong> : Dossier qui contient la logique de l'application</li>
+<li><strong>/node_modules</strong> : Dossier des modules installés, ne jamais rien modifier ou ajouter dans ce répertoire. À ne pas inclure dans vos dépôts Git (à ajouter au .gitignore), ce dossier peut facilement être "reconstruit" grâce à la commande <code>npm install</code>.</li>
 </ul>
 <p>Dans le dossier <strong>src</strong> : </p>
 <ul>
-<li><strong>/config</strong> : Les fichiers servants à la configuration, comme la connexion à la base de données (<strong>db.js</strong> dans mon exemple).</li>
-<li><strong>/controllers</strong> : Les fichiers controlleurs où <mark>la logique de l'application est écrite</mark>. Nommez les <strong>nomDeLaRessource.controller.js</strong> pour plus de clarté.</li>
-<li><strong>/models</strong> : Les fichiers modèles qui s'occuperont de la communication avec la base de données. Nommez les <strong>nomDeLaRessource.model.js</strong> pour plus de clarté.</li>
-<li><strong>/routes</strong> : Les fichiers de routage qui essentiellement appelleront le bon controlleur. Nommez les <strong>nomDeLaRessource.route.js</strong> pour plus de clarté.</li>
+<li><strong>/config</strong> : Les fichiers de configuration, comme la connexion à la base de données (<strong>db.js</strong> dans mon exemple).</li>
+<li><strong>/controllers</strong> : Les fichiers controlleurs où <mark>la logique applicative est écrite</mark>. Nommez-les <strong>nomDeLaRessource.controller.js</strong> pour plus de clarté.</li>
+<li><strong>/models</strong> : Les fichiers modèles qui s'occuperont de la communication avec la base de données. Nommez-les <strong>nomDeLaRessource.model.js</strong> pour plus de clarté.</li>
+<li><strong>/routes</strong> : Les fichiers de routage qui essentiellement appelleront le bon controlleur. Nommez-les <strong>nomDeLaRessource.route.js</strong> pour plus de clarté.</li>
 </ul>
 
 
