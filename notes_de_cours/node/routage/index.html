@@ -1706,6 +1706,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Hello World API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1893,79 +1921,61 @@
 
 <h1 id="routage-avec-expressjs">Routage avec Express.js</h1>
 <h2 id="les-routes-dynamiques">Les routes dynamiques</h2>
-<p>On a vue qu'on pouvait ajouter des paramètres à l'url en utilisant le caractère <strong>?</strong> suivi du nom du paramète et de sa valeur.</p>
+<p>On a vu qu'on pouvait ajouter des paramètres à l'url en utilisant le caractère <strong>?</strong> suivi du nom du paramète et de sa valeur.</p>
 <p><code>http://localhost:3000/professeurs?code=1</code></p>
 <p>On peut aussi ajouter la valeur du paramètre directement dans l'url sans le nommer, c'est ce qu'on appelle une route dynamique. </p>
 <p><code>http://localhost:3000/professeurs/1</code></p>
-<p>Dans cet exemple on pourra récupérer la valeur 1 dans l'url comme étant un paramètre. Les deux méthodes se valent bien que je trouve celle-ci plus "propre" quand la situation le permet.</p>
-<p>Dans le code, quand on déclare la route on va ajouter le nom du paramètre précédé du caractère <strong>:</strong>. Ensuite le paramètre sera stocké dans l'objet <code>req.params</code> et portera le nom défini dans la route.</p>
+<p>Dans cet exemple on pourra récupérer la valeur 1 dans l'url comme étant un paramètre. Les deux méthodes sont utilisées mais la deuxième fait clairement la distinction entre l'identité de la ressource et les paramètres comme le tri et la pagination.</p>
+<p>Dans le code, quand on déclare la route on ajoute le nom du paramètre précédé du caractère <strong>:</strong> (deux points). Ensuite le paramètre sera stocké dans l'objet <code>req.params</code> et portera le nom défini dans la route.</p>
 <div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">code</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">});</span>
 </span></code></pre></div>
 <p>Si on veut utiliser deux paramètres de cette façon, on doit les séparer par un <strong>/</strong>.</p>
-<p><code>http://localhost:3000/professeurs/1/mathieu</code></p>
-<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code/:nom&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<p><code>http://localhost:3000/professeurs/1/cours/2</code></p>
+<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code_professeur/cours/:code_cours&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="si">}</span><span class="sb"> et le nom </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">nom</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le cours </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_cours</span><span class="si">}</span><span class="sb"> du professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_professeur</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">});</span>
 </span></code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Faites attention à l'ordre des routes dynamiques si la syntaxe de plusieurs routes se ressemble.</p>
+<p>Faites attention à l'ordre des routes dynamiques si des routes peuvent être confondues.</p>
 </div>
-<p>Par exemple j'ai ces deux routes qui fonctionnent correctement</p>
-<div class="language-javascript highlight"><span class="filename">script.js</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/tous&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé tous les professeurs.`</span><span class="p">);</span>
+<p>Par exemple j'ai ces deux routes:</p>
+<div class="language-javascript highlight"><span class="filename">script.js</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code_professeur/cours/:code_cours&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">     </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le cours </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_cours</span><span class="si">}</span><span class="sb"> du professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_professeur</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">});</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code_professeur&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">code</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">});</span>
 </span></code></pre></div>
-<p>Par contre si j'inverse les routes et que la première est la route avec le paramètre code, on ne pourra jamais accéder à la route <code>/professeurs/tous</code> car "tous" sera considérer comme une valeur donnée au paramètre :code.</p>
+<p>Dans cet ordre là, tout va bien. Si je fais la requête <code>/professeurs/1/cours/2</code> je vais accéder à la première route et obtenir le 2e cours du professeur avec le code 1.</p>
+<p>Par contre si j'inverse les routes:</p>
+<div class="language-javascript highlight"><span class="filename">script.js</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code_professeur&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">code</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">});</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/professeurs/:code_professeur/cours/:code_cours&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">     </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le cours </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_cours</span><span class="si">}</span><span class="sb"> du professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_professeur</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">});</span>
+</span></code></pre></div>
+<p>on ne pourra jamais accéder à la route <code>/professeurs/1/cours/2</code> car la partie <em>/professeurs/1</em> du chemin sera toujours attrapée par la première route, et le reste sera <strong>ignoré</strong>. </p>
+<div class="admonition à retenir">
+<p class="admonition-title">À</p>
+<p>Toujours mettre les routes les plus spécifiques en premier.</p>
+</div>
 <h2 id="le-routage">Le routage</h2>
-<p>Le module <strong>Router</strong> permet de regrouper plusieurs routes similaire. C'est une très bonne pratique pour maintenir un code clair et consistant qu'on pourra faire évoluer facilement.</p>
-<p>Reprenons l'exemple de mes deux routes professeurs plus haut. On doit premièrement créer un fichier qui va contenir toutes ces routes similaires. Ensuite dans ce fichier on importe le module <strong>Express</strong> et crée un objet <strong>Router</strong>. Au lieu de définir les routes avec app on va utiliser l'objet Router qu'on vient de créer. Finalement à la fin du fichier on va exporter le module pour pouvoir l'utiliser dans notre fichier index.js</p>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">professeurs.route.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">// Nous avons besoin d&#39;importer le module express pour utiliser le Router</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// Nous créons un objet router qui va nous permettre de gérer les routes</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span><span class="w">    </span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// On utilise router au lieu de app</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/tous&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé tous les professeurs.`</span><span class="p">);</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">});</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:code&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">code</span><span class="p">;</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">code</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="p">});</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1">// On exporte le router pour pouvoir l&#39;utiliser dans index.js</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-<p>Vous avez remarqué que j'ai enlevé <code>/professeurs</code> de mes routes? On va gérer cette partie de la route dans le fichier index.js. La seule modification qu'on va faire à ce fichier est d'ajouter ces deux lignes dans la section où l'on ajoute les intergiciels.</p>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<p>Le module <strong>Router</strong> permet de regrouper plusieurs routes similaires. C'est une bonne pratique pour maintenir un code clair et consistant qu'on pourra faire évoluer facilement.</p>
+<p>Reprenons l'exemple des deux routes <em>professeurs</em> plus haut. On doit premièrement créer un fichier qui va contenir toutes ces routes similaires. Ensuite dans ce fichier on importe le module <strong>Express</strong> et crée un objet <strong>Router</strong>. </p>
+<p>Au lieu de définir les routes avec <em>app</em> on va utiliser l'objet <em>router</em> que l'on vient de créer. Finalement à la fin du fichier on va exporter le module pour pouvoir l'utiliser dans notre fichier <em>index.js</em></p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">professeurs.route.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -1983,28 +1993,67 @@
 <span class="normal"><a href="#__codelineno-4-16">16</a></span>
 <span class="normal"><a href="#__codelineno-4-17">17</a></span>
 <span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// Importer le module express</span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// Nous avons besoin d&#39;importer le module express pour utiliser la classe Router</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// Importer le fichier de router du fichier professeurs.route</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">professeursRouter</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./professeurs.route.js&#39;</span><span class="p">;</span>
-</span></span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// Créer une application express</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="c1">// On associe la route /api/professeurs au router importé</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api/professeurs&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">professeursRouter</span><span class="p">);</span>
-</span></span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Mon premier serveur web sur express !&lt;/h1&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// Nous créons un objet router qui va nous permettre de gérer les routes</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span><span class="w">    </span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// On utilise router. au lieu de app. (on peut aussi utiliser post(), put(), delete(), etc.)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:code_professeur/cours/:code_cours&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le cours </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_cours</span><span class="si">}</span><span class="sb"> du professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_professeur</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">});</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:code_professeur&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`Vous avez demandé le professeur avec le code </span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">code_professeur</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="p">});</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Serveur démarré sur le port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="p">});</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="c1">// IMPORTANT: On exporte le router pour pouvoir l&#39;utiliser dans index.js</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="c1">// Cet objet peut être utilisé comme un middleware</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Toutes les routes qui débute par <code>/api/professeurs</code> seront dirigées vers le fichier <em>./professeurs.route.js</em> (L'ajout de api dans la route est purement esthétique). Donc maintenant quand le serveur recevra par exemple la route <code>/api/professeurs/tous</code> il va diriger la requète dans le fichier professeurs.route.js pour trouver quoi faire avec la route <code>/tous</code>.</p>
-<p>Avec <strong>Router</strong> on peut organiser notre projet de plusieurs façon. Nous verrons plus tard des exemples de bonnes structures à adopter pour nos api.</p>
+<p>Vous avez remarqué que le segment  <code>/professeurs</code> n'apparaît plus dans les routes?  Ce segment de la route va être géré dans le fichier index.js. La seule modification à faire est d'ajouter notre router à l'application express en utilisant la méthode <strong>app.use()</strong> puisqu'il se comporte comme un middleware.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">// Importer le module express</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">// Importer le fichier de router du fichier professeurs.route</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">professeursRouter</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./professeurs.route.js&#39;</span><span class="p">;</span>
+</span></span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1">// Créer une application express</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1">// On associe la route /api/professeurs au router importé</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="hll"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/api/professeurs&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">professeursRouter</span><span class="p">);</span>
+</span></span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Mon premier serveur web sur express !&lt;/h1&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">});</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Serveur démarré sur le port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="p">});</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Toutes les routes qui débutent par <code>/api/professeurs</code> seront dirigées vers le fichier <em>./professeurs.route.js</em> (L'ajout de api dans la route est purement esthétique). Donc maintenant quand le serveur recevra par exemple la route <code>/api/professeurs/1/cours/2</code> il va diriger la requète dans le fichier <em>professeurs.route.js</em> pour trouver quoi faire avec le reste de la route: <code>/1/cours/2</code>.</p>
+<p>Avec <strong>Router</strong> on peut organiser notre projet de plusieurs façons. Nous verrons plus tard des exemples de bonnes structures à adopter pour nos api.</p>
 <div class="admonition manuel">
 <p class="admonition-title">Manuel</p>
 <p><a href="https://expressjs.com/en/5x/api.html#router">Router - ExpressJS</a>  </p>
