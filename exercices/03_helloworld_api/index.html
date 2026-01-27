@@ -2220,9 +2220,9 @@
 </ul>
 <h3 id="get-apisalutationshasardlanguefrenesde">GET /api/salutations/hasard?langue=[fr,en,es,de]</h3>
 <ul>
-<li>Retournez une salutations aléatoire depuis le tableau au format JSON</li>
+<li>Retournez une salutation aléatoire depuis le tableau au format JSON</li>
 <li>Si un code de langue est fourni, sélectionnez la salutation parmi celles de cette langue</li>
-<li>Si le code n'existe pas, ou si aucune salutation ne correspond à ce code, retournez le message suivant au format JSON avec le code de statut 404. Remplacez la valeur de code par celle envoyée en paramêtre. </li>
+<li>Si le code de langue n'existe pas, ou si aucune salutation ne correspond à ce code, retournez le message suivant au format JSON avec le code de statut 404. Remplacez la valeur de code par celle envoyée en paramètre. </li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Erreur, le code de langue [code] n&#39;existe pas&quot;</span>
@@ -2242,7 +2242,7 @@
 </div>
 <h3 id="post-apisalutations">POST /api/salutations</h3>
 <ul>
-<li>Vous devez dans le corps de la requête envoyer les informations suivantes en JSON (utilisez Postman le faire) : </li>
+<li>Vous devez envoyer dans le corps de la requête les informations suivantes en JSON (utilisez Postman pour le faire) : </li>
 </ul>
 <div class="language-json highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">corps</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
@@ -2267,7 +2267,7 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">});</span>
 </span></code></pre></div>
 <ul>
-<li>Créez une fonction dans le fichier <strong>salutations.model.js</strong> qui va s'occuper d'ajouter dans le tableau le nouvel objet salutation. Vous devrez importer cette fonction dans votre router pour l'utiliser.</li>
+<li>Créez une fonction dans le fichier <strong>salutations.model.js</strong> qui va s'occuper d'ajouter dans le tableau le nouvel objet <em>salutation</em>. Vous devrez importer cette fonction dans votre router pour l'utiliser.</li>
 <li>Dans le fichier <strong>salutations.controller.js</strong> validez que toutes les informations sont présentes, sinon retournez le message suivant au format JSON avec le code d'erreur 400.</li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
@@ -2287,7 +2287,7 @@
 Cette entrée devra afficher la date au format CLF, la méthode http, la route, le status de la réponse et le temps de réponse en millisecondes. Le résultat doit être formaté comme ceci: </p>
 <div class="language-text highlight"><span class="filename">access.log</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>22/Jan/2024:15:07:15 +0000 =&gt; GET / 200 - 7.331 ms
 </span></code></pre></div>
-<p>Consultez les notes de cours sur les intergiciels et la documentation de Mogan pour vous aider.</p>
+<p>Consultez les notes de cours sur les intergiciels et la documentation de Morgan pour vous aider.</p>
 
 
 
