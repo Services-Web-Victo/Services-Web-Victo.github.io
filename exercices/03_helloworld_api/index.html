@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-03-helloworldapi" class="md-skip">
+        <a href="#exercice-03-helloworld-api" class="md-skip">
           Aller au contenu
         </a>
       
@@ -2105,8 +2105,9 @@
 
 
 
-<h1 id="exercice-03-helloworldapi">Exercice 03 - HelloWorldApi</h1>
+<h1 id="exercice-03-helloworld-api">Exercice 03 - HelloWorld Api</h1>
 <p>Créez un nouveau projet dans lequel vous allez coder votre premier API en Node.js à l'aide d'Express.</p>
+<p>L'API devra permettre de gérer des messages de salutations dans différentes langues.</p>
 <h2 id="installation-des-modules">Installation des modules</h2>
 <ul>
 <li>Pour cet exercice utilisez les modules suivants : <code>express</code> et <code>nodemon</code></li>
@@ -2257,7 +2258,7 @@
 <ul>
 <li>Si vous utilisez l'intergiciel <strong>express.json()</strong> vous avez accès aux données par l'objet <strong>req</strong>. Il ne vous reste ensuite qu'à ajouter les valeurs au tableau salutations. </li>
 </ul>
-<div class="language-javascript highlight"><span class="filename">index.js</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span><span class="w"> </span><span class="c1">// Il y a un item message dans le json envoyé</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">...</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
