@@ -1977,7 +1977,7 @@
 
 <h1 id="mysql-avec-expressjs">MySQL avec Express.js</h1>
 <h2 id="installation">Installation</h2>
-<p>Pour nous permettre d'interragir avec une base de données MySQL nous allons installer un nouveau module avec npm - mysql2.</p>
+<p>Pour nous permettre d'interragir avec une base de données MySQL nous allons installer un nouveau module avec npm: mysql2.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>mysql2
 </span></code></pre></div>
 <div class="admonition manuel">
@@ -1985,7 +1985,7 @@
 <p><a href="https://www.npmjs.com/package/mysql2">Documentation du module mysql2</a></p>
 </div>
 <h2 id="creation-du-pool-de-connexions">Création du <em>pool</em> de connexions</h2>
-<p>Ensuite nous allons créer le fichier <code>./src/config/db.js</code> où nous allons déclarer un <em>pool</em> de connexion à notre BD. Notez aussi que j'utilise le module <a href="../npm/#nodemon"><strong>dotenv</strong></a> pour enregistrer les informations de connexion à la base de données</p>
+<p>Ensuite nous allons créer le fichier <code>./src/config/db.js</code> où nous allons déclarer un <em>pool</em> de connexions à notre BD. Notez aussi que j'utilise le module <a href="../npm/#nodemon"><strong>dotenv</strong></a> pour enregistrer les informations de connexion à la base de données</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On aurait aussi pu créer une connexion au lieu d'un <em>pool</em>, mais ce dernier est mieux adapté pour gérer de multiples utilisateurs. Pour plus de détail, cet article (anglais) résume bien la situation : <a href="https://devdotcode.com/connection-pooling-vs-single-connection/">Why is Connection Pooling better than Single Connection</a></p>
@@ -2232,7 +2232,7 @@
 </div>
 </div>
 </div>
-<h1 id="exercice-35-mysql-et-expressjs">Exercice 3.5: MySQL et Express.js</h1>
+<h1 id="exercice-3b-mysql-et-expressjs">Exercice 3b: MySQL et Express.js</h1>
 <p>L'exercice consiste à compléter l'exemple ci-dessus en ajoutant la gestion du cas où aucun professeur n'est trouvé dans la base de données. Dans ce cas, le serveur doit retourner un code 404 avec un message d'erreur approprié.</p>
 <h2 id="etapes">Étapes</h2>
 <ol>
