@@ -2274,13 +2274,17 @@ Parfois, certaines options sont nécessaires.  </p>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">utilisateurBD</span><span class="o">=</span><span class="s">&quot;admin&quot;</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="na">motDePasse</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
 </span></code></pre></div>
-Ensuite dans le code importé le fichier et vous pouvez récupérer les informations de cette façon :   </p>
+Ensuite dans le code importez le module dotenv et vous pouvez récupérer les informations de cette façon :   </p>
 <div class="language-ts highlight"><span class="filename">a_faire.js</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">dotenv</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;dotenv&#39;</span><span class="p">;</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cleAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">cleAPI</span><span class="p">;</span>
 </span></code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Le fichier .env doit être à la racine du projet pour que dotenv puisse le trouver.  Utilisez <strong>dotenv.config()</strong> une seule fois dans votre projet, les valeurs seront ensuite disponibles partout dans votre projet sous <strong>process.env</strong>.</p>
+</div>
 <h2 id="information-a-ajouter-dans-le-fichier-gitignore">Information à ajouter dans le fichier .gitignore</h2>
 <p>Il est essentiel de ne pas envoyer dans votre dépôt git le dossier <strong>node_modules</strong> ainsi que le fichier <strong>.env</strong> si vous en avez un. Ajoutez ces lignes dans .gitignore : </p>
 <div class="language-ini highlight"><span class="filename">.gitignore</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="na">**/node_modules </span>
