@@ -2283,7 +2283,7 @@ Ensuite dans le code importez le module dotenv et vous pouvez récupérer les in
 </span></code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Le fichier .env doit être à la racine du projet pour que dotenv puisse le trouver.  Utilisez <strong>dotenv.config()</strong> une seule fois dans votre projet, les valeurs seront ensuite disponibles partout dans votre projet sous <strong>process.env</strong>.</p>
+<p>Le fichier <strong>.env</strong> doit être dans le même répertoire que le fichier .js qui appelle <em>dotenv.config()</em><em> .  Utilisez cette fonction une seule fois dans votre projet (dans votre fichier principal), les valeurs seront ensuite disponibles partout dans votre projet sous </em><em>process.env</em>*.</p>
 </div>
 <h2 id="information-a-ajouter-dans-le-fichier-gitignore">Information à ajouter dans le fichier .gitignore</h2>
 <p>Il est essentiel de ne pas envoyer dans votre dépôt git le dossier <strong>node_modules</strong> ainsi que le fichier <strong>.env</strong> si vous en avez un. Ajoutez ces lignes dans .gitignore : </p>
