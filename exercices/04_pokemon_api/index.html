@@ -2174,24 +2174,22 @@
 
 
 <h1 id="exercice-04-pokemon-api">Exercice 04 - Pokemon API</h1>
-<p>Dans cet exercice vous devez créer un api avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL. Vous trouverez la description des routes à créer plus bas.</p>
+<p>Dans cet exercice vous devez créer un api de gestion de Pokemons avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL, puis vous devez documenter cette API. Vous trouverez la description des routes à créer plus bas.</p>
 <h2 id="configuration-du-projet">Configuration du projet</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Acceptez le devoir Gitub Classroom fourni par votre enseignant et clonez le projet.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Lancez la commande <code>npm install</code> pour installer automatiquement les modules <em>express</em>, <em>dotenv</em> et <em>nodemon</em> car ils sont déjà présent dans le fichier package.json.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Crééz un projet Node.js avec <code>npm init</code>, et installez les modules <em>express</em>, <em>mysql2</em>, <em>dotenv</em> et <em>nodemon</em> (n'oubliez pas de changer le type pour <em>module</em>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>mysql</em> ou <em>mysql2</em> selon votre SGBD.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Une fois l'exercice terminé, faites un commit et un push de votre dernière version.</p>
+<p>Faites un nouveau repo git, associez-le à votre exercice et faites des versions fonctionnelles de celui-ci.</p>
 </div>
 <h2 id="importation-de-la-base-de-donnees">Importation de la base de données</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Exécutez le script SQL disponible ici : <a href="../../assets/files/exercice04_data.sql">exercice04_data.sql</a></li>
 </ul>
-<p>Le script va créer la base de données <strong>bd_exercices</strong> ainsi que la table <strong>pokemon</strong>.</p>
+<p>Le script va créer la base de données <strong>sw_exercices</strong> ainsi que la table <strong>pokemon</strong>.</p>
 <h2 id="routes-a-creer">Routes à créer</h2>
 <h3 id="afficher-un-pokemon-selon-son-id">Afficher un pokemon selon son id</h3>
 <div class="language-text highlight"><span class="filename">route</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /api/pokemons/:id
@@ -2225,13 +2223,9 @@
 </span></code></pre></div>
 <p>Créez une route qui va afficher la liste de tous les pokemons. Cette route sera <strong>paginée</strong> et n'affichera que <mark>25 pokemons par page</mark>. Chaque pokemon a aussi un type primaire. On va pouvoir ajouter un filtre en paramêtre pour n'afficher que les pokemons qui sont du type choisi.</p>
 <ul>
-<li>Le paramètre page est optionnel. S'il n'est pas fournie, on va retourner la page 1.</li>
-<li>Le paramètre type est aussi optionnel. S'il n'est pas fournie, afficher tous les pokemons. Si le type ne correspond à aucun type primaire dans la table pokemon, on va retourner un tableau vide avec les valeurs nombrePokemonTotal à 0 et la page et totalPage à 1. </li>
+<li>Le paramètre <em>page</em> est optionnel. S'il n'est pas fourni, on va retourner la page 1.</li>
+<li>Le paramètre <em>type</em> est aussi optionnel. S'il n'est pas fourni, affichez tous les pokemons. Si le type ne correspond à aucun type primaire dans la table pokemon, on va retourner un tableau vide avec les valeurs nombrePokemonTotal à 0 et la page et totalPage à 1. </li>
 </ul>
-<div class="admonition astuce">
-<p class="admonition-title">Astuce</p>
-<p>Dans ma solution j'ai seulement ajouté le type primaire comme paramètre de la requête SQL. Ensuite j'ai utilisé <code>array.slice()</code> pour effectuer la pagination sur le tableau de résultats.</p>
-</div>
 <div class="language-json highlight"><span class="filename">reponse</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Succès avec la route /api/pokemons/liste?page=2&amp;type=grass</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Code de statut 200</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
@@ -2399,7 +2393,7 @@
 </span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="documentation">Documentation</h2>
-<p>Vous devez créer la documentation adéquate pour l'api que vous avez développé à l'exercice 04.</p>
+<p>Vous devez créer la documentation adéquate pour l'api que vous avez développé.</p>
 <p>La méthode pour documenter l'api doit être celle décrite dans les notes de cours à la section <a href="../../notes_de_cours/api/documentation/">Documentation d'un API avec OpenAPI</a></p>
 <h3 id="detail-de-la-documentation">Détail de la documentation</h3>
 <ul class="task-list">
@@ -2408,7 +2402,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les 5 routes doivent être documentées</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les paramètres doivent bien être détaillés.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Toutes les réponses doivent être décrites avec un exemple de valeur.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utiliser un schema pour le modèle pokemon et utilisez le lorsque c'est possible dans votre documentation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utiliser un schema de validationpour le modèle pokemon et utilisez-le lorsque c'est possible dans votre documentation</li>
 </ul>
 
 
