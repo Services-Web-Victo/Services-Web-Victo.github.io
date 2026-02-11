@@ -2183,7 +2183,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Faites un nouveau repo git, associez-le à votre exercice et faites des versions fonctionnelles de celui-ci.</p>
+<p>Faites un nouveau repo git, associez-le à votre exercice et faites des <em>commits</em> de versions fonctionnelles de celui-ci.</p>
 </div>
 <h2 id="importation-de-la-base-de-donnees">Importation de la base de données</h2>
 <ul class="task-list">
@@ -2223,8 +2223,8 @@
 </span></code></pre></div>
 <p>Créez une route qui va afficher la liste de tous les pokemons. Cette route sera <strong>paginée</strong> et n'affichera que <mark>25 pokemons par page</mark>. Chaque pokemon a aussi un type primaire. On va pouvoir ajouter un filtre en paramêtre pour n'afficher que les pokemons qui sont du type choisi.</p>
 <ul>
-<li>Le paramètre <em>page</em> est optionnel. S'il n'est pas fourni, on va retourner la page 1.</li>
-<li>Le paramètre <em>type</em> est aussi optionnel. S'il n'est pas fourni, affichez tous les pokemons. Si le type ne correspond à aucun type primaire dans la table pokemon, on va retourner un tableau vide avec les valeurs nombrePokemonTotal à 0 et la page et totalPage à 1. </li>
+<li>Le paramètre <em>page</em> est optionnel. S'il n'est pas fourni, on doit retourner la page 1.</li>
+<li>Le paramètre <em>type</em> est aussi optionnel. S'il n'est pas fourni, affichez tous les pokemons. Si le type ne correspond à aucun type primaire dans la table pokemon, on doit retourner un tableau vide avec les valeurs <em>nombrePokemonTotal</em> à 0 et <em>page</em> et <em>totalPage</em> à 1. </li>
 </ul>
 <div class="language-json highlight"><span class="filename">reponse</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Succès avec la route /api/pokemons/liste?page=2&amp;type=grass</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Code de statut 200</span>
@@ -2402,7 +2402,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les 5 routes doivent être documentées</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les paramètres doivent bien être détaillés.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Toutes les réponses doivent être décrites avec un exemple de valeur.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utiliser un schema de validationpour le modèle pokemon et utilisez-le lorsque c'est possible dans votre documentation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utiliser un schema de validation pour le modèle pokemon et utilisez-le lorsque c'est possible dans votre documentation</li>
 </ul>
 
 
