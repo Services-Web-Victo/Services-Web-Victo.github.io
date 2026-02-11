@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://example.com/exercices/04_pokemon_api/">
       
       
+        <link rel="prev" href="../formatif/">
+      
+      
+        <link rel="next" href="../examen2_reva/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Exercice 04 - Pokemon API (Formatif) - Services Web</title>
+        <title>04 - Pokemon API - Services Web</title>
       
     
     
@@ -145,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-04-pokemon-api-formatif" class="md-skip">
+        <a href="#exercice-04-pokemon-api" class="md-skip">
           Aller au contenu
         </a>
       
@@ -181,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 04 - Pokemon API (Formatif)
+              04 - Pokemon API
             
           </span>
         </div>
@@ -311,10 +315,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
@@ -1522,24 +1528,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1557,7 +1568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1675,6 +1686,203 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Pokemon API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Pokemon API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration du projet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importation de la base de données
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes-a-creer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routes à créer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Routes à créer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afficher-un-pokemon-selon-son-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afficher un pokemon selon son id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afficher-une-liste-paginee-de-tous-les-pokemons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Afficher une liste paginée de tous les pokemons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un pokemon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifier-un-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifier un pokemon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supprimer-un-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supprimer un pokemon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detail-de-la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail de la documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1965,12 +2173,12 @@
 
 
 
-<h1 id="exercice-04-pokemon-api-formatif">Exercice 04 - Pokemon API (Formatif)</h1>
+<h1 id="exercice-04-pokemon-api">Exercice 04 - Pokemon API</h1>
 <p>Dans cet exercice vous devez créer un api avec Express.js qui couvre toutes les opérations <em>CRUD</em> sur une table MySQL. Vous trouverez la description des routes à créer plus bas.</p>
 <h2 id="configuration-du-projet">Configuration du projet</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Acceptez le devoir Gitub Classroom fourni par votre enseignant et clonez le projet.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Lancez la commande <code>npm install</code> pour installer automatiquement les modules <em>express</em>, <em>dotenv</em> et <em>nodemon</em> car ils sont déjà présent dans le fichier pacjage.json.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Lancez la commande <code>npm install</code> pour installer automatiquement les modules <em>express</em>, <em>dotenv</em> et <em>nodemon</em> car ils sont déjà présent dans le fichier package.json.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les valeurs des paramètres de connexion à la base de données ainsi que le numéro de port doivent être enregistrées dans un fichier <mark>.env</mark>. </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Pour le projet installez aussi les modules <em>mysql</em> ou <em>mysql2</em> selon votre SGBD.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Vous devez utiliser une structure modèles, routes et contrôleur comme décrite dans la section <a href="../../notes_de_cours/node/structure_projet/">Structure de projet avec Express</a>.</li>
@@ -2199,7 +2407,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Configurez les valeurs de la section serveurs pour vous permettre de tester l'api depuis la documentation</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les 5 routes doivent être documentées</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Les paramètres doivent bien être détaillés.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Toute les réponses doivent être décrite avec un exemple de valeur.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Toutes les réponses doivent être décrites avec un exemple de valeur.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utiliser un schema pour le modèle pokemon et utilisez le lorsque c'est possible dans votre documentation</li>
 </ul>
 
