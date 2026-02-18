@@ -1857,6 +1857,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/05_apikey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Clé API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2083,7 +2111,7 @@
 
 <h1 id="cle-api">Clé API</h1>
 <p>Une clé d'api est une chaîne de caractères aléatoire unique qui est utilisée pour identifier et authentifier un utilisateur qui effectue une requête à l'api. <mark>Ce n'est pas de l'information encrypté ou hashé</mark>. Par exemple on pourrait utiliser un UUID comme clé api. L'importe est que la clé api doit être unique dans le système.</p>
-<p>On ajoute la clé dans l'entête de chaque requête envoyée à l'API. Ensuite le serveur détermine si la clé est valide, identifie l'utilisateur associé à la clé (identification) et détermine si celui-ci peut effectuer la requête (authentification).</p>
+<p>On ajoute la clé dans l'entête de chaque requête envoyée à l'API. Ensuite le serveur détermine si la clé est valide, identifie l'utilisateur associé à la clé (authentification) et détermine si celui-ci peut effectuer la requête (autorisation).</p>
 <h2 id="fonctionnement">Fonctionnement</h2>
 <p>Voici le mode de fonctionnement que nous allons utiliser pour ajouter une protection par clé api à notre projet:</p>
 <ul class="task-list">
@@ -2094,7 +2122,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> On va ajouter le Intergiciel aux routes qu'on veut protéger.</li>
 </ul>
 <h3 id="ajouter-la-cle-a-lentete-de-la-requete">Ajouter la clé à l'entête de la requête</h3>
-<p>Dans la section entête de la requête il y a une clé qui est utilisée pour envoyer des données d'authorisation comme une clé api. Dans Postman vous pouvez ajouter l'information dans l'onglet <em>Headers</em>. Le nom de la clé est <strong>Authorization</strong> et comme valeur nous allons avoir cle_api suivi d'une espace et de la clé. (Vous pouvez utiliser autre chose comme nom que cle_api, souvent dans les documentation on va voir <em>Bearer</em>, l'idée est d'indiquer quelle genre d'autorisation on demande).</p>
+<p>Dans la section entête de la requête il y a une clé qui est utilisée pour envoyer des données d'autorisation comme une clé api. Dans Postman vous pouvez ajouter l'information dans l'onglet <em>Headers</em>. Le nom de la clé est <strong>Authorization</strong> et comme valeur nous allons avoir cle_api suivi d'une espace et de la clé. (Vous pouvez utiliser autre chose comme nom que cle_api, souvent dans les documentation on va voir <em>Bearer</em>, l'idée est d'indiquer quelle genre d'autorisation on demande).</p>
 <figure>
 <p><img alt="apikey_01.png" class="center shadow" src="../../../assets/img/apikey_01.png" /></p>
 </figure>
