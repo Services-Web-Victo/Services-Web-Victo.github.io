@@ -2077,7 +2077,7 @@
 <p>Vous pouvez faire cet exercice à partir de l'api que vous avez développé à l'exercice précédent ou bien débuter un nouveau projet. Si vous recommencez un api, assurez-vous d'avoir au moins une route qui retourne un résultat et que vous pourrez protéger.</p>
 <h2 id="1-creation-dun-utilisateur">1. Création d'un utilisateur</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créer une table utilisateurs dans votre base de données. Vous devez avoir minimalement les champs id, nom, courriel, mot_de_passe et cle_api.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créer une table <em>utilisateurs</em> dans votre base de données. Vous devez avoir minimalement les champs <em>id</em>, <em>nom</em>, <em>courriel</em>, <em>mot_de_passe</em> et <em>cle_api</em>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez une route pour ajouter un nouvel utilisateur.</li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">POST</span><span class="w"> </span><span class="err">/api/users</span>
@@ -2090,10 +2090,10 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Avant de créer l'utilisateur, assurez-vous que tous les champs nécessaire sont présent et que le courriel est unique dans la table. Retournez le bon message d'erreur le cas échéant.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Avant de créer l'utilisateur, assurez-vous que tous les champs nécessaires sont présent et que le courriel est unique dans la table. Retournez le bon message d'erreur le cas échéant.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Utilisez la méthode que vous souhaitez pour générer la clé api.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Le mot de passe doit être hashé avec BCrypt avant d'être sauvegarder dans la base de données.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> La réponse de la requête doit être formaté comme suit.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Le mot de passe doit être hashé avec BCrypt avant d'être sauvegardé dans la base de données.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> La réponse de la requête doit être formatée comme suit:</li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;L&#39;utilisateur a été créé&quot;</span><span class="p">,</span>
@@ -2102,7 +2102,7 @@
 </span></code></pre></div>
 <h2 id="2-intergiciel-de-validation">2. Intergiciel de validation</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez un intergiciel qui va valider que la clé est présente dans l'entête de la requête existe dans la base de donnée. Vous devez utiliser <strong>Authorization</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créez un intergiciel qui va valider que la clé est présente dans l'entête de la requête et qu'elle existe dans la base de données. Vous devez utiliser <strong>Authorization</strong>.</li>
 </ul>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Authorization : &quot;cle_api 123456&quot;
 </span></code></pre></div>
@@ -2115,7 +2115,7 @@
 </ul>
 <h2 id="4-ajout-dune-route-pour-recuperer-la-cle">4. Ajout d'une route pour récupérer la clé</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajoutez une route pour permettre à un utilisateur de récupérer sa clé API s'il l'a oublié. On peut aussi ajouter un paramètre dans l'url pour demander d'en générer une nouvelle.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajoutez une route pour permettre à un utilisateur de récupérer sa clé API s'il l'a oubliée. On peut aussi ajouter un paramètre dans l'url pour demander d'en générer une nouvelle.</li>
 </ul>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">GET</span><span class="w"> </span><span class="err">/api/users/cle?</span><span class="kc">n</span><span class="err">ouvelle=</span><span class="mi">1</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
