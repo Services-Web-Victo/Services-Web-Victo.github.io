@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1868,6 +1868,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/06_render/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Déploiement sur Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2078,7 +2106,7 @@
 <h1 id="api-rest-avec-postgresql">API Rest avec PostgreSQL</h1>
 <p>Il est très simple de migrer nos API vers une BD PostgreSQL. </p>
 <h2 id="postgresql-et-devilbox">PostgreSQL et Devilbox</h2>
-<p>Devilbox à déjà une instance de PostgreSQL qui est lancé quand on le démarre, pratique si on veut effectuer des tests. Elle est accessible via le port <strong>5432</strong> en <strong>localhost</strong>.</p>
+<p>Devilbox à déjà une instance de PostgreSQL (<em>pgsql-1</em>) qui est lancée quand on le démarre, pratique si on veut effectuer des tests. Elle est accessible via le port <strong>5432</strong> en <strong>localhost</strong>.</p>
 <p>Par défaut le nom d'utilisateur est <em>postgres</em> et le mot de passe est vide. Il y a aussi une base de données appelée <em>postgres</em> où vous allez créer vos table. </p>
 <p>À l'aide de votre IDE préféré créez une connexion vers l'instance PostgreSQL. Dans DBeaver, quand vous créer une nouvelle connexion vous devez choisir PostgreSQL au lieu de MariaDB. Vous devrez surement installer des pilotes, juste à suivre les indications.</p>
 <figure>
@@ -2108,7 +2136,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">defense</span><span class="w"> </span><span class="nb">INTEGER</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">);</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Dans PosgreSQL il existe un concept de schemas qu'on ne couvrira pas (dans mon exemple public est le nom du schema). Le seul autre changement qu'on peut remarquer ici est au niveau du champ id qui est de type <em>SERIAL</em>, c'est l'équivalent du champs <em>auto-increment</em>.  </p>
+<p>Dans PosgreSQL il existe un concept de schemas qu'on ne couvrira pas (dans mon exemple <em>public</em> est le nom du schema). Le seul autre changement qu'on peut remarquer ici est au niveau du champ id qui est de type <em>SERIAL</em>, c'est l'équivalent du champs <em>auto-increment</em>.  </p>
 <div class="admonition manuel">
 <p class="admonition-title">Manuel</p>
 <ul>
@@ -2125,7 +2153,7 @@
 </span></code></pre></div>
 <p>Les valeurs ci-dessus correspondent à une connexion à l'instance PostgreSQL de Devilbox. </p>
 <p>Ensuite installer le module <strong>PG</strong> avec <em>npm</em>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm i pg
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm install pg
 </span></code></pre></div>
 <p>Maintenant créer un nouveau fichier nommé <code>db_pg.js</code> dans le répertoire <code>./src/config</code> et copiez le code suivant : </p>
 <div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">dp_pg.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -2188,22 +2216,22 @@
 <span class="normal"><a href="#__codelineno-6-13">13</a></span>
 <span class="normal"><a href="#__codelineno-6-14">14</a></span>
 <span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">static</span><span class="w"> </span><span class="nx">trouverUnPokemon</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">requete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SELECT id, nom, type_primaire, type_secondaire, pv, attaque, defense FROM pokemon WHERE id = $1&#39;</span><span class="p">;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">parametres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">            </span><span class="nx">sql</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">requete</span><span class="p">,</span><span class="w"> </span><span class="nx">parametres</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">,</span><span class="w"> </span><span class="nx">resultat</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Erreur sqlState : &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">erreur</span><span class="p">);</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Erreur sqlState </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlState</span><span class="si">}</span><span class="sb"> : </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlMessage</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">                    </span><span class="nx">reject</span><span class="p">(</span><span class="nx">erreur</span><span class="p">);</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">                </span><span class="p">}</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="hll"><span class="w">                </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">rows</span><span class="p">);</span>
-</span></span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">            </span><span class="p">});</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="p">});</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">trouverUnPokemon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">requete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SELECT id, nom, type_primaire, type_secondaire, pv, attaque, defense FROM pokemon WHERE id = $1&#39;</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">parametres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">sql</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">requete</span><span class="p">,</span><span class="w"> </span><span class="nx">parametres</span><span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">        </span><span class="c1">// PostgreSQL:  resultats dans la propriété &quot;rows&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">resultat</span><span class="p">.</span><span class="nx">rows</span><span class="p">;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Erreur sqlState : &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">erreur</span><span class="p">);</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Erreur sqlState </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlState</span><span class="si">}</span><span class="sb"> : </span><span class="si">${</span><span class="nx">erreur</span><span class="p">.</span><span class="nx">sqlMessage</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="hll"><span class="w">        </span><span class="p">}</span>
+</span></span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="nx">erreur</span><span class="p">;</span><span class="w"> </span><span class="c1">// On relance l&#39;erreur</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Et voilà! Vous êtes maintenant prêt à utiliser PostgreSQL</p>
 

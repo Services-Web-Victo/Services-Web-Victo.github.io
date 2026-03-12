@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1902,6 +1902,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/06_render/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Déploiement sur Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2154,42 +2182,45 @@
 </ul>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Dans le forfait gratuit, on ne peut avoir qu'une base de données et elle à une durée de vie de 90 jours</p>
+<p>Dans le forfait gratuit, on ne peut avoir qu'une base de données et elle à une durée de vie de <strong>30 jours</strong></p>
 </div>
 <h2 id="creation-dun-compte-sur-render">Création d'un compte sur Render</h2>
 <p>Première étape, créer votre compte sur le site <a href="https://render.com/">https://render.com/</a> et sélectionnez le plan gratuit. Pour vous faciliter le travail <mark>connectez vous avec Github</mark>.</p>
 <h2 id="creation-de-la-base-de-donnees">Création de la base de données</h2>
-<p>Dans le tableau de bord à la section PostgreSQL, cliquez sur <strong>Create PostgreSQL</strong> (Vous pouvez aussi cliquer sur New en haut à droite). Ensuite donnez un nom à votre base de données, laissez les autres options par défaut, sélectionnez le forfait gratuit et cliquez sur <strong>Create database</strong>. La création prendra un certain temps et une fois terminée vous aurez accès aux informations de connexions plus bas dans la section <em>Connections</em>: </p>
+<p>Dans le tableau de bord ensuite choisissez <strong>Create New PostgreSQL</strong>. Ensuite donnez un nom à votre instance et à votre base de données.</p>
+<p>Sélectionnez la Virginie comme région (la plus proche) et le forfait gratuit puis cliquez sur <strong>Create database</strong>. La création prendra un certain temps. Une fois terminée vous aurez accès aux informations de connexions plus bas dans la section <em>Connections</em>: </p>
 <figure>
 <p><img alt="render_01.png" class="center shadow" src="../../../assets/img/render_01.png" />
   </p>
 <figcaption>Image 1 - Informations de connexion</figcaption>
 </figure>
 <h3 id="connexion-depuis-dbeaver">Connexion depuis DBeaver</h3>
-<p>Maintenant créez-vous une connexions depuis un IDE (J'ai uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase. Vous avez aussi votre nom d'usager et votre mot de passe.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>postgres://nomUsager:motDePasse@dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
+<p>Maintenant créez-vous une connexions depuis un IDE (uniquement testé avec DBeaver). Copiez la valeur du champs <em>External Database URL</em> et conserver uniquement la section après l'arobase. Vous pouvez extraire votre nom d'usager et votre mot de passe de ce URL ou les obtenir de la section <strong>Connections</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>External Database URL: postgres://nomUsager:motDePasse@dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
 </span></code></pre></div>
-<p>Quand vous faites votre connexion dans DBeaver, l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut (Vous devez sélectionner l'option "Connect by: URL"): </p>
+<p>Quand vous faites votre connexion dans DBeaver (choisissez SQL - PostgreSQL comme type), l'url à utiliser sera <code>jdbc:postgresql://</code> + la valeur qui suit l'arobase dans ce que vous aviez plus haut (Vous devez sélectionner l'option "Connect by: URL").  Indiquer ensuite le nom d'usager et le mot de passe dans les champs correspondants.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>jdbc:postgresql://dpg-cnlkl76d3nmc7383kti0-a.ohio-postgres.render.com/pokemons_api_mcuk
 </span></code></pre></div>
 <figure>
 <p><img alt="render03.png" class="center shadow" src="../../../assets/img/render03.png" /></p>
 </figure>
+<p>Vous pouvez faire <strong>Test de la connexion</strong> initialement - DBeaver aura peut-être à télécharger les pilotes nécessaires pour accèder une un BD PostgreSQL. </p>
 <h2 id="creation-du-service-web">Création du service web</h2>
 <p>Render utilise Github pour le déploiement des services web. Assurez-vous que votre projet est dans un dépôt Github et qu'il est à jour.</p>
-<p>Sur le site de Render, cliquez sur le bouton <em>New</em> en haut à gauche et sélectionnez <em>Web Service</em>. Sélectionnez ensuite <em>Build and deploy from a Git repository</em>. Dans la section <em>Connect a repository</em> sélectionnez le dépôt Github de votre projet. Vous pouvez aussi plus bas sélectionner n'importe quel dépôt public. Cliquez ensuite sur <em>Connect</em>.</p>
-<p>À l'écran suivant, vous pouvez laisser la plupart des options par défaut.</p>
+<p>Sur le site de Render, cliquez sur le bouton <em>New Service</em> dans votre projet et sélectionnez <em>Web Service</em>. Sélectionnez ensuite <em>Git Provider</em> - <em>Github</em> pour déployer à partir d'un repo privé ou <em>Public Git Repository</em> pour les repos publics.</p>
+<p>Sélectionnez le dépôt Github de votre projet (repo privés) ou fournissez le URL du repo public. Cliquez ensuite sur <em>Connect</em>.</p>
+<p>À l'écran suivant, <em>render.com</em> devrait avoir détecter un application NodeJS et vous pouvez laisser la plupart des options par défaut.</p>
 <ul>
 <li>Ajustez la valeur de <strong>Start command</strong> pour le nom du fichier de "démarrage" de votre api.</li>
 <li>Sélectionnez le plan gratuit</li>
-<li>Ensuite ajoutez les variables d'environnement qui sont dans votre fichier et qui correspondent aux informations de la connexion avec PostgreSQL. Pour la valeur de <em>PG_HOST</em> utilisez la valeur qui vous avez pour <em>Hostname</em> dans l'écran des informations de connexions (image 1).</li>
+<li>Ensuite ajoutez les variables d'environnement qui sont dans votre fichier <em>.env</em> et qui correspondent par exemple aux informations de la connexion avec PostgreSQL (le fichier .env n'est pas dans votre repo git donc inaccessible pour render.com). Pour la valeur de <em>PG_HOST</em> utilisez la valeur qui vous avez pour <em>Hostname</em> dans l'écran des informations de connexion (image 1).</li>
 </ul>
 <figure>
 <p><img alt="render_02.png" class="center shadow" src="../../../assets/img/render_02.png" />
   </p>
 <figcaption>Image 2 - Variable d'environnement</figcaption>
 </figure>
-<p>Cliquez ensuite sur <em>Deploy</em> et après un petit moment votre api sera en ligne. </p>
+<p>Cliquez ensuite sur <em>Deploy Web Service</em> et après un petit moment votre api sera en ligne. </p>
 <figure>
 <p><img alt="render_03.png" class="center shadow" src="../../../assets/img/render_03.png" />
   </p>
@@ -2204,7 +2235,7 @@
 <p>Par défaut le déploiement est configuré sur le mode automatique, ce qui veut dire que dès que vous faites un <em>push</em> de votre projet, <em>Render</em> va aussi redéployer les modifications. </p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>C'est normal d'avoir un long délais après un moment d'inactivité, c'est un mauvais côté du plan gratuit.</p>
+<p>C'est normal d'avoir un long délai après un moment d'inactivité, c'est un désavantage du plan gratuit.</p>
 </div>
 <h2 id="references-et-tutoriels">Références et tutoriels</h2>
 <ul>
