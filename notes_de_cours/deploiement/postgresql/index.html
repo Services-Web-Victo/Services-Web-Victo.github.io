@@ -1221,7 +1221,7 @@
   <a href="#modification-des-requetes-preparees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modification des requètes préparées
+        Modification des requêtes préparées
       
     </span>
   </a>
@@ -2079,7 +2079,7 @@
   <a href="#modification-des-requetes-preparees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modification des requètes préparées
+        Modification des requêtes préparées
       
     </span>
   </a>
@@ -2194,7 +2194,7 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">import</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../config/db_pg.js&quot;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="modification-des-requetes-preparees">Modification des requètes préparées</h2>
+<h2 id="modification-des-requetes-preparees">Modification des requêtes préparées</h2>
 <p>La syntaxe pour passer des paramêtres à une requête préparée avec le module <em>PG</em> est un peu différente, vous allez devoir les modifier. Au lieu d'utiliser le caractère <mark>?</mark> pour indiquer un paramêtre vous devez utiliser le signe de dollar suivi d'un nombre incrémenté à partir de 1.</p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">requete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SELECT id, nom, type_primaire, type_secondaire, pv, attaque, defense FROM public.pokemon WHERE type_primaire LIKE $1;&#39;</span><span class="p">;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">// Exemple d&#39;un INSERT - attention PostgreSQL ne retourne pas de valeurs sur INSERT par defaut - il faut préciser si on veut avoir l&#39;id (ou indiquer RETURNING *; par avoir tous les champs)</span>
