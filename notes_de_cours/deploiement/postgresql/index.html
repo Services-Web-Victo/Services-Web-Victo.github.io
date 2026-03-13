@@ -2104,7 +2104,7 @@
 
 
 <h1 id="api-rest-service-web-avec-postgresql">API Rest (Service web) avec PostgreSQL</h1>
-<p>Il est très simple de migrer nos API vers une BD PostgreSQL. </p>
+<p>Voici comment migrer les modèles de vos API de MySQL vers une BD PostgreSQL:</p>
 <h2 id="postgresql-et-devilbox">PostgreSQL et Devilbox</h2>
 <p>Devilbox à déjà une instance de PostgreSQL (<em>pgsql-1</em>) qui est lancée quand on le démarre, pratique si on veut effectuer des tests. Elle est accessible via le port <strong>5432</strong> en <strong>localhost</strong>.</p>
 <p>Par défaut le nom d'utilisateur est <em>postgres</em> et le mot de passe est vide. Il y a aussi une base de données appelée <em>postgres</em> où vous allez créer vos table. </p>
@@ -2249,7 +2249,8 @@
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="hll"><span class="w">    </span><span class="p">}</span>
 </span></span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Et voilà! Vous êtes maintenant prêt à utiliser PostgreSQL</p>
+<p>Remarquez aussi que dans l'erreur, <em>sqlState</em> est remplacé par <em>code</em> et <em>sqlMessage</em> par <em>message</em>.</p>
+<p>Et voilà! Vous êtes maintenant prêt à utiliser PostgreSQL.</p>
 
 
 
