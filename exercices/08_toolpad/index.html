@@ -2033,8 +2033,9 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://restcountries.com/v3.1/translation/:nomDuPays
 </span></code></pre></div>
 <ul>
-<li>Cette route peut retourner plus d'un résultat. Remplissez un <strong>Select</strong> avec le code <em>cca2</em> et le <em>nom officiel</em> en français de chaque pays.</li>
-<li>Utilisez l'expression suivante dans le <em>transform</em> de la requête pour vous permettre de remplir le <strong>Select</strong></li>
+<li>Cette route peut retourner plus d'un résultat. Pour gérer cela, nous allons utiliser un composant <strong>Select</strong> où nous afficherons chaque pays retourné par la recherche.</li>
+<li>Ajouter un composant <strong>Select</strong></li>
+<li>Utilisez l'expression suivante dans le <em>transform</em> de la requête pour remplir le <strong>Select</strong></li>
 </ul>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pays</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
@@ -2044,6 +2045,7 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">});</span>
 </span></code></pre></div>
 <ul>
+<li>La valeur <em>cca2</em> est le code de pays de 2 lettres et le <em>label</em> est le <em>nom officiel</em> en français de chaque pays.</li>
 <li>Ensuite quand on sélectionne un pays dans le <strong>Select</strong> lancez une seconde requête qui va récupérer le drapeau, la capitale et la population du pays.</li>
 <li>Par défaut dans le <strong>Select</strong> le premier pays de la liste devrait être sélectionné.</li>
 </ul>
