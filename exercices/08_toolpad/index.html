@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://example.com/exercices/08_toolpad/">
       
       
+        <link rel="prev" href="../07_fetch/">
+      
+      
+        <link rel="next" href="../examen2_reva/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Exercice 08 - Première application avec Toolpad Studio - Services Web</title>
+        <title>08 - Toolpad Studio - Services Web</title>
       
     
     
@@ -181,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 08 - Première application avec Toolpad Studio
+              08 - Toolpad Studio
             
           </span>
         </div>
@@ -311,10 +315,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
@@ -1550,24 +1556,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1585,7 +1596,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1820,6 +1831,44 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Toolpad Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1976,12 +2025,12 @@
 
 
 <h1 id="exercice-08-premiere-application-avec-toolpad-studio">Exercice 08 - Première application avec Toolpad Studio</h1>
-<p>À l'aide de Toolpad Studio vous devez recréer l'interface de l'exercice précédente avec de petites modifications.</p>
+<p>À l'aide de Toolpad Studio vous devez recréer l'interface de l'exercice précédent avec de petites modifications.</p>
 <ul>
 <li>Une zone de texte permet d'inscrire le nom d'un pays en français.</li>
 <li>Utilisez la route suivante pour récupérer les résultats quand on clique sur un bouton.</li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://restcountries.com/v3.1/translation/nomDuPays
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://restcountries.com/v3.1/translation/:nomDuPays
 </span></code></pre></div>
 <ul>
 <li>Cette route peut retourner plus d'un résultat. Remplissez un <strong>Select</strong> avec le code <em>cca2</em> et le <em>nom officiel</em> en français de chaque pays.</li>
@@ -1998,7 +2047,7 @@
 <li>Ensuite quand on sélectionne un pays dans le <strong>Select</strong> lancez une seconde requête qui va récupérer le drapeau, la capitale et la population du pays.</li>
 <li>Par défaut dans le <strong>Select</strong> le premier pays de la liste devrait être sélectionné.</li>
 </ul>
-<p>Voici deux exemples de résultats</p>
+<p>Voici deux exemples de résultats:</p>
 <figure>
 <p><img alt="ex08_01.png" class="center shadow" src="../../assets/img/ex08_01.png" /></p>
 </figure>
