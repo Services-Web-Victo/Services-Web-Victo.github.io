@@ -1347,7 +1347,7 @@
   <a href="#ajouter-de-linteractivite-a-la-requete" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ajouter de l'intéractivité à la requête.
+        Ajouter de l'interactivité à la requête.
       
     </span>
   </a>
@@ -2147,7 +2147,7 @@
   <a href="#ajouter-de-linteractivite-a-la-requete" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ajouter de l'intéractivité à la requête.
+        Ajouter de l'interactivité à la requête.
       
     </span>
   </a>
@@ -2202,9 +2202,10 @@
 <p>Commencez par installer pnpm:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm install -g pnpm@latest-10
 </span></code></pre></div>
-<p>Créez un nouveau répertoire et placez vous à l'intérieur (cd <MonProjetToolpad>). Ensuite, exécutez la commande suivante pour créer un projet Toolpad Studio:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pnpm dlx create-toolpad-app@latest --studio my-toolpad-app
+<p>Créez un nouveau répertoire et placez vous à l'intérieur (cd <em>MonProjetToolpad</em>). Ensuite, exécutez la commande suivante pour créer un projet Toolpad Studio:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pnpm dlx create-toolpad-app@latest --studio my-toolpad-app
 </span></code></pre></div>
+(des avertissements vont apparaître lors de l'installation, vous pouvez les ignorer)</p>
 <p>Ensuite pour lancer l'application en mode développement, lancer la commande suivante dans le répertoire du projet:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pnpm run dev
 </span></code></pre></div>
@@ -2246,16 +2247,21 @@ Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les ch
 <p>La prochaine étape est de lier les données aux composantes. </p>
 <ul>
 <li>Cliquez sur le <strong>Data grid</strong> </li>
-<li>Dans l'inspecteur à gauche trouvez la propriété <strong>rows</strong> et cliquez sur l'icone <em>Bind "rows"</em> à sa droite pour ouvrir l'éditeur de liaisons.</li>
+<li>Dans l'inspecteur à droite trouvez la propriété <strong>rows</strong> et cliquez sur l'icone <em>Bind "rows"</em> à sa droite pour ouvrir l'éditeur de liaisons.</li>
 </ul>
+<figure>
+<p><img alt="toolpad_03a.png" class="center shadow" src="../../../assets/img/toolpad_03a.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
 <p>Sur la gauche, vous verrez une liste de tous les états pouvant être liés dans la page et sur la droite, un éditeur de code qui accepte n'importe quelle expression JavaScript.</p>
 <p>Utilisez la requête que vous venez d'enregistrer, <code>dogQuery</code>. Dans l'éditeur de code entrez la ligne suivante : </p>
 <div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">dogQuery</span><span class="p">.</span><span class="nx">data</span>
 </span></code></pre></div>
 <p><em>dogQuery</em> est le nom de la requête et data représente le résultat.</p>
-<p>Cliquez sur <em>Update binding</em> et votre <strong>Data grid</strong> devrait se remplir avec le résultat de la requête.</p>
-<h3 id="ajouter-de-linteractivite-a-la-requete">Ajouter de l'intéractivité à la requête.</h3>
-<p>On va maintenant ajouter de l'intéractivité à notre application en créant une seconde requête qui va réagir à une sélection de la grille.</p>
+<p>Cliquez sur <em>Update binding</em> et votre <strong>Data grid</strong> devrait se remplir avec le résultat de la requête (rafraîchissez la page si nécessaire).</p>
+<h3 id="ajouter-de-linteractivite-a-la-requete">Ajouter de l'interactivité à la requête.</h3>
+<p>On va maintenant ajouter de l'interactivité à notre application en créant une seconde requête qui va réagir à une sélection de la grille.</p>
 <ul>
 <li>Créez une autre requête de type REST API et ajoutez un paramètre <code>breed</code> dans la section <strong>Parameters</strong>.</li>
 <li>Cliquez sur le bouton <em>Bind</em> du paramètre et ajoutez le code suivant dans l'éditeur : </li>
