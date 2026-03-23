@@ -2050,10 +2050,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rafraichir-la-liste-apres-une-opetation" class="md-nav__link">
+  <a href="#rafraichir-la-liste-apres-une-operation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rafraîchir la liste après une opétation
+        Rafraîchir la liste après une opération
       
     </span>
   </a>
@@ -2078,25 +2078,25 @@
 
 
 <h1 id="operations-crud-avec-toolpad-studio">Opérations CRUD avec Toolpad Studio</h1>
-<p>À partir de l'api que vous avez mise en ligne sur Render à l'<mark>exercice 6</mark> vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
+<p>À partir de l'api que vous avez mis en ligne sur Render à l'<mark>exercice 6</mark> vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Dresser la liste des enregistrements dans une grille.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Permettre d'ajouter un enregistrement dans la base de données.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Récupérer un enregistrement et donner la possibilité de le modifier.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Supprimer un enregistrement.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Rafraîchir la liste après une opétation (automatiquement ou sur un clique de bouton).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Rafraîchir la liste après une opération (automatiquement ou sur un clic de bouton).</li>
 </ul>
 <h2 id="variable-denvironnement">Variable d'environnement</h2>
 <ul>
 <li>Utilisez une variable d'environnement pour le hostname de votre api.</li>
-<li>Si vous avez implémenter la protection par clé api, ajouter aussi la clé api dans vos variables d'environnement.</li>
+<li>Si vous avez implémenté la protection par clé api, ajouter aussi la clé api dans vos variables d'environnement.</li>
 </ul>
 <h2 id="dresser-la-liste-des-enregistrements-dans-une-grille">Dresser la liste des enregistrements dans une grille.</h2>
 <ul>
 <li>Utilisez une dataGrid pour afficher vos données. </li>
-<li>Puisque la requête était paginée, ajoutez sous la grille un sélecteur de page. Vous pouvez récupérer la page affiché et le nombre de page total dans la réponse de la requête.</li>
-<li>À vous de trouver un moyen de créer un tableau qui contiendra les nombres de 1 au nombre total de page que vous pourrez utiler comme données dans le sélecteur.</li>
-<li>Quand on change la valeur du sélecteur, les données de la grille doivent être mise à jour.</li>
+<li>Puisque la requête était paginée, ajoutez sous la grille un sélecteur de page. Vous pouvez récupérer la page affichée et le nombre de pages total dans la réponse de la requête.</li>
+<li>À vous de trouver un moyen de créer un tableau qui contiendra les nombres de 1 au nombre total de pages que vous pourrez utiliser comme données dans le sélecteur.</li>
+<li>Quand on change la valeur du sélecteur, les données de la grille doivent être mises à jour.</li>
 </ul>
 <figure>
 <p><img alt="ex09_02.png" class="center shadow" src="../../assets/img/ex09_02.png" />
@@ -2113,7 +2113,7 @@
 <li>Ajoutez un formulaire avec les champs nécessaires à la modification d'un pokemon.</li>
 <li>Quand un sélectionne un Pokemon dans la liste, les champs correspondants sont remplis avec les valeurs.</li>
 <li>Un bouton "Modifier" lancera la requête et ensuite la grille sera mise à jour.</li>
-<li>La modification doit être lancé uniquement si un pokemon de la liste est sélectionné.</li>
+<li>La modification doit être lancée uniquement si un pokemon de la liste est sélectionné.</li>
 </ul>
 <h2 id="supprimer-un-enregistrement">Supprimer un enregistrement.</h2>
 <ul>
@@ -2121,7 +2121,7 @@
 <li>Quand on clique sur le bouton, le Pokemon sélectionné est supprimé et la grille est mise à jour.</li>
 <li>Le bouton ne doit être accessible que si un enregistrement est sélectionné dans la liste.</li>
 </ul>
-<h2 id="rafraichir-la-liste-apres-une-opetation">Rafraîchir la liste après une opétation</h2>
+<h2 id="rafraichir-la-liste-apres-une-operation">Rafraîchir la liste après une opération</h2>
 <ul>
 <li>Vous pouvez utiliser la fonction <code>refetch()</code> pour relancer la requête correspondante.</li>
 </ul>
