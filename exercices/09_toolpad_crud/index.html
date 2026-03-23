@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://example.com/exercices/09_toolpad_crud/">
       
       
+        <link rel="prev" href="../08_toolpad/">
+      
+      
+        <link rel="next" href="../examen2_reva/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>Opérations CRUD avec Toolpad Studio - Services Web</title>
+        <title>09 - Opérations CRUD avec Toolpad Studio - Services Web</title>
       
     
     
@@ -181,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Opérations CRUD avec Toolpad Studio
+              09 - Opérations CRUD avec Toolpad Studio
             
           </span>
         </div>
@@ -311,10 +315,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
@@ -1550,24 +1556,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1585,7 +1596,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1848,6 +1859,147 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - Opérations CRUD avec Toolpad Studio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - Opérations CRUD avec Toolpad Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables-denvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables d'environnement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dresser-la-liste-des-enregistrements-dans-une-grille" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dresser la liste des enregistrements dans une grille.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permettre-dajouter-un-enregistrement-dans-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permettre d'ajouter un enregistrement dans la base de données.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recuperer-un-enregistrement-et-donner-la-possibilite-de-le-modifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Récupérer un enregistrement et donner la possibilité de le modifier.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supprimer-un-enregistrement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supprimer un enregistrement.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rafraichir-la-liste-apres-une-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rafraîchir la liste après une opération
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1995,10 +2147,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variable-denvironnement" class="md-nav__link">
+  <a href="#variables-denvironnement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variable d'environnement
+        Variables d'environnement
       
     </span>
   </a>
@@ -2078,7 +2230,7 @@
 
 
 <h1 id="operations-crud-avec-toolpad-studio">Opérations CRUD avec Toolpad Studio</h1>
-<p>À partir de l'api que vous avez mis en ligne sur Render à l'<mark>exercice 6</mark> vous devez créer une interface avec Toolpad Studio qui comportera les fonctionnalités suivantes : </p>
+<p>À partir de l'api que vous avez mis en ligne sur Render à l'<mark>exercice 6</mark> (Pokemons), vous devez créer une interface avec <em>Toolpad Studio</em> qui comportera les fonctionnalités suivantes : </p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Dresser la liste des enregistrements dans une grille.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Permettre d'ajouter un enregistrement dans la base de données.</li>
@@ -2086,7 +2238,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Supprimer un enregistrement.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Rafraîchir la liste après une opération (automatiquement ou sur un clic de bouton).</li>
 </ul>
-<h2 id="variable-denvironnement">Variable d'environnement</h2>
+<h2 id="variables-denvironnement">Variables d'environnement</h2>
 <ul>
 <li>Utilisez une variable d'environnement pour le hostname de votre api.</li>
 <li>Si vous avez implémenté la protection par clé api, ajouter aussi la clé api dans vos variables d'environnement.</li>
@@ -2094,7 +2246,7 @@
 <h2 id="dresser-la-liste-des-enregistrements-dans-une-grille">Dresser la liste des enregistrements dans une grille.</h2>
 <ul>
 <li>Utilisez une dataGrid pour afficher vos données. </li>
-<li>Puisque la requête était paginée, ajoutez sous la grille un sélecteur de page. Vous pouvez récupérer la page affichée et le nombre de pages total dans la réponse de la requête.</li>
+<li>Puisque la requête est paginée, ajoutez sous la grille un sélecteur de page. Vous pouvez récupérer la page affichée et le nombre de pages total dans la réponse de la requête.</li>
 <li>À vous de trouver un moyen de créer un tableau qui contiendra les nombres de 1 au nombre total de pages que vous pourrez utiliser comme données dans le sélecteur.</li>
 <li>Quand on change la valeur du sélecteur, les données de la grille doivent être mises à jour.</li>
 </ul>
