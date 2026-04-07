@@ -1876,6 +1876,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/10_meme_generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Générateur de Meme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2016,25 +2044,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mediagraphie" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Médiagraphie
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2059,6 +2068,32 @@
 <p>https://auth0.com/docs/secure/tokens/json-web-tokens
 https://jwt.io/
 https://fr.wikipedia.org/wiki/JSON_Web_Token</p>
+<h1 id="exercice-implementer-une-protection-par-jwt">Exercice : Implémenter une protection par JWT</h1>
+<h1 id="service-web">Service Web</h1>
+<h1 id="client">Client</h1>
+<p>npm create vite@latest <nom_du_projet></p>
+<ul>
+<li>Vanilla</li>
+<li>Javascript</li>
+</ul>
+<p>cd <nom_du_projet>
+pnpm install axios</p>
+<p>Edition de src/main.js</p>
+<p>```js title="src/main.js</p>
+<p>// main.js
+import axios from 'axios';</p>
+<p>const app = document.querySelector('#app');</p>
+<p>async function fetchData() {
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+    app.innerHTML = <code>&lt;h1&gt;${response.data.title}&lt;/h1&gt;&lt;p&gt;${response.data.body}&lt;/p&gt;</code>;
+  } catch (error) {
+    console.error("Erreur lors de l'appel API", error);
+  }
+}</p>
+<p>fetchData();</p>
+<p>```</p>
+<p>pnpm run dev</p>
 <h2 id="mediagraphie">Médiagraphie</h2>
 <ul>
 <li>GeeksforGeeks. (2024, January 18). How to implement JWT Authentication in express app ?. GeeksforGeeks. <a href="https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/">https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/</a></li>
