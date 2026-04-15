@@ -2709,7 +2709,7 @@
 <p><img src="../../../assets/img/assiste_par_ia.png" align="right" width="150" /></p>
 <h2 id="quest-ce-quun-json-web-token-jwt">Qu'est-ce qu'un JSON Web Token (JWT) ?</h2>
 <p>Le <strong>JSON Web Token (JWT)</strong> est un standard ouvert (<a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>) qui définit une manière compacte et sécurisée de transmettre des informations entre deux parties sous forme d'objet JSON. </p>
-<p>Ces informations peuvent être vérifiées et fiables car elles sont signées numériquement. Un JWT peut être signé à l'aide d'un secret (avec l'algorithme <strong>HMAC</strong>) ou d'une paire de clés publique/privée utilisant <strong>RSA</strong> ou <strong>ECDSA</strong>.</p>
+<p>Ces informations peuvent être vérifiées et fiables car elles sont signées numériquement. Un JWT peut être signé à l'aide d'un secret (avec l'algorithme <strong>HMAC</strong> - <em>Hash-based Message Authentication Code</em>) ou d'une paire de clés publique/privée utilisant <strong>RSA</strong> ou <strong>ECDSA</strong>.</p>
 <h2 id="pourquoi-utiliser-le-jwt-avantages">Pourquoi utiliser le JWT ? (Avantages)</h2>
 <p>L'utilisation des JWT présente plusieurs avantages majeurs, particulièrement dans le développement d'APIs modernes :</p>
 <ol>
@@ -2775,13 +2775,15 @@
 <li><strong>Durée de vie :</strong> Longue (ex: quelques jours à plusieurs mois).</li>
 <li><strong>Sécurité :</strong> Il est stocké de manière plus sécurisée (souvent dans un cookie <code>HttpOnly</code> côté client) et n'est envoyé qu'à la route de rafraîchissement.</li>
 </ul>
-<p><strong>Le flux classique :</strong>
-1. L'utilisateur se connecte et reçoit un <strong>Access Token</strong> et un <strong>Refresh Token</strong>.
-2. L'application utilise l'<strong>Access Token</strong> pour ses appels API.
-3. L'<strong>Access Token</strong> expire (erreur 401).
-4. L'application envoie le <strong>Refresh Token</strong> au serveur.
-5. Le serveur valide le <strong>Refresh Token</strong> et renvoie un nouvel <strong>Access Token</strong>.
-6. Si le <strong>Refresh Token</strong> est révoqué ou expiré, l'utilisateur doit se reconnecter manuellement.</p>
+<p><strong>Le flux classique :</strong></p>
+<ol>
+<li>L'utilisateur se connecte et reçoit un <strong>Access Token</strong> et un <strong>Refresh Token</strong>.</li>
+<li>L'application utilise l'<strong>Access Token</strong> pour ses appels API.</li>
+<li>L'<strong>Access Token</strong> expire (erreur 401).</li>
+<li>L'application envoie le <strong>Refresh Token</strong> au serveur.</li>
+<li>Le serveur valide le <strong>Refresh Token</strong> et renvoie un nouvel <strong>Access Token</strong>.</li>
+<li>Si le <strong>Refresh Token</strong> est révoqué ou expiré, l'utilisateur doit se reconnecter manuellement.</li>
+</ol>
 <h2 id="ou-stocker-le-jwt-cote-client">Où stocker le JWT côté client ?</h2>
 <p>Le choix du lieu de stockage du jeton est crucial pour protéger votre application contre les attaques.</p>
 <h3 id="1-local-storage-header-authorization">1. Local Storage + Header Authorization</h3>
@@ -2796,30 +2798,10 @@
 <li><strong>Avantages :</strong> En utilisant l'option <strong><code>HttpOnly</code></strong>, le JavaScript ne peut pas accéder au cookie, ce qui le protège contre le vol via <strong>XSS</strong>.</li>
 <li><strong>Inconvénients :</strong> Vulnérable aux attaques <strong>CSRF</strong> (Cross-Site Request Forgery). Il faut alors mettre en place des protections supplémentaires (attribut <code>SameSite: Strict</code> ou jetons anti-CSRF).</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Méthode</th>
-<th style="text-align: left;">Accès via JavaScript</th>
-<th style="text-align: left;">Protection XSS</th>
-<th style="text-align: left;">Protection CSRF</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Local Storage</strong></td>
-<td style="text-align: left;">Oui</td>
-<td style="text-align: left;">:x: Non</td>
-<td style="text-align: left;">:white_check_mark: Oui</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Cookie (HttpOnly)</strong></td>
-<td style="text-align: left;">:x: Non</td>
-<td style="text-align: left;">:white_check_mark: Oui</td>
-<td style="text-align: left;">:warning: Nécessite SameSite/CSRF token</td>
-</tr>
-</tbody>
-</table>
+<p>| Méthode | Accès via JavaScript | Protection XSS | Protection CSRF |</p>
+<p>| :--- | :--- | :--- | :--- |
+| <strong>Local Storage</strong> | Oui | :x: Non | :white_check_mark: Oui |
+| <strong>Cookie (HttpOnly)</strong> | :x: Non | :white_check_mark: Oui | :warning: Nécessite SameSite/CSRF token |</p>
 <h2 id="structure-dun-jwt">Structure d'un JWT</h2>
 <p>Un JWT est composé de trois parties séparées par des points (<code>.</code>) :</p>
 <p><code>xxxxx.yyyyy.zzzzz</code></p>
@@ -2868,14 +2850,35 @@ La signature est utilisée pour vérifier que le message n'a pas été modifié 
 <h2 id="algorithmes-hs256-vs-rs256">Algorithmes : HS256 vs RS256</h2>
 <p>Le choix de l'algorithme de signature est crucial pour la sécurité de votre architecture.</p>
 <h3 id="1-hs256-symetrique">1. HS256 (Symétrique)</h3>
-<p><strong>HMAC + SHA256</strong>. Une seule et même clé (le "secret") est utilisée pour <strong>signer</strong> et pour <strong>vérifier</strong> le jeton.
-- <strong>Avantage :</strong> Très simple à implémenter et rapide.
-- <strong>Inconvénient :</strong> Toutes les parties qui doivent vérifier le jeton doivent posséder le secret. Si le secret est compromis, n'importe qui peut forger des jetons.
-- <strong>Usage :</strong> Idéal quand l'émetteur et le vérificateur sont le même service (monolithe).</p>
+<p><strong>HMAC + SHA256</strong>. Une seule et même clé (le "secret") est utilisée pour <strong>signer</strong> et pour <strong>vérifier</strong> le jeton.</p>
+<ul>
+<li><strong>Avantages :</strong><ul>
+<li>Très simple à implémenter.</li>
+<li>Signature et vérification très rapides.</li>
+</ul>
+</li>
+<li><strong>Inconvénients :</strong><ul>
+<li><strong>Partage du secret :</strong> Toutes les parties qui doivent vérifier le jeton doivent posséder le secret.</li>
+<li><strong>Risque de compromission :</strong> Si le secret est volé sur un serveur de vérification, l'attaquant peut forger de nouveaux jetons.</li>
+</ul>
+</li>
+<li><strong>Usage :</strong> Idéal quand l'émetteur et le vérificateur sont le même service (application monolithique).</li>
+</ul>
 <h3 id="2-rs256-asymetrique">2. RS256 (Asymétrique)</h3>
-<p><strong>RSA + SHA256</strong>. Utilise une paire de clés : une <strong>clé privée</strong> pour signer et une <strong>clé publique</strong> pour vérifier.
-- <strong>Avantage :</strong> Plus sécurisé. Seul l'émetteur possède la clé privée. N'importe qui peut posséder la clé publique pour vérifier le jeton sans risque de pouvoir en créer un nouveau.
-- <strong>Usage :</strong> Idéal pour les architectures microservices ou les fournisseurs d'identité (OIDC/Google/Auth0).</p>
+<p><strong>RSA + SHA256</strong>. Utilise une paire de clés : une <strong>clé privée</strong> pour signer et une <strong>clé publique</strong> pour vérifier.</p>
+<ul>
+<li><strong>Avantages :</strong><ul>
+<li><strong>Plus sécurisé :</strong> Seul l'émetteur possède la clé privée.</li>
+<li><strong>Distribution publique :</strong> N'importe quel service peut posséder la clé publique pour vérifier le jeton sans aucun risque de pouvoir en créer un nouveau.</li>
+</ul>
+</li>
+<li><strong>Inconvénients :</strong><ul>
+<li>Plus complexe à mettre en œuvre (gestion des paires de clés).</li>
+<li>Légèrement plus lent (calculs mathématiques asymétriques plus lourds).</li>
+</ul>
+</li>
+<li><strong>Usage :</strong> Idéal pour les architectures microservices, les APIs publiques et les fournisseurs d'identité (Google, Microsoft, Auth0).</li>
+</ul>
 <p><strong>Exemple de signature RS256 :</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>RSASHA256(
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  base64UrlEncode(header) + &quot;.&quot; +
