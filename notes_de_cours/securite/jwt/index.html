@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://example.com/notes_de_cours/securite/jwt/">
       
       
+        <link rel="prev" href="../hashage/">
+      
+      
+        <link rel="next" href="../../aide/start_express/">
       
       
         
@@ -291,10 +295,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../workspace/" class="md-tabs__link">
           
   
@@ -417,24 +423,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -452,7 +463,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1287,6 +1298,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1297,11 +1310,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -1322,7 +1335,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1384,6 +1397,225 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Web Token (JWT)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON Web Token (JWT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quest-ce-quun-json-web-token-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qu'est-ce qu'un JSON Web Token (JWT) ?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-le-jwt-avantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi utiliser le JWT ? (Avantages)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-cle-api-stateful-vs-jwt-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparaison : Clé API (Stateful) vs JWT (Stateless)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-dun-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure d'un JWT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure d&#39;un JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-len-tete-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. L'en-tête (Header)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-la-charge-utile-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. La charge utile (Payload)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-signature-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. La signature (Signature)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-et-openid-connect-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT et OpenID Connect (OIDC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JWT et OpenID Connect (OIDC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-jeton-didentite-id-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le jeton d'identité (ID Token)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-est-ce-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi est-ce important ?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liens-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens utiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediagraphie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Médiagraphie
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1904,6 +2136,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/11_jwt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - JSON Web Token (JWT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2044,6 +2304,158 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quest-ce-quun-json-web-token-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qu'est-ce qu'un JSON Web Token (JWT) ?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-utiliser-le-jwt-avantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi utiliser le JWT ? (Avantages)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-cle-api-stateful-vs-jwt-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparaison : Clé API (Stateful) vs JWT (Stateless)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-dun-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure d'un JWT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure d&#39;un JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-len-tete-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. L'en-tête (Header)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-la-charge-utile-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. La charge utile (Payload)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-signature-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. La signature (Signature)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-et-openid-connect-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT et OpenID Connect (OIDC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JWT et OpenID Connect (OIDC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-jeton-didentite-id-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le jeton d'identité (ID Token)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-est-ce-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi est-ce important ?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liens-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens utiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediagraphie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Médiagraphie
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2060,40 +2472,119 @@
 
 
 <h1 id="json-web-token-jwt">JSON Web Token (JWT)</h1>
+<p><img src="../../../assets/img/assisté_de_IA.png" align="right" width="150" /></p>
+<h2 id="quest-ce-quun-json-web-token-jwt">Qu'est-ce qu'un JSON Web Token (JWT) ?</h2>
+<p>Le <strong>JSON Web Token (JWT)</strong> est un standard ouvert (<a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>) qui définit une manière compacte et sécurisée de transmettre des informations entre deux parties sous forme d'objet JSON. </p>
+<p>Ces informations peuvent être vérifiées et fiables car elles sont signées numériquement. Un JWT peut être signé à l'aide d'un secret (avec l'algorithme <strong>HMAC</strong>) ou d'une paire de clés publique/privée utilisant <strong>RSA</strong> ou <strong>ECDSA</strong>.</p>
+<h2 id="pourquoi-utiliser-le-jwt-avantages">Pourquoi utiliser le JWT ? (Avantages)</h2>
+<p>L'utilisation des JWT présente plusieurs avantages majeurs, particulièrement dans le développement d'APIs modernes :</p>
+<ol>
+<li><strong>Sans état (Stateless) :</strong> Contrairement aux sessions traditionnelles, le serveur n'a pas besoin de stocker d'informations de session en mémoire ou en base de données. Toutes les informations nécessaires à l'authentification sont contenues dans le jeton lui-même.</li>
+<li><strong>Scalabilité :</strong> Comme le serveur est <em>stateless</em>, il est beaucoup plus facile de faire évoluer l'application horizontalement (plusieurs serveurs derrière un répartiteur de charge) car n'importe quel serveur peut valider le jeton sans consulter une base de données de sessions centrale.</li>
+<li><strong>Performance :</strong> La validation d'un JWT est rapide car elle ne nécessite généralement pas de requête réseau vers une base de données ou un service tiers.</li>
+<li><strong>Interopérabilité :</strong> Le format JSON est universel et supporté par presque tous les langages de programmation.</li>
+<li><strong>Sécurité :</strong> Puisque le jeton est signé, le serveur peut détecter si les données ont été altérées par un tiers.</li>
+</ol>
+<h2 id="comparaison-cle-api-stateful-vs-jwt-stateless">Comparaison : Clé API (Stateful) vs JWT (Stateless)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Caractéristique</th>
+<th style="text-align: left;">Clé API / Session (Stateful)</th>
+<th style="text-align: left;">JSON Web Token (Stateless)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Stockage serveur</strong></td>
+<td style="text-align: left;">Nécessite une base de données ou un cache (Redis) pour valider la clé à chaque requête.</td>
+<td style="text-align: left;">Aucune donnée stockée sur le serveur. Le jeton contient tout.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scalabilité</strong></td>
+<td style="text-align: left;">Plus complexe (nécessite une base de données centrale ou une session collante).</td>
+<td style="text-align: left;">Facile (n'importe quel serveur peut valider le jeton avec la clé secrète).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Révocation</strong></td>
+<td style="text-align: left;">Instantanée (il suffit de supprimer la clé en base de données).</td>
+<td style="text-align: left;">Difficile (le jeton reste valide jusqu'à son expiration, sauf si une "liste noire" est gérée).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Taille</strong></td>
+<td style="text-align: left;">Très courte (simple identifiant).</td>
+<td style="text-align: left;">Plus longue (contient les données encodées et la signature).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Données (Payload)</strong></td>
+<td style="text-align: left;">Aucune donnée dans la clé elle-même.</td>
+<td style="text-align: left;">Peut transporter des informations (ID utilisateur, rôles, etc.).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Utilisation type</strong></td>
+<td style="text-align: left;">Accès permanent à une API, sessions web classiques.</td>
+<td style="text-align: left;">Authentification moderne, microservices, applications mobiles.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="structure-dun-jwt">Structure d'un JWT</h2>
+<p>Un JWT est composé de trois parties séparées par des points (<code>.</code>) :</p>
+<p><code>xxxxx.yyyyy.zzzzz</code></p>
+<h3 id="1-len-tete-header">1. L'en-tête (Header)</h3>
+<p>L'en-tête se compose généralement de deux parties : le type de jeton (JWT) et l'algorithme de signature utilisé (comme HS256 ou RS256).</p>
+<p><div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span></code></pre></div>
+Cet objet JSON est ensuite encodé en <strong>Base64Url</strong>.</p>
+<h3 id="2-la-charge-utile-payload">2. La charge utile (Payload)</h3>
+<p>C'est ici que se trouvent les "claims" (revendications). Ce sont des déclarations sur une entité (généralement l'utilisateur) et des données supplémentaires.</p>
 <ul>
-<li>Qu'est-ce que c'est?</li>
-<li>Pourquoi on l'utilise, avantage</li>
-<li>Structure</li>
+<li><strong>Claims enregistrés :</strong> Des clés prédéfinies comme <code>sub</code> (sujet), <code>iat</code> (émis à), <code>exp</code> (expiration).</li>
+<li><strong>Claims publics/privés :</strong> Vos propres données (ex: <code>user_id</code>, <code>role</code>, <code>username</code>).</li>
 </ul>
-<p>https://auth0.com/docs/secure/tokens/json-web-tokens
-https://jwt.io/
-https://fr.wikipedia.org/wiki/JSON_Web_Token</p>
-<h1 id="exercice-implementer-une-protection-par-jwt">Exercice : Implémenter une protection par JWT</h1>
-<h1 id="service-web">Service Web</h1>
-<h1 id="client">Client</h1>
-<p>npm create vite@latest <nom_du_projet></p>
+<p><div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1516239022</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+Le Payload est également encodé en <strong>Base64Url</strong>.</p>
+<h3 id="3-la-signature-signature">3. La signature (Signature)</h3>
+<p>Pour créer la signature, vous devez prendre l'en-tête encodé, la charge utile encodée, un secret, et l'algorithme spécifié dans l'en-tête.</p>
+<p>Par exemple, avec HS256 :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>HMACSHA256(
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  base64UrlEncode(header) + &quot;.&quot; +
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  base64UrlEncode(payload),
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  secret
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>)
+</span></code></pre></div>
+La signature est utilisée pour vérifier que le message n'a pas été modifié en cours de route.</p>
+<h2 id="jwt-et-openid-connect-oidc">JWT et OpenID Connect (OIDC)</h2>
+<p>Le <strong>JWT</strong> est l'élément central du protocole <strong>OpenID Connect (OIDC)</strong>, qui est une couche d'identité construite au-dessus d'OAuth 2.0.</p>
+<p>Alors qu'OAuth 2.0 concerne l'<strong>autorisation</strong> (quelles ressources un utilisateur peut-il accéder ?), OIDC concerne l'<strong>authentification</strong> (qui est l'utilisateur ?).</p>
+<h3 id="le-jeton-didentite-id-token">Le jeton d'identité (ID Token)</h3>
+<p>Dans un flux OIDC, le serveur d'authentification (comme Google, GitHub ou Auth0) renvoie un <strong>ID Token</strong>. Ce jeton est <strong>obligatoirement un JWT</strong>.</p>
+<p>Il permet au client (votre application) de :
+*   Confirmer l'identité de l'utilisateur.
+*   Obtenir des informations de profil de base (nom, email, photo) directement dans le jeton, sans appel API supplémentaire.</p>
+<h3 id="pourquoi-est-ce-important">Pourquoi est-ce important ?</h3>
+<p>OIDC standardise la manière dont les JWT sont utilisés pour l'identité, ce qui permet le <strong>Single Sign-On (SSO)</strong> : un utilisateur peut se connecter à plusieurs applications différentes en utilisant le même compte centralisé.</p>
+<p><strong>Exemple concret avec un compte Google :</strong>
+1. Vous visitez un site tiers (ex: <strong>Canva</strong> ou <strong>Spotify</strong>).
+2. Au lieu de créer un nouveau compte, vous cliquez sur <strong>"Se connecter avec Google"</strong>.
+3. Google vous authentifie et renvoie un <strong>ID Token (JWT)</strong> au site tiers.
+4. Le site tiers valide la signature du JWT (émise par Google) et extrait votre nom et email.
+5. Vous êtes connecté instantanément sans avoir jamais partagé votre mot de passe avec le site tiers.</p>
+<hr />
+<h3 id="liens-utiles">Liens utiles</h3>
 <ul>
-<li>Vanilla</li>
-<li>Javascript</li>
+<li><a href="https://auth0.com/docs/secure/tokens/json-web-tokens">auth0.com - JWT</a></li>
+<li><a href="https://jwt.io/">jwt.io</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/JSON_Web_Token">Wikipedia - JSON Web Token</a></li>
 </ul>
-<p>cd <nom_du_projet>
-pnpm install axios</p>
-<p>Edition de src/main.js</p>
-<p>```js title="src/main.js</p>
-<p>// main.js
-import axios from 'axios';</p>
-<p>const app = document.querySelector('#app');</p>
-<p>async function fetchData() {
-  try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
-    app.innerHTML = <code>&lt;h1&gt;${response.data.title}&lt;/h1&gt;&lt;p&gt;${response.data.body}&lt;/p&gt;</code>;
-  } catch (error) {
-    console.error("Erreur lors de l'appel API", error);
-  }
-}</p>
-<p>fetchData();</p>
-<p>```</p>
-<p>pnpm run dev</p>
 <h2 id="mediagraphie">Médiagraphie</h2>
 <ul>
 <li>GeeksforGeeks. (2024, January 18). How to implement JWT Authentication in express app ?. GeeksforGeeks. <a href="https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/">https://www.geeksforgeeks.org/how-to-implement-jwt-authentication-in-express-js-app/</a></li>

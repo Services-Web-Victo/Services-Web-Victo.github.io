@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes_de_cours/node/express/">
+        <link rel="canonical" href="https://example.com/exercices/11_jwt/">
       
       
-        <link rel="prev" href="../npm/">
+        <link rel="prev" href="../10_meme_generator/">
       
       
-        <link rel="next" href="../middleware/">
+        <link rel="next" href="../examen2_reva/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Express - Services Web</title>
+        <title>11 - JSON Web Token (JWT) - Services Web</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -116,15 +116,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../custom_theme/css/extra.css">
+      <link rel="stylesheet" href="../../custom_theme/css/extra.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/all.css">
+      <link rel="stylesheet" href="../../custom_theme/css/all.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/colors.css">
+      <link rel="stylesheet" href="../../custom_theme/css/colors.css">
     
-      <link rel="stylesheet" href="../../../custom_theme/css/cards.css">
+      <link rel="stylesheet" href="../../custom_theme/css/cards.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expressjs" class="md-skip">
+        <a href="#exercice-11-tester-une-api-avec-jwt-et-postman" class="md-skip">
           Aller au contenu
         </a>
       
@@ -165,7 +165,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-header__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
@@ -185,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Express
+              11 - JSON Web Token (JWT)
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -295,13 +295,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../workspace/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../notes_de_cours/workspace/" class="md-tabs__link">
           
   
   
@@ -317,11 +315,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../exercices/01_utilisation_api/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01_utilisation_api/" class="md-tabs__link">
           
   
   
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../exercices/examen2_reva/" class="md-tabs__link">
+        <a href="../examen2_reva/" class="md-tabs__link">
           
   
   
@@ -381,7 +381,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
+    <a href="../.." title="Services Web" class="md-nav__button md-logo" aria-label="Services Web" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -423,29 +423,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -463,7 +458,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -481,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workspace/" class="md-nav__link">
+      <a href="../../notes_de_cours/workspace/" class="md-nav__link">
         
   
   
@@ -509,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/devilbox_install/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/devilbox_install/" class="md-nav__link">
         
   
   
@@ -587,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/introduction/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/introduction/" class="md-nav__link">
         
   
   
@@ -615,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/bonnes_pratiques/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/bonnes_pratiques/" class="md-nav__link">
         
   
   
@@ -643,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/json/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/json/" class="md-nav__link">
         
   
   
@@ -671,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/documentation/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/documentation/" class="md-nav__link">
         
   
   
@@ -699,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/code_gen/" class="md-nav__link">
+      <a href="../../notes_de_cours/api/code_gen/" class="md-nav__link">
         
   
   
@@ -732,8 +727,6 @@
                 
   
   
-    
-  
   
   
     
@@ -744,11 +737,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -769,7 +762,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -787,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/introduction/" class="md-nav__link">
         
   
   
@@ -815,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server_web/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/server_web/" class="md-nav__link">
         
   
   
@@ -843,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../npm/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/npm/" class="md-nav__link">
         
   
   
@@ -868,37 +861,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Express
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/node/express/" class="md-nav__link">
         
   
   
@@ -914,59 +880,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#premier-serveur-web-avec-express" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Premier serveur web avec Express
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#les-objets-req-et-res" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Les objets req et res
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#routes-et-methodes-http" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Routes et méthodes HTTP
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -979,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../middleware/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/middleware/" class="md-nav__link">
         
   
   
@@ -1007,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routage/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/routage/" class="md-nav__link">
         
   
   
@@ -1035,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../structure_projet/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/structure_projet/" class="md-nav__link">
         
   
   
@@ -1063,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../javascript_promise/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/javascript_promise/" class="md-nav__link">
         
   
   
@@ -1091,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../express_mysql/" class="md-nav__link">
+      <a href="../../notes_de_cours/node/express_mysql/" class="md-nav__link">
         
   
   
@@ -1177,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/render/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/render/" class="md-nav__link">
         
   
   
@@ -1205,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deploiement/postgresql/" class="md-nav__link">
+      <a href="../../notes_de_cours/deploiement/postgresql/" class="md-nav__link">
         
   
   
@@ -1291,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/fetch/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/fetch/" class="md-nav__link">
         
   
   
@@ -1319,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/toolpad/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/toolpad/" class="md-nav__link">
         
   
   
@@ -1347,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/toolpad_env/" class="md-nav__link">
+      <a href="../../notes_de_cours/frontend/toolpad_env/" class="md-nav__link">
         
   
   
@@ -1433,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../securite/cle_api/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/cle_api/" class="md-nav__link">
         
   
   
@@ -1461,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../securite/hashage/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/hashage/" class="md-nav__link">
         
   
   
@@ -1489,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../securite/jwt/" class="md-nav__link">
+      <a href="../../notes_de_cours/securite/jwt/" class="md-nav__link">
         
   
   
@@ -1575,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/start_express/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/start_express/" class="md-nav__link">
         
   
   
@@ -1603,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/recuperer_parametres/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/recuperer_parametres/" class="md-nav__link">
         
   
   
@@ -1631,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aide/cors/" class="md-nav__link">
+      <a href="../../notes_de_cours/aide/cors/" class="md-nav__link">
         
   
   
@@ -1671,24 +1584,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1706,7 +1624,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1724,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/01_utilisation_api/" class="md-nav__link">
+      <a href="../01_utilisation_api/" class="md-nav__link">
         
   
   
@@ -1752,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/02_serverweb_node/" class="md-nav__link">
+      <a href="../02_serverweb_node/" class="md-nav__link">
         
   
   
@@ -1780,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/03_helloworld_api/" class="md-nav__link">
+      <a href="../03_helloworld_api/" class="md-nav__link">
         
   
   
@@ -1808,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/formatif/" class="md-nav__link">
+      <a href="../formatif/" class="md-nav__link">
         
   
   
@@ -1836,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/04_pokemon_api/" class="md-nav__link">
+      <a href="../04_pokemon_api/" class="md-nav__link">
         
   
   
@@ -1864,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/05_apikey/" class="md-nav__link">
+      <a href="../05_apikey/" class="md-nav__link">
         
   
   
@@ -1892,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/06_render/" class="md-nav__link">
+      <a href="../06_render/" class="md-nav__link">
         
   
   
@@ -1920,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/07_fetch/" class="md-nav__link">
+      <a href="../07_fetch/" class="md-nav__link">
         
   
   
@@ -1948,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/08_toolpad/" class="md-nav__link">
+      <a href="../08_toolpad/" class="md-nav__link">
         
   
   
@@ -1976,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/09_toolpad_crud/" class="md-nav__link">
+      <a href="../09_toolpad_crud/" class="md-nav__link">
         
   
   
@@ -2004,7 +1922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/10_meme_generator/" class="md-nav__link">
+      <a href="../10_meme_generator/" class="md-nav__link">
         
   
   
@@ -2029,10 +1947,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../exercices/11_jwt/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - JSON Web Token (JWT)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2048,6 +1993,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectifs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-1-obtenir-le-jeton-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 1 : Obtenir le jeton (Login)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-2-analyser-le-jeton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 2 : Analyser le jeton
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-3-acceder-a-une-ressource-protegee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 3 : Accéder à une ressource protégée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-4-tester-lexpiration-optionnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 4 : Tester l'expiration (Optionnel)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-remettre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À remettre
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2117,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/examen2_reva/" class="md-nav__link">
+      <a href="../examen2_reva/" class="md-nav__link">
         
   
   
@@ -2145,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/examen2_revb/" class="md-nav__link">
+      <a href="../examen2_revb/" class="md-nav__link">
         
   
   
@@ -2200,10 +2231,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#premier-serveur-web-avec-express" class="md-nav__link">
+  <a href="#objectifs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Premier serveur web avec Express
+        Objectifs
       
     </span>
   </a>
@@ -2211,10 +2242,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#les-objets-req-et-res" class="md-nav__link">
+  <a href="#etape-1-obtenir-le-jeton-login" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Les objets req et res
+        Étape 1 : Obtenir le jeton (Login)
       
     </span>
   </a>
@@ -2222,10 +2253,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routes-et-methodes-http" class="md-nav__link">
+  <a href="#etape-2-analyser-le-jeton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Routes et méthodes HTTP
+        Étape 2 : Analyser le jeton
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-3-acceder-a-une-ressource-protegee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 3 : Accéder à une ressource protégée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-4-tester-lexpiration-optionnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 4 : Tester l'expiration (Optionnel)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-remettre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        À remettre
       
     </span>
   </a>
@@ -2249,100 +2313,61 @@
 
 
 
-<h1 id="expressjs">Express.js</h1>
-<p>Express.js est un framework pour construire des applications web en Node.js. C'est de fait le framework standard pour le développement de serveur web en Node.js. </p>
-<p>Documentation officielle: </p>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<p><a href="https://expressjs.com/fr/">Express JS</a>  </p>
-</div>
-<p>Pour installer Express :</p>
-<div class="language-nodejsrepl highlight"><span class="filename">console</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">express</span>
-</span></code></pre></div>
-<h2 id="premier-serveur-web-avec-express">Premier serveur web avec Express</h2>
-<div class="language-javascript highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">index.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// Importer le module express</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">// Créer une application express</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Mon premier serveur web sur express !&lt;/h1&gt;&quot;</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">});</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Serveur démarré sur le port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">});</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="les-objets-req-et-res">Les objets req et res</h2>
-<p>L’objet <strong>req</strong> représente la requête HTTP transmise au serveur. Cet objet permet, entre autres :  </p>
+<h1 id="exercice-11-tester-une-api-avec-jwt-et-postman">Exercice 11 : Tester une API avec JWT et Postman</h1>
+<p><img src="../assets/img/assisté_de_IA.png" align="right" width="150" /></p>
+<p>Dans cet exercice, vous allez utiliser <strong>Postman</strong> pour tester une API qui nécessite une authentification par <strong>JSON Web Token (JWT)</strong>.
+ Nous utiliserons l'API publique <a href="https://dummyjson.com/docs/auth">DummyJSON</a>, qui permet de simuler un flux d'authentification réel.</p>
+<h2 id="objectifs">Objectifs</h2>
 <ul>
-<li>D’accéder aux paramètres transmis dans l’URL  </li>
-<li>D’accéder aux données transmises dans le corps de la requête (body)  </li>
-<li>De manipuler les cookies</li>
+<li>Comprendre comment obtenir un jeton JWT via une requête de connexion (Login).</li>
+<li>Utiliser ce jeton pour accéder à des ressources protégées.</li>
+<li>Observer la structure du jeton sur <a href="https://jwt.io">jwt.io</a>.</li>
 </ul>
-<p>L’objet <strong>res</strong> représente la réponse HTTP transmise du serveur au client. Cet objet permet, entre autres : </p>
-<ul>
-<li>Retourner des informations au client</li>
-<li>Modifier le code de statut de la requête</li>
-<li>Rediriger une demande</li>
-<li>Générer un modèle de vue</li>
-</ul>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<ul>
-<li><a href="https://expressjs.com/en/4x/api.html#req">L'objet Request (req)</a></li>
-<li><a href="https://expressjs.com/en/4x/api.html#res">L'objet Response (res)</a></li>
-</ul>
-</div>
-<h2 id="routes-et-methodes-http">Routes et méthodes HTTP</h2>
-<p>Dans l’exemple précédent, la requête utilise la méthode GET, qui récupèrent les informations directement dans l’URL. </p>
-<p>D’autres méthodes sont aussi définies dans le protocole HTTP. Les plus communes sont : GET, POST, PUT, DELETE.   </p>
-<p>Avec Express.js, il est possible d’utiliser la même URL avec différentes méthodes. Cela se fait en modifiant la méthode auprès de l'application express :</p>
-<table>
-<thead>
-<tr>
-<th>Méthode http</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>app.<strong>get</strong>(path, function(req, res) { … })</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>app.<strong>post</strong>(path, function(req, res) { … })</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>app.<strong>put</strong>(path, function(req, res) { … })</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>app.<strong>delete</strong>(path, function(req, res) { … })</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition manuel">
-<p class="admonition-title">Manuel</p>
-<p><a href="https://developer.mozilla.org/fr/docs/Web/HTTP/Methods">MDN HTTP Methods</a>  </p>
-</div>
+<hr />
+<h2 id="etape-1-obtenir-le-jeton-login">Étape 1 : Obtenir le jeton (Login)</h2>
+<p>Pour obtenir un JWT, vous devez d'abord envoyer vos identifiants à l'endpoint d'authentification.</p>
+<ol>
+<li>Ouvrez <strong>Postman</strong>.</li>
+<li>Créez une nouvelle requête <strong>POST</strong> vers l'URL suivante :<br />
+<code>https://dummyjson.com/auth/login</code></li>
+<li>Allez dans l'onglet <strong>Body</strong>, sélectionnez <strong>raw</strong> et choisissez <strong>JSON</strong>.</li>
+<li>Entrez les identifiants de test suivants :
+   <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emilys&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emilyspass&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;expiresInMins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div></li>
+<li>Cliquez sur <strong>Send</strong>.</li>
+<li>Dans la réponse, vous devriez voir un champ <code>accessToken</code>. C'est votre <strong>JWT</strong>. Copiez-le.</li>
+</ol>
+<h2 id="etape-2-analyser-le-jeton">Étape 2 : Analyser le jeton</h2>
+<ol>
+<li>Allez sur le site <a href="https://jwt.io">jwt.io</a>.</li>
+<li>Collez votre jeton dans la case "Encoded".</li>
+<li>Observez les sections <strong>Header</strong> et <strong>Payload</strong> à droite.</li>
+<li>Quelles informations (claims) sont contenues dans le payload ?</li>
+<li>Quel est l'algorithme utilisé ?</li>
+</ol>
+<h2 id="etape-3-acceder-a-une-ressource-protegee">Étape 3 : Accéder à une ressource protégée</h2>
+<p>Maintenant que vous avez le jeton, vous allez l'utiliser pour récupérer les informations de l'utilisateur connecté.</p>
+<ol>
+<li>Dans Postman, créez une nouvelle requête <strong>GET</strong> vers :<br />
+<code>https://dummyjson.com/auth/me</code></li>
+<li>Cliquez sur <strong>Send</strong> sans rien configurer d'autre.  </li>
+<li><em>Résultat :</em> Vous devriez recevoir une erreur <code>401 Unauthorized</code> ou <code>Token missing</code>. C'est normal, l'API attend votre jeton.</li>
+<li>Allez dans l'onglet <strong>Authorization</strong>.</li>
+<li>Dans le menu déroulant <strong>Type</strong>, sélectionnez <strong>Bearer Token</strong>.</li>
+<li>Collez votre jeton (l'accessToken copié à l'étape 1) dans le champ <strong>Token</strong>.</li>
+<li>Cliquez sur <strong>Send</strong>.</li>
+<li><em>Résultat :</em> Vous devriez maintenant recevoir les données du profil de l'utilisateur !</li>
+</ol>
+<h2 id="etape-4-tester-lexpiration-optionnel">Étape 4 : Tester l'expiration (Optionnel)</h2>
+<p>Si vous attendez plus de 30 minutes (ou si vous refaites l'étape 1 avec <code>"expiresInMins": 1</code>), essayez de refaire la requête de l'étape 3.
+- Que se passe-t-il une fois le jeton expiré ?</p>
+<hr />
+<h2 id="a-remettre">À remettre</h2>
+<p>Capture d'écran de votre requête réussie sur <code>https://dummyjson.com/auth/me</code> dans Postman, montrant le profil de l'utilisateur et l'onglet Authorization (Bearer Token).</p>
 
 
 
@@ -2421,12 +2446,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../custom_theme/javascript/alltarget.js"></script>
+        <script src="../../custom_theme/javascript/alltarget.js"></script>
       
     
   </body>
