@@ -1365,6 +1365,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gestion-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion des erreurs
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2305,6 +2316,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gestion-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion des erreurs
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2430,6 +2452,11 @@ Vous pouvez ensuite cliquer sur <strong>Run</strong> à nouveau pour voir les ch
   </p>
 <figcaption>Version finale</figcaption>
 </figure>
+<h3 id="gestion-des-erreurs">Gestion des erreurs</h3>
+<p>Vous pouvez accéder au message d'erreur d'une requête en utilisant <code>&lt;requete&gt;.error.message</code> et afficher ce message dans un composant <strong>Text</strong> (via un binding) pour une meilleure expérience utilisateur.</p>
+<p><div class="language-javascript highlight"><span class="filename">script.js</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&lt;</span><span class="nx">requete</span><span class="o">&gt;?</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span>
+</span></code></pre></div>
+(attention ici la propriété <em>message</em> est remplie par Toolpad Studio avec le message d'erreur, elle ne provient pas d'une clé de la réponse JSON de l'API)</p>
 
 
 
