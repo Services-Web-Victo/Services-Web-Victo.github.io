@@ -2576,7 +2576,7 @@ Dans cette exemple, selon l'ordre que les routes seront traitées dans le code, 
 </table>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>On ne doit jamais modifier une ressource avec une méthode GET.  C'est-à-dire que les requêtes GET ne doivent avoir aucun effet sur l'état de la resource associée.  </p>
+<p>On ne doit jamais modifier une ressource avec une méthode GET.  C'est-à-dire que les requêtes GET ne doivent avoir aucun effet sur l'état de la resource associée. Les requêtes GET ne doivent pas contenir de données dans le corps de la requête, les informations nécessaires à la requête doivent être envoyées dans la section query de l'url, directement dans la route ou dans les en-têtes.</p>
 </div>
 <p>Les actions de modification PUT et PATCH sont très similaires, la différence est que PUT est utilisé pour modifier toutes les valeurs de la ressource alors que PATCH l'est pour une modification partielle. Autre distinction de PUT, si la ressource n'est pas trouvé, elle sera créée. Prenons l'exemple suivant, on veut pouvoir modifier un utilisateur ayant ces informations </p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
